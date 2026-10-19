@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer ICQ24 - Tema Claro</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              icqBlue: "#0263E2",
+              icqNavy: "#001D4A",
+              icqDark: "#0B1120",
+            },
+            fontFamily: {
+              sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- ESTILOS RESILIENTES PARA ODOO (Evitan que Bootstrap o Odoo sobreescriban el diseño) -->
+    <style>
+      /* ════════════════════════════════════════════════
+         ESTILOS DEL FOOTER ICQ24 (TEMA CLARO RESILIENTE)
+         ════════════════════════════════════════════════ */
+      #icq24-global-footer {
+        font-family: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        background-color: #ffffff !important;
+        color: #475569 !important;
+        border-top: 1px solid #e2e8f0 !important;
+        width: 100% !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+        -webkit-font-smoothing: antialiased !important;
+      }
+
+      #icq24-global-footer * {
+        box-sizing: border-box !important;
+      }
+
+      /* Títulos de Columnas */
+      #icq24-global-footer .footer-column-title {
+        font-size: 11px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        color: #0f172a !important;
+        margin-bottom: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+      }
+
+      #icq24-global-footer .footer-column-title::after {
+        content: "" !important;
+        width: 16px !important;
+        height: 2px !important;
+        background-color: #0263e2 !important;
+        display: inline-block !important;
+        border-radius: 9999px !important;
+      }
+
+      /* Enlaces de Navegación */
+      #icq24-global-footer .footer-nav-link {
+        color: #64748b !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        transition: all 0.22s ease-in-out !important;
+        line-height: 1.5 !important;
+        white-space: normal !important;
+      }
+
+      #icq24-global-footer .footer-nav-link:hover {
+        color: #0263e2 !important;
+        transform: translateX(4px) !important;
+        text-decoration: none !important;
+      }
+
+      #icq24-global-footer .footer-nav-link:hover .link-arrow {
+        opacity: 1 !important;
+        transform: translateX(2px) !important;
+      }
+
+      #icq24-global-footer .link-arrow {
+        opacity: 0 !important;
+        font-size: 10px !important;
+        color: #0263e2 !important;
+        transition: all 0.22s ease-in-out !important;
+      }
+
+      /* Botones de Redes Sociales */
+      #icq24-global-footer .social-btn {
+        width: 38px !important;
+        height: 38px !important;
+        border-radius: 12px !important;
+        background-color: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #475569 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 15px !important;
+        text-decoration: none !important;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      }
+
+      #icq24-global-footer .social-btn:hover {
+        background-color: #0263e2 !important;
+        border-color: #0263e2 !important;
+        color: #ffffff !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 16px -2px rgba(2, 99, 226, 0.3) !important;
+      }
+
+      /* Contenedor de 3 Columnas Equidistantes */
+      #icq24-global-footer .footer-nav-columns {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 32px !important;
+      }
+      @media (min-width: 640px) {
+        #icq24-global-footer .footer-nav-columns {
+          flex-direction: row !important;
+          gap: 40px !important;
+        }
+      }
+      @media (min-width: 1024px) {
+        #icq24-global-footer .footer-nav-columns {
+          gap: 48px !important;
+        }
+      }
+      @media (min-width: 1280px) {
+        #icq24-global-footer .footer-nav-columns {
+          gap: 64px !important;
+        }
+      }
+
+      /* Ubicaciones Limpias con Icono Pin */
+      #icq24-global-footer .footer-location-item {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        color: #64748b !important;
+        transition: color 0.2s ease !important;
+      }
+
+      #icq24-global-footer .footer-location-item:hover {
+        color: #0263e2 !important;
+      }
+
+      #icq24-global-footer .footer-location-pin {
+        color: #0263e2 !important;
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+      }
+
+      /* Enlaces Legales Inferiores */
+      #icq24-global-footer .legal-link {
+        color: #64748b !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease !important;
+      }
+
+      #icq24-global-footer .legal-link:hover {
+        color: #0263e2 !important;
+        text-decoration: underline !important;
+      }
+    </style>
+  </head>
+  <body class="bg-white p-0 m-0">
+
+    <!-- ══════════════════════════════════════════════════════════════
+         INICIO CÓDIGO FOOTER ICQ24 (COPIAR Y PEGAR EN ODOO)
+    ══════════════════════════════════════════════════════════════ -->
+    <footer id="icq24-global-footer" class="bg-white text-slate-600 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        <!-- Main Layout: Columna Izquierda (Marca) + 3 Columnas Derecha Equidistantes -->
+        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-12 xl:gap-16 pb-14 border-b border-slate-100">
+          
+          <!-- Columna 1: Logo, Descripción y Redes (Bloque de Marca) -->
+          <div class="w-full lg:max-w-[380px] xl:max-w-[420px] space-y-6">
+            <!-- Logo Oficial ICQ24 -->
+            <a href="https://www.icq24.com" class="inline-block" aria-label="ICQ24 Inicio">
+              <img
+                src="https://github.com/Lucaro99/Pagina-Soporte/blob/main/Assets/Logo%20ICQ24_original%20-%20copia.png?raw=true"
+                alt="ICQ24 - Transformación Digital, Contact Center & ITSM"
+                width="644"
+                height="299"
+                loading="lazy"
+                decoding="async"
+                style="aspect-ratio: 644 / 299;"
+                class="h-10 sm:h-11 w-auto object-contain"
+              />
+            </a>
+
+            <!-- Texto de Propósito y Valor -->
+            <div class="space-y-3">
+              <p class="text-slate-900 font-bold text-sm sm:text-base leading-snug">
+                Más que un implementador: un socio estratégico para transformar operaciones y experiencias.
+              </p>
+              <p class="text-slate-500 text-xs sm:text-[13px] leading-relaxed font-normal">
+                Combinamos consultoría experta, tecnología e IA para optimizar operaciones críticas, conectar capacidades y mejorar productividad, control y CX, con acompañamiento desde el diagnóstico hasta la evolución continua.
+              </p>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="pt-2 flex items-center gap-2.5">
+              <a
+                href="https://www.linkedin.com/in/luisa-catalina-rodriguez/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/icq24inc/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="Instagram"
+                title="Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@ICQ24_inc"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn"
+                aria-label="YouTube"
+                title="YouTube"
+              >
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bloque de 3 Columnas de Enlaces: Rigurosamente Equidistantes y Proporcionales -->
+          <div class="footer-nav-columns flex-1 justify-end">
+            <!-- Columna 2: PLATAFORMAS -->
+            <div class="min-w-[140px] sm:min-w-[150px]">
+              <h3 class="footer-column-title">PLATAFORMAS</h3>
+              <ul class="space-y-3.5 list-none p-0 m-0">
+                <li>
+                  <a href="https://www.icq24.com/five9-software-inteligente-contact-center" class="footer-nav-link">
+                    <span>Five9</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/atlassian" class="footer-nav-link">
+                    <span>Atlassian</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/icq24-suite-soluciones-contact-center" class="footer-nav-link">
+                    <span>ICQ24 suite</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/verint" class="footer-nav-link">
+                    <span>Verint</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/khomp" class="footer-nav-link">
+                    <span>Khomp</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/odoo-1" class="footer-nav-link">
+                    <span>Odoo</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Columna 3: SOLUCIONES -->
+            <div class="min-w-[180px] sm:max-w-[220px]">
+              <h3 class="footer-column-title">SOLUCIONES</h3>
+              <ul class="space-y-3.5 list-none p-0 m-0">
+                <li>
+                  <a href="https://www.icq24.com/contactus" class="footer-nav-link">
+                    <span>Contact Center &amp; CX</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/contactus" class="footer-nav-link">
+                    <span>Automatización &amp; IA</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/contactus" class="footer-nav-link">
+                    <span>Inteligencia &amp; Optimización Operativa</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/contactus" class="footer-nav-link">
+                    <span>ITSM &amp; Help Desk</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Columna 4: EMPRESA -->
+            <div class="min-w-[140px] sm:min-w-[150px]">
+              <h3 class="footer-column-title">EMPRESA</h3>
+              <ul class="space-y-3.5 list-none p-0 m-0">
+                <li>
+                  <a href="https://www.icq24.com/about-us" class="footer-nav-link">
+                    <span>Quiénes somos</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/casos-de-uso" class="footer-nav-link">
+                    <span>Casos de uso</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/blog" class="footer-nav-link">
+                    <span>Blog &amp; Recursos</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/nuestro-equipo" class="footer-nav-link">
+                    <span>Certificaciones</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/soporte" class="footer-nav-link">
+                    <span>Soporte</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.icq24.com/contactus" class="footer-nav-link">
+                    <span>Contacto</span>
+                    <i class="fa-solid fa-arrow-right link-arrow"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sub-Footer: Derechos Reservados, Ubicaciones y Política de Privacidad -->
+        <div class="pt-8 flex flex-col xl:flex-row items-center justify-between gap-5 text-xs text-slate-500">
+          <!-- Copyright & Enlace Legal -->
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 font-normal text-slate-500 text-xs sm:text-[13px]">
+            <span>&copy; 2026 <strong class="text-slate-800 font-bold">ICQ24 International</strong>. Todos los derechos reservados.</span>
+            <span class="text-slate-300 hidden sm:inline">|</span>
+            <a href="https://www.icq24.com/privacy-policy" class="legal-link">
+              Política de Privacidad
+            </a>
+          </div>
+
+          <!-- Ubicaciones como texto limpio con icono vectorial de Pin -->
+          <div class="flex flex-wrap items-center justify-center xl:justify-end gap-x-5 sm:gap-x-6 gap-y-2">
+            <span class="footer-location-item">
+              <span class="footer-location-pin">
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              <span>Estados Unidos</span>
+            </span>
+            <span class="footer-location-item">
+              <span class="footer-location-pin">
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              <span>Colombia</span>
+            </span>
+            <span class="footer-location-item">
+              <span class="footer-location-pin">
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              <span>Puerto Rico</span>
+            </span>
+            <span class="footer-location-item">
+              <span class="footer-location-pin">
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              <span>México</span>
+            </span>
+            <span class="footer-location-item">
+              <span class="footer-location-pin">
+                <i class="fa-solid fa-location-dot"></i>
+              </span>
+              <span>República Dominicana</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ══════════════════════════════════════════════════════════════
+         FIN CÓDIGO FOOTER ICQ24
+    ══════════════════════════════════════════════════════════════ -->
+
+  </body>
+</html>

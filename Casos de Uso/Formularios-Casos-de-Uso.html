@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IA Conversacional en Tiempo Real | Casos de Uso ICQ24</title>
+    <meta
+      name="description"
+      content="IA Conversacional: El nuevo modelo para construir operaciones comerciales que responden, comprenden y convierten en tiempo real con IVAs de Five9 impulsados por Level AI."
+    />
+    <meta
+      name="keywords"
+      content="IA Conversacional, Five9, Level AI, IVAs, automatización comercial, CRM, contact center, ICQ24, casos de uso"
+    />
+
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Configuración de Tailwind de ICQ24 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              icqGrey: "#475569",
+              icqDark: "#0f172a",
+              icqBlue: "#0263e2",
+              icqBlueHover: "#002d6d",
+              icqGreen: "#3b935d",
+              icqRed: "#ed3d2e",
+              icqYellow: "#f0ad0f",
+              icqLightBg: "#f8fafc",
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              heading: ["Montserrat", "sans-serif"],
+            },
+            boxShadow: {
+              "card-purple":
+                "0 20px 40px -10px rgba(124, 58, 237, 0.15), 0 10px 25px -5px rgba(2, 99, 226, 0.08)",
+              "card-glow": "0 12px 35px -5px rgba(2, 99, 226, 0.15)",
+              "input-focus": "0 0 0 4px rgba(2, 99, 226, 0.15)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* ==========================================================================
+         DESIGN SYSTEM – ICQ24 / FIVE9 THEME (CSS Variables & Core Overrides)
+         ========================================================================== */
+      :root {
+        --brand-primary: #0263e2;
+        --brand-primary-hover: #002d6d;
+        --brand-primary-light: #eff6ff;
+        --brand-primary-mid: #1d4ed8;
+        --navy: #0a192f;
+        --navy-dark: #0b132b;
+        --yellow: #f0ad0f;
+        --red: #ed3d2e;
+        --green: #3b935d;
+
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-card: #ffffff;
+        --bg-dark: #0f172a;
+
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+
+        --border-light: #e2e8f0;
+
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+        --shadow-lg:
+          0 10px 25px -3px rgba(0, 0, 0, 0.07),
+          0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        --shadow-xl:
+          0 20px 40px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --shadow-card: 0 4px 20px rgba(2, 99, 226, 0.1);
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: #1e293b;
+        background-color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -0.02em;
+      }
+
+      .gradient-hero {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(248, 250, 252, 1) 100%
+        );
+      }
+
+      .gradient-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 50% at 50% -10%,
+          rgba(2, 99, 226, 0.09) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #0263e2;
+        letter-spacing: 0.12em;
+        background: #eff6ff;
+        padding: 6px 14px;
+        border-radius: 9999px;
+        border: 1px solid rgba(2, 99, 226, 0.15);
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 28px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        background: #2563eb;
+        color: #ffffff;
+        border: none;
+        text-decoration: none;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(37, 99, 235, 0.4);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 24px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 9999px;
+        cursor: pointer;
+        background: transparent;
+        color: #0263e2;
+        border: 2px solid #0263e2;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .btn-secondary:hover {
+        background: #0263e2;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      /* Card & Form Input Styling */
+      .form-card {
+        background: #ffffff;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        border-radius: 24px;
+        box-shadow:
+          0 20px 45px -10px rgba(124, 58, 237, 0.12),
+          0 10px 25px -5px rgba(2, 99, 226, 0.08);
+        transition:
+          box-shadow 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .form-card:hover {
+        box-shadow:
+          0 25px 50px -12px rgba(124, 58, 237, 0.18),
+          0 12px 30px -6px rgba(2, 99, 226, 0.12);
+      }
+
+      .custom-input {
+        width: 100%;
+        padding: 11px 16px;
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+        color: #0f172a;
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        outline: none;
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .custom-input::placeholder {
+        color: #94a3b8;
+        font-weight: 400;
+      }
+
+      .custom-input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      }
+
+      .custom-checkbox {
+        width: 16px;
+        height: 16px;
+        accent-color: #2563eb;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+
+      /* Odoo Embedded Form Overrides */
+      .odoo-form-container iframe {
+        width: 100% !important;
+        border: none !important;
+        min-height: 480px;
+      }
+
+      .odoo-form-container form input[type="text"],
+      .odoo-form-container form input[type="email"],
+      .odoo-form-container form input[type="tel"],
+      .odoo-form-container form select,
+      .odoo-form-container form textarea,
+      .odoo-form-container .o_website_form input,
+      .odoo-form-container .form-control {
+        width: 100% !important;
+        padding: 11px 16px !important;
+        font-size: 14px !important;
+        font-family: "Montserrat", sans-serif !important;
+        color: #0f172a !important;
+        background-color: #ffffff !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        outline: none !important;
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease !important;
+      }
+
+      .odoo-form-container form input:focus,
+      .odoo-form-container .form-control:focus {
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+      }
+
+      .odoo-form-container button[type="submit"],
+      .odoo-form-container .o_website_form_send,
+      .odoo-form-container .btn-primary {
+        background: #2563eb !important;
+        color: #ffffff !important;
+        font-family: "Montserrat", sans-serif !important;
+        font-weight: 700 !important;
+        padding: 12px 28px !important;
+        border-radius: 10px !important;
+        border: none !important;
+        cursor: pointer !important;
+        transition: all 0.25s ease !important;
+        box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3) !important;
+      }
+
+      .odoo-form-container button[type="submit"]:hover,
+      .odoo-form-container .o_website_form_send:hover,
+      .odoo-form-container .btn-primary:hover {
+        background: #1d4ed8 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 22px rgba(37, 99, 235, 0.4) !important;
+      }
+
+      .grid-lines {
+        background-size: 28px 28px;
+        background-image:
+          linear-gradient(to right, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen flex flex-col justify-between grid-lines">
+    <!-- MAIN CONTENT CONTAINER -->
+    <main
+      class="gradient-hero relative overflow-hidden py-10 lg:py-16 flex-grow"
+    >
+      <div
+        class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12"
+      >
+        <!-- BLOQUE SUPERIOR: TITULO WEB Y DESCRIPCIÓN WEB -->
+        <div class="space-y-6">
+          <!-- TÍTULO WEB -->
+          <h1
+            class="text-2xl sm:text-4xl lg:text-[42px] font-black text-slate-900 leading-tight tracking-tight"
+          >
+            IA Conversacional: El nuevo modelo para construir operaciones
+            comerciales que responden, comprenden y convierten en tiempo real
+          </h1>
+
+          <!-- DECORATIVE ACCENT LINE -->
+          <div
+            class="w-20 h-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"
+          ></div>
+
+          <!-- DESCRIPCIÓN WEB (Formulario) -->
+          <div
+            class="prose prose-slate max-w-none text-slate-600 text-base sm:text-lg leading-relaxed space-y-4"
+          >
+            <p class="font-medium text-slate-700">
+              Las operaciones comerciales modernas ya no compiten únicamente por
+              generar más demanda, sino por responder con mayor velocidad,
+              comprender mejor cada oportunidad y actuar en el momento correcto.
+            </p>
+
+            <p>
+              En este caso de uso descubrirás cómo los IVAs de Five9 impulsados
+              por Level AI están redefiniendo la IA Conversacional para ventas,
+              permitiendo automatizar conversaciones, interpretar la intención
+              del cliente, ejecutar acciones dentro de la operación e integrarse
+              con el CRM para entregar oportunidades con mayor contexto al
+              equipo comercial.
+            </p>
+
+            <p>
+              Conoce cómo este nuevo modelo ayuda a optimizar la productividad,
+              mejorar la experiencia del prospecto y construir una operación
+              preparada para crecer con mayor eficiencia.
+            </p>
+          </div>
+        </div>
+
+        <!-- BLOQUE INFERIOR: TARJETA DEL FORMULARIO (UNA ABAJO DE OTRA) -->
+        <div class="max-w-2xl mx-auto pt-4">
+          <div class="form-card p-6 sm:p-8">
+            <!-- BANNER VISUAL CON DEGRADADO PÚRPURA E IMAGEN PORTADA CU_1.WEBP -->
+            <div
+              class="relative overflow-hidden rounded-2xl flex items-center justify-center min-h-[200px]"
+            >
+              <div class="w-full h-48 rounded-xl overflow-hidden relative z-10">
+                <img
+                  src="https://github.com/Lucaro99/Pagina-Soporte/blob/main/Assets/Casos%20de%20Uso/Portada%20CU_1.webp?raw=true"
+                  alt="IA Conversacional Portada Caso de Uso"
+                  width="600"
+                  height="400"
+                  class="w-full h-full object-cover hover:scale-105 transition duration-500"
+                />
+              </div>
+            </div>
+
+            <!-- CONTENEDOR DEL FORMULARIO (ESTRUCTURA Y SOPORTE ODOO) -->
+            <!-- 
+              ======================================================================
+              INSTRUCCIONES INTEGRACIÓN FORMULARIO ODOO:
+              Para conectar tu formulario directamente desde Odoo:
+              Opción 1: Reemplazar la etiqueta <form> por el script/snippet o iframe que genera Odoo dentro de este <div id="odoo-form-container">.
+              Opción 2: Asignar el valor action="TU_URL_DE_EMBED_ODOO" en la etiqueta <form> siguiente.
+              Todos los estilos de inputs, botones y enfoques mantendrán la fidelidad visual exacta.
+              ======================================================================
+            -->
+            <div id="odoo-form-container" class="odoo-form-container">
+              <form
+                action="#"
+                method="POST"
+                class="space-y-4"
+                onsubmit="
+                  event.preventDefault();
+                  alert('Formulario listo para integración con Odoo.');
+                "
+              >
+                <!-- Grid Nombre / Apellido -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      class="block text-xs font-semibold text-slate-800 mb-1.5"
+                    >
+                      Nombre<span class="text-slate-800">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="nombre"
+                      placeholder="Nombre"
+                      required
+                      class="custom-input"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      class="block text-xs font-semibold text-slate-800 mb-1.5"
+                    >
+                      Apellido<span class="text-slate-800">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="apellido"
+                      placeholder="Apellido"
+                      required
+                      class="custom-input"
+                    />
+                  </div>
+                </div>
+
+                <!-- Campo Email -->
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-slate-800 mb-1.5"
+                  >
+                    Email<span class="text-slate-800">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email corporativo"
+                    required
+                    class="custom-input"
+                  />
+                </div>
+
+                <!-- Campo Empresa -->
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-slate-800 mb-1.5"
+                  >
+                    Empresa
+                  </label>
+                  <input
+                    type="text"
+                    name="empresa"
+                    placeholder="Empresa"
+                    class="custom-input"
+                  />
+                </div>
+
+                <!-- Checkboxes de Términos y Comunicaciones -->
+                <div class="space-y-3 pt-2">
+                  <!-- Checkbox 1 -->
+                  <div class="flex items-start gap-2.5">
+                    <input
+                      type="checkbox"
+                      id="terms"
+                      name="terms"
+                      required
+                      class="custom-checkbox"
+                    />
+                    <label
+                      for="terms"
+                      class="text-[12px] leading-relaxed text-slate-600 font-medium"
+                    >
+                      He leído y acepto los
+                      <a
+                        href="#"
+                        class="text-blue-600 underline hover:text-blue-800"
+                        >términos legales</a
+                      >
+                      y las
+                      <a
+                        href="#"
+                        class="text-blue-600 underline hover:text-blue-800"
+                        >políticas de privacidad</a
+                      >.
+                    </label>
+                  </div>
+
+                  <!-- Checkbox 2 -->
+                  <div class="flex items-start gap-2.5">
+                    <input
+                      type="checkbox"
+                      id="communications"
+                      name="communications"
+                      class="custom-checkbox"
+                    />
+                    <label
+                      for="communications"
+                      class="text-[12px] leading-relaxed text-slate-600 font-medium"
+                    >
+                      Acepto recibir comunicaciones de Inconcert por email,
+                      llamadas humanas o agentes virtuales y mensajes. Puedo
+                      revocar mi consentimiento en cualquier momento.
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Botón de Envío "Accede ahora" -->
+                <div class="pt-3">
+                  <button
+                    type="submit"
+                    class="btn-primary w-auto text-base font-bold py-3.5 px-8"
+                  >
+                    Accede ahora
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

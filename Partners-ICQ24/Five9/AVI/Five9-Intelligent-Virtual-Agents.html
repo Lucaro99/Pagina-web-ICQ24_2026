@@ -1,0 +1,3088 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Five9 Intelligent Virtual Agents (IVAs) | ICQ24</title>
+    <meta
+      name="description"
+      content="Five9 Intelligent Virtual Agents automatiza conversaciones de voz y canales digitales con IA conversacional enterprise para mejorar CX, reducir costos y escalar operaciones con control total."
+    />
+    <meta
+      name="keywords"
+      content="Five9 IVAs, Five9 Intelligent Virtual Agents, agentes virtuales inteligentes Five9, IA conversacional enterprise, voice AI contact center, AI virtual agents Five9, automatización CX con IA, virtual agents enterprise"
+    />
+
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO Schema JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué son los Five9 IVAs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Five9 Intelligent Virtual Agents son agentes virtuales impulsados por IA conversacional diseñados para automatizar interacciones de voz y canales digitales."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué diferencia existe entre un bot tradicional y Five9 IVAs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Los IVAs de Five9 pueden comprender intención, ejecutar acciones, integrarse con sistemas empresariales y transferir conversaciones con contexto completo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Five9 IVAs funciona solo en voz?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Five9 IVAs puede operar tanto en voz como en canales digitales como chat y mensajería."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Five9 IVAs se integra con CRM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Five9 permite integraciones con Salesforce, HubSpot, Microsoft Dynamics, Odoo y otros sistemas empresariales."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué beneficios ofrece implementar IA conversacional?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La IA conversacional ayuda a reducir costos operativos, mejorar tiempos de respuesta y aumentar el autoservicio efectivo."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- SEO Schema JSON-LD: Product -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Five9 Intelligent Virtual Agents",
+        "brand": {
+          "@type": "Brand",
+          "name": "Five9"
+        },
+        "description": "Plataforma de IA conversacional enterprise para automatizar interacciones de voz y canales digitales en Contact Centers.",
+        "category": "Conversational AI Software",
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "Five9"
+        }
+      }
+    </script>
+
+    <style>
+      /* ==========================================================================
+         DESIGN SYSTEM – ICQ24 / FIVE9 THEME (CSS Variables)
+         ========================================================================== */
+      :root {
+        --brand-primary: #0263e2;
+        --brand-primary-hover: #002d6d;
+        --brand-primary-light: #eff6ff;
+        --brand-primary-mid: #1d4ed8;
+        --navy: #0a192f;
+        --navy-dark: #0b132b;
+        --yellow: #f0ad0f;
+        --yellow-bg: #fef6e4;
+        --red: #ed3d2e;
+        --green: #3b935d;
+        --green-bg: #e8f5ee;
+
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-card: #f9fafb;
+        --bg-dark: #0f172a;
+        --bg-dark-elevated: #1e293b;
+
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+        --text-inverse: #ffffff;
+
+        --border-light: #e2e8f0;
+        --border-dark: #334155;
+
+        --shadow-card: 0 4px 20px rgba(2, 99, 226, 0.1);
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: #1e293b;
+        background-color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -0.02em;
+      }
+
+      .gradient-hero {
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.92),
+          rgba(255, 255, 255, 0.97)
+        );
+      }
+
+      .gradient-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 0%,
+          rgba(2, 99, 226, 0.09) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #475569;
+        margin-bottom: 14px;
+        letter-spacing: 0.12em;
+      }
+      .eyebrow span {
+        width: 12px;
+        height: 2px;
+        background-color: #0263e2;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 9999px;
+        cursor: pointer;
+        background: #0263e2;
+        color: #ffffff;
+        border: 2px solid transparent;
+        text-decoration: none;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          background-color 0.25s ease;
+      }
+
+      .btn-primary:hover {
+        background: #002d6d;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px -4px rgba(2, 99, 226, 0.35);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 28px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 9999px;
+        cursor: pointer;
+        background: transparent;
+        color: #0263e2;
+        border: 2px solid #0263e2;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .btn-secondary:hover {
+        background: #0263e2;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      .five9-card-hover {
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .five9-card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(2, 99, 226, 0.12);
+        border-color: rgba(2, 99, 226, 0.3);
+      }
+
+      /* Estilos para el carrusel infinito de Capacidades Clave */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .marquee-container {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent
+        );
+      }
+      .marquee-track {
+        display: flex;
+        gap: 24px;
+        width: max-content;
+        align-items: center;
+        animation: marquee 35s linear infinite;
+      }
+      .marquee-container:hover .marquee-track {
+        animation-play-state: paused;
+      }
+      .marquee-track > div {
+        padding: 1.25rem 1.5rem !important;
+        min-height: auto !important;
+        height: auto !important;
+      }
+
+      /* Estilos para el carrusel de casos de uso */
+      .usecase-carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+      .usecase-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.4s ease-in-out;
+        scroll-behavior: smooth;
+      }
+      .usecase-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      @media (min-width: 640px) {
+        .usecase-card {
+          flex: 0 0 calc(50% - 10px);
+          max-width: calc(50% - 10px);
+        }
+      }
+      @media (min-width: 1024px) {
+        .usecase-card {
+          flex: 0 0 calc(33.333% - 14px);
+          max-width: calc(33.333% - 14px);
+        }
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Transición suave para el acordeón principal y preguntas */
+      .faq-main-content,
+      .faq-item-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition:
+          grid-template-rows 0.4s ease-in-out,
+          opacity 0.4s ease-in-out;
+        opacity: 0;
+      }
+      details[open] > .faq-main-content,
+      details[open] > .faq-item-content {
+        grid-template-rows: 1fr;
+        opacity: 1;
+      }
+      .faq-main-content-inner,
+      .faq-item-content-inner {
+        overflow: hidden;
+      }
+
+      /* ==========================================================================
+         CARRUSELES MÓVILES (1 COLUMNA) Y GRIDS DESKTOP (COMPATIBLE CON ODOO)
+         ========================================================================== */
+      /* Definición & Arquitectura (< 768px) y Beneficios Multinivel (< 768px) */
+      @media (max-width: 767px) {
+        .def-carousel-window,
+        .ben-carousel-window {
+          overflow: hidden !important;
+          width: 100% !important;
+        }
+        .def-carousel-track,
+        .ben-carousel-track {
+          display: flex !important;
+          width: 100% !important;
+          gap: 0 !important;
+          transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+        }
+        .def-card,
+        .ben-card {
+          flex: 0 0 100% !important;
+          width: 100% !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 768px) {
+        .def-carousel-window,
+        .ben-carousel-window {
+          overflow: visible !important;
+          width: 100% !important;
+        }
+        .def-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important; /* 32px */
+          transform: none !important;
+        }
+        .ben-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 2rem !important; /* 32px */
+          transform: none !important;
+        }
+        .def-card,
+        .ben-card {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+
+      /* A diferencia de bots tradicionales (< 640px) y Métricas de Éxito (< 640px) */
+      @media (max-width: 639px) {
+        .diff-carousel-window,
+        .met-carousel-window {
+          overflow: hidden !important;
+          width: 100% !important;
+        }
+        .diff-carousel-track,
+        .met-carousel-track {
+          display: flex !important;
+          width: 100% !important;
+          gap: 0 !important;
+          transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+        }
+        .diff-card,
+        .met-card {
+          flex: 0 0 100% !important;
+          width: 100% !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 640px) {
+        .diff-carousel-window,
+        .met-carousel-window {
+          overflow: visible !important;
+          width: 100% !important;
+        }
+        .diff-carousel-track,
+        .met-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 1.5rem !important; /* 24px */
+          transform: none !important;
+        }
+        .diff-card,
+        .met-card {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 1024px) {
+        .diff-carousel-track,
+        .met-carousel-track {
+          grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+          gap: 1.5rem !important; /* 24px */
+        }
+      }
+
+      /* Carrusel Automático de Beneficios Rápidos (Quick Value) */
+      .qv-desktop-view {
+        display: none !important;
+      }
+      .qv-mobile-view {
+        display: flex !important;
+      }
+      @media (min-width: 768px) {
+        .qv-desktop-view {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 1.5rem 2rem !important;
+        }
+        .qv-mobile-view {
+          display: none !important;
+        }
+      }
+
+      .qv-slide {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      #qvTrack {
+        gap: 0 !important;
+      }
+    </style>
+  </head>
+
+  <body
+    class="min-h-screen flex flex-col justify-between text-slate-800 bg-slate-50"
+  >
+    <main class="flex-grow">
+      <!-- HERO SECTION -->
+      <section
+        class="relative py-16 lg:py-18 gradient-hero overflow-hidden border-b border-slate-200"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center"
+          >
+            <div class="lg:col-span-5 space-y-6">
+              <span class="eyebrow">
+                FIVE9 INTELLIGENT VIRTUAL AGENTS (IVAS)
+              </span>
+
+              <h1
+                class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight"
+              >
+                Agentes Virtuales Inteligentes:
+                <span class="text-icqBlue"
+                  >Automatiza conversaciones complejas</span
+                >
+                con IA que entiende, actúa y resuelve
+              </h1>
+
+              <p
+                class="text-sm sm:text-base text-slate-600 leading-relaxed font-medium"
+              >
+                Los IVAs de Five9 combinan IA conversacional, automatización
+                inteligente y capacidades avanzadas de resolución para atender
+                conversaciones de voz y canales digitales, ayudando a reducir
+                costos, aumentar la resolución automática y mantener
+                experiencias más rápidas, naturales y consistentes para tus
+                clientes.
+              </p>
+
+              <div class="pt-2">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="btn-primary text-xs sm:text-sm !px-4 sm:!px-6 whitespace-nowrap shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-icqBlue"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Descubre cuánto puede automatizar tu operación</span>
+                  <i
+                    class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Visual Image side -->
+            <div class="lg:col-span-7 flex items-center justify-center">
+              <div class="w-full">
+                <img
+                  src="https://www.icq24.com/web/image/37700-a972377e/Hero%20AVI.webp"
+                  alt="Demostración visual de Agentes Virtuales Inteligentes Five9 y asistente de voz con IA"
+                  width="1200"
+                  height="675"
+                  loading="eager"
+                  class="w-full h-auto object-contain lg:scale-110 transform origin-center transition-transform duration-500 hover:scale-115 mx-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK VALUE SECTION -->
+      <section
+        id="quick-value"
+        class="proof-strip bg-[#0b132b] text-white py-3.5 px-4 sm:px-6 lg:px-8 border-y border-slate-800 select-none relative"
+      >
+        <div class="max-w-7xl mx-auto flex items-center justify-center">
+          <!-- Versión Web / Escritorio: todos uno al lado del otro (sin carrusel) -->
+          <div
+            class="qv-desktop-view hidden md:flex flex-wrap items-center justify-center gap-y-2 gap-x-6 lg:gap-x-8 text-xs sm:text-sm font-semibold tracking-wide text-slate-200 text-center"
+          >
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Atención automatizada 24/7</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>IA conversacional con contexto y continuidad</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Mayor resolución sin intervención humana</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Escalabilidad sin aumentar costos operativos</span>
+            </span>
+          </div>
+
+          <!-- Versión Móvil: carrusel automático (1 a la vez) -->
+          <div
+            id="qvCarouselWindow"
+            class="qv-mobile-view md:hidden overflow-hidden w-full max-w-xl h-8 sm:h-9 flex items-center justify-center relative cursor-default"
+          >
+            <div
+              id="qvTrack"
+              class="flex w-full transition-transform duration-700 ease-out will-change-transform"
+            >
+              <!-- Slide 1 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Atención automatizada 24/7</span>
+                </span>
+              </div>
+
+              <!-- Slide 2 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>IA conversacional con contexto y continuidad</span>
+                </span>
+              </div>
+
+              <!-- Slide 3 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Mayor resolución sin intervención humana</span>
+                </span>
+              </div>
+
+              <!-- Slide 4 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Escalabilidad sin aumentar costos operativos</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIAGNÓSTICO / PROBLEMA SECTION (FONDO CLARO CON TONALIDADES ROJAS) -->
+      <section class="py-16 bg-white text-slate-900 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow">
+              EL VERDADERO DESAFÍO EN LA AUTOMATIZACIÓN
+            </span>
+            <h2
+              class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight"
+            >
+              Cuando automatizar genera más fricción que eficiencia, el problema
+              no es la IA
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg">
+              Muchas organizaciones implementan bots o automatizaciones, pero
+              terminan enfrentando:
+            </p>
+          </div>
+
+          <!-- Desafíos organizados en carrusel infinito y automático -->
+          <div class="mt-12 marquee-container py-4">
+            <div class="marquee-track flex gap-6 items-stretch">
+              <!-- Set 1 of cards -->
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Conversaciones rígidas y poco naturales
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Incapacidad para resolver solicitudes complejas
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Transferencias sin contexto hacia agentes humanos
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Automatizaciones difíciles de mantener y escalar
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Experiencias inconsistentes entre canales
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Falta de control y gobernanza sobre la IA
+                </h3>
+              </div>
+
+              <!-- Set 2 (duplicado para loop infinito continuo) -->
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Conversaciones rígidas y poco naturales
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Incapacidad para resolver solicitudes complejas
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Transferencias sin contexto hacia agentes humanos
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Automatizaciones difíciles de mantener y escalar
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Experiencias inconsistentes entre canales
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[360px] flex-shrink-0 bg-red-50/60 p-6 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[100px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-9 h-9 rounded-xl bg-red-100/80 text-icqRed flex items-center justify-center flex-shrink-0 text-sm"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Falta de control y gobernanza sobre la IA
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRANJA AZUL / NAVY COMPLETA (EL PROBLEMA NO ES AUTOMATIZAR) -->
+      <section
+        class="py-14 bg-[#0a192f] text-white border-y border-slate-800 text-center"
+      >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+          <h3
+            class="text-base sm:text-base lg:text-2xl font-black text-white tracking-tight"
+          >
+            El problema no es automatizar.
+          </h3>
+          <p
+            class="text-base sm:text-base text-slate-300 font-medium max-w-3xl mx-auto leading-relaxed"
+          >
+            Es utilizar herramientas desconectadas del customer journey, los
+            datos y la operación real del Contact Center.
+          </p>
+        </div>
+      </section>
+
+      <!-- ¿QUÉ SON LOS AGENTES VIRTUALES INTELIGENTES DE FIVE9? -->
+      <section class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow"> DEFINICIÓN & ARQUITECTURA </span>
+            <h2 class="text-3xl font-black text-slate-900">
+              ¿Qué son los Agentes Virtuales Inteligentes de Five9?
+            </h2>
+            <p class="text-slate-600 text-base">
+              Los IVAS son agentes virtuales impulsados por IA conversacional
+              diseñados para automatizar interacciones de voz y canales
+              digitales de forma natural, contextual y segura.
+            </p>
+            <p class="text-slate-600 text-base">
+              La plataforma permite implementar:
+            </p>
+          </div>
+
+          <!-- Wrapper del Carrusel / Grid -->
+          <div class="relative w-full">
+            <div
+              class="def-carousel-window overflow-hidden w-full md:overflow-visible py-2"
+            >
+              <div
+                id="defTrack"
+                class="def-carousel-track flex md:grid md:grid-cols-2 gap-0 md:gap-8"
+              >
+                <!-- Voice IVAs -->
+                <div
+                  class="def-card w-full flex-shrink-0 md:flex-shrink bg-slate-50 border border-slate-200 rounded-3xl p-8 space-y-4 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-icqBlue text-white flex items-center justify-center text-xl font-bold"
+                    >
+                      <i
+                        class="fa-solid fa-phone-volume"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                      Voice Intelligent Virtual Agents (IVAs)
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      Automatizan conversaciones telefónicas mediante IA
+                      conversacional avanzada, permitiendo resolver solicitudes
+                      de forma natural sin depender de menús rígidos o
+                      experiencias tradicionales de IVR.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Digital IVAs -->
+                <div
+                  class="def-card w-full flex-shrink-0 md:flex-shrink bg-slate-50 border border-slate-200 rounded-3xl p-8 space-y-4 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-4">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-icqBlue text-white flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-comments" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                      Digital Intelligent Virtual Agents (DIVAs)
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                      Automatizan conversaciones en canales digitales como chat
+                      web, aplicaciones de mensajería y otros puntos de contacto
+                      digitales, manteniendo el mismo contexto y experiencia de
+                      atención.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de navegación y dots abajo (visibles únicamente en 1 columna / móviles) -->
+            <div
+              id="defCarouselNav"
+              class="flex md:hidden items-center justify-center gap-4 mt-6"
+            >
+              <button
+                type="button"
+                id="defPrevBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm"
+                aria-label="Tarjeta anterior"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <div class="flex items-center gap-2" id="defDots">
+                <span
+                  class="def-dot w-6 h-2 rounded-full bg-icqBlue transition-all duration-300 cursor-pointer"
+                  data-index="0"
+                  aria-label="Tarjeta 1"
+                ></span>
+                <span
+                  class="def-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="1"
+                  aria-label="Tarjeta 2"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                id="defNextBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm"
+                aria-label="Tarjeta siguiente"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRANJA AZUL / NAVY: A DIFERENCIA DE LOS BOTS TRADICIONALES -->
+      <section class="py-16 bg-[#0a192f] text-white border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div class="text-center max-w-3xl mx-auto">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white">
+              A diferencia de los bots tradicionales, Five9 IVAs:
+            </h3>
+          </div>
+
+          <!-- Wrapper del Carrusel / Grid -->
+          <div class="relative w-full">
+            <div
+              class="diff-carousel-window overflow-hidden w-full sm:overflow-visible py-2"
+            >
+              <div
+                id="diffTrack"
+                class="diff-carousel-track flex sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-0 sm:gap-6"
+              >
+                <div
+                  class="diff-card w-full flex-shrink-0 sm:flex-shrink bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:border-icqBlue hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer flex flex-col items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-brain text-white text-2xl"
+                    aria-hidden="true"
+                  ></i>
+                  <h4 class="font-bold text-sm text-slate-100">
+                    Comprenden intención, contexto y sentimiento
+                  </h4>
+                </div>
+
+                <div
+                  class="diff-card w-full flex-shrink-0 sm:flex-shrink bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:border-icqBlue hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer flex flex-col items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-bolt text-white text-2xl"
+                    aria-hidden="true"
+                  ></i>
+                  <h4 class="font-bold text-sm text-slate-100">
+                    Ejecutan acciones dentro de sistemas empresariales
+                  </h4>
+                </div>
+
+                <div
+                  class="diff-card w-full flex-shrink-0 sm:flex-shrink bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:border-icqBlue hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer flex flex-col items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-arrows-rotate text-white text-2xl"
+                    aria-hidden="true"
+                  ></i>
+                  <h4 class="font-bold text-sm text-slate-100">
+                    Aprenden continuamente de cada interacción
+                  </h4>
+                </div>
+
+                <div
+                  class="diff-card w-full flex-shrink-0 sm:flex-shrink bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:border-icqBlue hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer flex flex-col items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-people-arrows text-white text-2xl"
+                    aria-hidden="true"
+                  ></i>
+                  <h4 class="font-bold text-sm text-slate-100">
+                    Escalan conversaciones con contexto completo
+                  </h4>
+                </div>
+
+                <div
+                  class="diff-card w-full flex-shrink-0 sm:flex-shrink bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 text-center space-y-3 transition-all duration-300 hover:-translate-y-1 hover:bg-slate-800 hover:border-icqBlue hover:shadow-lg hover:shadow-blue-500/10 cursor-pointer flex flex-col items-center justify-center"
+                >
+                  <i
+                    class="fa-solid fa-shield-halved text-white text-2xl"
+                    aria-hidden="true"
+                  ></i>
+                  <h4 class="font-bold text-sm text-slate-100">
+                    Operan bajo modelos de gobernanza y control enterprise
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de navegación y dots abajo (visibles únicamente en 1 columna / móviles) -->
+            <div
+              id="diffCarouselNav"
+              class="flex sm:hidden items-center justify-center gap-4 mt-6"
+            >
+              <button
+                type="button"
+                id="diffPrevBtn"
+                class="w-11 h-11 rounded-full border border-slate-700 bg-slate-800 text-slate-200 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-md cursor-pointer"
+                aria-label="Tarjeta anterior"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <div class="flex items-center gap-2" id="diffDots">
+                <span
+                  class="diff-dot w-6 h-2 rounded-full bg-icqBlue transition-all duration-300 cursor-pointer"
+                  data-index="0"
+                  aria-label="Tarjeta 1"
+                ></span>
+                <span
+                  class="diff-dot w-2 h-2 rounded-full bg-slate-700 transition-all duration-300 cursor-pointer"
+                  data-index="1"
+                  aria-label="Tarjeta 2"
+                ></span>
+                <span
+                  class="diff-dot w-2 h-2 rounded-full bg-slate-700 transition-all duration-300 cursor-pointer"
+                  data-index="2"
+                  aria-label="Tarjeta 3"
+                ></span>
+                <span
+                  class="diff-dot w-2 h-2 rounded-full bg-slate-700 transition-all duration-300 cursor-pointer"
+                  data-index="3"
+                  aria-label="Tarjeta 4"
+                ></span>
+                <span
+                  class="diff-dot w-2 h-2 rounded-full bg-slate-700 transition-all duration-300 cursor-pointer"
+                  data-index="4"
+                  aria-label="Tarjeta 5"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                id="diffNextBtn"
+                class="w-11 h-11 rounded-full border border-slate-700 bg-slate-800 text-slate-200 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-md cursor-pointer"
+                aria-label="Tarjeta siguiente"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="text-center pt-6 border-t border-slate-800 max-w-3xl mx-auto space-y-4"
+          >
+            <p class="text-lg font-bold text-slate-200">
+              No son simples flujos automatizados.
+            </p>
+            <p class="text-base text-slate-300">
+              Son una capa de inteligencia diseñada para automatizar CX sin
+              perder calidad humana ni control operativo.
+            </p>
+            <div class="pt-4">
+              <a
+                href="https://www.icq24.com/contactus"
+                class="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span
+                  >Evalúa tu potencial de automatización con IA
+                  conversacional</span
+                >
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xs"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPACIDADES CLAVE (CARRUSEL INTERACTIVO CON BOTONES) -->
+      <section
+        class="py-16 bg-slate-50 border-b border-slate-200 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6"
+          >
+            <div class="max-w-3xl space-y-4">
+              <span class="eyebrow">CAPACIDADES ENTERPRISE </span>
+              <h2 class="text-3xl font-black text-slate-900">
+                Capacidades que convierten la IA conversacional en resolución
+                real
+              </h2>
+            </div>
+            <!-- Botones de navegación del carrusel -->
+            <div class="flex items-center gap-3 self-end md:self-auto">
+              <button
+                id="capacidadesPrevBtn"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm"
+                aria-label="Anterior"
+              >
+                <i class="fa-solid fa-chevron-left text-base"></i>
+              </button>
+              <button
+                id="capacidadesNextBtn"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm"
+                aria-label="Siguiente"
+              >
+                <i class="fa-solid fa-chevron-right text-base"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Carousel Container -->
+          <div class="usecase-carousel py-2">
+            <div id="capacidadesTrack" class="usecase-track">
+              <!-- Card 1 -->
+              <div
+                class="usecase-card bg-white p-6 rounded-2xl border border-slate-200 space-y-3 flex-shrink-0 five9-card-hover"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-lg font-bold"
+                >
+                  <i
+                    class="fa-solid fa-comments text-icqBlue"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">
+                  Conversaciones naturales con calidad humana
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  IA de voz avanzada diseñada para mantener conversaciones
+                  fluidas, contextuales y con baja latencia, evitando
+                  experiencias robóticas.
+                </p>
+              </div>
+
+              <!-- Card 2 -->
+              <div
+                class="usecase-card bg-white p-6 rounded-2xl border border-slate-200 space-y-3 flex-shrink-0 five9-card-hover"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-lg font-bold"
+                >
+                  <i
+                    class="fa-solid fa-layer-group text-icqBlue"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">
+                  Voice AI y Digital AI en una misma estrategia
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Automatización unificada para voz, chat y canales digitales
+                  bajo un único modelo operativo.
+                </p>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="usecase-card bg-white p-6 rounded-2xl border border-slate-200 space-y-3 flex-shrink-0 five9-card-hover"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-lg font-bold"
+                >
+                  <i
+                    class="fa-solid fa-sliders text-icqBlue"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">
+                  Automatización híbrida con control enterprise
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Combinación de workflows determinísticos y automatización
+                  agéntica para mantener flexibilidad, precisión y gobernanza
+                  operacional.
+                </p>
+              </div>
+
+              <!-- Card 4 -->
+              <div
+                class="usecase-card bg-white p-6 rounded-2xl border border-slate-200 space-y-3 flex-shrink-0 five9-card-hover"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-lg font-bold"
+                >
+                  <i
+                    class="fa-solid fa-diagram-project text-icqBlue"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">
+                  Resolución conectada al negocio
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Integración con CRM, sistemas empresariales y bases de
+                  conocimiento para ejecutar acciones reales.
+                </p>
+              </div>
+
+              <!-- Card 5 -->
+              <div
+                class="usecase-card bg-white p-6 rounded-2xl border border-slate-200 space-y-3 flex-shrink-0 five9-card-hover"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-lg font-bold"
+                >
+                  <i
+                    class="fa-solid fa-user-gear text-icqBlue"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">
+                  IA colaborativa entre agentes virtuales y humanos
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Transferencias con contexto completo para una experiencia
+                  continua.
+                </p>
+              </div>
+
+              <!-- Card 6 -->
+              <div
+                class="usecase-card bg-white p-6 rounded-2xl border border-slate-200 space-y-3 flex-shrink-0 five9-card-hover"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-lg font-bold"
+                >
+                  <i
+                    class="fa-solid fa-lock text-icqBlue"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">
+                  Gobernanza y control enterprise
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Políticas de seguridad, monitoreo, trazabilidad y cumplimiento
+                  para implementar IA de forma responsable y escalable.
+                </p>
+              </div>
+
+              <!-- Card 7 -->
+              <div
+                class="usecase-card bg-white p-6 rounded-2xl border border-slate-200 space-y-3 flex-shrink-0 five9-card-hover"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-lg font-bold"
+                >
+                  <i
+                    class="fa-solid fa-language text-icqBlue"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-base">
+                  Soporte multilingüe y regionalizado
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Capacidad para operar en múltiples idiomas y variantes
+                  regionales, incluyendo español e inglés contextualizados.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center max-w-3xl mx-auto pt-1">
+            <p class="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
+              Este enfoque permite construir operaciones de CX impulsadas por IA
+              sin perder control, trazabilidad ni calidad de servicio.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FRICCIÓN OPERATIVA QUE ELIMINA -->
+      <section class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <!-- Heading Full Width -->
+          <div class="space-y-2 max-w-3xl">
+            <span class="eyebrow"> EFICIENCIA OPERACIONAL </span>
+            <h2 class="text-3xl font-black text-slate-900 leading-tight">
+              La fricción operativa que Five9 IVAs elimina
+            </h2>
+          </div>
+
+          <!-- Cards + Image Grid Side by Side -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch"
+          >
+            <!-- Left Column Cards -->
+            <div class="lg:col-span-5 space-y-3">
+              <div
+                class="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/70 hover:border-blue-300 hover:shadow-md hover:shadow-blue-500/10 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-circle-check text-icqBlue text-lg"
+                  aria-hidden="true"
+                ></i>
+                <span class="text-xs sm:text-sm font-bold text-slate-800"
+                  >Altos volúmenes de contactos repetitivos</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/70 hover:border-blue-300 hover:shadow-md hover:shadow-blue-500/10 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-circle-check text-icqBlue text-lg"
+                  aria-hidden="true"
+                ></i>
+                <span class="text-xs sm:text-sm font-bold text-slate-800"
+                  >Saturación de agentes y largas esperas</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/70 hover:border-blue-300 hover:shadow-md hover:shadow-blue-500/10 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-circle-check text-icqBlue text-lg"
+                  aria-hidden="true"
+                ></i>
+                <span class="text-xs sm:text-sm font-bold text-slate-800"
+                  >Transferencias sin contexto</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/70 hover:border-blue-300 hover:shadow-md hover:shadow-blue-500/10 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-circle-check text-icqBlue text-lg"
+                  aria-hidden="true"
+                ></i>
+                <span class="text-xs sm:text-sm font-bold text-slate-800"
+                  >Baja adopción del autoservicio</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/70 hover:border-blue-300 hover:shadow-md hover:shadow-blue-500/10 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-circle-check text-icqBlue text-lg"
+                  aria-hidden="true"
+                ></i>
+                <span class="text-xs sm:text-sm font-bold text-slate-800"
+                  >Escalamiento costoso de operaciones humanas</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/70 hover:border-blue-300 hover:shadow-md hover:shadow-blue-500/10 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-circle-check text-icqBlue text-lg"
+                  aria-hidden="true"
+                ></i>
+                <span class="text-xs sm:text-sm font-bold text-slate-800"
+                  >Experiencias inconsistentes entre canales</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-3 p-3 bg-blue-50/80 border border-blue-100 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-blue-100/70 hover:border-blue-300 hover:shadow-md hover:shadow-blue-500/10 cursor-pointer"
+              >
+                <i
+                  class="fa-solid fa-circle-check text-icqBlue text-lg"
+                  aria-hidden="true"
+                ></i>
+                <span class="text-xs sm:text-sm font-bold text-slate-800"
+                  >Automatizaciones difíciles de mantener</span
+                >
+              </div>
+            </div>
+
+            <!-- Right Column Image perfectly matching cards height -->
+            <div
+              class="lg:col-span-7 flex flex-col justify-center items-center"
+            >
+              <img
+                src="https://www.icq24.com/web/image/37699-5475b7ac/IMG%202%20AVI.webp"
+                alt="Diagrama descriptivo de eliminación de fricción operacional mediante Five9 IVAs"
+                width="1200"
+                height="900"
+                loading="lazy"
+                class="w-full h-full max-w-none transition-transform duration-500 hover:scale-105 object-contain mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DÓNDE GENERAN VALOR LOS IVAS - CASOS DE USO (CARRUSEL INTERACTIVO) -->
+      <section class="py-16 bg-slate-100 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6"
+          >
+            <div class="space-y-3 max-w-2xl">
+              <span class="eyebrow"> CASOS DE USO POR ÁREA </span>
+              <h2 class="text-3xl font-black text-slate-900">
+                Dónde generan valor los IVAs
+              </h2>
+              <h3 class="text-lg font-semibold text-slate-900">
+                Casos de uso más comunes para Five9 IVAs.
+              </h3>
+              <p class="text-slate-600 text-sm sm:text-base">
+                Los Agentes Virtuales Inteligentes pueden automatizar procesos
+                de alto volumen en distintas áreas del negocio, permitiendo
+                escalar la atención sin incrementar costos operativos.
+              </p>
+            </div>
+
+            <!-- Botones de Navegación del Carrusel -->
+            <div class="flex items-center gap-3">
+              <button
+                id="prevBtn"
+                class="w-12 h-12 rounded-full bg-white border border-slate-300 text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-icqBlue"
+                aria-label="Caso anterior"
+              >
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+              </button>
+              <button
+                id="nextBtn"
+                class="w-12 h-12 rounded-full bg-white border border-slate-300 text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-icqBlue"
+                aria-label="Caso siguiente"
+              >
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Componente Carrusel -->
+          <div class="usecase-carousel">
+            <div id="usecaseTrack" class="usecase-track">
+              <!-- Card 1: Atención al Cliente -->
+              <div
+                class="usecase-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center"
+                    >
+                      <i
+                        class="fa-solid fa-headset text-icqBlue text-xl"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900">
+                    Atención al Cliente
+                  </h3>
+                  <div class="space-y-2">
+                    <span
+                      class="text-xs font-bold text-slate-500 block uppercase"
+                      >Casos de uso:</span
+                    >
+                    <p
+                      class="text-sm text-slate-700 font-medium leading-relaxed"
+                    >
+                      Consultas de estado, seguimiento de solicitudes,
+                      validaciones y soporte de primer nivel
+                    </p>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                  <span class="text-xs text-slate-500"
+                    >Optimización de FCR y autoservicio directo</span
+                  >
+                </div>
+              </div>
+
+              <!-- Card 2: Ventas -->
+              <div
+                class="usecase-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center"
+                    >
+                      <i
+                        class="fa-solid fa-chart-line text-icqBlue text-xl"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900">Ventas</h3>
+                  <div class="space-y-2">
+                    <span
+                      class="text-xs font-bold text-slate-500 block uppercase"
+                      >Casos de uso:</span
+                    >
+                    <p
+                      class="text-sm text-slate-700 font-medium leading-relaxed"
+                    >
+                      Calificación de prospectos, agendamiento de citas,
+                      seguimiento comercial y recuperación de leads
+                    </p>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                  <span class="text-xs text-slate-500"
+                    >Conversión 24/7 sin demora comercial</span
+                  >
+                </div>
+              </div>
+
+              <!-- Card 3: Cobranza -->
+              <div
+                class="usecase-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center"
+                    >
+                      <i
+                        class="fa-solid fa-wallet text-icqBlue text-xl"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900">Cobranza</h3>
+                  <div class="space-y-2">
+                    <span
+                      class="text-xs font-bold text-slate-500 block uppercase"
+                      >Casos de uso:</span
+                    >
+                    <p
+                      class="text-sm text-slate-700 font-medium leading-relaxed"
+                    >
+                      Recordatorios de pago, acuerdos de pago, validación de
+                      información y gestión preventiva
+                    </p>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                  <span class="text-xs text-slate-500"
+                    >Gestión de mora temprana con trato empático</span
+                  >
+                </div>
+              </div>
+
+              <!-- Card 4: Servicio Técnico -->
+              <div
+                class="usecase-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center"
+                    >
+                      <i
+                        class="fa-solid fa-wrench text-icqBlue text-xl"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900">
+                    Servicio Técnico
+                  </h3>
+                  <div class="space-y-2">
+                    <span
+                      class="text-xs font-bold text-slate-500 block uppercase"
+                      >Casos de uso:</span
+                    >
+                    <p
+                      class="text-sm text-slate-700 font-medium leading-relaxed"
+                    >
+                      Diagnóstico inicial, apertura de tickets y resolución de
+                      incidentes frecuentes
+                    </p>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                  <span class="text-xs text-slate-500"
+                    >Reducción de carga en Nivel 1</span
+                  >
+                </div>
+              </div>
+
+              <!-- Card 5: Recursos Humanos -->
+              <div
+                class="usecase-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center"
+                    >
+                      <i
+                        class="fa-solid fa-users text-icqBlue text-xl"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900">
+                    Recursos Humanos
+                  </h3>
+                  <div class="space-y-2">
+                    <span
+                      class="text-xs font-bold text-slate-500 block uppercase"
+                      >Casos de uso:</span
+                    >
+                    <p
+                      class="text-sm text-slate-700 font-medium leading-relaxed"
+                    >
+                      Solicitudes internas, consultas de empleados y procesos de
+                      onboarding
+                    </p>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                  <span class="text-xs text-slate-500"
+                    >Atención ágil para colaboradores</span
+                  >
+                </div>
+              </div>
+
+              <!-- Card 6: Sector Salud -->
+              <div
+                class="usecase-card bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-6"
+              >
+                <div class="space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center"
+                    >
+                      <i
+                        class="fa-solid fa-notes-medical text-icqBlue text-xl"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900">Sector Salud</h3>
+                  <div class="space-y-2">
+                    <span
+                      class="text-xs font-bold text-slate-500 block uppercase"
+                      >Casos de uso:</span
+                    >
+                    <p
+                      class="text-sm text-slate-700 font-medium leading-relaxed"
+                    >
+                      Confirmación de citas, recordatorios, validación de
+                      información y seguimiento de pacientes
+                    </p>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-slate-100">
+                  <span class="text-xs text-slate-500"
+                    >Reducción de ausentismo médico</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center pt-4">
+            <p class="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
+              Los IVAs permiten automatizar interacciones repetitivas mientras
+              los agentes se enfocan en casos de mayor valor para el negocio.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CASO DE USO DESTACADO: VENTAS -->
+      <section class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden group"
+          >
+            <!-- Ambient Background Glow -->
+            <div
+              class="absolute -top-24 -right-24 w-96 h-96 bg-icqBlue/20 rounded-full blur-3xl pointer-events-none"
+            ></div>
+            <div
+              class="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"
+            ></div>
+
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10"
+            >
+              <div class="lg:col-span-7 space-y-6">
+                <span class="eyebrow text-blue-300">
+                  CASO DE USO APLICADO
+                </span>
+
+                <h2
+                  class="text-2xl sm:text-3xl font-black text-white leading-tight"
+                >
+                  Caso de uso: Cómo se aplica la IA conversacional en procesos
+                  de ventas reales
+                </h2>
+
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  Muchas organizaciones comienzan automatizando consultas
+                  simples, pero el verdadero valor aparece cuando la IA ayuda a
+                  ejecutar procesos completos de negocio.
+                </p>
+
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  En este caso de uso podrás ver cómo un Agente Virtual
+                  Inteligente puede atender prospectos, recopilar información,
+                  calificar oportunidades y transferir conversaciones listas
+                  para el equipo comercial sin intervención manual.
+                </p>
+
+                <div class="pt-4">
+                  <a
+                    href="https://www.icq24.com/caso-de-uso-agentes-virtuales-inteligentes-para-ventas"
+                    class="btn-primary !bg-white !text-slate-900 hover:!bg-slate-100 hover:!text-slate-900 shadow-lg"
+                    style="
+                      background-color: #ffffff !important;
+                      color: #0f172a !important;
+                    "
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span style="color: #0f172a !important"
+                      >Explorar caso de uso de IA Conversacional para
+                      Ventas</span
+                    >
+                    <i
+                      class="fa-solid fa-arrow-up-right-from-square text-xs"
+                      style="color: #0f172a !important"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="lg:col-span-5 flex justify-center items-center">
+                <div>
+                  <img
+                    src="https://www.icq24.com/web/image/37703-f0036fc5/Caso%20de%20uso_AVI.webp"
+                    alt="Caso de uso de IA Conversacional para Ventas"
+                    class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMPACTO REAL EN CLIENTE, OPERACIONES Y DIRECCIÓN -->
+      <section class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow"> BENEFICIOS MULTINIVEL </span>
+            <h2 class="text-3xl font-black text-slate-900">
+              Impacto real en CX, Operaciones y Dirección
+            </h2>
+          </div>
+
+          <!-- Wrapper del Carrusel / Grid -->
+          <div class="relative w-full">
+            <div
+              class="ben-carousel-window overflow-hidden w-full md:overflow-visible py-2"
+            >
+              <div
+                id="benTrack"
+                class="ben-carousel-track flex md:grid md:grid-cols-3 gap-0 md:gap-8"
+              >
+                <!-- CX / Cliente -->
+                <div
+                  class="ben-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-face-smile" aria-hidden="true"></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Experiencia del Cliente (CX)
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Atención inmediata 24/7</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span
+                          >Conversaciones más naturales y personalizadas</span
+                        >
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Menor esfuerzo del cliente</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span
+                          >Mayor continuidad entre automatización y atención
+                          humana</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Operación -->
+                <div
+                  class="ben-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Operación
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Mayor capacidad de autoservicio efectivo</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Reducción de carga operativa sobre agentes</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Menor presión sobre canales de voz</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Escalabilidad sin aumentar headcount</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dirección e IT -->
+                <div
+                  class="ben-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i
+                        class="fa-solid fa-building-user"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Dirección e IT
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Gobernanza sobre modelos de IA</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Integraciones centralizadas y seguras</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Mayor previsibilidad operativa</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Control sobre cumplimiento y seguridad</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de navegación y dots abajo (visibles únicamente en 1 columna / móviles) -->
+            <div
+              id="benCarouselNav"
+              class="flex md:hidden items-center justify-center gap-4 mt-6"
+            >
+              <button
+                type="button"
+                id="benPrevBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta anterior"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <div class="flex items-center gap-2" id="benDots">
+                <span
+                  class="ben-dot w-6 h-2 rounded-full bg-icqBlue transition-all duration-300 cursor-pointer"
+                  data-index="0"
+                  aria-label="Tarjeta 1"
+                ></span>
+                <span
+                  class="ben-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="1"
+                  aria-label="Tarjeta 2"
+                ></span>
+                <span
+                  class="ben-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="2"
+                  aria-label="Tarjeta 3"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                id="benNextBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta siguiente"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center pt-4">
+            <a
+              href="https://www.icq24.com/contactus"
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Conoce el impacto real en tu operación</span>
+              <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTADOS MEDIBLES -->
+      <section class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow"> MÉTRICAS DE ÉXITO </span>
+            <h2 class="text-3xl font-black text-slate-900">
+              Resultados medibles cuando la IA conversacional está bien diseñada
+            </h2>
+            <p class="text-slate-600 text-base">
+              Las organizaciones que implementan IA conversacional dentro de una
+              estrategia estructurada de CX suelen lograr:
+            </p>
+          </div>
+
+          <!-- Wrapper del Carrusel / Grid -->
+          <div class="relative w-full">
+            <div
+              class="met-carousel-window overflow-hidden w-full sm:overflow-visible py-2"
+            >
+              <div
+                id="metTrack"
+                class="met-carousel-track flex sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-0 sm:gap-6 items-stretch"
+              >
+                <!-- Card 1 -->
+                <div
+                  class="met-card w-full flex-shrink-0 sm:flex-shrink p-6 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-between space-y-4 five9-card-hover min-h-[230px]"
+                >
+                  <div class="h-20 flex flex-col justify-end items-center">
+                    <span
+                      class="text-xs uppercase font-extrabold text-icqBlue tracking-wider block"
+                      >Hasta</span
+                    >
+                    <div
+                      class="text-3xl xl:text-4xl font-black text-icqBlue leading-none mt-1"
+                    >
+                      65%
+                    </div>
+                  </div>
+                  <div class="space-y-1 flex-1 flex flex-col justify-start">
+                    <h3 class="font-bold text-slate-900 text-sm leading-snug">
+                      Automatización de interacciones
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      Consultas resueltas sin intervención humana.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                  class="met-card w-full flex-shrink-0 sm:flex-shrink p-6 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-between space-y-4 five9-card-hover min-h-[230px]"
+                >
+                  <div class="h-20 flex flex-col justify-end items-center">
+                    <span
+                      class="text-xs uppercase font-extrabold text-icqBlue tracking-wider block"
+                      >Hasta</span
+                    >
+                    <div
+                      class="text-3xl xl:text-4xl font-black text-icqBlue leading-none mt-1"
+                    >
+                      -20–25%
+                    </div>
+                  </div>
+                  <div class="space-y-1 flex-1 flex flex-col justify-start">
+                    <h3 class="font-bold text-slate-900 text-sm leading-snug">
+                      Menos costos operativos
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      Reducción del costo asociado a atención repetitiva.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                  class="met-card w-full flex-shrink-0 sm:flex-shrink p-6 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-between space-y-4 five9-card-hover min-h-[230px]"
+                >
+                  <div class="h-20 flex flex-col justify-end items-center">
+                    <span
+                      class="text-xs uppercase font-extrabold text-icqBlue tracking-wider block"
+                      >Menor</span
+                    >
+                    <div
+                      class="text-2xl xl:text-3xl font-black text-icqBlue leading-none mt-1"
+                    >
+                      AHT
+                    </div>
+                  </div>
+                  <div class="space-y-1 flex-1 flex flex-col justify-start">
+                    <h3 class="font-bold text-slate-900 text-sm leading-snug">
+                      Atención más eficiente
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      Menos tiempo dedicado a solicitudes simples.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                  class="met-card w-full flex-shrink-0 sm:flex-shrink p-6 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-between space-y-4 five9-card-hover min-h-[230px]"
+                >
+                  <div class="h-20 flex flex-col justify-end items-center">
+                    <span
+                      class="text-xs uppercase font-extrabold text-icqBlue tracking-wider block"
+                      >Mayor</span
+                    >
+                    <div
+                      class="text-2xl xl:text-3xl font-black text-icqBlue leading-none mt-1"
+                    >
+                      CSAT
+                    </div>
+                  </div>
+                  <div class="space-y-1 flex-1 flex flex-col justify-start">
+                    <h3 class="font-bold text-slate-900 text-sm leading-snug">
+                      Mejor experiencia del cliente
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      Respuestas más rápidas y consistentes.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                  class="met-card w-full flex-shrink-0 sm:flex-shrink p-6 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-between space-y-4 five9-card-hover min-h-[230px]"
+                >
+                  <div class="h-20 flex flex-col justify-end items-center">
+                    <span
+                      class="text-xs uppercase font-extrabold text-icqBlue tracking-wider block"
+                      >Mayor</span
+                    >
+                    <div
+                      class="text-base xl:text-lg font-black text-icqBlue leading-tight mt-1 uppercase"
+                    >
+                      Containment Rate
+                    </div>
+                  </div>
+                  <div class="space-y-1 flex-1 flex flex-col justify-start">
+                    <h3 class="font-bold text-slate-900 text-sm leading-snug">
+                      Más resolución en autoservicio
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                      Menos transferencias hacia agentes humanos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de navegación y dots abajo (visibles únicamente en 1 columna / móviles) -->
+            <div
+              id="metCarouselNav"
+              class="flex sm:hidden items-center justify-center gap-4 mt-6"
+            >
+              <button
+                type="button"
+                id="metPrevBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta anterior"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <div class="flex items-center gap-2" id="metDots">
+                <span
+                  class="met-dot w-6 h-2 rounded-full bg-icqBlue transition-all duration-300 cursor-pointer"
+                  data-index="0"
+                  aria-label="Tarjeta 1"
+                ></span>
+                <span
+                  class="met-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="1"
+                  aria-label="Tarjeta 2"
+                ></span>
+                <span
+                  class="met-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="2"
+                  aria-label="Tarjeta 3"
+                ></span>
+                <span
+                  class="met-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="3"
+                  aria-label="Tarjeta 4"
+                ></span>
+                <span
+                  class="met-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="4"
+                  aria-label="Tarjeta 5"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                id="metNextBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta siguiente"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center max-w-3xl mx-auto space-y-6 pt-4">
+            <p class="text-base font-semibold text-slate-700">
+              Five9 IVAs ayudan a transformar la IA conversacional en resultados
+              medibles para CX, operaciones y crecimiento del negocio.
+            </p>
+            <div>
+              <a
+                href="https://www.icq24.com/contactus"
+                class="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span
+                  >Descubre cuánto puede automatizar tu operación sin afectar la
+                  experiencia</span
+                >
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xs"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREGUNTAS FRECUENTES (FAQ) ACCESIBLES -->
+      <section
+        class="py-16 border-b border-slate-200 bg-cover bg-center bg-no-repeat bg-fixed relative"
+        style="
+          background-image:
+            linear-gradient(
+              to bottom,
+              rgba(255, 255, 255, 0.75),
+              rgba(255, 255, 255, 0.65)
+            ),
+            url(https://github.com/Lucaro99/Pagina-Soporte/blob/main/Assets/Background.webp?raw=true);
+        "
+      >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <!-- Acordeón Principal de Preguntas Frecuentes -->
+          <details class="group">
+            <summary
+              class="text-center space-y-4 flex flex-col items-center cursor-pointer list-none select-none focus:outline-none"
+            >
+              <span class="eyebrow"> Resuelve tus dudas </span>
+              <h2 class="text-3xl font-black text-slate-900">
+                Preguntas Frecuentes sobre Five9 Agentes Virtuales Inteligentes
+              </h2>
+              <div class="pt-2">
+                <span
+                  class="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-icqBlue group-open:rotate-180 transition-transform duration-300 hover:border-icqBlue hover:shadow-md"
+                >
+                  <i
+                    class="fa-solid fa-chevron-down text-base"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </div>
+            </summary>
+
+            <div class="faq-main-content">
+              <div class="faq-main-content-inner space-y-4 pt-8">
+                <details
+                  name="five9-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span
+                      >¿Qué son los Agentes Virtuales Inteligentes (IVAs) de
+                      Five9?</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Son agentes virtuales impulsados por inteligencia
+                      artificial que automatizan conversaciones de voz y canales
+                      digitales utilizando lenguaje natural, automatización
+                      inteligente e integración con sistemas empresariales.
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  name="five9-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span
+                      >¿Cuál es la diferencia entre un IVA y un chatbot
+                      tradicional?</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Un IVA puede comprender intención, mantener contexto,
+                      ejecutar acciones dentro de sistemas empresariales y
+                      transferir conversaciones con toda la información
+                      necesaria a un agente humano.
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  name="five9-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Five9 IVAs funcionan en canales digitales?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Sí. Five9 permite desplegar Digital Intelligent Virtual
+                      Agents (DIVAs) para chat web, mensajería y otros canales
+                      digitales, además de Voice AI Agents para voz.
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  name="five9-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span
+                      >¿Los IVAs pueden integrarse con CRM y sistemas
+                      empresariales?</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Sí. Pueden conectarse con CRM, plataformas de gestión,
+                      bases de conocimiento y aplicaciones corporativas para
+                      consultar información y ejecutar acciones en tiempo real.
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  name="five9-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span
+                      >¿Los Five9 IVAs reemplazan a los agentes humanos?</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      No. Están diseñados para colaborar con los agentes
+                      humanos, automatizando solicitudes repetitivas y
+                      transfiriendo casos complejos con contexto completo.
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  name="five9-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span
+                      >¿Cómo ayudan los IVAs a reducir costos operativos?</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Al automatizar consultas repetitivas y procesos
+                      transaccionales, disminuyen el volumen de contactos que
+                      requieren atención humana y permiten escalar la atención
+                      sin aumentar proporcionalmente los recursos.
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  name="five9-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span
+                      >¿Qué industrias pueden beneficiarse de Five9 AI
+                      Agents?</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Banca, seguros, salud, retail, telecomunicaciones,
+                      educación, logística y organizaciones de servicios que
+                      buscan optimizar CX, automatización y eficiencia
+                      operativa.
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- AGENTES VIRTUALES INTELIGENTES CON ICQ24 -->
+      <section
+        class="w-full py-12 lg:py-16 bg-[#0B1120] text-white border-b border-slate-800"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+        >
+          <!-- Columna de la Imagen (Izquierda) -->
+          <div class="w-full flex justify-center items-center">
+            <img
+              src="https://www.icq24.com/web/image/37698-6135e688/Footer%20AVI.webp"
+              alt="Representación de la alianza entre ICQ24 y Five9 para la implementación de Agentes Virtuales Inteligentes"
+              width="800"
+              height="600"
+              loading="lazy"
+              class="w-full h-auto rounded-xl object-contain transform hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <!-- Columna de Texto (Derecha con Información Original) -->
+          <div class="space-y-6 text-left">
+            <span class="eyebrow text-blue-400">
+              PARTNER ENTERPRISE FIVE9
+            </span>
+
+            <h2
+              class="text-3xl sm:text-4xl font-black text-white leading-tight"
+            >
+              Agentes Virtuales Inteligentes con ICQ24
+            </h2>
+
+            <h3 class="text-lg sm:text-xl font-bold text-blue-300">
+              IA conversacional diseñada para resolver, gobernar y escalar
+              operaciones reales
+            </h3>
+
+            <div
+              class="space-y-3 text-slate-300 text-sm sm:text-base leading-relaxed"
+            >
+              <p>En ICQ24 no solo implementamos agentes virtuales.</p>
+              <p>
+                Diseñamos modelos conversacionales alineados a procesos,
+                customer journeys, métricas y objetivos de negocio para
+                garantizar automatización y aplicación de IA útil, gobernada y
+                escalable.
+              </p>
+              <p class="font-bold text-white text-base sm:text-lg pt-1">
+                Más resolución automática, menor fricción operativa y
+                experiencias más inteligentes para el cliente.
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <a
+                href="https://www.icq24.com/contactus"
+                class="btn-primary bg-icqBlue text-white hover:bg-blue-600 border-none px-6 py-3.5 text-sm sm:text-base font-bold rounded-full inline-flex items-center gap-2 shadow-lg shadow-icqBlue/20 hover:shadow-icqBlue/40 transition-all duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Agenda una demo personalizada</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+         SCRIPTS AL FINAL DEL DOCUMENTO
+         ========================================================================== -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <!-- Configuración de Tailwind de ICQ24 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              icqGrey: "#475569",
+              icqDark: "#0f172a",
+              icqBlue: "#0263e2",
+              icqGreen: "#3b935d",
+              icqRed: "#ed3d2e",
+              icqYellow: "#f0ad0f",
+              icqLightBg: "#f8fafc",
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              heading: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- SCRIPT DE LOS CARRUSELES INTERACTIVOS Y ACORDEÓN (OPTIMIZADO) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // -------------------------------------------------------------
+        // GESTOR CENTRALIZADO DE REDIMENSIONAMIENTO (Debounced via RAF)
+        // -------------------------------------------------------------
+        const resizeCallbacks = [];
+        let resizeTicking = false;
+
+        window.addEventListener(
+          "resize",
+          () => {
+            if (!resizeTicking) {
+              window.requestAnimationFrame(() => {
+                resizeCallbacks.forEach((cb) => cb());
+                resizeTicking = false;
+              });
+              resizeTicking = true;
+            }
+          },
+          { passive: true },
+        );
+
+        // -------------------------------------------------------------
+        // 1. CARRUSELES MULTI-TARJETA (Capacidades y Casos de Uso)
+        // -------------------------------------------------------------
+        function initMultiCardCarousel({ trackId, prevBtnId, nextBtnId, gap = 20 }) {
+          const track = document.getElementById(trackId);
+          const prevBtn = document.getElementById(prevBtnId);
+          const nextBtn = document.getElementById(nextBtnId);
+          if (!track || !prevBtn || !nextBtn) return;
+
+          let currentIndex = 0;
+
+          function getVisibleCards() {
+            if (window.innerWidth >= 1024) return 3;
+            if (window.innerWidth >= 640) return 2;
+            return 1;
+          }
+
+          function getMaxIndex() {
+            return Math.max(0, track.children.length - getVisibleCards());
+          }
+
+          function update() {
+            const cards = track.children;
+            if (cards.length === 0) return;
+            const cardWidth = cards[0].getBoundingClientRect().width + gap;
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+          }
+
+          nextBtn.addEventListener("click", () => {
+            currentIndex = currentIndex < getMaxIndex() ? currentIndex + 1 : 0;
+            update();
+          });
+
+          prevBtn.addEventListener("click", () => {
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : getMaxIndex();
+            update();
+          });
+
+          // Soporte táctil / swipe
+          let startX = 0;
+          track.addEventListener(
+            "touchstart",
+            (e) => {
+              startX = e.changedTouches[0].screenX;
+            },
+            { passive: true },
+          );
+
+          track.addEventListener(
+            "touchend",
+            (e) => {
+              const diff = e.changedTouches[0].screenX - startX;
+              if (Math.abs(diff) > 40) {
+                if (diff < 0) {
+                  currentIndex = currentIndex < getMaxIndex() ? currentIndex + 1 : 0;
+                } else {
+                  currentIndex = currentIndex > 0 ? currentIndex - 1 : getMaxIndex();
+                }
+                update();
+              }
+            },
+            { passive: true },
+          );
+
+          resizeCallbacks.push(() => {
+            if (currentIndex > getMaxIndex()) currentIndex = getMaxIndex();
+            update();
+          });
+
+          update();
+        }
+
+        initMultiCardCarousel({
+          trackId: "capacidadesTrack",
+          prevBtnId: "capacidadesPrevBtn",
+          nextBtnId: "capacidadesNextBtn",
+          gap: 20,
+        });
+
+        initMultiCardCarousel({
+          trackId: "usecaseTrack",
+          prevBtnId: "prevBtn",
+          nextBtnId: "nextBtn",
+          gap: 20,
+        });
+
+        // -------------------------------------------------------------
+        // 2. ACORDEÓN DE PREGUNTAS FRECUENTES (Exclusivo)
+        // -------------------------------------------------------------
+        const faqDetails = document.querySelectorAll("details.faq-item");
+        faqDetails.forEach((targetDetail) => {
+          targetDetail.addEventListener("toggle", () => {
+            if (targetDetail.open) {
+              faqDetails.forEach((detail) => {
+                if (detail !== targetDetail && detail.open) {
+                  detail.open = false;
+                }
+              });
+            }
+          });
+        });
+
+        // -------------------------------------------------------------
+        // 3. FACTORÍA DE CARRUSELES MÓVILES (1 COLUMNA)
+        // -------------------------------------------------------------
+        function initMobileCarousel({
+          trackId,
+          prevBtnId,
+          nextBtnId,
+          dotsSelector,
+          cardsSelector,
+          windowSelector,
+          breakpoint = 768,
+          activeDotClass = "bg-icqBlue",
+          inactiveDotClass = "bg-slate-300",
+        }) {
+          const track = document.getElementById(trackId);
+          const cards = document.querySelectorAll(cardsSelector);
+          if (!track || cards.length === 0) return;
+
+          const prevBtn = document.getElementById(prevBtnId);
+          const nextBtn = document.getElementById(nextBtnId);
+          const dots = document.querySelectorAll(dotsSelector);
+          const total = cards.length;
+          let currentIndex = 0;
+
+          function update() {
+            if (window.innerWidth < breakpoint) {
+              track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            } else {
+              track.style.transform = "none";
+            }
+
+            dots.forEach((dot, idx) => {
+              if (idx === currentIndex) {
+                dot.classList.remove("w-2", inactiveDotClass);
+                dot.classList.add("w-6", activeDotClass);
+              } else {
+                dot.classList.remove("w-6", activeDotClass);
+                dot.classList.add("w-2", inactiveDotClass);
+              }
+            });
+          }
+
+          if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+              currentIndex = (currentIndex + 1) % total;
+              update();
+            });
+          }
+
+          if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+              currentIndex = (currentIndex - 1 + total) % total;
+              update();
+            });
+          }
+
+          dots.forEach((dot, idx) => {
+            dot.addEventListener("click", () => {
+              currentIndex = idx;
+              update();
+            });
+          });
+
+          // Soporte táctil / swipe
+          let startX = 0;
+          const carouselWindow = document.querySelector(windowSelector);
+          if (carouselWindow) {
+            carouselWindow.addEventListener(
+              "touchstart",
+              (e) => {
+                startX = e.changedTouches[0].screenX;
+              },
+              { passive: true },
+            );
+
+            carouselWindow.addEventListener(
+              "touchend",
+              (e) => {
+                const diff = e.changedTouches[0].screenX - startX;
+                if (Math.abs(diff) > 40) {
+                  currentIndex =
+                    diff < 0
+                      ? (currentIndex + 1) % total
+                      : (currentIndex - 1 + total) % total;
+                  update();
+                }
+              },
+              { passive: true },
+            );
+          }
+
+          resizeCallbacks.push(() => {
+            if (window.innerWidth >= breakpoint) currentIndex = 0;
+            update();
+          });
+
+          update();
+        }
+
+        // Inicializar carruseles móviles (1 columna)
+        initMobileCarousel({
+          trackId: "defTrack",
+          prevBtnId: "defPrevBtn",
+          nextBtnId: "defNextBtn",
+          dotsSelector: ".def-dot",
+          cardsSelector: ".def-card",
+          windowSelector: ".def-carousel-window",
+          breakpoint: 768,
+          inactiveDotClass: "bg-slate-300",
+        });
+
+        initMobileCarousel({
+          trackId: "diffTrack",
+          prevBtnId: "diffPrevBtn",
+          nextBtnId: "diffNextBtn",
+          dotsSelector: ".diff-dot",
+          cardsSelector: ".diff-card",
+          windowSelector: ".diff-carousel-window",
+          breakpoint: 640,
+          inactiveDotClass: "bg-slate-700",
+        });
+
+        initMobileCarousel({
+          trackId: "benTrack",
+          prevBtnId: "benPrevBtn",
+          nextBtnId: "benNextBtn",
+          dotsSelector: ".ben-dot",
+          cardsSelector: ".ben-card",
+          windowSelector: ".ben-carousel-window",
+          breakpoint: 768,
+          inactiveDotClass: "bg-slate-300",
+        });
+
+        initMobileCarousel({
+          trackId: "metTrack",
+          prevBtnId: "metPrevBtn",
+          nextBtnId: "metNextBtn",
+          dotsSelector: ".met-dot",
+          cardsSelector: ".met-card",
+          windowSelector: ".met-carousel-window",
+          breakpoint: 640,
+          inactiveDotClass: "bg-slate-300",
+        });
+
+        // -------------------------------------------------------------
+        // 4. CARRUSEL AUTOMÁTICO DE BENEFICIOS RÁPIDOS (Quick Value)
+        // -------------------------------------------------------------
+        const qvTrack = document.getElementById("qvTrack");
+        const qvSlides = document.querySelectorAll(".qv-slide");
+        const qvSection = document.getElementById("quick-value");
+        const qvWindow = document.getElementById("qvCarouselWindow");
+
+        if (qvTrack && qvSlides.length > 0) {
+          let qvCurrentIndex = 0;
+          const qvTotal = qvSlides.length;
+          const qvIntervalMs = 4500;
+          let qvTimer = null;
+
+          function updateQv() {
+            qvTrack.style.transform = `translateX(-${qvCurrentIndex * 100}%)`;
+          }
+
+          function qvNext() {
+            qvCurrentIndex = (qvCurrentIndex + 1) % qvTotal;
+            updateQv();
+          }
+
+          function qvPrev() {
+            qvCurrentIndex = (qvCurrentIndex - 1 + qvTotal) % qvTotal;
+            updateQv();
+          }
+
+          function startQv() {
+            stopQv();
+            if (window.innerWidth < 768) {
+              qvTimer = setInterval(qvNext, qvIntervalMs);
+            }
+          }
+
+          function stopQv() {
+            if (qvTimer) {
+              clearInterval(qvTimer);
+              qvTimer = null;
+            }
+          }
+
+          if (qvSection) {
+            qvSection.addEventListener("mouseenter", stopQv);
+            qvSection.addEventListener("mouseleave", startQv);
+          }
+
+          let qvStartX = 0;
+          if (qvWindow) {
+            qvWindow.addEventListener(
+              "touchstart",
+              (e) => {
+                stopQv();
+                qvStartX = e.changedTouches[0].screenX;
+              },
+              { passive: true },
+            );
+
+            qvWindow.addEventListener(
+              "touchend",
+              (e) => {
+                const diff = e.changedTouches[0].screenX - qvStartX;
+                if (Math.abs(diff) > 35) {
+                  if (diff < 0) qvNext();
+                  else qvPrev();
+                }
+                startQv();
+              },
+              { passive: true },
+            );
+          }
+
+          resizeCallbacks.push(() => {
+            if (window.innerWidth >= 768) {
+              stopQv();
+            } else {
+              if (!qvTimer) startQv();
+              updateQv();
+            }
+          });
+
+          updateQv();
+          startQv();
+        }
+      });
+    </script>
+  </body>
+</html>

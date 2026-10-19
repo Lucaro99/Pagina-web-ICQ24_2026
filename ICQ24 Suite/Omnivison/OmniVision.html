@@ -1,0 +1,2817 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmniVision | Inteligencia de resultados para Five9 | ICQ24</title>
+    <meta
+      name="description"
+      content="Conecte cada conversación Five9 con calidad, resolución, ventas, retención y desempeño de agentes de voz IA—y sepa qué cambiar."
+    />
+    <meta
+      property="og:title"
+      content="OmniVision | Inteligencia de resultados para Five9 | ICQ24"
+    />
+    <meta
+      property="og:description"
+      content="Conecte cada conversación Five9 con calidad, resolución, ventas, retención y desempeño de agentes de voz IA—y sepa qué cambiar."
+    />
+    <meta property="og:site_name" content="OmniVision por ICQ24" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://omnivision.icq24.com/og.png" />
+
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- fontawesome icons -->
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <!-- Configuración de estilos y paleta de marca ICQ24 en Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              icqGrey: "#475569",
+              icqDark: "#0f172a",
+              icqBlue: "#0263e2",
+              icqGreen: "#3b935d",
+              icqRed: "#ed3d2e",
+              icqYellow: "#f0ad0f",
+              icqLightBg: "#f8fafc",
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              heading: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root {
+        --brand-primary: #0263e2;
+        --brand-primary-hover: #002d6d;
+        --brand-primary-light: #eff6ff;
+        --brand-primary-mid: #1d4ed8;
+        --navy: #0a192f;
+        --navy-dark: #0b132b;
+        --yellow: #f0ad0f;
+        --yellow-bg: #fef6e4;
+        --red: #ed3d2e;
+        --green: #3b935d;
+        --green-bg: #e8f5ee;
+
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-card: #f9fafb;
+        --bg-dark: #0f172a;
+        --bg-dark-elevated: #1e293b;
+
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+        --text-inverse: #ffffff;
+
+        --border-light: #e2e8f0;
+        --border-dark: #334155;
+
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+        --shadow-lg:
+          0 10px 25px -3px rgba(0, 0, 0, 0.07),
+          0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        --shadow-xl:
+          0 20px 40px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --shadow-card: 0 4px 20px rgba(2, 99, 226, 0.1);
+
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-xl: 28px;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: #1e293b;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -0.02em;
+      }
+      .gradient-hero {
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.95)
+        );
+      }
+      .gradient-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 0%,
+          rgba(2, 99, 226, 0.08) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 32px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 9999px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        text-decoration: none;
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease,
+          background-color 0.3s ease,
+          color 0.3s ease;
+        background: #0263e2;
+        color: #ffffff;
+      }
+      .btn-primary:hover {
+        background: #002d6d;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px -3px rgba(2, 99, 226, 0.25);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 32px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 14px;
+        border-radius: 9999px;
+        cursor: pointer;
+        border: 2px solid #e2e8f0;
+        text-decoration: none;
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease,
+          background-color 0.3s ease,
+          color 0.3s ease,
+          border-color 0.3s ease;
+        background: transparent;
+        color: #1e293b;
+      }
+      .btn-secondary:hover {
+        border-color: #0263e2;
+        color: #0263e2;
+        background: #eff6ff;
+        transform: translateY(-2px);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #475569;
+        margin-bottom: 20px;
+        letter-spacing: 0.12em;
+      }
+      .eyebrow span {
+        width: 12px;
+        height: 2px;
+        background-color: #0263e2;
+        display: inline-block;
+      }
+
+      .five9-card-hover {
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+        border: 1px solid #e2e8f0;
+      }
+      .five9-card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(2, 99, 226, 0.08);
+        border-color: rgba(2, 99, 226, 0.2);
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary {
+        list-style: none;
+      }
+
+      /* Transición suave para el acordeón principal y preguntas */
+      .faq-main-content,
+      .faq-item-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition:
+          grid-template-rows 0.4s ease-in-out,
+          opacity 0.4s ease-in-out;
+        opacity: 0;
+      }
+      details[open] > .faq-main-content,
+      details[open] > .faq-item-content {
+        grid-template-rows: 1fr;
+        opacity: 1;
+      }
+      .faq-main-content-inner,
+      .faq-item-content-inner {
+        overflow: hidden;
+      }
+
+      /* Mock Donut Chart styles */
+      .donut-ring {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: conic-gradient(
+          #0263e2 0% 58%,
+          #38bdf8 58% 85%,
+          #f0ad0f 85% 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .donut-ring::before {
+        content: "";
+        position: absolute;
+        inset: 14px;
+        border-radius: 50%;
+        background-color: #ffffff;
+      }
+
+      /* Marquee Animation styles */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .animate-marquee {
+        display: flex;
+        width: max-content;
+        animation: marquee 45s linear infinite;
+      }
+      .animate-marquee:hover {
+        animation-play-state: paused;
+      }
+
+      /* FAQ Section Background */
+      .faqs-section {
+        padding: 75px 0;
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.65)
+          ),
+          url("https://github.com/Lucaro99/Partners-ICQ24/blob/main/Assets/Background.webp?raw=true");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      /* ==========================================================================
+         CARRUSELES MÓVILES (1 COLUMNA CENTRADA) Y GRIDS DESKTOP (ODOO COMPATIBLE)
+         ========================================================================== */
+      @media (max-width: 767px) {
+        .ciclo-carousel-window {
+          overflow: hidden !important;
+          width: 100% !important;
+        }
+        .ciclo-carousel-track {
+          display: flex !important;
+          width: 100% !important;
+          gap: 0 !important;
+          transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+        }
+        .ciclo-card {
+          flex: 0 0 100% !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .ciclo-carousel-window {
+          overflow: visible !important;
+        }
+        .ciclo-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 2rem !important; /* 32px separación de cards en desktop */
+          transform: none !important;
+          width: auto !important;
+        }
+        .ciclo-card {
+          flex: initial !important;
+          width: auto !important;
+          min-width: 0 !important;
+          max-width: none !important;
+        }
+      }
+
+      /* Breakpoint 640px para Voice Spotlight y Governance */
+      @media (max-width: 639px) {
+        .voice-carousel-window,
+        .gov-carousel-window {
+          overflow: hidden !important;
+          width: 100% !important;
+        }
+        .voice-carousel-track,
+        .gov-carousel-track {
+          display: flex !important;
+          width: 100% !important;
+          gap: 0 !important;
+          transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+        }
+        .voice-card,
+        .gov-card {
+          flex: 0 0 100% !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+
+      @media (min-width: 640px) {
+        .voice-carousel-window,
+        .gov-carousel-window {
+          overflow: visible !important;
+        }
+        .voice-carousel-track,
+        .gov-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 1.5rem !important; /* 24px separación de cards en desktop */
+          transform: none !important;
+          width: auto !important;
+        }
+        .voice-card,
+        .gov-card {
+          flex: initial !important;
+          width: auto !important;
+          min-width: 0 !important;
+          max-width: none !important;
+        }
+      }
+
+      /* Quick Value Auto Carousel (< 768px carrusel automático, >= 768px estático) */
+      @media (max-width: 767px) {
+        .qv-desktop-view {
+          display: none !important;
+        }
+        .qv-mobile-view {
+          display: flex !important;
+        }
+      }
+      @media (min-width: 768px) {
+        .qv-desktop-view {
+          display: flex !important;
+        }
+        .qv-mobile-view {
+          display: none !important;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+
+        "@type": "FAQPage",
+
+        "mainEntity": [
+          {
+            "@type": "Question",
+
+            "name": "¿Qué es OmniVision?",
+
+            "acceptedAnswer": {
+              "@type": "Answer",
+
+              "text": "OmniVision es una plataforma de inteligencia conversacional que utiliza inteligencia artificial para analizar el 100 % de las interacciones de voz, chat y correo electrónico, transformándolas en información accionable para mejorar la operación de los Contact Centers."
+            }
+          },
+
+          {
+            "@type": "Question",
+
+            "name": "¿Cómo ayuda OmniVision a mejorar la experiencia del cliente?",
+
+            "acceptedAnswer": {
+              "@type": "Answer",
+
+              "text": "OmniVision identifica tendencias, motivos de contacto, puntos de fricción y oportunidades de mejora para ayudar a las organizaciones a optimizar la experiencia del cliente y tomar decisiones basadas en datos."
+            }
+          },
+
+          {
+            "@type": "Question",
+
+            "name": "¿Qué canales analiza OmniVision?",
+
+            "acceptedAnswer": {
+              "@type": "Answer",
+
+              "text": "La plataforma centraliza y analiza conversaciones provenientes de llamadas de voz, chats, SMS y correos electrónicos desde una única vista."
+            }
+          },
+
+          {
+            "@type": "Question",
+
+            "name": "¿Para quién está diseñada OmniVision?",
+
+            "acceptedAnswer": {
+              "@type": "Answer",
+
+              "text": "OmniVision está diseñada para organizaciones que buscan optimizar la calidad, el desempeño operativo y la experiencia del cliente mediante inteligencia conversacional impulsada por IA."
+            }
+          },
+
+          {
+            "@type": "Question",
+
+            "name": "¿Qué beneficios ofrece OmniVision?",
+
+            "acceptedAnswer": {
+              "@type": "Answer",
+
+              "text": "Permite analizar todas las conversaciones, identificar oportunidades de mejora, fortalecer procesos de calidad, optimizar el coaching de agentes y obtener información estratégica para la toma de decisiones."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+
+        "@type": "Organization",
+
+        "name": "ICQ24",
+
+        "url": "https://www.icq24.com",
+
+        "logo": "https://www.icq24.com/logo.png",
+
+        "description": "ICQ24 implementa soluciones de Customer Experience e Inteligencia Artificial para ayudar a las organizaciones a optimizar sus operaciones, mejorar la experiencia del cliente y acelerar su transformación digital.",
+
+        "sameAs": ["https://www.linkedin.com/company/icq24"]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+
+        "@type": "Service",
+
+        "name": "OmniVision",
+
+        "serviceType": "Plataforma de Inteligencia Conversacional",
+
+        "provider": {
+          "@type": "Organization",
+
+          "name": "ICQ24"
+        },
+
+        "description": "Plataforma de inteligencia conversacional impulsada por inteligencia artificial que analiza el 100 % de las interacciones para generar insights accionables, optimizar la calidad y mejorar la experiencia del cliente.",
+
+        "areaServed": "Latinoamérica",
+
+        "availableChannel": {
+          "@type": "ServiceChannel",
+
+          "serviceUrl": "https://www.icq24.com/omnivision-inteligencia-conversacional-ia"
+        }
+      }
+    </script>
+
+    <div style="display: none">
+      OmniVision es una plataforma de inteligencia conversacional desarrollada
+      para transformar las conversaciones de los Contact Centers en información
+      estratégica mediante inteligencia artificial. Analiza llamadas, chats, SMS
+      y correos electrónicos para identificar tendencias, oportunidades de
+      mejora, riesgos operativos y comportamientos de los clientes. La
+      plataforma permite optimizar procesos de Quality Assurance, coaching de
+      agentes, análisis conversacional, customer insights, speech analytics y
+      experiencia del cliente mediante dashboards interactivos e inteligencia
+      artificial. OmniVision ayuda a organizaciones que utilizan Five9, Contact
+      Centers omnicanal, plataformas de Customer Experience y soluciones
+      empresariales a comprender mejor cada interacción y tomar decisiones
+      basadas en datos.
+    </div>
+
+    <meta
+      property="og:title"
+      content="OmniVision | Inteligencia Conversacional con IA para Contact Centers"
+    />
+
+    <meta
+      property="og:description"
+      content="Convierte cada conversación en información estratégica con OmniVision. Analiza el 100 % de las interacciones mediante inteligencia artificial para optimizar la calidad y mejorar la experiencia del cliente."
+    />
+
+    <meta
+      property="og:url"
+      content="https://www.icq24.com/omnivision-inteligencia-conversacional-ia"
+    />
+
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="bg-white text-slate-800">
+    <!-- HERO SECTION -->
+    <section
+      class="gradient-hero relative overflow-hidden border-b border-slate-100"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-2 lg:pt-24 lg:pb-28"
+      >
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+        >
+          <!-- Text Column -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="eyebrow">
+              Inteligencia de resultados conversacionales para Five9
+            </div>
+
+            <h1
+              class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight"
+            >
+              OmniVision: Convierte cada conversación de Five9
+              <span class="text-icqBlue relative block mt-2 font-black italic"
+                >en inteligencia accionable.
+              </span>
+            </h1>
+
+            <p
+              class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl"
+            >
+              Omnivision analiza el 100 % de las interacciones de voz, chat y
+              correo electrónico con IA para descubrir insights que optimizan la
+              calidad, mejoran la experiencia del cliente y fortalecen el
+              desempeño de tu Contact Center.
+            </p>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a
+                class="btn-primary"
+                href="https://www.icq24.com/contactus"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Analizar mis conversaciones
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="#como-funciona" class="btn-secondary">
+                Ver cómo funciona <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="lg:col-span-7 relative w-full flex items-center justify-center lg:justify-end lg:pl-12"
+          >
+            <img
+              src="https://www.icq24.com/web/image/37732-24d6d9d4/Hero_Omnivision.webp"
+              alt="Soporte ICQ24"
+              width="1200"
+              height="800"
+              class="w-full h-auto object-contain transform lg:scale-105 xl:scale-110 transition-transform duration-500 lg:translate-x-4"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF STRIP / QUICK VALUE SECTION -->
+    <section
+      id="quick-value"
+      class="bg-slate-900 py-4 sm:py-6 border-y border-slate-800 text-white overflow-hidden select-none"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Versión Web / Escritorio: todos los items visibles en una sola línea -->
+        <div
+          class="qv-desktop-view hidden md:flex items-center justify-between w-full flex-wrap gap-6"
+        >
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wider"
+            >Creado para operaciones Five9</span
+          >
+          <div
+            class="flex flex-wrap items-center gap-x-8 gap-y-2 text-sm font-bold text-slate-200"
+          >
+            <span class="flex items-center gap-2"
+              ><i class="fa-solid fa-check text-icqBlue"></i> 100% de
+              interacciones</span
+            >
+            <span class="flex items-center gap-2"
+              ><i class="fa-solid fa-check text-icqBlue"></i> Humanos + agentes
+              IA</span
+            >
+            <span class="flex items-center gap-2"
+              ><i class="fa-solid fa-check text-icqBlue"></i> Español +
+              inglés</span
+            >
+            <span class="flex items-center gap-2"
+              ><i class="fa-solid fa-check text-icqBlue"></i> Power BI</span
+            >
+            <span class="flex items-center gap-2"
+              ><i class="fa-solid fa-check text-icqBlue"></i> Tus llaves de
+              IA</span
+            >
+          </div>
+        </div>
+
+        <!-- Versión Móvil: carrusel automático sin marcadores ni flechas (1 a la vez, centrado con tiempo suficiente para leer) -->
+        <div
+          class="qv-mobile-view md:hidden w-full flex flex-col items-center justify-center py-1 space-y-2"
+        >
+          <span
+            class="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center"
+            >Creado para operaciones Five9</span
+          >
+          <div
+            id="qvCarouselWindow"
+            class="overflow-hidden w-full max-w-xl h-8 flex items-center justify-center relative cursor-default"
+          >
+            <div
+              id="qvTrack"
+              class="flex w-full transition-transform duration-700 ease-out will-change-transform"
+            >
+              <!-- Slide 1 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>100% de interacciones</span>
+                </span>
+              </div>
+
+              <!-- Slide 2 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Humanos + agentes IA</span>
+                </span>
+              </div>
+
+              <!-- Slide 3 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Español + inglés</span>
+                </span>
+              </div>
+
+              <!-- Slide 4 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Power BI</span>
+                </span>
+              </div>
+
+              <!-- Slide 5 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Tus llaves de IA</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEL DATO A LA CAUSA SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
+      >
+        <!-- Title left -->
+        <div class="lg:col-span-6 space-y-4">
+          <div class="eyebrow">Del dato a la causa</div>
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight"
+          >
+            Five9 muestra la operación.<br />
+            <span class="text-icqBlue"
+              >OmniVision explica qué está moviendo el resultado.</span
+            >
+          </h2>
+        </div>
+        <!-- Copy right -->
+        <div class="lg:col-span-6 space-y-6">
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+            Conecta el contenido de cada conversación con disposiciones,
+            métricas, comportamiento del cliente y resultados de negocio. Ve
+            <strong
+              >qué ocurrió, por qué ocurrió y cuál es la próxima intervención de
+              mayor impacto.</strong
+            >
+          </p>
+          <div>
+            <a
+              href="https://www.icq24.com/contactus"
+              class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-2 text-base group"
+            >
+              Valida la integración Five9
+              <i
+                class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOMES SECTION (APLICACIONES DE RESULTADOS) -->
+    <section
+      id="soluciones"
+      class="bg-slate-50 border-y border-slate-100 py-10 lg:py-16"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+          <div class="eyebrow justify-center">Aplicaciones de resultados</div>
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight"
+          >
+            Empieza por la
+            <span class="text-icqBlue">decisión que más importa.</span>
+          </h2>
+          <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+            <strong>OmniVision</strong> no obliga a comprar una promesa genérica
+            de IA. Cada aplicación responde una pregunta de negocio concreta
+            sobre tus conversaciones <strong>Five9.</strong>
+          </p>
+        </div>
+
+        <!-- Infinite Carousel Wrapper -->
+        <div class="relative w-full overflow-hidden py-4">
+          <div class="animate-marquee flex gap-8">
+            <!-- Card 1 -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >01</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >QA · Cumplimiento · Coaching</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Quality Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Convierte cada interacción en evidencia de calidad,
+                  cumplimiento y oportunidades de coaching.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >02</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >Conversión · Objeciones · Ingresos</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Sales Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Descubre objeciones, comportamientos ganadores y señales que
+                  explican la conversión.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >03</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >Riesgo · Fidelización · Churn</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Retention Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Identifica intención de cancelación, fricción y patrones que
+                  anticipan la pérdida del cliente.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >04</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >Promesas · Cumplimiento · Recuperación</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Collections Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Conecta cumplimiento, promesas de pago y estrategias de
+                  cobranza con tus resultados.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >05</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >FCR · Repetición · Intención</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Customer Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Ve FCR, contactos repetidos, intención y sentimiento en una
+                  historia de 90 días por cliente.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >06</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >Bots · Prompt · Conocimiento</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Voice Agent Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Evalúa contención, transferencias, adherencia al prompt y
+                  brechas de conocimiento con independencia.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Explorar aplicación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 1 (Duplicate) -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >01</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >QA · Cumplimiento · Coaching</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Quality Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Convierta cada interacción en evidencia de calidad,
+                  cumplimiento y oportunidades de coaching.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2 (Duplicate) -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >02</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >Conversión · Objeciones · Ingresos</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Sales Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Descubra objeciones, comportamientos ganadores y señales que
+                  explican la conversión.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3 (Duplicate) -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >03</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >Riesgo · Fidelización · Churn</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Retention Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Identifique intención de cancelación, fricción y patrones que
+                  anticipan la pérdida del cliente.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 4 (Duplicate) -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >04</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >Promesas · Cumplimiento · Recuperación</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Collections Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Conecte cumplimiento, promesas de pago y estrategias de
+                  cobranza con sus resultados.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 5 (Duplicate) -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >05</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >FCR · Repetición · Intención</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Customer Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Vea FCR, contactos repetidos, intención y sentimiento en una
+                  historia de 90 días por cliente.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Ver con mis datos
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 6 (Duplicate) -->
+            <article
+              class="five9-card-hover bg-white p-8 rounded-2xl flex flex-col justify-between h-[300px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                    >06</span
+                  >
+                  <small
+                    class="text-[8px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2 py-0.5 rounded"
+                    >Bots · Prompt · Conocimiento</small
+                  >
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">
+                  Voice Agent Intelligence
+                </h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                  Evalúe contención, transferencias, adherencia al prompt y
+                  brechas de conocimiento con independencia.
+                </p>
+              </div>
+              <div class="pt-4">
+                <a
+                  href="https://omnivision-icq24-es.icq24.chatgpt.site/omnivision-para-agentes-elevenlabs"
+                  class="text-icqBlue font-bold hover:text-slate-900 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Explorar aplicación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DECISION CYCLE SECTION -->
+    <section
+      id="como-funciona"
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16"
+    >
+      <!-- Title -->
+      <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <div class="eyebrow justify-center">Un ciclo de decisión</div>
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight"
+        >
+          Escucha todo. Entiende por qué.
+          <span class="text-icqBlue">Actúa mejor.</span>
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+          <strong>OmniVision</strong> convierte el contenido conversacional en
+          una cadena de evidencia que tu operación puede seguir y medir.
+        </p>
+      </div>
+
+      <!-- 3 Steps Grid / Carrusel Móvil -->
+      <div class="relative w-full">
+        <div
+          class="ciclo-carousel-window overflow-hidden w-full md:overflow-visible py-2"
+        >
+          <div
+            id="cicloTrack"
+            class="ciclo-carousel-track flex md:grid md:grid-cols-3 gap-8 text-left items-stretch"
+          >
+            <!-- Step 1 -->
+            <article
+              class="ciclo-card w-full flex-shrink-0 md:flex-shrink five9-card-hover p-8 bg-slate-50 border border-slate-100 rounded-2xl relative space-y-4"
+            >
+              <span
+                class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                >01</span
+              >
+              <h3 class="text-xl font-bold text-slate-900">Ve</h3>
+              <p class="text-base text-slate-600 leading-relaxed">
+                Analiza voz, chat y correo de Five9 junto con las conversaciones de
+                tus agentes de voz IA.
+              </p>
+              <span
+                class="inline-block text-[10px] font-bold text-slate-400 bg-slate-200/50 px-2 py-0.5 rounded uppercase tracking-wider"
+                >Conversación + métricas Five9</span
+              >
+            </article>
+
+            <!-- Step 2 -->
+            <article
+              class="ciclo-card w-full flex-shrink-0 md:flex-shrink five9-card-hover p-8 bg-slate-50 border border-slate-100 rounded-2xl relative space-y-4"
+            >
+              <span
+                class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                >02</span
+              >
+              <h3 class="text-xl font-bold text-slate-900">Explica</h3>
+              <p class="text-base text-slate-600 leading-relaxed">
+                Relaciona criterios, intención, sentimiento y comportamiento con
+                calidad, resolución e ingresos.
+              </p>
+              <span
+                class="inline-block text-[10px] font-bold text-slate-400 bg-slate-200/50 px-2 py-0.5 rounded uppercase tracking-wider"
+                >Causa raíz + correlaciones</span
+              >
+            </article>
+
+            <!-- Step 3 -->
+            <article
+              class="ciclo-card w-full flex-shrink-0 md:flex-shrink five9-card-hover p-8 bg-slate-50 border border-slate-100 rounded-2xl relative space-y-4"
+            >
+              <span
+                class="flex items-center justify-center w-10 h-10 rounded-lg bg-icqBlue/10 text-icqBlue font-extrabold text-lg"
+                >03</span
+              >
+              <h3 class="text-xl font-bold text-slate-900">Actúa</h3>
+              <p class="text-base text-slate-600 leading-relaxed">
+                Lleva los hallazgos a scorecards, coaching, Power BI y contenido
+                para Five9 Agent Assist.
+              </p>
+              <span
+                class="inline-block text-[10px] font-bold text-slate-400 bg-slate-200/50 px-2 py-0.5 rounded uppercase tracking-wider"
+                >Decisiones + activación</span
+              >
+            </article>
+          </div>
+        </div>
+
+        <!-- Botonera de Navegación del Carrusel (Móvil Únicamente) -->
+        <div
+          id="cicloCarouselNav"
+          class="flex md:hidden items-center justify-center gap-4 mt-6"
+        >
+          <button
+            type="button"
+            id="cicloPrevBtn"
+            class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+            aria-label="Paso anterior"
+          >
+            <i class="fa-solid fa-chevron-left text-sm" aria-hidden="true"></i>
+          </button>
+
+          <!-- Indicadores de puntos (dots) -->
+          <div class="flex items-center gap-1.5 px-2">
+            <button
+              type="button"
+              class="ciclo-dot h-2 rounded-full transition-all duration-300 w-6 bg-icqBlue cursor-pointer"
+              aria-label="Ir al paso 1"
+            ></button>
+            <button
+              type="button"
+              class="ciclo-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-300 hover:bg-slate-400 cursor-pointer"
+              aria-label="Ir al paso 2"
+            ></button>
+            <button
+              type="button"
+              class="ciclo-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-300 hover:bg-slate-400 cursor-pointer"
+              aria-label="Ir al paso 3"
+            ></button>
+          </div>
+
+          <button
+            type="button"
+            id="cicloNextBtn"
+            class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+            aria-label="Paso siguiente"
+          >
+            <i class="fa-solid fa-chevron-right text-sm" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT PROOF SECTION -->
+    <section class="bg-slate-50 border-y border-slate-100 py-10 lg:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+        >
+          <!-- Copy Left -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="eyebrow">De la llamada al negocio</div>
+            <h2
+              class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight"
+            >
+              Una vista común para operaciones,
+              <span class="text-icqBlue">calidad y liderazgo.</span>
+            </h2>
+            <p class="text-base text-slate-600 leading-relaxed">
+              Desde el indicador ejecutivo hasta la evidencia de una
+              conversación individual, OmniVision conserva el vínculo entre
+              resultado, causa y acción.
+            </p>
+
+            <ul class="space-y-3.5 text-sm font-semibold text-slate-700">
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 flex items-center justify-center w-5.5 h-5.5 bg-icqBlue/10 text-icqBlue rounded-full text-xs"
+                >
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                Scorecards configurables con evidencia
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 flex items-center justify-center w-5.5 h-5.5 bg-icqBlue/10 text-icqBlue rounded-full text-xs"
+                >
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                Inteligencia de clientes y contactos repetidos
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 flex items-center justify-center w-5.5 h-5.5 bg-icqBlue/10 text-icqBlue rounded-full text-sm"
+                >
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                Resultados hacia Power BI
+              </li>
+              <li class="flex items-center gap-2.5">
+                <span
+                  class="flex-shrink-0 flex items-center justify-center w-5.5 h-5.5 bg-icqBlue/10 text-icqBlue rounded-full text-xs"
+                >
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                Datos de demostración claramente identificados
+              </li>
+            </ul>
+
+            <div class="pt-4">
+              <a href="https://www.icq24.com/contactus" class="btn-secondary">
+                Ver integración y arquitectura
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="lg:col-span-7 relative w-full flex items-center justify-center lg:justify-end lg:pl-12"
+          >
+            <img
+              src="https://www.icq24.com/web/image/37737-99799e36/Dash_Omnivision.webp"
+              alt="Soporte ICQ24"
+              width="1200"
+              height="800"
+              class="w-full h-auto object-contain transform lg:scale-105 xl:scale-110 transition-transform duration-500 lg:translate-x-4"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOICE SPOTLIGHT SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+      >
+        <!-- Left details -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="eyebrow">Humanos y agentes de voz IA</div>
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight"
+          >
+            Un solo programa de calidad.
+            <span class="text-icqBlue">Una evaluación independiente.</span>
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Compara resolución, satisfacción y cumplimiento entre humanos y
+            agentes de voz. Detecta contención real, transferencias evitables,
+            fallas de prompt y brechas de conocimiento sin depender únicamente
+            de la calificación de la plataforma del bot.
+          </p>
+          <div class="pt-2">
+            <a
+              href="https://omnivision-icq24-es.icq24.chatgpt.site/omnivision-para-agentes-elevenlabs"
+              class="btn-primary"
+            >
+              Explorar Voice Agent Intelligence
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right indicators grid / Carrusel Móvil -->
+        <div class="lg:col-span-6 relative w-full">
+          <div
+            class="voice-carousel-window overflow-hidden w-full sm:overflow-visible py-2"
+          >
+            <div
+              id="voiceTrack"
+              class="voice-carousel-track flex sm:grid sm:grid-cols-2 gap-6 items-stretch"
+            >
+              <!-- Signal 1 -->
+              <div
+                class="voice-card w-full flex-shrink-0 sm:flex-shrink five9-card-hover bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-3"
+              >
+                <span
+                  class="text-lg font-black text-icqBlue bg-icqBlue/10 w-9 h-9 rounded-xl flex items-center justify-center"
+                  >01</span
+                >
+                <h3 class="text-base font-bold text-slate-900">Contención</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  ¿Resolvió o simplemente terminó? Evaluamos el verdadero resultado.
+                </p>
+              </div>
+
+              <!-- Signal 2 -->
+              <div
+                class="voice-card w-full flex-shrink-0 sm:flex-shrink five9-card-hover bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-3"
+              >
+                <span
+                  class="text-lg font-black text-icqBlue bg-icqBlue/10 w-9 h-9 rounded-xl flex items-center justify-center"
+                  >02</span
+                >
+                <h3 class="text-base font-bold text-slate-900">Transferencias</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  ¿Fueron necesarias o evitables? Analizamos el flujo del bot.
+                </p>
+              </div>
+
+              <!-- Signal 3 -->
+              <div
+                class="voice-card w-full flex-shrink-0 sm:flex-shrink five9-card-hover bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-3"
+              >
+                <span
+                  class="text-lg font-black text-icqBlue bg-icqBlue/10 w-9 h-9 rounded-xl flex items-center justify-center"
+                  >03</span
+                >
+                <h3 class="text-base font-bold text-slate-900">Conocimiento</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  ¿Qué preguntas no pudo responder el bot con precisión?
+                </p>
+              </div>
+
+              <!-- Signal 4 -->
+              <div
+                class="voice-card w-full flex-shrink-0 sm:flex-shrink five9-card-hover bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-3"
+              >
+                <span
+                  class="text-lg font-black text-icqBlue bg-icqBlue/10 w-9 h-9 rounded-xl flex items-center justify-center"
+                  >04</span
+                >
+                <h3 class="text-base font-bold text-slate-900">Prompt y ASR</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  ¿Dónde se originó la falla? ¿Reconocimiento de voz o lógica?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botonera de Navegación del Carrusel (Móvil Únicamente) -->
+          <div
+            id="voiceCarouselNav"
+            class="flex sm:hidden items-center justify-center gap-4 mt-6"
+          >
+            <button
+              type="button"
+              id="voicePrevBtn"
+              class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+              aria-label="Indicador anterior"
+            >
+              <i class="fa-solid fa-chevron-left text-sm" aria-hidden="true"></i>
+            </button>
+
+            <!-- Indicadores de puntos (dots) -->
+            <div class="flex items-center gap-1.5 px-2">
+              <button
+                type="button"
+                class="voice-dot h-2 rounded-full transition-all duration-300 w-6 bg-icqBlue cursor-pointer"
+                aria-label="Ir al indicador 1"
+              ></button>
+              <button
+                type="button"
+                class="voice-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-300 hover:bg-slate-400 cursor-pointer"
+                aria-label="Ir al indicador 2"
+              ></button>
+              <button
+                type="button"
+                class="voice-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-300 hover:bg-slate-400 cursor-pointer"
+                aria-label="Ir al indicador 3"
+              ></button>
+              <button
+                type="button"
+                class="voice-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-300 hover:bg-slate-400 cursor-pointer"
+                aria-label="Ir al indicador 4"
+              ></button>
+            </div>
+
+            <button
+              type="button"
+              id="voiceNextBtn"
+              class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+              aria-label="Indicador siguiente"
+            >
+              <i class="fa-solid fa-chevron-right text-sm" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVATION SECTION -->
+    <section
+      class="bg-[#0B1120] py-10 lg:py-16 text-white relative overflow-hidden font-sans"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+          <div class="eyebrow text-white">Activo dentro de tu ecosistema</div>
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold leading-tight text-white tracking-tight"
+          >
+            El hallazgo no termina en otro dashboard.
+          </h2>
+          <p
+            class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mt-4"
+          >
+            OmniVision utiliza lo que Five9 ya produce y devuelve inteligencia a
+            los flujos donde tu equipo trabaja.
+          </p>
+        </div>
+
+        <!-- Flow Container -->
+        <div
+          class="flex items-center justify-start lg:justify-center gap-2 sm:gap-4 pb-12 pt-8 overflow-x-auto snap-x snap-mandatory px-4 lg:px-0"
+        >
+          <!-- Step 01: Five9 -->
+          <div
+            class="relative shrink-0 snap-center z-10 flex items-center transition-transform duration-300 hover:scale-105 hover:z-30 cursor-pointer"
+          >
+            <div
+              class="w-[170px] sm:w-[190px] h-[100px] sm:h-[110px] bg-[#161D2D] rounded-xl p-4 flex flex-col justify-between border border-slate-700/50 hover:border-slate-500 transition-colors duration-300 shadow-lg"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="text-lg sm:text-xl font-bold text-white leading-none"
+                  >01</span
+                >
+                <div
+                  class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                >
+                  <span><i class="fa-solid fa-headset"></i></span>
+                </div>
+              </div>
+              <div class="flex-grow flex items-end justify-center pb-1">
+                <span class="text-base sm:text-lg font-bold text-white"
+                  >Five9</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 02: OmniVision (Active con resplandor) -->
+          <div
+            class="relative shrink-0 snap-center z-20 flex items-center group transition-transform duration-300 hover:scale-[1.08] hover:z-40 cursor-pointer"
+          >
+            <div
+              class="w-[190px] sm:w-[210px] h-[115px] sm:h-[125px] bg-[#0F62FE] rounded-xl p-4 flex flex-col justify-between shadow-[0_0_10px_rgba(0,191,255,0.6)] group-hover:shadow-[0_0_15px_rgba(0,191,255,0.9)] transition-shadow duration-300 border border-cyan-400/50"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="text-lg sm:text-xl font-bold text-white leading-none"
+                  >02</span
+                >
+                <div
+                  class="text-lg font-black text-white bg-white/10 w-9 h-9 rounded-xl flex items-center justify-center"
+                >
+                  <span><i class="fa-solid fa-robot"></i></span>
+                </div>
+              </div>
+              <div class="flex-grow flex items-end justify-center pb-1">
+                <span class="text-lg sm:text-xl font-extrabold text-white"
+                  >OmniVision</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 03: Scorecards -->
+          <div
+            class="relative shrink-0 snap-center z-10 flex items-center transition-transform duration-300 hover:scale-105 hover:z-30 cursor-pointer"
+          >
+            <div
+              class="w-[170px] sm:w-[190px] h-[100px] sm:h-[110px] bg-[#161D2D] rounded-xl p-4 flex flex-col justify-between border border-slate-700/50 hover:border-slate-500 transition-colors duration-300 shadow-lg"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="text-lg sm:text-xl font-bold text-white leading-none"
+                  >03</span
+                >
+                <div
+                  class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                >
+                  <span><i class="fa-solid fa-trophy"></i></span>
+                </div>
+              </div>
+              <div class="flex-grow flex items-end justify-center pb-1">
+                <span class="text-base sm:text-lg font-bold text-white"
+                  >Scorecards</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 04: Agent Assist -->
+          <div
+            class="relative shrink-0 snap-center z-10 flex items-center transition-transform duration-300 hover:scale-105 hover:z-30 cursor-pointer"
+          >
+            <div
+              class="w-[170px] sm:w-[190px] h-[100px] sm:h-[110px] bg-[#161D2D] rounded-xl p-4 flex flex-col justify-between border border-slate-700/50 hover:border-slate-500 transition-colors duration-300 shadow-lg"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="text-lg sm:text-xl font-bold text-white leading-none"
+                  >04</span
+                >
+                <div
+                  class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                >
+                  <span><i class="fa-solid fa-clipboard-question"></i></span>
+                </div>
+              </div>
+              <div class="flex-grow flex items-end justify-center pb-1">
+                <span class="text-base sm:text-lg font-bold text-white"
+                  >Agent Assist</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 05: Power BI -->
+          <div
+            class="relative shrink-0 snap-center z-10 flex items-center transition-transform duration-300 hover:scale-105 hover:z-30 cursor-pointer"
+          >
+            <div
+              class="w-[170px] sm:w-[190px] h-[100px] sm:h-[110px] bg-[#161D2D] rounded-xl p-4 flex flex-col justify-between border border-slate-700/50 hover:border-slate-500 transition-colors duration-300 shadow-lg"
+            >
+              <div class="flex justify-between items-start">
+                <span
+                  class="text-lg sm:text-xl font-bold text-white leading-none"
+                  >05</span
+                >
+                <div
+                  class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                >
+                  <span><i class="fa-solid fa-chart-pie"></i></span>
+                </div>
+              </div>
+              <div class="flex-grow flex items-end justify-center pb-1">
+                <span class="text-base sm:text-lg font-bold text-white"
+                  >Power BI</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOVERNANCE SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+      >
+        <!-- Left copy -->
+        <div class="lg:col-span-5 space-y-5">
+          <div class="eyebrow">Control empresarial</div>
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight"
+          >
+            Tus datos. Tu IA.<span class="text-icqBlue"> Tus decisiones.</span>
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            El control no es el titular; es la condición para operar con
+            confianza. OmniVision se despliega donde tú decidas y mantiene la
+            infraestructura, las llaves, la retención y el consumo bajo tu
+            gobierno.
+          </p>
+        </div>
+
+        <!-- Right Grid / Carrusel Móvil -->
+        <div class="lg:col-span-7 relative w-full">
+          <div
+            class="gov-carousel-window overflow-hidden w-full sm:overflow-visible py-2"
+          >
+            <div
+              id="govTrack"
+              class="gov-carousel-track flex sm:grid sm:grid-cols-2 gap-6 items-stretch"
+            >
+              <div
+                class="gov-card w-full flex-shrink-0 sm:flex-shrink five9-card-hover bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-2"
+              >
+                <span class="text-icqBlue font-bold text-lg"
+                  ><i class="fa-solid fa-circle-check"></i
+                ></span>
+                <h3 class="text-lg font-bold text-slate-900 mt-2">
+                  Infraestructura
+                </h3>
+                <p class="text-base text-slate-600 leading-relaxed">
+                  Despliegue sobre el entorno del cliente.
+                </p>
+              </div>
+
+              <div
+                class="gov-card w-full flex-shrink-0 sm:flex-shrink five9-card-hover bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-2"
+              >
+                <span class="text-icqBlue font-bold text-lg"
+                  ><i class="fa-solid fa-circle-check"></i
+                ></span>
+                <h3 class="text-lg font-bold text-slate-900 mt-2">Audio</h3>
+                <p class="text-base text-slate-600 leading-relaxed">
+                  Referenciado desde SFTP; no duplicado en la base.
+                </p>
+              </div>
+
+              <div
+                class="gov-card w-full flex-shrink-0 sm:flex-shrink five9-card-hover bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-2"
+              >
+                <span class="text-icqBlue font-bold text-lg"
+                  ><i class="fa-solid fa-circle-check"></i
+                ></span>
+                <h3 class="text-lg font-bold text-slate-900 mt-2">IA</h3>
+                <p class="text-base text-slate-600 leading-relaxed">
+                  Proveedor y modelo seleccionables con tus llaves.
+                </p>
+              </div>
+
+              <div
+                class="gov-card w-full flex-shrink-0 sm:flex-shrink five9-card-hover bg-slate-50 border border-slate-100 rounded-2xl p-6 space-y-2"
+              >
+                <span class="text-icqBlue font-bold text-lg"
+                  ><i class="fa-solid fa-circle-check"></i
+                ></span>
+                <h3 class="text-lg font-bold text-slate-900 mt-2">BI</h3>
+                <p class="text-base text-slate-600 leading-relaxed">
+                  Acceso de solo lectura para tus tableros.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botonera de Navegación del Carrusel (Móvil Únicamente) -->
+          <div
+            id="govCarouselNav"
+            class="flex sm:hidden items-center justify-center gap-4 mt-6"
+          >
+            <button
+              type="button"
+              id="govPrevBtn"
+              class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+              aria-label="Elemento anterior"
+            >
+              <i class="fa-solid fa-chevron-left text-sm" aria-hidden="true"></i>
+            </button>
+
+            <!-- Indicadores de puntos (dots) -->
+            <div class="flex items-center gap-1.5 px-2">
+              <button
+                type="button"
+                class="gov-dot h-2 rounded-full transition-all duration-300 w-6 bg-icqBlue cursor-pointer"
+                aria-label="Ir al elemento 1"
+              ></button>
+              <button
+                type="button"
+                class="gov-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-300 hover:bg-slate-400 cursor-pointer"
+                aria-label="Ir al elemento 2"
+              ></button>
+              <button
+                type="button"
+                class="gov-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-300 hover:bg-slate-400 cursor-pointer"
+                aria-label="Ir al elemento 3"
+              ></button>
+              <button
+                type="button"
+                class="gov-dot h-2 rounded-full transition-all duration-300 w-2 bg-slate-300 hover:bg-slate-400 cursor-pointer"
+                aria-label="Ir al elemento 4"
+              ></button>
+            </div>
+
+            <button
+              type="button"
+              id="govNextBtn"
+              class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+              aria-label="Elemento siguiente"
+            >
+              <i class="fa-solid fa-chevron-right text-sm" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="soluciones" class="bg-[#0B1120] text-white py-10 lg:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+          <div class="eyebrow justify-center text-white">Beneficios</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+            <span class="text-icqBlue">Resultados que se Miden:</span>
+            Beneficios y Ahorros al Implementar OmniVision
+          </h2>
+        </div>
+
+        <!-- Infinite Carousel Wrapper -->
+        <div class="relative w-full overflow-hidden py-4">
+          <div class="animate-marquee flex gap-8">
+            <!-- Card 1 -->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-arrow-right-arrow-left"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Incremento en la Satisfacción del Cliente (CSAT/NPS) y Lealtad
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Comprender y abordar proactivamente sus necesidades y
+                  frustraciones.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-money-bill-1"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Reducción de Costos Operativos
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Optimización del tiempo de agentes, menor necesidad de
+                  retrabajo, y resolución más eficiente de problemas.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-headset"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Mejora en la Resolución en Primer Contacto (FCR)
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Al identificar las causas raíz de las rellamadas y optimizar
+                  los procesos de resolución.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-people-arrows"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Disminución de la Rotación de Agentes (Attrition)
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Un coaching más efectivo y un enfoque en la mejora del
+                  desempeño contribuyen a un equipo más comprometido.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-layer-group"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Optimización del Esfuerzo en Auditorías y Cumplimiento
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  El análisis automatizado facilita la verificación de la
+                  adherencia a protocolos y normativas.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i
+                      class="fa-solid fa-up-right-and-down-left-from-center"
+                    ></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Aumento de la Eficiencia en la Detección de Oportunidades de
+                  Venta o Retención
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Identifica patrones y palabras clave que indican potencial de
+                  negocio.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 1 (Duplicate)-->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-arrow-right-arrow-left"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Incremento en la Satisfacción del Cliente (CSAT/NPS) y Lealtad
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Comprender y abordar proactivamente sus necesidades y
+                  frustraciones.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2 (Duplicate)-->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-money-bill-1"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Reducción de Costos Operativos
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Optimización del tiempo de agentes, menor necesidad de
+                  retrabajo, y resolución más eficiente de problemas.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3 (Duplicate)-->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-headset"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Mejora en la Resolución en Primer Contacto (FCR)
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Al identificar las causas raíz de las rellamadas y optimizar
+                  los procesos de resolución.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 4 (Duplicate)-->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-people-arrows"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Disminución de la Rotación de Agentes (Attrition)
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Un coaching más efectivo y un enfoque en la mejora del
+                  desempeño contribuyen a un equipo más comprometido.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 5 (Duplicate)-->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i class="fa-solid fa-layer-group"></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Optimización del Esfuerzo en Auditorías y Cumplimiento
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  El análisis automatizado facilita la verificación de la
+                  adherencia a protocolos y normativas.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 6 (Duplicate)-->
+            <article
+              class="border-slate-700/50 five9-card-hover bg-[#161D2D] p-8 rounded-2xl flex flex-col justify-between h-[360px] w-[290px] sm:w-[340px] flex-shrink-0 whitespace-normal"
+            >
+              <div class="space-y-4 flex-grow">
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-lg font-black text-icqBlue bg-[#dfebf9] w-9 h-9 rounded-xl flex items-center justify-center"
+                    ><i
+                      class="fa-solid fa-up-right-and-down-left-from-center"
+                    ></i
+                  ></span>
+                </div>
+                <h3 class="text-lg font-bold text-white">
+                  Aumento de la Eficiencia en la Detección de Oportunidades de
+                  Venta o Retención
+                </h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  Identifica patrones y palabras clave que indican potencial de
+                  negocio.
+                </p>
+              </div>
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="text-icqBlue font-bold hover:text-slate-300 transition-colors inline-flex items-center gap-1.5 text-sm group"
+                >
+                  Optimiza y mejora tu operación
+                  <i
+                    class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES (FAQ) ACCESIBLES -->
+    <section class="faqs-section border-b border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <!-- Acordeón Principal de Preguntas Frecuentes (Inicia recogido como en AVI) -->
+        <details class="group">
+          <summary
+            class="text-center space-y-4 flex flex-col items-center cursor-pointer list-none select-none focus:outline-none"
+          >
+            <span class="eyebrow"> Respuestas directas </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+              Preguntas Frecuentes sobre OmniVision
+            </h2>
+            <div class="pt-2">
+              <span
+                class="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-icqBlue group-open:rotate-180 transition-transform duration-300 hover:border-icqBlue hover:shadow-md"
+              >
+                <i
+                  class="fa-solid fa-chevron-down text-base"
+                  aria-hidden="true"
+                ></i>
+              </span>
+            </div>
+          </summary>
+
+          <div class="faq-main-content">
+            <div class="faq-main-content-inner space-y-4 pt-8">
+              <!-- FAQ 1 -->
+              <details
+                name="omnivision-faq"
+                class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+              >
+                <summary
+                  class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                >
+                  <span>¿Qué es OmniVision?</span>
+                  <span
+                    class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                  >
+                    <i
+                      class="fa-solid fa-chevron-down text-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </summary>
+                <div class="faq-item-content">
+                  <div
+                    class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                  >
+                    OmniVision es la solución de inteligencia de resultados
+                    conversacionales de ICQ24 para operaciones Five9. Conecta el
+                    contenido de voz, chat y correo con métricas operativas y
+                    resultados de negocio, y convierte los patrones en evidencia
+                    y acciones.
+                  </div>
+                </div>
+              </details>
+
+              <!-- FAQ 2 -->
+              <details
+                name="omnivision-faq"
+                class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+              >
+                <summary
+                  class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                >
+                  <span>¿OmniVision reemplaza Five9?</span>
+                  <span
+                    class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                  >
+                    <i
+                      class="fa-solid fa-chevron-down text-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </summary>
+                <div class="faq-item-content">
+                  <div
+                    class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                  >
+                    No. Five9 continúa siendo la plataforma operativa del
+                    contact center. OmniVision trabaja alrededor de los datos y
+                    flujos que Five9 ya produce para responder preguntas
+                    específicas de calidad, ventas, retención, cobranzas,
+                    clientes y agentes de voz IA.
+                  </div>
+                </div>
+              </details>
+
+              <!-- FAQ 3 -->
+              <details
+                name="omnivision-faq"
+                class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+              >
+                <summary
+                  class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                >
+                  <span>¿Necesito encuestas para estimar satisfacción?</span>
+                  <span
+                    class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                  >
+                    <i
+                      class="fa-solid fa-chevron-down text-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </summary>
+                <div class="faq-item-content">
+                  <div
+                    class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                  >
+                    No. OmniVision puede estimar CSAT de 1 a 5 a partir de lo
+                    ocurrido en cada conversación analizada. Esto complementa las
+                    encuestas con una señal consistente sobre una cobertura
+                    mucho mayor.
+                  </div>
+                </div>
+              </details>
+
+              <!-- FAQ 4 -->
+              <details
+                name="omnivision-faq"
+                class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+              >
+                <summary
+                  class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                >
+                  <span>¿Dónde quedan mis datos y grabaciones?</span>
+                  <span
+                    class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                  >
+                    <i
+                      class="fa-solid fa-chevron-down text-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </summary>
+                <div class="faq-item-content">
+                  <div
+                    class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                  >
+                    OmniVision se despliega sobre la infraestructura definida con
+                    el cliente. Las grabaciones pueden referenciarse desde SFTP
+                    sin duplicar el audio en la base de datos, y el cliente
+                    conserva el control de accesos, retención y llaves de IA.
+                  </div>
+                </div>
+              </details>
+
+              <!-- FAQ 5 -->
+              <details
+                name="omnivision-faq"
+                class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+              >
+                <summary
+                  class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                >
+                  <span>¿Funciona en español e inglés?</span>
+                  <span
+                    class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                  >
+                    <i
+                      class="fa-solid fa-chevron-down text-sm"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </summary>
+                <div class="faq-item-content">
+                  <div
+                    class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                  >
+                    Sí. La transcripción, el análisis y la interfaz están
+                    diseñados para operaciones bilingües en América Latina,
+                    Puerto Rico y Estados Unidos.
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section
+      class="mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16 bg-[#0B1120] text-white"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+      >
+        <!-- Columna de la Imagen -->
+        <div class="w-full">
+          <img
+            src="https://www.icq24.com/web/image/37733-a464ef8e/Footer_Omnivision.webp"
+            alt="Análisis de conversaciones Five9"
+            width="800"
+            height="600"
+            class="w-full h-auto rounded-xl object-cover"
+          />
+        </div>
+        <!-- Columna de Texto -->
+        <div class="space-y-6 text-left">
+          <div class="eyebrow text-white">Empieza con evidencia</div>
+
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white"
+          >
+            Descubre qué está
+            <span class="text-icqBlue">moviendo tus resultados.</span>
+          </h2>
+
+          <p class="text-base sm:text-lg leading-relaxed text-slate-300">
+            Analicemos una muestra de conversaciones Five9 y conviértela en tu
+            primera sesión de inteligencia operacional. Identificaremos
+            oportunidades para optimizar calidad, experiencia del cliente y
+            desempeño mediante inteligencia conversacional.
+          </p>
+
+          <div class="pt-2">
+            <a
+              class="btn-primary inline-flex items-center gap-2"
+              href="https://www.icq24.com/contactus"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Solicita un análisis de tus conversaciones Five9.
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTION SCRIPTS -->
+    <script>
+      (function () {
+        // -------------------------------------------------------------
+        // FACTORÍA DE CARRUSELES MÓVILES (1 COLUMNA CENTRADA, ODOO FRIENDLY)
+        // -------------------------------------------------------------
+        function initMobileCarousel({
+          trackId,
+          prevBtnId,
+          nextBtnId,
+          dotsSelector,
+          cardsSelector,
+          windowSelector,
+          breakpoint = 768,
+          activeDotClass = "bg-icqBlue",
+          inactiveDotClass = "bg-slate-300",
+        }) {
+          const track = document.getElementById(trackId);
+          const cards = document.querySelectorAll(cardsSelector);
+          if (!track || cards.length === 0) return;
+
+          const prevBtn = document.getElementById(prevBtnId);
+          const nextBtn = document.getElementById(nextBtnId);
+          const dots = document.querySelectorAll(dotsSelector);
+          const total = cards.length;
+          let currentIndex = 0;
+
+          function update() {
+            if (window.innerWidth < breakpoint) {
+              track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            } else {
+              track.style.transform = "none";
+            }
+
+            dots.forEach((dot, idx) => {
+              if (idx === currentIndex) {
+                dot.classList.remove("w-2", inactiveDotClass);
+                dot.classList.add("w-6", activeDotClass);
+              } else {
+                dot.classList.remove("w-6", activeDotClass);
+                dot.classList.add("w-2", inactiveDotClass);
+              }
+            });
+          }
+
+          if (nextBtn) {
+            nextBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = (currentIndex + 1) % total;
+              update();
+            });
+          }
+
+          if (prevBtn) {
+            prevBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = (currentIndex - 1 + total) % total;
+              update();
+            });
+          }
+
+          dots.forEach((dot, idx) => {
+            dot.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = idx;
+              update();
+            });
+          });
+
+          // Soporte Swipe táctil para móvil
+          const carouselWindow = document.querySelector(windowSelector);
+          if (carouselWindow) {
+            let startX = 0;
+            let endX = 0;
+            carouselWindow.addEventListener(
+              "touchstart",
+              function (e) {
+                if (window.innerWidth >= breakpoint) return;
+                startX = e.touches[0].clientX;
+                endX = startX;
+              },
+              { passive: true }
+            );
+
+            carouselWindow.addEventListener(
+              "touchmove",
+              function (e) {
+                if (window.innerWidth >= breakpoint) return;
+                endX = e.touches[0].clientX;
+              },
+              { passive: true }
+            );
+
+            carouselWindow.addEventListener(
+              "touchend",
+              function () {
+                if (window.innerWidth >= breakpoint) return;
+                const diff = startX - endX;
+                if (Math.abs(diff) > 40) {
+                  if (diff > 0) {
+                    currentIndex = (currentIndex + 1) % total;
+                  } else {
+                    currentIndex = (currentIndex - 1 + total) % total;
+                  }
+                  update();
+                }
+              },
+              { passive: true }
+            );
+          }
+
+          window.addEventListener("resize", function () {
+            if (window.innerWidth >= breakpoint) {
+              track.style.transform = "none";
+            } else {
+              update();
+            }
+          });
+
+          update();
+        }
+
+        function initQuickValueCarousel() {
+          const qvTrack = document.getElementById("qvTrack");
+          const qvSlides = document.querySelectorAll(".qv-slide");
+          const qvWindow = document.getElementById("qvCarouselWindow");
+          if (!qvTrack || qvSlides.length === 0) return;
+
+          let qvCurrentIndex = 0;
+          let qvTimer = null;
+          const qvTotal = qvSlides.length;
+          const intervalTime = 4000; // 4 segundos para leer con tranquilidad
+
+          function updateQv() {
+            if (window.innerWidth < 768) {
+              qvTrack.style.transform = `translateX(-${qvCurrentIndex * 100}%)`;
+            } else {
+              qvTrack.style.transform = "none";
+            }
+          }
+
+          function nextQv() {
+            if (window.innerWidth >= 768) return;
+            qvCurrentIndex = (qvCurrentIndex + 1) % qvTotal;
+            updateQv();
+          }
+
+          function startQv() {
+            if (qvTimer) clearInterval(qvTimer);
+            qvTimer = setInterval(nextQv, intervalTime);
+          }
+
+          function stopQv() {
+            if (qvTimer) {
+              clearInterval(qvTimer);
+              qvTimer = null;
+            }
+          }
+
+          // Pausar si el usuario toca o pasa el cursor
+          if (qvWindow) {
+            qvWindow.addEventListener("mouseenter", stopQv);
+            qvWindow.addEventListener("mouseleave", () => {
+              if (window.innerWidth < 768) startQv();
+            });
+            qvWindow.addEventListener("touchstart", stopQv, { passive: true });
+            qvWindow.addEventListener("touchend", () => {
+              if (window.innerWidth < 768) startQv();
+            }, { passive: true });
+          }
+
+          window.addEventListener("resize", function () {
+            if (window.innerWidth >= 768) {
+              stopQv();
+              qvCurrentIndex = 0;
+              updateQv();
+            } else {
+              if (!qvTimer) startQv();
+              updateQv();
+            }
+          });
+
+          updateQv();
+          startQv();
+        }
+
+        function initInteractions() {
+          // 1. Mobile menu toggle
+          const btn = document.getElementById("mobile-menu-btn");
+          const dropdown = document.getElementById("mobile-dropdown");
+          if (btn && dropdown) {
+            btn.addEventListener("click", () => {
+              dropdown.classList.toggle("hidden");
+            });
+          }
+
+          // 2. Acordeón exclusivo de preguntas frecuentes (como en AVI)
+          const faqDetails = document.querySelectorAll("details.faq-item");
+          faqDetails.forEach((targetDetail) => {
+            targetDetail.addEventListener("toggle", () => {
+              if (targetDetail.open) {
+                faqDetails.forEach((detail) => {
+                  if (detail !== targetDetail && detail.open) {
+                    detail.open = false;
+                  }
+                });
+              }
+            });
+          });
+
+          // 3. Carruseles Móviles
+          // 3.1 Un ciclo de decisión (< 768px carrusel, >= 768px grid 3 cols)
+          initMobileCarousel({
+            trackId: "cicloTrack",
+            prevBtnId: "cicloPrevBtn",
+            nextBtnId: "cicloNextBtn",
+            dotsSelector: ".ciclo-dot",
+            cardsSelector: ".ciclo-card",
+            windowSelector: ".ciclo-carousel-window",
+            breakpoint: 768,
+          });
+
+          // 3.2 Voice Spotlight (< 640px carrusel, >= 640px grid 2 cols)
+          initMobileCarousel({
+            trackId: "voiceTrack",
+            prevBtnId: "voicePrevBtn",
+            nextBtnId: "voiceNextBtn",
+            dotsSelector: ".voice-dot",
+            cardsSelector: ".voice-card",
+            windowSelector: ".voice-carousel-window",
+            breakpoint: 640,
+          });
+
+          // 3.3 Governance (< 640px carrusel, >= 640px grid 2 cols)
+          initMobileCarousel({
+            trackId: "govTrack",
+            prevBtnId: "govPrevBtn",
+            nextBtnId: "govNextBtn",
+            dotsSelector: ".gov-dot",
+            cardsSelector: ".gov-card",
+            windowSelector: ".gov-carousel-window",
+            breakpoint: 640,
+          });
+
+          // 3.4 Quick Value / Proof Strip (< 768px carrusel automático sin marcadores ni flechas)
+          initQuickValueCarousel();
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initInteractions);
+        } else {
+          initInteractions();
+        }
+      })();
+    </script>
+  </body>
+</html>
