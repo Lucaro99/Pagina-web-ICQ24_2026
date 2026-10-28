@@ -1,0 +1,2918 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ==========================================================================
+      ANOTACIÓN ENLACE DE PÁGINA:
+      URL Asignada: /privacy
+      URL canónica completa: https://www.icq24.com/privacy
+      ========================================================================== -->
+    <title>Políticas de Privacidad y Seguridad | ICQ24</title>
+    <meta
+      name="description"
+      content="Conozca las políticas de privacidad, protección de datos y seguridad de la información de ICQ24, aplicables a sus servicios y operaciones en los mercados donde está presente."
+    />
+    <meta
+      name="keywords"
+      content="Políticas de privacidad ICQ24, Políticas de seguridad ICQ24, Protección de datos ICQ24, Seguridad de la información, Privacidad y seguridad empresarial"
+    />
+    <link rel="canonical" href="https://www.icq24.com/privacy" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* ── RESET & BASE ─────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: #ffffff;
+        color: #1e293b;
+        font-size: 15px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ==========================================================================
+        DESIGN SYSTEM & VARIABLES - ICQ24 / FIVE9 THEME
+        ========================================================================== */
+      :root {
+        /* Brand Colors */
+        --brand-primary: #0263e2;
+        --brand-primary-hover: #002d6d;
+        --brand-primary-light: #eff6ff;
+        --navy: #0a192f;
+        --yellow: #f0ad0f;
+        --yellow-bg: #fef6e4;
+        --red: #ed3d2e;
+        --red-bg: #fef4f2;
+        --green: #3b935d;
+        --green-bg: #e8f5ee;
+
+        /* Backgrounds */
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-dark: #0f172a;
+        --bg-dark-elevated: #1e293b;
+
+        /* Typography Colors */
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+        --text-inverse: #ffffff;
+
+        /* UI Elements */
+        --border-light: #e2e8f0;
+        --border-dark: #334155;
+
+        /* Spacing System (8pt Grid) */
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-12: 48px;
+        --space-16: 64px;
+        --space-24: 96px;
+        --space-32: 128px;
+
+        /* Shadows (Soft Enterprise) */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        --shadow-lg:
+          0 10px 15px -3px rgba(0, 0, 0, 0.04),
+          0 4px 6px -2px rgba(0, 0, 0, 0.02);
+        --shadow-xl:
+          0 20px 25px -5px rgba(0, 0, 0, 0.05),
+          0 10px 10px -5px rgba(0, 0, 0, 0.02);
+
+        /* Radii */
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-pill: 9999px;
+      }
+
+      /* ── HERO ─────────────────────────────────────────────── */
+      .hero {
+        background: var(--bg-white);
+        padding: 72px 90px 70px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 680px;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--bg-light) 0%,
+          var(--brand-primary-light) 100%
+        );
+        clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+        pointer-events: none;
+      }
+      .hero-decoration::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 60% at 70% 40%,
+          rgba(0, 102, 255, 0.08) 0%,
+          transparent 70%
+        );
+      }
+      .hero-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        position: relative;
+        z-index: 2;
+        padding-right: 0;
+      }
+      .hero-content-left {
+        flex: 1 1 45%;
+        max-width: 47%;
+      }
+
+      .hero-image-right {
+        flex: 1 1 55%;
+        max-width: 55%;
+        display: flex;
+        justify-content: flex-end;
+        align-self: flex-end;
+        margin-bottom: -70px;
+      }
+
+      .hero-image-right img {
+        width: 100%;
+        max-width: 640px;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        border-radius: 8px 8px 0 0;
+      }
+      .section-eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        margin-bottom: 16px;
+      }
+      .hero h1 {
+        font-size: clamp(32px, 4vw, 50px);
+        font-weight: 800;
+        color: var(--brand-primary);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif !important;
+      }
+      .hero h1 span {
+        color: var(--brand-primary);
+      }
+      .hero-desc {
+        font-size: 15px;
+        color: var(--gray-mid);
+        font-weight: 400;
+        line-height: 1.75;
+        max-width: 600px;
+        margin-bottom: 28px;
+      }
+      .hero-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--brand-primary-light);
+        border: 1px solid var(--border-dark);
+        border-radius: var(--radius-pill);
+        padding: 6px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .hero-tag .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--green);
+        flex-shrink: 0;
+      }
+
+      /* ── MAIN LAYOUT ──────────────────────────────────────── */
+      .page-layout {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 56px 40px 80px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      /* ── SIDEBAR ──────────────────────────────────────────── */
+      .sidebar {
+        position: sticky;
+        top: 84px;
+      }
+      .sidebar-card {
+        background: var(--bg-dark);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+      .sidebar-header {
+        padding: 22px 20px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .sidebar-logo {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        margin-bottom: 4px;
+      }
+      .sidebar-logo img {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      .sidebar-sub {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.35);
+        text-transform: uppercase;
+      }
+      .sidebar-nav {
+        padding: 8px 0;
+      }
+      .sidebar-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 12.5px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.55);
+        transition: all 0.2s;
+        border-left: 3px solid transparent;
+      }
+      .sidebar-link:hover,
+      .sidebar-link.active {
+        color: var(--text-inverse);
+        background: rgba(255, 255, 255, 0.05);
+        border-left-color: var(--brand-primary);
+      }
+
+      .sidebar-num {
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--brand-primary);
+        min-width: 20px;
+      }
+      .sidebar-divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 8px 20px;
+      }
+      .sidebar-footer {
+        padding: 16px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .sidebar-footer-label {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 10px;
+      }
+      .sidebar-ext-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: #00aaff;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 5px 0;
+        transition: color 0.2s;
+      }
+      .sidebar-ext-link:hover {
+        color: #fff;
+      }
+
+      /* ── CONTENT AREA ─────────────────────────────────────── */
+      .content {
+        min-width: 0;
+      }
+
+      /* Section card */
+      .policy-section {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        margin-bottom: 16px;
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+        transition: box-shadow 0.25s;
+      }
+      .policy-section:hover {
+        box-shadow: var(--shadow-hover);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 28px;
+        cursor: pointer;
+        user-select: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+      .section-head.open {
+        border-bottom-color: var(--border-light);
+      }
+
+      .sec-num {
+        width: 40px;
+        height: 40px;
+        background: var(--bg-dark);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-primary);
+        flex-shrink: 0;
+        letter-spacing: -0.02em;
+      }
+      .sec-title {
+        flex: 1;
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--text-main);
+        letter-spacing: -0.01em;
+      }
+      .sec-chevron {
+        width: 30px;
+        height: 30px;
+        background: var(--bg-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        flex-shrink: 0;
+        transition: all 0.3s;
+      }
+      .section-head.open .sec-chevron {
+        background: var(--brand-primary-light);
+        color: var(--brand-primary-hover);
+        transform: rotate(180deg);
+      }
+
+      .section-body-wrap {
+        display: none;
+        padding: 28px;
+      }
+      .section-body-wrap.open {
+        display: block;
+      }
+
+      /* Body typography */
+      .section-body-wrap p {
+        font-size: 14px;
+        color: var(--gray-mid);
+        font-weight: 400;
+        line-height: 1.75;
+        margin-bottom: 16px;
+      }
+      .section-body-wrap p:last-child {
+        margin-bottom: 0;
+      }
+      .section-body-wrap strong {
+        color: var(--navy-mid);
+        font-weight: 700;
+      }
+
+      .body-h4 {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--navy-mid);
+        margin: 24px 0 12px;
+      }
+      .body-h4:first-child {
+        margin-top: 0;
+      }
+
+      /* Custom bullet list */
+      .custom-list {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0;
+      }
+      .custom-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-main);
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border-light);
+        line-height: 1.6;
+      }
+      .custom-list li:last-child {
+        border-bottom: none;
+      }
+      .custom-list-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        margin-top: 8px;
+        flex-shrink: 0;
+      }
+
+      /* Contact dark card */
+      .contact-dark {
+        background: var(--bg-dark);
+        border-radius: 14px;
+        padding: 28px;
+        margin: 16px 0;
+      }
+      .contact-dark-head {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-inverse);
+        margin-bottom: 20px;
+      }
+      .contact-grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 16px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .contact-item-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-primary);
+        flex-shrink: 0;
+      }
+      .contact-item label {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--bg-light) !important;
+        margin-bottom: 3px;
+      }
+      .contact-item span {
+        font-size: 13px;
+        color: var(--text-inverse);
+        font-weight: 500;
+      }
+      .contact-item a {
+        font-size: 13px;
+        color: var(--brand-primary);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      /* Cross-links bottom */
+      .cross-links {
+        background: var(--bg-light);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        padding: 28px;
+        margin-top: 16px;
+      }
+      .cross-links h3 {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      }
+      .cross-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
+      }
+      .cross-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px;
+        background: var(--text-inverse);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .cross-item:hover {
+        border-color: var(--brand-primary);
+        background: var(--brand-primary-light);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+      .cross-item-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--bg-light);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-primary);
+        flex-shrink: 0;
+      }
+      .cross-item strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--text-main);
+      }
+      .cross-item span {
+        font-size: 11.5px;
+        color: var(--text-muted);
+      }
+
+      /* ── RESPONSIVE ───────────────────────────────────────── */
+      @media (max-width: 960px) {
+        .page-layout {
+          grid-template-columns: 1fr;
+          padding: 40px 24px 60px;
+        }
+        .sidebar {
+          position: static;
+        }
+      }
+      @media (max-width: 768px) {
+        .hero-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero-content-left,
+        .hero-image-right {
+          max-width: 100%;
+        }
+        .hero-image-right {
+          justify-content: center;
+        }
+        .hero-image-right img {
+          max-width: 440px;
+        }
+        .hero-meta-row {
+          justify-content: center;
+        }
+      }
+      @media (max-width: 640px) {
+        .hero {
+          padding: 48px 20px 48px;
+        }
+        .hero-image-right {
+          margin-bottom: -48px;
+        }
+        .hero-decoration {
+          width: 200px;
+        }
+        .cross-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── ANIMATIONS ───────────────────────────────────────── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-inner > * {
+        animation: fadeUp 0.55s ease both;
+      }
+      .section-eyebrow {
+        animation-delay: 0.04s;
+      }
+      .hero h1 {
+        animation-delay: 0.1s;
+      }
+      .hero-desc {
+        animation-delay: 0.17s;
+      }
+      .hero-meta-row {
+        animation-delay: 0.24s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── HERO ──────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-decoration"></div>
+      <div class="hero-inner">
+        <div class="hero-content-left">
+          <div class="section-eyebrow" id="eyebrow-text">
+            Políticas de Privacidad y Seguridad | ICQ24
+          </div>
+
+          <h1 id="hero-title">
+            <span id="title-word1">
+              Políticas de Privacidad y Seguridad de ICQ24
+            </span>
+          </h1>
+
+          <p class="hero-desc" id="hero-desc-es">
+            En ICQ24 reconocemos la importancia de proteger la información, los
+            datos personales y la seguridad de nuestros clientes, usuarios y
+            demás personas que interactúan con nuestros servicios. Por ello,
+            contamos con políticas y medidas orientadas a establecer cómo
+            recopilamos, utilizamos, protegemos y gestionamos la información,
+            así como los mecanismos que respaldan la seguridad y continuidad de
+            nuestros servicios.<br /><br />
+            Esta sección reúne las principales políticas y documentos
+            relacionados con privacidad, protección de datos, seguridad de la
+            información y continuidad del servicio de ICQ24. Cada documento
+            aborda un ámbito específico y debe consultarse según la naturaleza
+            de la información o servicio correspondiente.
+          </p>
+
+          <div class="hero-meta-row">
+            <div class="hero-tag">
+              <span class="dot"></span>
+              <span id="tag-updated"
+                >Última actualización: 7 de mayo de 2024</span
+              >
+            </div>
+            <div class="hero-tag">
+              <span style="color: var(--brand-primary)"
+                ><i class="fa-solid fa-building"></i
+              ></span>
+              ICQ24
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-right">
+          <img
+            src="https://www.icq24.com/web/image/38284-be5537d6/privacidad_1.webp"
+            alt="Ilustración de Privacidad y Seguridad"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PAGE LAYOUT ────────────────────────────────────────────── -->
+    <div class="page-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-header">
+            <div class="sidebar-logo">
+              <img
+                src="https://www.icq24.com/web/image/38269-1c0f4c4d/Logo%20ICQ24_Blanco%20-%20copia.png"
+                alt="Logo ICQ24"
+              />
+            </div>
+            <div class="sidebar-sub">Privacidad y Seguridad</div>
+          </div>
+          <nav class="sidebar-nav" id="sidebar-nav">
+            <a class="sidebar-link active" href="#s1">
+              <span class="sidebar-num">01</span>
+              <span class="sn">Introducción</span>
+            </a>
+            <a class="sidebar-link" href="#s2">
+              <span class="sidebar-num">02</span>
+              <span class="sn">Objetivo</span>
+            </a>
+            <a class="sidebar-link" href="#s3">
+              <span class="sidebar-num">03</span>
+              <span class="sn">Alcance</span>
+            </a>
+            <a class="sidebar-link" href="#s4">
+              <span class="sidebar-num">04</span>
+              <span class="sn">Seguridad de la información</span>
+            </a>
+            <a class="sidebar-link" href="#s5">
+              <span class="sidebar-num">05</span>
+              <span class="sn">Conclusiones</span>
+            </a>
+            <a class="sidebar-link" href="#s6">
+              <span class="sidebar-num">06</span>
+              <span class="sn">Cyberseguridad</span>
+            </a>
+            <a class="sidebar-link" href="#s7">
+              <span class="sidebar-num">07</span>
+              <span class="sn"
+                >Política de Privacidad y Tratamiento de Datos</span
+              >
+            </a>
+            <a class="sidebar-link" href="#s8">
+              <span class="sidebar-num">08</span>
+              <span class="sn">Contacto</span>
+            </a>
+            <div class="sidebar-divider"></div>
+            <a class="sidebar-link" href="#crosslinks">
+              <span class="sidebar-num">→</span>
+              <span class="sn">Políticas relacionadas</span>
+            </a>
+          </nav>
+          <div class="sidebar-footer">
+            <div class="sidebar-footer-label" id="sf-label">
+              Documentos legales
+            </div>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/privacy -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/privacy"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/privacy"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Políticas de Privacidad</span>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/politica-de-privacidad-icq24 -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/politica-de-privacidad-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/politica-de-privacidad-icq24"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Política de Privacidad y Protección de Datos</span>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/politica-de-seguridad-icq24 -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/politica-de-seguridad-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/politica-de-seguridad-icq24"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Política de Seguridad de la Información</span>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/continuidad-de-servicio-icq24 -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/continuidad-de-servicio-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/continuidad-de-servicio-icq24"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Continuidad del Servicio</span>
+            </a>
+            <!-- ANOTACIÓN ENLACE: Sitio Web Oficial de ICQ24 -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/"
+              target="_blank"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
+              </svg>
+              <span>Sitio Oficial ICQ24</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <!-- ── SECTION 1: INTRODUCCIÓN ── -->
+        <div class="policy-section" id="s1">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">01</div>
+            <div class="sec-title">Introducción</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              El presente documento establece las directrices y mejores
+              prácticas para el manejo de la ciberseguridad en la empresa ICQ24,
+              utilizando la nube de Azure de Microsoft y sus componentes de
+              seguridad. El objetivo principal es garantizar la protección de
+              los activos de información y la continuidad del negocio frente a
+              amenazas cibernéticas. Se espera que todos los empleados,
+              contratistas y terceros cumplan con las políticas y procedimientos
+              establecidos en este documento.
+            </p>
+            <p>
+              La Política de Seguridad de la Información (en adelante, Política)
+              persigue la adopción de un conjunto de medidas destinadas a
+              preservar la confidencialidad, integridad y disponibilidad de la
+              información, que constituyen los tres componentes básicos de la
+              seguridad de la información, y tiene como objetivo establecer los
+              requisitos para proteger la información, los equipos y servicios
+              tecnológicos que sirven de soporte para la mayoría de los procesos
+              de negocio de ICQ24.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── SECTION 2: OBJETIVO ── -->
+        <div class="policy-section" id="s2">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">02</div>
+            <div class="sec-title">Objetivo</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              El objetivo de esta Política es definir los principios y las
+              reglas básicas para la gestión de la seguridad de la información.
+              El fin último y de esta manera lograr que ICQ24 garantice la
+              seguridad de la información y minimicen los riesgos derivados de
+              un impacto provocado por una mala gestión.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── SECTION 3: ALCANCE ── -->
+        <div class="policy-section" id="s3">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">03</div>
+            <div class="sec-title">Alcance</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              Este documento es aplicable a toda la información generada,
+              procesada, almacenada y transmitida por ICQ24, sin importar su
+              formato o medio, incluyendo información electrónica y en papel. Se
+              aplica a todos los empleados, contratistas y terceros que manejen
+              información en nombre de ICQ24. Aplica para todas las divisiones
+              donde opera ICQ24 en las diferentes regiones geográficas donde
+              tiene presencia.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── SECTION 4: SEGURIDAD DE LA INFORMACIÓN ── -->
+        <div class="policy-section" id="s4">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">04</div>
+            <div class="sec-title">Seguridad de la información</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p><strong>1.1. CLASIFICACION DE LA INFORMACION</strong></p>
+            <p>
+              ICQ24 implementará un sistema de clasificación de la información
+              para asegurar su protección adecuada. La clasificación se basará
+              en los criterios de confidencialidad, integridad y disponibilidad
+              de la información. Se establecerán los siguientes niveles de
+              clasificación:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>1. Información Pública:</strong> Aquella que no
+                  requiere ninguna protección especial y puede ser divulgada al
+                  público en general.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>2. Información Interna:</strong> Aquella que tiene
+                  cierto grado de sensibilidad y solo debe ser accesible por
+                  personal autorizado dentro de ICQ24.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>3. Información Confidencial:</strong> Aquella que es
+                  altamente sensible y requiere un manejo y protección especial
+                  para prevenir su divulgación no autorizada.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>4. Información Restringida:</strong> Aquella que es
+                  de máxima sensibilidad y solo debe ser accesible por un grupo
+                  selecto de individuos autorizados dentro de ICQ24.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 16px">
+              <strong>1.2. RESPONSABILIDAD</strong>
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Designar un Responsable de la Información que será el
+                  encargado de supervisar y asegurar el cumplimiento de las
+                  políticas y procedimientos de manejo de la información en
+                  ICQ24 dentro de cada área de trabajo específico.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Todos los empleados, contratistas y terceros deben cumplir
+                  con las políticas y procedimientos establecidos en este
+                  documento y ser responsables de proteger la información a la
+                  que tienen acceso.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 16px"><strong>1.3. PROTECCION</strong></p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer controles de acceso adecuados para garantizar que
+                  solo el personal autorizado tenga acceso a la información
+                  confidencial o restringida.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Implementar medidas de seguridad técnicas y físicas para
+                  proteger la información contra accesos no autorizados,
+                  pérdidas, robos o daños.</span
+                >
+              </li>
+            </ul>
+
+            <div class="body-h4">POLITICAS DE SEGURIDAD DE LA INFORMACIÓN</div>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Utilizar tecnologías de encriptación para proteger la
+                  información confidencial cuando se almacena o se
+                  transmite.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer políticas y procedimientos para la gestión de
+                  dispositivos de almacenamiento portátiles, como USB o discos
+                  externos, para prevenir la pérdida o divulgación no autorizada
+                  de información.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Realizar copias de seguridad periódicas de la información
+                  crítica y establecer un plan de recuperación de desastres para
+                  garantizar la disponibilidad y recuperación de la información
+                  en caso de incidentes.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 16px"><strong>1.4. USO APROPIADO:</strong></p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer pautas claras sobre el uso apropiado de la
+                  información y las comunicaciones en ICQ24, incluyendo
+                  políticas sobre el uso de correos electrónicos.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Prohibir el uso no autorizado o indebido de la información,
+                  incluyendo la divulgación no autorizada, la alteración o
+                  destrucción intencional de la información, y el acceso no
+                  autorizado a sistemas o bases de datos.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer políticas de uso de contraseñas seguras y
+                  renovación periódica de contraseñas para proteger el acceso a
+                  la información.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Capacitar a todos los empleados, contratistas y terceros
+                  sobre las políticas y procedimientos de uso apropiado de la
+                  información, resaltando la importancia de proteger la
+                  información confidencial y respetar los derechos de privacidad
+                  de los individuos.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer políticas y procedimientos para el manejo y
+                  disposición adecuada de la información cuando ya no sea
+                  necesaria, incluyendo la destrucción segura de la información
+                  en papel y el borrado seguro de la información almacenada
+                  electrónicamente.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── SECTION 5: CONCLUSIONES ── -->
+        <div class="policy-section" id="s5">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">05</div>
+            <div class="sec-title">Conclusiones</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              El presente documento de Manejo de la Información establece las
+              políticas y procedimientos necesarios para garantizar la
+              confidencialidad, integridad y disponibilidad de la información en
+              ICQ24. Es esencial que todos los empleados, contratistas y
+              terceros comprendan y cumplan con estas políticas para proteger la
+              información y preservar la reputación y el cumplimiento legal de
+              la organización. Se recomienda revisar y actualizar periódicamente
+              este documento para adaptarse a los cambios en las regulaciones y
+              a las necesidades de la organización.
+            </p>
+            <p>
+              Y también establece las políticas y procedimientos para el manejo
+              de la ciberseguridad en la empresa ICQ24 utilizando la nube de
+              Azure de Microsoft y sus componentes de seguridad.
+            </p>
+            <p>
+              La implementación de estas medidas permitirá proteger los activos
+              de información, garantizar la confidencialidad, integridad y
+              disponibilidad de los datos, y fortalecer la postura de seguridad
+              de la organización frente a las amenazas cibernéticas. Se
+              recomienda revisar y actualizar este documento de manera regular
+              para adaptarse a los cambios en el entorno de seguridad y las
+              necesidades de la organización.
+            </p>
+          </div>
+        </div>
+
+        <!-- ── SECTION 6: CYBERSEGURIDAD ── -->
+        <div class="policy-section" id="s6">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">06</div>
+            <div class="sec-title">Cyberseguridad</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              El presente documento establece las directrices y mejores
+              prácticas para el manejo de la ciberseguridad en la empresa ICQ24,
+              utilizando la nube de Azure de Microsoft y sus componentes de
+              seguridad. El objetivo principal es garantizar la protección de
+              los activos de información y la continuidad del negocio frente a
+              amenazas cibernéticas. Se espera que todos los empleados,
+              contratistas y terceros cumplan con las políticas y procedimientos
+              establecidos en este documento de seguridad de la data.
+            </p>
+
+            <div class="body-h4">2.1. ALCANCE</div>
+            <p>
+              Este documento es aplicable a todos los sistemas y servicios de
+              ICQ24 que se encuentren alojados en la nube de Azure de Microsoft.
+              Cubre aspectos relacionados con la seguridad de la
+              infraestructura, protección de datos, acceso y autenticación,
+              monitoreo y detección, y cumplimiento legal y regulaciones.
+            </p>
+
+            <div class="body-h4">2.2. POLITICA DE SEGURIDAD</div>
+            <p><strong>a. Clasificación y Manejo de la Información:</strong></p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Definir una política de clasificación de la información según
+                  su nivel de confidencialidad, integridad y
+                  disponibilidad.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer procedimientos para el manejo seguro de la
+                  información, incluyendo almacenamiento, transmisión y
+                  eliminación de la misma.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 14px">
+              <strong>b. Accesos y Autenticacion:</strong>
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Implementar una política de contraseñas seguras, que incluya
+                  requisitos de longitud, complejidad y caducidad.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer procedimientos para la gestión de usuarios y sus
+                  privilegios de acceso.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Utilizar la autenticación multifactor para aumentar la
+                  seguridad de los accesos.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Creacion de maquinas virtuales como punto de entrada y no
+                  acceder directo a los servidores.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 14px">
+              <strong>c. Protección de los sistemas.</strong>
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Mantener actualizados los sistemas operativos, aplicaciones y
+                  servicios en la nube con los últimos parches de
+                  seguridad.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Utilizar soluciones antivirus y antimalware actualizadas en
+                  todos los sistemas y servicios.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer políticas de seguridad para dispositivos móviles y
+                  acceso remoto, como la encriptación y autenticación.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 14px">
+              <strong>d. Respaldo y Recuperación de Datos</strong>
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Realizar respaldos periódicos de los datos almacenados en la
+                  nube de Azure, asegurando su integridad y
+                  disponibilidad.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Establecer planes de recuperación de desastres y continuidad
+                  del negocio, con pruebas y actualizaciones regulares.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 14px">
+              <strong>e. Componentes de seguridad en Azure.</strong>
+            </p>
+            <p>
+              Se cuenta con múltiples servicios corriendo en el entorno de Azure
+              tales como Azure Security Center, Azure Firewall, Azure
+              Information Protection, Azure Sentinel, Azure Backup, Azure
+              Identity Protection, Azure Advanced Threat Protection entre otros
+              componentes de seguridad de la red.
+            </p>
+
+            <div class="body-h4">2.3. RESPONSABILIDAD Y PROCEDIMIENTOS</div>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>f.</strong> Designar un responsable de seguridad de
+                  la información en ICQ24 para supervisar y gestionar la
+                  implementación de las políticas y medidas de seguridad en
+                  Azure.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>g.</strong> Establecer procedimientos claros para la
+                  gestión de incidentes de seguridad, incluyendo la
+                  notificación, investigación, mitigación y documentación de los
+                  incidentes.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>h.</strong> Realizar auditorías y revisiones
+                  regulares de los sistemas y servicios en Azure para asegurar
+                  el cumplimiento de las políticas y detectar posibles
+                  vulnerabilidades o brechas de seguridad.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>i.</strong> Fomentar la concienciación y capacitación
+                  en seguridad cibernética entre los empleados de ICQ24,
+                  incluyendo buenas prácticas de seguridad, detección de
+                  phishing y gestión de contraseñas.</span
+                >
+              </li>
+            </ul>
+
+            <div class="body-h4">2.4. EVALUACION Y MEJORAS</div>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>j.</strong> Realizar evaluaciones periódicas de la
+                  postura de seguridad en Azure, revisando y actualizando las
+                  políticas y medidas de seguridad según las nuevas amenazas y
+                  tecnologías emergentes.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>k.</strong> Participar en programas de certificación
+                  y cumplimiento de seguridad en la nube, como la certificación
+                  de cumplimiento de Microsoft Azure.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>l.</strong> Establecer un canal de retroalimentación
+                  para que los empleados de ICQ24 informen de posibles problemas
+                  de seguridad o sugerencias de mejora.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>m.</strong> Documentar y mantener actualizado el
+                  presente documento de Manejo de Ciberseguridad en Azure,
+                  asegurando que esté disponible para todos los empleados y
+                  partes interesadas.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ── SECTION 7: POLÍTICA DE PRIVACIDAD Y TRATAMIENTO DE DATOS ── -->
+        <div class="policy-section" id="s7">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">07</div>
+            <div class="sec-title">
+              Política de Privacidad y Tratamiento de Datos
+            </div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <div class="body-h4">
+              POLÍTICA DE PRIVACIDAD Y TRATAMIENTO DE DATOS PERSONALES DE ICQ24
+            </div>
+
+            <p><strong>A. Introducción</strong></p>
+            <p>
+              La Constitución Política de Colombia consagra el derecho que
+              tienen todas las personas a conocer, actualizar y rectificar la
+              información que exista sobre ellas en bases de datos o archivos de
+              entidades públicas o privadas. Igualmente, ordena a quienes tienen
+              Datos Personales de terceros a respetar los derechos y garantías
+              previstos en la Constitución cuando se recolecta, trata y circula
+              esta clase de información.
+            </p>
+            <p>
+              ICQ24 (en adelante “La Compañía” o “el Responsable”), en calidad
+              de Responsable del tratamiento, según se define en la Ley 1581 de
+              2012 está comprometida con el cumplimiento de la regulación en
+              materia de protección de Datos Personales y con el respeto de los
+              derechos de los Titulares de la información. Por esta razón,
+              adopta la presente Política de Privacidad y Tratamiento de Datos
+              Personales (en adelante, “La Política”) de obligatoria aplicación
+              en todas las actividades que involucren Tratamiento de Datos
+              Personales y de obligatorio cumplimiento por parte de La Compañía,
+              sus Administradores, Colaboradores y los terceros con quien éste
+              se relacione contractual o comercialmente. El uso de nuestros
+              servicios o la adquisición de nuestros productos (en adelante “los
+              Servicios y/o Productos”) estará regido por lo dispuesto en la
+              presente Política.
+            </p>
+
+            <p><strong>B. Objetivo</strong></p>
+            <p>
+              El objetivo de la presente Política es garantizar los derechos que
+              en virtud de la ley y la Constitución tienen los Titulares de los
+              Datos Personales, identificar las finalidades para las que serán
+              tratados los Datos Personales, así como la definición de los
+              lineamientos para la atención de consultas y reclamos de los
+              Titulares de los Datos Personales.
+            </p>
+
+            <p><strong>C. Alcance</strong></p>
+            <p>
+              Esta Política es de obligatorio y estricto cumplimiento por parte
+              de la Compañía, sus directores, administradores, colaboradores,
+              agentes de venta, comercializadores, aliados y los demás terceros
+              quienes la representan o actúan por ella, o con los que la
+              Compañía tiene algún tipo de vínculo, sea legal, comercial o
+              convencional.
+            </p>
+
+            <p><strong>D. Definiciones</strong></p>
+            <p>
+              Los términos aquí definidos serán usados a lo largo del presente
+              documento y su significado será el que se establece a
+              continuación:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Aviso de privacidad:</strong> es una de las opciones
+                  de comunicación verbal o escrita que brinda la ley o la
+                  Compañía para darle a conocer a los titulares de la
+                  información, la existencia y las formas de acceder a las
+                  políticas de tratamiento de la información y el objetivo de su
+                  recolección y uso.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Autorización:</strong> consentimiento previo, expreso
+                  e informado del Titular del dato para llevar a cabo el
+                  Tratamiento. Esta puede ser i) escrita; ii) verbal o; iii)
+                  conductas inequívocas que permitan concluir de forma razonable
+                  que el Titular aceptó el Tratamiento de sus datos.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Base de Datos:</strong> conjunto organizado de Datos
+                  Personales que sean objeto de Tratamiento, electrónico o no,
+                  cualquiera que fuere la modalidad de su formación,
+                  almacenamiento, organización y acceso.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Consulta:</strong> solicitud del Titular del Dato
+                  Personal, de las personas autorizadas por éste, o las
+                  autorizadas por ley, para conocer la información que reposa
+                  sobre él en las Bases de Datos de la Compañía.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Dato Personal:</strong> cualquier información
+                  vinculada o que pueda asociarse a una o varias personas
+                  naturales, determinadas o determinables.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Dato Personal Privado:</strong> dato que por su
+                  naturaleza íntima o reservada sólo es relevante para el
+                  Titular.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Dato Personal Público:</strong> dato calificado como
+                  tal según los mandatos de la ley o de la Constitución Política
+                  y todos aquellos que no sean semiprivados, privados o
+                  sensibles. Por ejemplo: los datos contenidos en documentos
+                  públicos, registros públicos, gacetas y boletines oficiales y
+                  sentencias judiciales debidamente ejecutoriadas que no estén
+                  sometidos a reserva, los relativos al estado civil de las
+                  personas, a su profesión u oficio y a su calidad de
+                  comerciante o de servidor público. Son públicos los Datos
+                  Personales existentes en el registro mercantil de las Cámaras
+                  de Comercio.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Dato personal semiprivado:</strong> dato que no tiene
+                  naturaleza íntima, reservada, ni pública y cuyo conocimiento o
+                  divulgación puede interesar no sólo a su Titular sino a cierto
+                  sector o grupo de personas, o a la sociedad en general. Por
+                  ejemplo: el dato referente al cumplimiento e incumplimiento de
+                  las obligaciones financieras o los datos relativos a las
+                  relaciones con las entidades de la seguridad social.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Dato personal sensible:</strong> dato que afecta la
+                  intimidad de la persona o cuyo uso indebido puede generar su
+                  discriminación. Por ejemplo: aquellos que revelen el origen
+                  racial o étnico, la orientación política, las convicciones
+                  religiosas o filosóficas, la pertenencia a sindicatos,
+                  organizaciones sociales, de derechos humanos o que promueva
+                  intereses de cualquier partido político o que garanticen los
+                  derechos y garantías de partidos políticos de oposición, datos
+                  relativos a la salud, a la vida sexual y los datos biométricos
+                  (huellas dactilares, iris, etc.), entre otros.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Encargado:</strong> persona natural o jurídica que
+                  realiza el Tratamiento de datos por cuenta del Responsable del
+                  Tratamiento.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Reclamo:</strong> solicitud del Titular del dato o
+                  las personas autorizadas por éste o por la ley para corregir,
+                  actualizar o suprimir sus Datos Personales o cuando adviertan
+                  que existe un presunto incumplimiento del régimen de
+                  protección de datos.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Responsable:</strong> Persona natural o jurídica,
+                  pública o privada, que por sí misma o en asocio con otros,
+                  decida sobre la base de datos y/o el Tratamiento de los
+                  datos.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Requisito de procedibilidad:</strong> paso previo que
+                  debe surtir el Titular antes de interponer una queja ante la
+                  Superintendencia de Industria y Comercio. Este consiste en una
+                  reclamación directa al Encargado o Responsable de sus Datos
+                  Personales.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Titular del dato:</strong> significa la persona
+                  natural cuyos datos personales sean objeto de
+                  Tratamiento.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Tratamiento:</strong> cualquier operación o conjunto
+                  de operaciones sobre Datos Personales como, la recolección, el
+                  almacenamiento, el uso, la circulación, transferencia,
+                  transmisión, actualización o supresión de los Datos
+                  Personales, entre otros. El Tratamiento puede ser nacional
+                  (dentro de Colombia) o internacional (fuera de
+                  Colombia).</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Transmisión:</strong> Tratamiento de datos personales
+                  que implica la comunicación de los mismos dentro o fuera del
+                  territorio de la República de Colombia cuando tenga por objeto
+                  la realización de un Tratamiento por el Encargado por cuenta
+                  del Responsable.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Transferencia:</strong> Tratamiento de Datos
+                  Personales que tiene lugar cuando el Responsable y/o Encargado
+                  del Tratamiento de Datos Personales, envía los Datos
+                  Personales a un receptor, que a su vez es Responsable del
+                  Tratamiento y se encuentra dentro o fuera del país.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 16px">
+              <strong
+                >E. Principios para el Tratamiento de Datos Personales</strong
+              >
+            </p>
+            <p>
+              En el desarrollo, interpretación y aplicación de la presente
+              Política, se aplicarán los siguientes principios:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Legalidad:</strong> El tratamiento de datos
+                  personales es una actividad reglada que debe sujetarse a lo
+                  establecido en la ley y en las demás disposiciones que la
+                  desarrollen.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Finalidad:</strong> El tratamiento de datos
+                  personales debe obedecer a una finalidad legítima de acuerdo
+                  con la Constitución y la ley, la cual debe ser informada al
+                  Titular.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Libertad:</strong> El tratamiento de datos personales
+                  solo puede ejercerse con el consentimiento, previo, expreso e
+                  informado del Titular. Los datos personales no podrán ser
+                  obtenidos o divulgados sin previa autorización, o en ausencia
+                  de mandato legal o judicial que releve el
+                  consentimiento.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Veracidad o calidad:</strong> La información personal
+                  sujeta a tratamiento debe ser veraz, completa, exacta,
+                  actualizada, comprobable y comprensible, en este sentido, se
+                  prohíbe el tratamiento de datos parciales, incompletos,
+                  fraccionados o que induzcan a error.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Transparencia:</strong> En el tratamiento de datos
+                  personales debe garantizarse el derecho del Titular a obtener
+                  del Responsable del Tratamiento o del Encargado del
+                  Tratamiento, en cualquier momento y sin restricciones,
+                  información acerca de la existencia de datos que le
+                  conciernan.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Acceso y circulación restringida:</strong> El
+                  tratamiento de datos personales está sujeto a los límites que
+                  se derivan de la naturaleza de los mismos, de las
+                  disposiciones de ley y la Constitución. En este sentido, su
+                  tratamiento solo podrá hacerse por personas autorizadas por el
+                  Titular y/o por las personas previstas en ley. Los datos
+                  personales, salvo la información pública, no podrán estar
+                  disponibles en Internet u otros medios de divulgación o
+                  comunicación masiva, salvo que el acceso sea técnicamente
+                  controlable para brindar un conocimiento restringido solo a
+                  los Titulares o terceros autorizados conforme a la ley.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Seguridad:</strong> La información personal sujeta a
+                  tratamiento por el Responsable del Tratamiento o Encargado del
+                  Tratamiento a que se refiere la ley, se deberá manejar con las
+                  medidas técnicas, humanas y administrativas que sean
+                  necesarias para otorgar seguridad a los registros evitando su
+                  adulteración, pérdida, consulta, uso o acceso no autorizado o
+                  fraudulento.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  ><strong>Confidencialidad:</strong> Todas las personas que
+                  intervengan en el tratamiento de datos personales que no
+                  tengan la naturaleza de públicos están obligadas a garantizar
+                  la reserva de la información, inclusive después de finalizada
+                  su relación con alguna de las labores que comprende el
+                  tratamiento, pudiendo solo realizar suministro o comunicación
+                  de datos personales cuando ello corresponda al desarrollo de
+                  las actividades autorizadas en la ley y en los términos de la
+                  misma.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 16px">
+              <strong
+                >F. Tratamiento al cual serán sometidos los Datos
+                Personales</strong
+              >
+            </p>
+            <p>
+              La Compañía realizará el Tratamiento de los Datos Personales de
+              acuerdo con las condiciones establecidas por el Titular, la ley o
+              las entidades públicas para el cumplimiento de las actividades
+              propias de su objeto social como pueden ser la contratación o
+              ejecución de los Servicios o la adquisición de los Productos que
+              ésta ofrece.
+            </p>
+            <p>
+              El Tratamiento de los Datos Personales se podrá realizar a través
+              de medios físicos, automatizados o digitales de acuerdo con el
+              tipo y forma de recolección de la información.
+            </p>
+
+            <p><strong>G. Finalidades como Responsable</strong></p>
+            <p>
+              La Compañía, en su calidad de Responsable, también podrá tratar
+              los Datos Personales, entre otros, para los siguientes fines:
+            </p>
+
+            <div class="body-h4">1. Finalidades Generales:</div>
+            <p>
+              Las finalidades descritas a continuación serán aplicables a todos
+              los Titulares que hayan autorizado a la Compañía de forma previa,
+              expresa e informada el Tratamiento de sus Datos Personales:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Ejercer su derecho de conocer de manera suficiente al Titular
+                  con quien se propone entablar relaciones, prestar servicios o
+                  enajenar sus productos y valorar el riesgo presente o futuro
+                  de las mismas relaciones y servicios. Efectuar las gestiones
+                  pertinentes para el desarrollo de la etapa precontractual,
+                  contractual y post contractual con la Compañía, respecto de
+                  cualquiera de los Servicios o Productos ofrecidos por ésta,
+                  que haya o no adquirido o respecto de cualquier relación
+                  negocial subyacente que tenga con ella, así como dar
+                  cumplimiento a la ley colombiana o extranjera y a las órdenes
+                  de autoridades judiciales o administrativas;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Implementar estrategias de relacionamiento con clientes,
+                  proveedores, accionistas, trabajadores, contratistas y otros
+                  terceros con los cuales la Compañía pueda llegar a tener
+                  relaciones contractuales o legales;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Realizar invitaciones a eventos, mejorar servicios o
+                  productos, y todas aquellas actividades asociadas a la
+                  relación comercial o vínculo existente con la Compañía, o
+                  aquel que llegare a tener;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Gestionar trámites (solicitudes, quejas, reclamos), efectuar
+                  encuestas de satisfacción respecto de los bienes y servicios
+                  ofrecidos por la Compañía, o empresas vinculadas y los aliados
+                  comerciales de ésta;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Dar a conocer, transferir y/o trasmitir Datos Personales
+                  dentro y fuera del país a las compañías matrices, filiales o
+                  subsidiarias de La Compañía o a terceros como consecuencia de
+                  un contrato, ley o vínculo lícito que así lo requiera o para
+                  implementar servicios de computación en la nube;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Ordenar, catalogar, clasificar, dividir o separar la
+                  información suministrada por los Titulares de datos.
+                  Verificar, corroborar, comprobar, validar, investigar o
+                  comparar la información suministrada por los Titulares de
+                  datos, con cualquier información de que disponga
+                  legítimamente, como relaciones comerciales. Acceder,
+                  consultar, comparar y evaluar toda la información que sobre el
+                  Titular se encuentre almacenada en las bases de datos de
+                  cualquier central de riesgo crediticio, financiero, de
+                  antecedentes judiciales o de seguridad, de naturaleza estatal
+                  o privada, nacional o extranjera, o cualquier base de datos
+                  comercial o de servicios, que permita establecer de manera
+                  integral e histórica completa, el comportamiento que como
+                  deudor, usuario, cliente, garante, endosante, afiliado,
+                  beneficiario, suscriptor, contribuyente y/o como Titular de
+                  servicios financieros, comerciales o de cualquier otra
+                  índole;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Registrar, almacenar y actualizar la información y los Datos
+                  Personales en sus Bases de Datos;</span
+                >
+              </li>
+            </ul>
+
+            <div class="body-h4">1. Clientes:</div>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Realizar actividades de mercadeo, ventas y promocionales,
+                  telemarketing (mercadeo telefónico), servicio al cliente,
+                  actividades de activación de marca, premios y promociones,
+                  directamente o a través de terceros derivados de alianzas
+                  comerciales o de cualquier vínculo;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Para fines de seguridad, mejoramiento del servicio o
+                  producto, la experiencia en los servicios o productos, los
+                  Datos Personales podrán ser utilizados, entre otros, como
+                  prueba en cualquier tipo de proceso;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Conocer, almacenar y procesar toda la información
+                  suministrada por los Titulares de datos en una o varias bases
+                  de datos, en el formato que estime más conveniente;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Realizar análisis estadísticos (incluso de los datos
+                  sensibles) e investigaciones comerciales, de riesgos, de
+                  mercado, interbancarias y financieras;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Adelantar los procedimientos de transcripción, radicación y
+                  cobro de subsidios por incapacidad temporal frente a las
+                  entidades del Sistema de Seguridad Social;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Consultar, solicitar o verificar la información y Datos
+                  Personales del Titular en bases de datos de entidades públicas
+                  o privadas, o con personas naturales o jurídicas, o en
+                  buscadores públicos, redes sociales o publicaciones físicas o
+                  electrónicas, bien fuere en Colombia o en el exterior;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Procesar solicitudes de los usuarios de la Plataforma;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Comercializar los Servicios o Productos que ofrezca la
+                  Compañía por todos los medios;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Realizar todas las gestiones de orden tributario, contable,
+                  fiscal y de facturación;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Cumplir el objeto de la relación laboral, comercial o civil
+                  que se hubiere adquirido con los titulares;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >El cumplimiento del objeto social de La Compañía y de las
+                  funcionalidades de la Plataforma;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Cumplir con la propuesta de valor y el nivel de servicio
+                  ofrecido a cada segmento de clientes y proveedores;</span
+                >
+              </li>
+            </ul>
+
+            <div class="body-h4">1. Recurso Humano:</div>
+            <p>
+              El Responsable utilizará los Datos Personales de sus empleados sus
+              colaboradores, de acuerdo con las finalidades que se relacionan a
+              continuación:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Incorporar los Datos Personales del Titular en los contratos
+                  o documentos de vinculación, modificaciones y adiciones al
+                  mismo, así como en los demás documentos que resulten
+                  necesarios para gestionar la relación con el titular y
+                  obligaciones derivadas de la misma que se encuentren a cargo
+                  del Responsable en calidad de Responsable del Tratamiento de
+                  los Datos Personales;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Desarrollar una correcta gestión de la relación contractual
+                  que vincula al Titular con El Responsable;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Disponer de los Datos Personales de los colaboradores para
+                  incorporarlos de forma adecuada en los archivos activos e
+                  históricos del Responsable y mantenerlos actualizados;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Enviar comunicaciones internas relacionadas, o no, con su
+                  vinculación contractual;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Administrar los Datos Personales del Titular para que El
+                  Responsable, cumpla correctamente con sus obligaciones
+                  contractuales o legales;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Gestionar, en cuanto resulte aplicable, los Datos Personales
+                  del Titular y los de su núcleo familiar sobre los cuales el
+                  Responsable pudiese estar legitimado a tratar para realizar
+                  trámites de afiliación a las entidades promotoras de salud
+                  −EPS−, cajas de compensación familiar, −ARLs−, y demás
+                  necesarias para que El Responsable cumpla sus deberes legales
+                  en la materia;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Responder solicitudes del titular sobre expedición de
+                  certificados, constancias y demás documentos solicitados al
+                  Responsable en razón del vínculo contractual que
+                  mantengan;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Administrar los Datos Personales para realizar el correcto
+                  pago de contraprestaciones, incluida la realización de los
+                  descuentos para pagos a terceros que el titular haya
+                  autorizado previamente y realizar los informes relativos a
+                  este proceso, cuando aplique;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Utilizar, en el evento que sea necesario, los Datos
+                  Personales del Titular con el fin de establecer controles de
+                  acceso a la infraestructura lógica o física del
+                  Responsable;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Administrar los Datos Personales para realizar pagos,
+                  incluida la administración de los números de cuentas bancarias
+                  para la correcta gestión de los pagos;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Enviar o aportar información a las autoridades competentes,
+                  cuando así lo soliciten, o en el curso de controversias
+                  contractuales;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Transferir información a autoridades administrativas que, en
+                  razón de sus funciones, así lo requieran con el fin de cumplir
+                  las obligaciones legales a cargo del Responsable;</span
+                >
+              </li>
+            </ul>
+            <p style="margin-top: 14px">
+              Los datos que se recolecten o almacenen sobre los trabajadores de
+              la Compañía, mediante el diligenciamiento de formatos, vía
+              telefónica, o con la entrega de documentos serán tratados para
+              todo lo relacionado con cuestiones laborales de orden legal o
+              contractual. En virtud de lo anterior, la Compañía utilizará los
+              Datos Personales para los siguientes fines: (1) Dar cumplimiento a
+              las leyes como, entre otras, de derecho laboral, seguridad social,
+              pensiones, riesgos profesionales, cajas de compensación familiar
+              (Sistema Integral de Seguridad Social) e impuestos; (2) Cumplir
+              las instrucciones de las autoridades judiciales y administrativas
+              competentes; (3) Implementar las políticas y estrategias laborales
+              y organizacionales;
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Adelantar procesos de selección, los cuales podrán incluir
+                  entrevistas, sometimiento a pruebas de conocimiento y a
+                  pruebas sicotécnicas, práctica de visitas domiciliarias, así
+                  como el acceso a hojas de vida y las comunicaciones con el
+                  candidato por cualquier vía;</span
+                >
+              </li>
+            </ul>
+
+            <div class="body-h4">influenciadores</div>
+            <p>
+              La Compañía tratará los datos personales de los influenciadores (o
+              influencers) con los que tenga un vínculo comercial o contractual
+              para:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Registrar, almacenar y actualizar la información y los Datos
+                  Personales en sus Bases de Datos;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Implementar estrategias de relacionamiento con los
+                  influenciadores con los cuales la Compañía pueda llegar a
+                  tener relaciones contractuales o legales;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Disponer de los Datos Personales de los influenciadores para
+                  incorporarlos de forma adecuada en los archivos activos e
+                  históricos del Responsable y mantenerlos actualizados;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Desarrollar una correcta gestión de la relación contractual
+                  que vincula al Influenciador con el Responsable.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 16px">
+              <strong>H. Uso de Datos Personales bajo esta Política</strong>
+            </p>
+            <p>
+              1. La Compañía solo tratará los datos personales y otra
+              información de los titulares para las finalidades descritas y los
+              usos autorizados en esta Política o en las leyes vigentes.
+            </p>
+
+            <p>
+              <strong
+                >I. Limitaciones temporales al Tratamiento de Datos</strong
+              >
+            </p>
+            <p>
+              La Compañía solo podrá recolectar, almacenar, usar o circular los
+              Datos Personales durante el tiempo que sea razonable y necesario,
+              de acuerdo con las finalidades que justificaron el Tratamiento,
+              atendiendo a las disposiciones aplicables a la materia de que se
+              trate y a los aspectos administrativos, contables, fiscales,
+              jurídicos e históricos de la información. Una vez cumplida la o
+              las finalidades del tratamiento y sin perjuicio de normas legales
+              que dispongan lo contrario, La Compañía deberá proceder a la
+              supresión de los datos personales en su posesión. No obstante lo
+              anterior, los datos personales deberán ser conservados cuando así
+              se requiera para el cumplimiento de una obligación legal o
+              contractual.
+            </p>
+
+            <p><strong>J. Derechos de los Titulares de los datos</strong></p>
+            <p>Los Titulares de los Datos personales, tienen derecho a:</p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Conocer, actualizar y rectificar sus Datos Personales frente
+                  a los Responsables del Tratamiento o Encargados del
+                  Tratamiento. Este derecho se podrá ejercer, entre otros frente
+                  a datos parciales, inexactos, incompletos, fraccionados, que
+                  induzcan a error, o aquellos cuyo Tratamiento esté
+                  expresamente prohibido o no haya sido autorizado. Para el
+                  efecto es necesario establecer previamente la identificación
+                  de la persona para evitar que terceros no autorizados accedan
+                  a los datos del Titular.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Solicitar prueba de la autorización otorgada a la Compañía,
+                  salvo que se trate de uno de los casos en los que no es
+                  necesaria la autorización, de conformidad con lo previsto en
+                  el artículo 10 de la ley 1581 de 2012.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Ser informado por la Compañía, previa solicitud, respecto del
+                  uso que le ha dado a sus Datos Personales.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Presentar ante la Superintendencia de Industria y Comercio
+                  quejas por infracciones a lo dispuesto en la ley y las demás
+                  normas que la modifiquen, adicionen o complementen.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Revocar la autorización y/o solicitar la supresión del dato
+                  cuando en el Tratamiento no se respeten los principios,
+                  derechos y garantías constitucionales y legales.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >La solicitud de supresión de la información y la revocatoria
+                  de la autorización no procederá cuando el Titular tenga un
+                  deber legal o contractual de permanecer en la base de datos
+                  del Responsable o Encargado.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 16px">
+              <strong>K. De la autorización</strong>
+            </p>
+            <p>
+              <strong
+                >1. Autorización para el Tratamiento de Datos y forma de
+                obtención.</strong
+              ><br />
+              Los obligados a cumplir esta política deberán obtener de parte del
+              Titular su autorización previa, expresa e informada para
+              recolectar y tratar sus Datos Personales. Esta obligación no es
+              necesaria cuando se trate de datos de naturaleza pública.<br />
+              Para obtener la autorización, es necesario informarle al Titular
+              de los Datos Personales de forma clara y expresa lo siguiente:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >El Tratamiento al cual serán sometidos sus Datos Personales y
+                  la finalidad del mismo;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >El carácter facultativo de la respuesta a las preguntas que
+                  le sean hechas, cuando estas versen sobre datos sensibles o
+                  sobre los datos de las niñas, niños y adolescentes;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Los derechos que le asisten como Titular previstos en el
+                  Artículo 8 de la Ley 1581 de 2012;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >La identificación, dirección física o electrónica de la
+                  Compañía.</span
+                >
+              </li>
+            </ul>
+            <p style="margin-top: 10px">
+              La Autorización del Titular debe obtenerse a través de cualquier
+              medio que pueda ser objeto de consulta posterior, tal como la
+              página web, formularios, formatos, actividades, concursos,
+              presenciales o en redes sociales, formato de PQR, mensajes de
+              datos o Apps, email, teléfono, registro o autenticación en la
+              Plataforma, entre otras.<br />
+              La autorización también podrá obtenerse a partir de conductas
+              inequívocas del Titular del Dato que permitan concluir de manera
+              razonable que éste otorgó su consentimiento para el Tratamiento.
+              Dichas conductas deben ser muy claras de manera que no admitan
+              duda o equivocación sobre la voluntad de autorizar el Tratamiento.
+            </p>
+
+            <p style="margin-top: 14px">
+              <strong>1. Manifestaciones de los Titulares.</strong><br />
+              Los titulares manifiestan que:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Se les informó acerca de las finalidades para las cuales se
+                  utilizarán los datos sensibles recolectados, los cuales se
+                  encuentran descritos en el título H de esta Política.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Entienden que son datos sensibles aquellos que afectan la
+                  intimidad del titular o cuyo uso indebido puede generar
+                  discriminación, así como los de origen racial o étnico,
+                  orientación política, convicciones religiosas o filosóficas,
+                  pertenencia a sindicatos, organizaciones sociales, datos
+                  relacionados con el estado de salud, la vida sexual y los
+                  datos biométricos.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Comprenden las medidas de seguridad que La Compañía
+                  implementa para brindar protección a los datos personales que
+                  recolecta y, por tanto, aceptan las mismas.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 14px">
+              <strong
+                >1. Autorización para Tratamiento de datos sensibles.</strong
+              ><br />
+              Cuando se trate de la recolección de datos sensibles se deben
+              cumplir los siguientes requisitos:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span>La autorización debe ser explícita;</span>
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Se debe informar al Titular que no está obligado a autorizar
+                  el Tratamiento de dicha información;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Se debe informar de forma explícita y previa al Titular
+                  cuáles de los datos que serán objeto de Tratamiento son
+                  sensibles y la finalidad del mismo;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Se requiere autorización por parte del representante o tutor
+                  para el Tratamiento de datos de niños, niñas y
+                  adolescentes.</span
+                >
+              </li>
+            </ul>
+
+            <p style="margin-top: 14px">
+              <strong
+                >1. Autorización para Tratamiento de datos de niños, niñas y
+                adolescentes</strong
+              ><br />
+              Cuando se trate de la recolección y Tratamiento de datos de niños,
+              niñas y adolescentes se deben cumplir los siguientes requisitos:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >La autorización debe ser otorgada por personas que estén
+                  facultadas para representar los niños, niñas o adolescentes.
+                  El representante de los niños, niñas o adolescentes deberá
+                  garantizarles el derecho a ser escuchados y valorar su opinión
+                  del Tratamiento teniendo en cuenta la madurez, autonomía y
+                  capacidad de los niños, niñas y adolescentes para entender el
+                  asunto;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Se debe informar que es facultativo responder preguntas sobre
+                  datos de los niños, niñas y adolescentes;</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >La Compañía debe asegurar que el Tratamiento de los Datos
+                  Personales de los niños, niñas y adolescentes será realizado
+                  respetando sus derechos, razón por la cual, en las actividades
+                  comerciales y de mercadeo que realice, deberá contar con la
+                  autorización previa, expresa e informada del padre o la madre
+                  o del representante legal del niño, niña o adolescente.</span
+                >
+              </li>
+            </ul>
+            <p style="margin-top: 10px">
+              Sin perjuicio de lo anterior, La Compañía únicamente tratará los
+              datos de los menores de edad para los fines exclusivos de la
+              prestación de los Servicios o enajenación de Productos, o
+              cualquier otro fin que sea estrictamente necesario para
+              desarrollar el objeto social de la Compañía.
+            </p>
+
+            <p style="margin-top: 14px">
+              <strong>Autorización para nuevos usos</strong><br />
+              1. La Compañía podrá solicitar autorización de los titulares para
+              nuevos usos de sus datos o información, para lo cual publicará los
+              cambios en la presente Política de Tratamiento en su página web o
+              en cualquier medio que estime conveniente según el caso.
+            </p>
+
+            <p style="margin-top: 16px">
+              <strong>L. Almacenamiento de datos personales</strong>
+            </p>
+            <p>
+              2. El Titular autoriza expresamente a la Compañía para que
+              almacene los datos de la forma que considere más oportuna y cumpla
+              con la seguridad requerida para la protección de los datos de los
+              titulares.
+            </p>
+
+            <p>
+              <strong
+                >M. Transferencias nacionales o internacionales de Datos
+                Personales</strong
+              >
+            </p>
+            <p>
+              La Compañía podrá realizar transferencias de datos a otros
+              Responsables del Tratamiento cuando así esté autorizado por el
+              Titular de la información, por la ley o por un mandato
+              administrativo o judicial. Cuando la transferencia sea
+              internacional, La Compañía garantizará que el país receptor tendrá
+              los estándares adecuados de protección de datos personales.
+            </p>
+
+            <p>
+              <strong
+                >N. Transmisiones nacionales o internacionales de Datos
+                Personales</strong
+              >
+            </p>
+            <p>
+              La Compañía podrá enviar o transmitir datos a uno o varios
+              Encargados ubicados dentro o fuera del territorio de la República
+              de Colombia cuando así esté autorizado por el Titular de la
+              información, por la ley o por un mandato administrativo o
+              judicial. Para todos los efectos se entiende que con la aceptación
+              de esta política los titulares consienten que la Compañía
+              transfiera o transmita internacionalmente los datos a sus
+              proveedores de servicios computacionales en la nube, frente a los
+              cuales la Compañía certifica que se encuentran ubicados en una
+              jurisdicción con un nivel adecuado de protección (i.e., Estados
+              Unidos en virtud del marco Safe Harbor).
+            </p>
+
+            <p>
+              <strong
+                >O. Procedimiento para que los Titulares puedan ejercer sus
+                derechos</strong
+              >
+            </p>
+            <p>
+              Para el ejercicio pleno y efectivo de los derechos que le asisten
+              a los Titulares de los Datos Personales, o a las personas
+              legitimadas por ley para tal efecto, la Compañía dispone del
+              correo electrónico indicado más adelante (sección “Contacto”), a
+              través del cual podrán presentar todas las consultas, quejas y/o
+              reclamos asociados al derecho de Habeas Data.
+            </p>
+            <p>
+              Todas las solicitudes que realicen las personas legitimadas para
+              conocer los Datos Personales que reposan en la Compañía se
+              canalizarán a través del mencionado correo electrónico en el cual
+              constará la fecha de recibo de la consulta y la identidad del
+              solicitante.
+            </p>
+            <p>
+              El reclamo debe dirigirse a ICQ24 y contener como mínimo la
+              siguiente información:
+            </p>
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Nombre e identificación del Titular del dato o la persona
+                  legitimada.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Descripción precisa y completa de los hechos que dan lugar al
+                  reclamo.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span>Pretensiones.</span>
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Dirección física o electrónica para remitir la respuesta e
+                  informar sobre el estado del trámite.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Documentos y demás pruebas pertinentes que quiera hacer
+                  valer.</span
+                >
+              </li>
+            </ul>
+            <p style="margin-top: 10px">
+              Una vez recibida la solicitud se procederá con la verificación de
+              la identidad del peticionario o de la legitimación de éste para
+              tal fin. La respuesta a la consulta deberá comunicarse al
+              solicitante en un término máximo de diez (10) días hábiles
+              contados a partir de la fecha de recibo de la misma. Cuando no
+              fuere posible atender la consulta dentro de dicho término, se
+              deberá informar al interesado los motivos de la demora y la fecha
+              en que se atenderá su consulta, la cual en ningún caso podrá
+              superar los cinco (5) días hábiles siguientes al vencimiento del
+              primer término.
+            </p>
+            <p>
+              Si la solicitud o el reclamo resulta incompleto, se requerirá al
+              interesado dentro de los cinco (5) días siguientes a su recepción
+              para que subsane las fallas. Transcurridos dos (2) meses desde la
+              fecha del requerimiento, sin que el solicitante presente la
+              información requerida, se entenderá que ha desistido del reclamo.
+            </p>
+
+            <p>
+              <strong
+                >P. Persona o área responsable de la protección de los Datos
+                Personales</strong
+              >
+            </p>
+            <p>
+              El área encargada de atender las peticiones, consultas y reclamos
+              de los titulares para ejercer sus derechos a conocer, actualizar,
+              rectificar y suprimir sus datos y revocar su autorización es el
+              área de atención al usuario. Las peticiones, consultas y reclamos
+              podrán ser remitidas al correo electrónico
+              <a href="mailto:mvanegas@icq24.com">mvanegas@icq24.com</a>
+            </p>
+
+            <p><strong>R. Políticas de seguridad de la información</strong></p>
+            <p>
+              La Compañía adoptará las medidas técnicas, administrativas y
+              humanas necesarias para procurar la seguridad de los Datos
+              Personales a los que les da Tratamiento, protegiendo la
+              confidencialidad, integridad, uso, acceso no autorizado y/o
+              fraudulento a éstos. Para tal fin, ha implementado protocolos de
+              seguridad de obligatorio cumplimiento para todo el Personal que
+              tenga acceso a estos datos y/o a los sistemas de información.
+            </p>
+            <p>
+              Las políticas internas de seguridad bajo las cuales se conserva la
+              información del Titular para impedir su adulteración, pérdida,
+              consulta, uso o acceso no autorizado o fraudulento son incluidas
+              en el Programa Integral de Gestión de Datos Personales de la
+              Compañía. El titular acepta expresamente esta forma de protección
+              y declara que la considera conveniente y suficiente para todos los
+              propósitos.
+            </p>
+
+            <p>
+              <strong
+                >S. Quejas ante la Superintendencia de Industria y
+                Comercio</strong
+              >
+            </p>
+            <p>
+              3. El Titular, sus causahabientes o apoderados, deberán agotar el
+              trámite de consulta ante La Compañía, con anterioridad a la
+              presentación de cualquier queja ante la Superintendencia de
+              Industria y Comercio.
+            </p>
+
+            <p><strong>T. Término de la Autorización</strong></p>
+            <p>
+              El término del Tratamiento de los Datos Personales será desde que
+              se otorga la autorización hasta el día en que La Compañía se
+              disuelva y se liquide o hasta que se termine la finalidad para la
+              cual fueron recolectados los Datos Personales.
+            </p>
+
+            <p>
+              <strong
+                >U. Ajustes a la política de Tratamiento de Datos
+                Personales</strong
+              >
+            </p>
+            <p>
+              Con miras a mantener la vigencia de la política, la Compañía puede
+              ajustarla y modificarla, indicando la fecha de la actualización en
+              la Plataforma o mediante el empleo de otros medios, como mensajes
+              de datos, materiales físicos, etc.
+            </p>
+
+            <p><strong>V. Legislación Vigente</strong></p>
+            <p>
+              4. La legislación nacional vigente en materia de protección de
+              datos personales está contenida en la ley 1581 de 2012, el Decreto
+              1074 de 2015 (que compila el Decreto 1377 de 2013) y la ley 1266
+              de 2008 y las normas que lo modifiquen, complementen o subroguen.
+            </p>
+            <p>
+              <strong>5. Última actualización: 7 de mayo de 2024</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- ── SECTION 8: CONTACTO ── -->
+        <div class="policy-section" id="s8">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">08</div>
+            <div class="sec-title">Contacto</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              Para consultas, peticiones, quejas, reclamos o ejercicio de
+              derechos de privacidad y protección de datos personales, puede
+              comunicarse con el Responsable del Tratamiento a través de los
+              siguientes canales:
+            </p>
+
+            <div class="contact-dark">
+              <div class="contact-dark-head">
+                Q. Datos del Responsable del Tratamiento
+              </div>
+              <div class="contact-grid-2">
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-building"></i>
+                  </div>
+                  <div>
+                    <label>Razón social</label>
+                    <span>ICQ24</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-id-card"></i>
+                  </div>
+                  <div>
+                    <label>NIT</label>
+                    <span>901.642.407-7</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <label>Dirección</label>
+                    <span>Calle 30 # 22 39, Bucaramanga</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div>
+                    <label>Correo Electrónico</label>
+                    <a href="mailto:mvanegas@icq24.com">privacy@icq24.com </a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div>
+                    <label>Teléfono</label>
+                    <span>3186335950</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-globe"></i>
+                  </div>
+                  <div>
+                    <label>Página web</label>
+                    <a href="https://www.icq24.com/" target="_blank"
+                      >www.icq24.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CROSS-LINKS -->
+        <div class="cross-links" id="crosslinks">
+          <h3>Políticas relacionadas</h3>
+          <p
+            style="
+              font-size: 13px;
+              color: var(--text-muted);
+              margin-bottom: 16px;
+            "
+          >
+            Consulte también los siguientes documentos que complementan nuestras
+            políticas de privacidad y seguridad:
+          </p>
+          <div class="cross-grid">
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/politica-de-privacidad-icq24 -->
+            <a
+              class="cross-item"
+              href="https://www.icq24.com/politica-de-privacidad-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/politica-de-privacidad-icq24"
+            >
+              <div class="cross-item-icon">
+                <i class="fa-solid fa-user-lock"></i>
+              </div>
+              <div>
+                <strong>Política de Privacidad y Protección de Datos</strong>
+                <span>icq24.com/politica-de-privacidad-icq24</span>
+              </div>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/politica-de-seguridad-icq24 -->
+            <a
+              class="cross-item"
+              href="https://www.icq24.com/politica-de-seguridad-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/politica-de-seguridad-icq24"
+            >
+              <div class="cross-item-icon">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <div>
+                <strong>Política de Seguridad de la Información</strong>
+                <span>icq24.com/politica-de-seguridad-icq24</span>
+              </div>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/continuidad-de-servicio-icq24 -->
+            <a
+              class="cross-item"
+              href="https://www.icq24.com/continuidad-de-servicio-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/continuidad-de-servicio-icq24"
+            >
+              <div class="cross-item-icon">
+                <i class="fa-solid fa-rotate"></i>
+              </div>
+              <div>
+                <strong>Continuidad del Servicio</strong>
+                <span>icq24.com/continuidad-de-servicio-icq24</span>
+              </div>
+            </a>
+            <!-- ANOTACIÓN ENLACE: Sitio Oficial www.icq24.com -->
+            <a class="cross-item" href="https://www.icq24.com/" target="_blank">
+              <div class="cross-item-icon">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div>
+                <strong>Sitio Oficial ICQ24</strong>
+                <span>www.icq24.com</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // ── SECTION TOGGLE ─────────────────────────────────────────────
+      function toggleSec(header) {
+        const section = header.closest(".policy-section");
+        const body = section.querySelector(".section-body-wrap");
+        header.classList.toggle("open");
+        body.classList.toggle("open");
+      }
+
+      // ── ACTIVE SIDEBAR LINK ────────────────────────────────────────
+      const sections = document.querySelectorAll(".policy-section[id]");
+      const sideLinks = document.querySelectorAll(".sidebar-link");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              sideLinks.forEach((l) => l.classList.remove("active"));
+              const active = document.querySelector(
+                `.sidebar-link[href="#${e.target.id}"]`,
+              );
+              if (active) active.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-15% 0px -80% 0px", threshold: 0 },
+      );
+
+      sections.forEach((s) => observer.observe(s));
+
+      sideLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+
+          if (!href.startsWith("#")) return;
+
+          e.preventDefault();
+
+          const targetId = href.slice(1);
+          const target = document.getElementById(targetId);
+
+          if (target) {
+            const head = target.querySelector(".section-head");
+            const body = target.querySelector(".section-body-wrap");
+
+            if (head && body && !body.classList.contains("open")) {
+              head.classList.add("open");
+              body.classList.add("open");
+            }
+
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

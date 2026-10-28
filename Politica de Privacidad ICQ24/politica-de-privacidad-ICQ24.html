@@ -1,0 +1,1463 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ==========================================================================
+      ANOTACIÓN ENLACE DE PÁGINA:
+      URL Asignada: /politica-de-privacidad-ICQ24 (o /politica-de-privacidad)
+      URL canónica completa: https://www.icq24.com/politica-de-privacidad-ICQ24
+      ========================================================================== -->
+    <title>
+      Política de Privacidad y Protección de Datos Personales | ICQ24
+    </title>
+    <meta
+      name="description"
+      content="Conozca cómo ICQ24 recopila, utiliza, protege y conserva los datos personales de clientes, usuarios y visitantes, conforme a la normativa."
+    />
+    <meta
+      name="keywords"
+      content="Política de privacidad ICQ24, Protección de datos personales, Privacidad de datos, Tratamiento de datos personales, Ley 172-13 República Dominicana"
+    />
+    <link
+      rel="canonical"
+      href="https://www.icq24.com/politica-de-privacidad-icq24"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* ── RESET & BASE ─────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: #ffffff;
+        color: #1e293b;
+        font-size: 15px;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ==========================================================================
+        DESIGN SYSTEM & VARIABLES - ICQ24 / FIVE9 THEME
+        ========================================================================== */
+      :root {
+        /* Brand Colors */
+        --brand-primary: #0263e2;
+        --brand-primary-hover: #002d6d;
+        --brand-primary-light: #eff6ff;
+        --navy: #0a192f;
+        --yellow: #f0ad0f;
+        --yellow-bg: #fef6e4;
+        --red: #ed3d2e;
+        --red-bg: #fef4f2;
+        --green: #3b935d;
+        --green-bg: #e8f5ee;
+
+        /* Backgrounds */
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-dark: #0f172a;
+        --bg-dark-elevated: #1e293b;
+
+        /* Typography Colors */
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+        --text-inverse: #ffffff;
+
+        /* UI Elements */
+        --border-light: #e2e8f0;
+        --border-dark: #334155;
+
+        /* Spacing System (8pt Grid) */
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-12: 48px;
+        --space-16: 64px;
+        --space-24: 96px;
+        --space-32: 128px;
+
+        /* Shadows (Soft Enterprise) */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md:
+          0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        --shadow-lg:
+          0 10px 15px -3px rgba(0, 0, 0, 0.04),
+          0 4px 6px -2px rgba(0, 0, 0, 0.02);
+        --shadow-xl:
+          0 20px 25px -5px rgba(0, 0, 0, 0.05),
+          0 10px 10px -5px rgba(0, 0, 0, 0.02);
+
+        /* Radii */
+        --radius-md: 12px;
+        --radius-lg: 20px;
+        --radius-pill: 9999px;
+      }
+
+      /* ── HERO ─────────────────────────────────────────────── */
+      .hero {
+        background: var(--bg-white);
+        padding: 72px 90px 70px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 540px;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--bg-light) 0%,
+          var(--brand-primary-light) 100%
+        );
+        clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+        pointer-events: none;
+      }
+      .hero-decoration::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 70% 60% at 70% 40%,
+          rgba(0, 102, 255, 0.08) 0%,
+          transparent 70%
+        );
+      }
+      .hero-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        position: relative;
+        z-index: 2;
+        padding-right: 0;
+      }
+      .hero-content-left {
+        flex: 1 1 50%;
+        max-width: 52%;
+      }
+
+      .hero-image-right {
+        flex: 1 1 48%;
+        max-width: 48%;
+        display: flex;
+        justify-content: flex-end;
+        align-self: flex-end;
+        margin-bottom: -70px;
+      }
+
+      .hero-image-right img {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        border-radius: 8px 8px 0 0;
+      }
+      .section-eyebrow {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        margin-bottom: 16px;
+      }
+      .hero h1 {
+        font-size: clamp(32px, 4vw, 50px);
+        font-weight: 800;
+        color: var(--brand-primary);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+        font-family: "Montserrat", sans-serif !important;
+      }
+      .hero h1 span {
+        color: var(--brand-primary);
+      }
+      .hero-desc {
+        font-size: 15px;
+        color: var(--gray-mid);
+        font-weight: 400;
+        line-height: 1.75;
+        max-width: 600px;
+        margin-bottom: 28px;
+      }
+      .hero-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--brand-primary-light);
+        border: 1px solid var(--border-dark);
+        border-radius: var(--radius-pill);
+        padding: 6px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .hero-tag .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--green);
+        flex-shrink: 0;
+      }
+
+      /* ── MAIN LAYOUT ──────────────────────────────────────── */
+      .page-layout {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 56px 40px 80px;
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      /* ── SIDEBAR ──────────────────────────────────────────── */
+      .sidebar {
+        position: sticky;
+        top: 84px;
+      }
+      .sidebar-card {
+        background: var(--bg-dark);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+      .sidebar-header {
+        padding: 22px 20px 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .sidebar-logo {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        margin-bottom: 4px;
+      }
+      .sidebar-logo img {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      .sidebar-sub {
+        font-size: 9px;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.35);
+        text-transform: uppercase;
+      }
+      .sidebar-nav {
+        padding: 8px 0;
+      }
+      .sidebar-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 12.5px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.55);
+        transition: all 0.2s;
+        border-left: 3px solid transparent;
+      }
+      .sidebar-link:hover,
+      .sidebar-link.active {
+        color: var(--text-inverse);
+        background: rgba(255, 255, 255, 0.05);
+        border-left-color: var(--brand-primary);
+      }
+
+      .sidebar-num {
+        font-size: 10px;
+        font-weight: 800;
+        color: var(--brand-primary);
+        min-width: 20px;
+      }
+      .sidebar-divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.08);
+        margin: 8px 20px;
+      }
+      .sidebar-footer {
+        padding: 16px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .sidebar-footer-label {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 10px;
+      }
+      .sidebar-ext-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: #00aaff;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 5px 0;
+        transition: color 0.2s;
+      }
+      .sidebar-ext-link:hover {
+        color: #fff;
+      }
+
+      /* ── CONTENT AREA ─────────────────────────────────────── */
+      .content {
+        min-width: 0;
+      }
+
+      /* Section card */
+      .policy-section {
+        background: var(--bg-white);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        margin-bottom: 16px;
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+        transition: box-shadow 0.25s;
+      }
+      .policy-section:hover {
+        box-shadow: var(--shadow-hover);
+      }
+
+      .section-head {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 28px;
+        cursor: pointer;
+        user-select: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+      .section-head.open {
+        border-bottom-color: var(--border-light);
+      }
+
+      .sec-num {
+        width: 40px;
+        height: 40px;
+        background: var(--bg-dark);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--brand-primary);
+        flex-shrink: 0;
+        letter-spacing: -0.02em;
+      }
+      .sec-title {
+        flex: 1;
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--text-main);
+        letter-spacing: -0.01em;
+      }
+      .sec-chevron {
+        width: 30px;
+        height: 30px;
+        background: var(--bg-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        flex-shrink: 0;
+        transition: all 0.3s;
+      }
+      .section-head.open .sec-chevron {
+        background: var(--brand-primary-light);
+        color: var(--brand-primary-hover);
+        transform: rotate(180deg);
+      }
+
+      .section-body-wrap {
+        display: none;
+        padding: 28px;
+      }
+      .section-body-wrap.open {
+        display: block;
+      }
+
+      /* Body typography */
+      .section-body-wrap p {
+        font-size: 14px;
+        color: var(--gray-mid);
+        font-weight: 400;
+        line-height: 1.75;
+        margin-bottom: 16px;
+      }
+      .section-body-wrap p:last-child {
+        margin-bottom: 0;
+      }
+      .section-body-wrap strong {
+        color: var(--navy-mid);
+        font-weight: 700;
+      }
+
+      /* Purpose list */
+      .purpose-list {
+        list-style: none;
+        padding: 0;
+      }
+      .purpose-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 11px 14px;
+        border-radius: 10px;
+        background: var(--bg-light);
+        border: 1px solid var(--border-light);
+        margin-bottom: 8px;
+        font-size: 13.5px;
+        color: var(--text-main);
+        line-height: 1.5;
+      }
+      .purpose-badge {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--brand-primary-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--brand-primary);
+        margin-top: 2px;
+      }
+
+      /* Custom bullet list */
+      .custom-list {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0;
+      }
+      .custom-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-main);
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border-light);
+        line-height: 1.6;
+      }
+      .custom-list li:last-child {
+        border-bottom: none;
+      }
+      .custom-list-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        margin-top: 8px;
+        flex-shrink: 0;
+      }
+
+      /* Contact dark card */
+      .contact-dark {
+        background: var(--bg-dark);
+        border-radius: 14px;
+        padding: 28px;
+        margin: 16px 0;
+      }
+      .contact-dark-head {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-inverse);
+        margin-bottom: 20px;
+      }
+      .contact-grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 16px;
+      }
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .contact-item-icon {
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-primary);
+        flex-shrink: 0;
+      }
+      .contact-item label {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--bg-light) !important;
+        margin-bottom: 3px;
+      }
+      .contact-item span {
+        font-size: 13px;
+        color: var(--text-inverse);
+        font-weight: 500;
+      }
+      .contact-item a {
+        font-size: 13px;
+        color: var(--brand-primary);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      /* Cross-links bottom */
+      .cross-links {
+        background: var(--bg-light);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        padding: 28px;
+        margin-top: 16px;
+      }
+      .cross-links h3 {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      }
+      .cross-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 12px;
+      }
+      .cross-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px;
+        background: var(--text-inverse);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .cross-item:hover {
+        border-color: var(--brand-primary);
+        background: var(--brand-primary-light);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+      }
+      .cross-item-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--bg-light);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brand-primary);
+        flex-shrink: 0;
+      }
+      .cross-item strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--text-main);
+      }
+      .cross-item span {
+        font-size: 11.5px;
+        color: var(--text-muted);
+      }
+
+      /* ── RESPONSIVE ───────────────────────────────────────── */
+      @media (max-width: 960px) {
+        .page-layout {
+          grid-template-columns: 1fr;
+          padding: 40px 24px 60px;
+        }
+        .sidebar {
+          position: static;
+        }
+      }
+      @media (max-width: 768px) {
+        .hero-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero-content-left,
+        .hero-image-right {
+          max-width: 100%;
+        }
+        .hero-image-right {
+          justify-content: center;
+        }
+        .hero-image-right img {
+          max-width: 380px;
+        }
+        .hero-meta-row {
+          justify-content: center;
+        }
+      }
+      @media (max-width: 640px) {
+        .hero {
+          padding: 48px 20px 48px;
+        }
+        .hero-image-right {
+          margin-bottom: -48px;
+        }
+        .hero-decoration {
+          width: 200px;
+        }
+        .cross-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── ANIMATIONS ───────────────────────────────────────── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-inner > * {
+        animation: fadeUp 0.55s ease both;
+      }
+      .section-eyebrow {
+        animation-delay: 0.04s;
+      }
+      .hero h1 {
+        animation-delay: 0.1s;
+      }
+      .hero-desc {
+        animation-delay: 0.17s;
+      }
+      .hero-meta-row {
+        animation-delay: 0.24s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── HERO ──────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-decoration"></div>
+      <div class="hero-inner">
+        <div class="hero-content-left">
+          <div class="section-eyebrow" id="eyebrow-text">
+            Política de Privacidad y Protección de Datos Personales | ICQ24
+          </div>
+
+          <h1 id="hero-title">
+            <span id="title-word1">
+              Política de Privacidad y Protección de Datos Personales
+            </span>
+          </h1>
+
+          <p class="hero-desc" id="hero-desc-es">
+            ICQ24, SRL, RNC 1-31-59088-8, con domicilio en Av. John F. Kennedy
+            No. 63, Plaza Metropolitana, Local 223, Ensanche Kennedy, Santo
+            Domingo, República Dominicana, es responsable de los datos
+            personales que se tratan en este sitio y en sus servicios. Esta
+            política cumple con la Ley Núm. 172-13 sobre Protección de Datos de
+            Carácter Personal de la República Dominicana.
+          </p>
+
+          <div class="hero-meta-row">
+            <div class="hero-tag">
+              <span class="dot"></span>
+              <span id="tag-updated"
+                >Última actualización: [fecha de publicación]</span
+              >
+            </div>
+            <div class="hero-tag">
+              <span style="color: var(--brand-primary)"
+                ><i class="fa-solid fa-building"></i
+              ></span>
+              ICQ24, SRL
+            </div>
+            <!-- ANOTACIÓN ENLACE DE LA PÁGINA -->
+            <div class="hero-tag">
+              <span style="color: var(--brand-primary)"
+                ><i class="fa-solid fa-location-dot"></i
+              ></span>
+              <span>República Dominicana</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-right">
+          <img
+            src="https://www.icq24.com/web/image/38283-d6bd77c2/privacidad_4.webp"
+            alt="Ilustración de Privacidad y Protección de Datos"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PAGE LAYOUT ────────────────────────────────────────────── -->
+    <div class="page-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-header">
+            <div class="sidebar-logo">
+              <img
+                src="https://www.icq24.com/web/image/38269-1c0f4c4d/Logo%20ICQ24_Blanco%20-%20copia.png"
+                alt="Logo ICQ24"
+              />
+            </div>
+            <div class="sidebar-sub">Protección de Datos</div>
+          </div>
+          <nav class="sidebar-nav" id="sidebar-nav">
+            <a class="sidebar-link active" href="#s1">
+              <span class="sidebar-num">01</span>
+              <span class="sn">Datos que recopilamos</span>
+            </a>
+            <a class="sidebar-link" href="#s2">
+              <span class="sidebar-num">02</span>
+              <span class="sn">Para qué usamos los datos</span>
+            </a>
+            <a class="sidebar-link" href="#s3">
+              <span class="sidebar-num">03</span>
+              <span class="sn">Base legal</span>
+            </a>
+            <a class="sidebar-link" href="#s4">
+              <span class="sidebar-num">04</span>
+              <span class="sn">Comprobantes fiscales electrónicos</span>
+            </a>
+            <a class="sidebar-link" href="#s5">
+              <span class="sidebar-num">05</span>
+              <span class="sn">Con quién compartimos los datos</span>
+            </a>
+            <a class="sidebar-link" href="#s6">
+              <span class="sidebar-num">06</span>
+              <span class="sn">Seguridad</span>
+            </a>
+            <a class="sidebar-link" href="#s7">
+              <span class="sidebar-num">07</span>
+              <span class="sn">Sus derechos</span>
+            </a>
+            <a class="sidebar-link" href="#s8">
+              <span class="sidebar-num">08</span>
+              <span class="sn">Cookies</span>
+            </a>
+            <a class="sidebar-link" href="#s9">
+              <span class="sidebar-num">09</span>
+              <span class="sn">Cambios a esta política</span>
+            </a>
+            <a class="sidebar-link" href="#s10">
+              <span class="sidebar-num">10</span>
+              <span class="sn">Contacto</span>
+            </a>
+            <div class="sidebar-divider"></div>
+            <a class="sidebar-link" href="#crosslinks">
+              <span class="sidebar-num">→</span>
+              <span class="sn">Políticas relacionadas</span>
+            </a>
+          </nav>
+          <div class="sidebar-footer">
+            <div class="sidebar-footer-label" id="sf-label">
+              Documentos legales
+            </div>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/privacy -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/privacy"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/privacy"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Políticas de Privacidad</span>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/politica-de-privacidad-icq24 -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/politica-de-privacidad-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/politica-de-privacidad-icq24"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Política de Privacidad y Protección de Datos</span>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/politica-de-seguridad-icq24 -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/politica-de-seguridad-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/politica-de-seguridad-icq24"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Política de Seguridad de la Información</span>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/continuidad-de-servicio-icq24 -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/continuidad-de-servicio-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/continuidad-de-servicio-icq24"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Continuidad del Servicio</span>
+            </a>
+            <!-- ANOTACIÓN ENLACE: Sitio Web Oficial de ICQ24 -->
+            <a
+              class="sidebar-ext-link"
+              href="https://www.icq24.com/"
+              target="_blank"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" />
+              </svg>
+              <span>Sitio Oficial ICQ24</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+        <!-- SECTION 1 -->
+        <div class="policy-section" id="s1">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">01</div>
+            <div class="sec-title">Datos que recopilamos</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <ul class="purpose-list">
+              <li>
+                <div class="purpose-badge">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+                <span
+                  ><strong>Visitantes del sitio:</strong> nombre, correo
+                  electrónico, teléfono, empresa y el mensaje que nos
+                  envían.</span
+                >
+              </li>
+              <li>
+                <div class="purpose-badge">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <span
+                  ><strong>Clientes:</strong> RNC, razón social, datos de
+                  contacto y datos del representante. Clientes del servicio de
+                  facturación electrónica: los datos que contienen sus
+                  comprobantes fiscales electrónicos (e-CF), incluidos los de
+                  sus compradores: RNC o cédula, nombre o razón social, correo
+                  electrónico, montos y detalle de la venta.</span
+                >
+              </li>
+              <li>
+                <div class="purpose-badge">
+                  <i class="fa-solid fa-laptop"></i>
+                </div>
+                <span
+                  ><strong>Usuarios de nuestras plataformas:</strong> nombre de
+                  usuario, correo electrónico y registro de accesos. Las
+                  contraseñas se guardan cifradas.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="policy-section" id="s2">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">02</div>
+            <div class="sec-title">Para qué usamos los datos</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span>Responder consultas y solicitudes.</span>
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Prestar, facturar y dar soporte a nuestros servicios.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Emitir, enviar, recibir y conservar los comprobantes fiscales
+                  electrónicos de nuestros clientes, como exige la Dirección
+                  General de Impuestos Internos (DGII).</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span>Cumplir con las obligaciones legales y tributarias.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="policy-section" id="s3">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">03</div>
+            <div class="sec-title">Base legal</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              Tratamos los datos para cumplir los contratos con nuestros
+              clientes y las obligaciones de la Ley Núm. 32-23 de Facturación
+              Electrónica, su reglamento y el Código Tributario. En los demás
+              casos, con el consentimiento del titular.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="policy-section" id="s4">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">04</div>
+            <div class="sec-title">Comprobantes fiscales electrónicos</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              En el servicio de facturación electrónica, ICQ24, SRL trata los
+              datos por cuenta de cada cliente emisor. Cada cliente es
+              responsable de los datos de sus compradores. Los comprobantes se
+              envían a la DGII y al comprador, y se conservan durante diez (10)
+              años, como exige la ley.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 5 -->
+        <div class="policy-section" id="s5">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">05</div>
+            <div class="sec-title">Con quién compartimos los datos</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <ul class="custom-list">
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Con la Dirección General de Impuestos Internos (DGII), por
+                  mandato de ley.</span
+                >
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span>Con los compradores que reciben cada comprobante.</span>
+              </li>
+              <li>
+                <span class="custom-list-dot"></span>
+                <span
+                  >Con nuestros proveedores de servidores y almacenamiento,
+                  ubicados en Estados Unidos y en la Unión Europea. Las copias
+                  de respaldo se guardan cifradas y estos proveedores no tienen
+                  acceso a su contenido.</span
+                >
+              </li>
+            </ul>
+            <div class="notice-box" style="margin-top: 16px">
+              No vendemos ni cedemos datos personales a terceros con fines
+              comerciales.
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6 -->
+        <div class="policy-section" id="s6">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">06</div>
+            <div class="sec-title">Seguridad</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              Protegemos los datos con conexiones cifradas, acceso restringido
+              con doble factor de autenticación y copias de respaldo cifradas.
+              Los detalles están en nuestra Política de Seguridad de la
+              Información.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 7 -->
+        <div class="policy-section" id="s7">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">07</div>
+            <div class="sec-title">Sus derechos</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              Usted puede solicitar el acceso, la rectificación, la cancelación
+              o la oposición al tratamiento de sus datos. Para hacerlo, escriba
+              a
+              <a
+                href="mailto:privacy@icq24.com"
+                style="color: var(--brand-primary); font-weight: 600"
+                >privacy@icq24.com</a
+              >
+              e incluya una copia de su documento de identidad. Responderemos
+              dentro de los plazos que establece la Ley Núm. 172-13.
+            </p>
+            <p>
+              Los datos que forman parte de comprobantes fiscales no pueden
+              eliminarse mientras dure la obligación legal de conservarlos.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 8 -->
+        <div class="policy-section" id="s8">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">08</div>
+            <div class="sec-title">Cookies</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              Este sitio utiliza cookies. Puede consultar nuestra Política de
+              Cookies.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 9 -->
+        <div class="policy-section" id="s9">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">09</div>
+            <div class="sec-title">Cambios a esta política</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <p>
+              Publicaremos en esta página cualquier cambio, con su fecha de
+              actualización.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 10 -->
+        <div class="policy-section" id="s10">
+          <div class="section-head" onclick="toggleSec(this)">
+            <div class="sec-num">10</div>
+            <div class="sec-title">Contacto</div>
+            <div class="sec-chevron">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </svg>
+            </div>
+          </div>
+          <div class="section-body-wrap">
+            <div class="contact-dark">
+              <div class="contact-dark-head">
+                ICQ24, SRL — Contacto de Privacidad y Protección de Datos
+              </div>
+              <div class="contact-grid-2">
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-building"></i>
+                  </div>
+                  <div>
+                    <label>Empresa</label>
+                    <span>ICQ24, SRL</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-id-card"></i>
+                  </div>
+                  <div>
+                    <label>RNC</label>
+                    <span>1-31-59088-8</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <label>Dirección RD</label>
+                    <span>
+                      Av. John F. Kennedy No. 63, Plaza Metropolitana, Local
+                      223, Ens. Kennedy
+                    </span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div>
+                    <label>Correo Electrónico</label>
+                    <a href="mailto:privacy@icq24.com">privacy@icq24.com</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div>
+                    <label>Teléfono RD</label>
+                    <a href="tel:+18299273849">+1 (829) 9273849</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <i class="fa-solid fa-globe"></i>
+                  </div>
+                  <div>
+                    <label>Sitio web</label>
+                    <a href="https://www.icq24.com/" target="_blank"
+                      >www.icq24.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CROSS-LINKS -->
+        <div class="cross-links" id="crosslinks">
+          <h3>Políticas relacionadas</h3>
+          <p
+            style="
+              font-size: 13px;
+              color: var(--text-muted);
+              margin-bottom: 16px;
+            "
+          >
+            Consulte también los siguientes documentos que conforman el marco de
+            políticas de ICQ24:
+          </p>
+          <div class="cross-grid">
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/privacy -->
+            <a
+              class="cross-item"
+              href="https://www.icq24.com/privacy"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/privacy"
+            >
+              <div class="cross-item-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div>
+                <strong>Políticas de Privacidad y Seguridad</strong>
+                <span>icq24.com/privacy</span>
+              </div>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/politica-de-seguridad-icq24 -->
+            <a
+              class="cross-item"
+              href="https://www.icq24.com/politica-de-seguridad-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/politica-de-seguridad-icq24"
+            >
+              <div class="cross-item-icon">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <div>
+                <strong>Política de Seguridad de la Información</strong>
+                <span>icq24.com/politica-de-seguridad-icq24</span>
+              </div>
+            </a>
+            <!-- ANOTACIÓN ENLACE: https://www.icq24.com/continuidad-de-servicio-icq24 -->
+            <a
+              class="cross-item"
+              href="https://www.icq24.com/continuidad-de-servicio-icq24"
+              target="_blank"
+              title="Anotación enlace: https://www.icq24.com/continuidad-de-servicio-icq24"
+            >
+              <div class="cross-item-icon">
+                <i class="fa-solid fa-rotate"></i>
+              </div>
+              <div>
+                <strong>Continuidad del Servicio</strong>
+                <span>icq24.com/continuidad-de-servicio-icq24</span>
+              </div>
+            </a>
+            <!-- ANOTACIÓN ENLACE: Sitio Oficial www.icq24.com -->
+            <a class="cross-item" href="https://www.icq24.com/" target="_blank">
+              <div class="cross-item-icon">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div>
+                <strong>Sitio Oficial ICQ24</strong>
+                <span>www.icq24.com</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // ── SECTION TOGGLE ─────────────────────────────────────────────
+      function toggleSec(header) {
+        const section = header.closest(".policy-section");
+        const body = section.querySelector(".section-body-wrap");
+        header.classList.toggle("open");
+        body.classList.toggle("open");
+      }
+
+      // ── ACTIVE SIDEBAR LINK ────────────────────────────────────────
+      const sections = document.querySelectorAll(".policy-section[id]");
+      const sideLinks = document.querySelectorAll(".sidebar-link");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              sideLinks.forEach((l) => l.classList.remove("active"));
+              const active = document.querySelector(
+                `.sidebar-link[href="#${e.target.id}"]`,
+              );
+              if (active) active.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-15% 0px -80% 0px", threshold: 0 },
+      );
+
+      sections.forEach((s) => observer.observe(s));
+
+      sideLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          const href = link.getAttribute("href");
+
+          if (!href.startsWith("#")) return;
+
+          e.preventDefault();
+
+          const targetId = href.slice(1);
+          const target = document.getElementById(targetId);
+
+          if (target) {
+            const head = target.querySelector(".section-head");
+            const body = target.querySelector(".section-body-wrap");
+
+            if (head && body && !body.classList.contains("open")) {
+              head.classList.add("open");
+              body.classList.add("open");
+            }
+
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
