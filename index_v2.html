@@ -2006,7 +2006,7 @@
               >
             </h2>
             <p
-              class="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed font-normal"
+              class="text-slate-600 text-sm sm:text-base leading-relaxed font-normal"
             >
               Integra inteligencia en cada punto de la operación para resolver
               mejor, potenciar la productividad de tus equipos, convertir datos
@@ -2026,7 +2026,7 @@
            CARD CONTENEDORA PRINCIPAL (FONDO BLANCO + SOMBRA)
            ══════════════════════════════════════════════════════════════ -->
           <div
-            class="max-w-6xl mx-auto w-full bg-white rounded-2xl sm:rounded-3xl lg:rounded-[2.5rem] p-3.5 sm:p-7 lg:p-10 shadow-xl shadow-slate-200/80 border border-slate-200/80"
+            class="max-w-7xl mx-auto w-full bg-white rounded-2xl sm:rounded-3xl lg:rounded-[2.5rem] p-3.5 sm:p-6 lg:p-7 shadow-xl shadow-slate-200/80 border border-slate-200/80"
           >
             <!-- ── BARRA DE NAVEGACIÓN SUPERIOR ── -->
             <div class="max-w-3xl mx-auto w-full mb-4 sm:mb-6 lg:mb-8">
@@ -2190,36 +2190,40 @@
                 id="ia-slide-0"
                 role="tabpanel"
                 aria-labelledby="ia-tab-0"
-                class="ia-slide block bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-10 shadow-2xl transition-all duration-300 relative overflow-hidden"
+                class="ia-slide block bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transition-all duration-300 relative overflow-hidden"
               >
                 <div
                   class="absolute -top-24 -right-24 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"
                 ></div>
                 <div
-                  class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center relative z-10"
+                  class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-center relative z-10"
                 >
                   <!-- Costado Izquierdo: Solo Video y Botón Play/Pause -->
-                  <div class="lg:col-span-6 w-full flex flex-col items-start">
+                  <div class="lg:col-span-7 w-full flex flex-col items-start">
                     <!-- Marco del Video -->
                     <div
                       class="w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-slate-700/70 shadow-[0_10px_35px_-5px_rgba(0,82,204,0.3)]"
                     >
                       <div class="relative w-full aspect-video bg-black">
-                        <iframe
-                          id="ia-yt-iframe-0"
-                          class="w-full h-full border-0 block"
-                          src="https://www.youtube-nocookie.com/embed/6amwl39Cr2s?enablejsapi=1&controls=0&modestbranding=1&rel=0&playsinline=1"
-                          title="Video demostrativo ICQ24"
-                          allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                          "
-                          allowfullscreen
-                        ></iframe>
+                        <video
+                          id="ia-video-0"
+                          class="w-full h-full object-cover block cursor-pointer"
+                          playsinline
+                          preload="metadata"
+                          loop
+                          muted
+                          onclick="toggleIaVideo(0)"
+                        >
+                          <source
+                            src="./Home/Asset/Videos%20flujo%20home/Videos%20ajustados/1.mp4"
+                            type="video/mp4"
+                          />
+                          <source
+                            src="https://raw.githubusercontent.com/Lucaro99/Pagina-web-ICQ24_2026/main/Home/Asset/Videos%20flujo%20home/Videos%20ajustados/1.mp4"
+                            type="video/mp4"
+                          />
+                          Tu navegador no soporta el formato de video.
+                        </video>
                       </div>
                     </div>
 
@@ -2240,7 +2244,7 @@
                   </div>
 
                   <!-- Costado Derecho: Información -->
-                  <div class="lg:col-span-6 text-left space-y-3 sm:space-y-4">
+                  <div class="lg:col-span-5 text-left space-y-3 sm:space-y-4">
                     <h3
                       class="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight"
                     >
@@ -2283,36 +2287,40 @@
                 id="ia-slide-1"
                 role="tabpanel"
                 aria-labelledby="ia-tab-1"
-                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-10 shadow-2xl transition-all duration-300 relative overflow-hidden"
+                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transition-all duration-300 relative overflow-hidden"
               >
                 <div
                   class="absolute -top-24 -right-24 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"
                 ></div>
                 <div
-                  class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center relative z-10"
+                  class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-center relative z-10"
                 >
                   <!-- Costado Izquierdo: Solo Video y Botón Play/Pause -->
-                  <div class="lg:col-span-6 w-full flex flex-col items-start">
+                  <div class="lg:col-span-7 w-full flex flex-col items-start">
                     <!-- Marco del Video -->
                     <div
                       class="w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-slate-700/70 shadow-[0_10px_35px_-5px_rgba(0,82,204,0.3)]"
                     >
                       <div class="relative w-full aspect-video bg-black">
-                        <iframe
-                          id="ia-yt-iframe-1"
-                          class="w-full h-full border-0 block"
-                          src="https://www.youtube-nocookie.com/embed/6amwl39Cr2s?enablejsapi=1&controls=0&modestbranding=1&rel=0&playsinline=1"
-                          title="Video demostrativo ICQ24"
-                          allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                          "
-                          allowfullscreen
-                        ></iframe>
+                        <video
+                          id="ia-video-1"
+                          class="w-full h-full object-cover block cursor-pointer"
+                          playsinline
+                          preload="metadata"
+                          loop
+                          muted
+                          onclick="toggleIaVideo(1)"
+                        >
+                          <source
+                            src="./Home/Asset/Videos%20flujo%20home/Videos%20ajustados/2.mp4"
+                            type="video/mp4"
+                          />
+                          <source
+                            src="https://raw.githubusercontent.com/Lucaro99/Pagina-web-ICQ24_2026/main/Home/Asset/Videos%20flujo%20home/Videos%20ajustados/2.mp4"
+                            type="video/mp4"
+                          />
+                          Tu navegador no soporta el formato de video.
+                        </video>
                       </div>
                     </div>
 
@@ -2333,7 +2341,7 @@
                   </div>
 
                   <!-- Costado Derecho: Información -->
-                  <div class="lg:col-span-6 text-left space-y-3 sm:space-y-4">
+                  <div class="lg:col-span-5 text-left space-y-3 sm:space-y-4">
                     <h3
                       class="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight"
                     >
@@ -2376,36 +2384,40 @@
                 id="ia-slide-2"
                 role="tabpanel"
                 aria-labelledby="ia-tab-2"
-                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-10 shadow-2xl transition-all duration-300 relative overflow-hidden"
+                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transition-all duration-300 relative overflow-hidden"
               >
                 <div
                   class="absolute -top-24 -right-24 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"
                 ></div>
                 <div
-                  class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center relative z-10"
+                  class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-center relative z-10"
                 >
                   <!-- Costado Izquierdo: Solo Video y Botón Play/Pause -->
-                  <div class="lg:col-span-6 w-full flex flex-col items-start">
+                  <div class="lg:col-span-7 w-full flex flex-col items-start">
                     <!-- Marco del Video -->
                     <div
                       class="w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-slate-700/70 shadow-[0_10px_35px_-5px_rgba(0,82,204,0.3)]"
                     >
                       <div class="relative w-full aspect-video bg-black">
-                        <iframe
-                          id="ia-yt-iframe-2"
-                          class="w-full h-full border-0 block"
-                          src="https://www.youtube-nocookie.com/embed/6amwl39Cr2s?enablejsapi=1&controls=0&modestbranding=1&rel=0&playsinline=1"
-                          title="Video demostrativo ICQ24"
-                          allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                          "
-                          allowfullscreen
-                        ></iframe>
+                        <video
+                          id="ia-video-2"
+                          class="w-full h-full object-cover block cursor-pointer"
+                          playsinline
+                          preload="metadata"
+                          loop
+                          muted
+                          onclick="toggleIaVideo(2)"
+                        >
+                          <source
+                            src="./Home/Asset/Videos%20flujo%20home/Videos%20ajustados/3.mp4"
+                            type="video/mp4"
+                          />
+                          <source
+                            src="https://raw.githubusercontent.com/Lucaro99/Pagina-web-ICQ24_2026/main/Home/Asset/Videos%20flujo%20home/Videos%20ajustados/3.mp4"
+                            type="video/mp4"
+                          />
+                          Tu navegador no soporta el formato de video.
+                        </video>
                       </div>
                     </div>
 
@@ -2426,7 +2438,7 @@
                   </div>
 
                   <!-- Costado Derecho: Información -->
-                  <div class="lg:col-span-6 text-left space-y-3 sm:space-y-4">
+                  <div class="lg:col-span-5 text-left space-y-3 sm:space-y-4">
                     <h3
                       class="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight"
                     >
@@ -2469,36 +2481,40 @@
                 id="ia-slide-3"
                 role="tabpanel"
                 aria-labelledby="ia-tab-3"
-                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-10 shadow-2xl transition-all duration-300 relative overflow-hidden"
+                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transition-all duration-300 relative overflow-hidden"
               >
                 <div
                   class="absolute -top-24 -right-24 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"
                 ></div>
                 <div
-                  class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center relative z-10"
+                  class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-center relative z-10"
                 >
                   <!-- Costado Izquierdo: Solo Video y Botón Play/Pause -->
-                  <div class="lg:col-span-6 w-full flex flex-col items-start">
+                  <div class="lg:col-span-7 w-full flex flex-col items-start">
                     <!-- Marco del Video -->
                     <div
                       class="w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-slate-700/70 shadow-[0_10px_35px_-5px_rgba(0,82,204,0.3)]"
                     >
                       <div class="relative w-full aspect-video bg-black">
-                        <iframe
-                          id="ia-yt-iframe-3"
-                          class="w-full h-full border-0 block"
-                          src="https://www.youtube-nocookie.com/embed/6amwl39Cr2s?enablejsapi=1&controls=0&modestbranding=1&rel=0&playsinline=1"
-                          title="Video demostrativo ICQ24"
-                          allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                          "
-                          allowfullscreen
-                        ></iframe>
+                        <video
+                          id="ia-video-3"
+                          class="w-full h-full object-cover block cursor-pointer"
+                          playsinline
+                          preload="metadata"
+                          loop
+                          muted
+                          onclick="toggleIaVideo(3)"
+                        >
+                          <source
+                            src="./Home/Asset/Videos%20flujo%20home/Videos%20ajustados/4.mp4"
+                            type="video/mp4"
+                          />
+                          <source
+                            src="https://raw.githubusercontent.com/Lucaro99/Pagina-web-ICQ24_2026/main/Home/Asset/Videos%20flujo%20home/Videos%20ajustados/4.mp4"
+                            type="video/mp4"
+                          />
+                          Tu navegador no soporta el formato de video.
+                        </video>
                       </div>
                     </div>
 
@@ -2519,7 +2535,7 @@
                   </div>
 
                   <!-- Costado Derecho: Información -->
-                  <div class="lg:col-span-6 text-left space-y-3 sm:space-y-4">
+                  <div class="lg:col-span-5 text-left space-y-3 sm:space-y-4">
                     <h3
                       class="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight"
                     >
@@ -2562,36 +2578,40 @@
                 id="ia-slide-4"
                 role="tabpanel"
                 aria-labelledby="ia-tab-4"
-                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-10 shadow-2xl transition-all duration-300 relative overflow-hidden"
+                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transition-all duration-300 relative overflow-hidden"
               >
                 <div
                   class="absolute -top-24 -right-24 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"
                 ></div>
                 <div
-                  class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center relative z-10"
+                  class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-center relative z-10"
                 >
                   <!-- Costado Izquierdo: Solo Video y Botón Play/Pause -->
-                  <div class="lg:col-span-6 w-full flex flex-col items-start">
+                  <div class="lg:col-span-7 w-full flex flex-col items-start">
                     <!-- Marco del Video -->
                     <div
                       class="w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-slate-700/70 shadow-[0_10px_35px_-5px_rgba(0,82,204,0.3)]"
                     >
                       <div class="relative w-full aspect-video bg-black">
-                        <iframe
-                          id="ia-yt-iframe-4"
-                          class="w-full h-full border-0 block"
-                          src="https://www.youtube-nocookie.com/embed/6amwl39Cr2s?enablejsapi=1&controls=0&modestbranding=1&rel=0&playsinline=1"
-                          title="Video demostrativo ICQ24"
-                          allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                          "
-                          allowfullscreen
-                        ></iframe>
+                        <video
+                          id="ia-video-4"
+                          class="w-full h-full object-cover block cursor-pointer"
+                          playsinline
+                          preload="metadata"
+                          loop
+                          muted
+                          onclick="toggleIaVideo(4)"
+                        >
+                          <source
+                            src="./Home/Asset/Videos%20flujo%20home/Videos%20ajustados/5.mp4"
+                            type="video/mp4"
+                          />
+                          <source
+                            src="https://raw.githubusercontent.com/Lucaro99/Pagina-web-ICQ24_2026/main/Home/Asset/Videos%20flujo%20home/Videos%20ajustados/5.mp4"
+                            type="video/mp4"
+                          />
+                          Tu navegador no soporta el formato de video.
+                        </video>
                       </div>
                     </div>
 
@@ -2612,7 +2632,7 @@
                   </div>
 
                   <!-- Costado Derecho: Información -->
-                  <div class="lg:col-span-6 text-left space-y-3 sm:space-y-4">
+                  <div class="lg:col-span-5 text-left space-y-3 sm:space-y-4">
                     <h3
                       class="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight"
                     >
@@ -2655,36 +2675,40 @@
                 id="ia-slide-5"
                 role="tabpanel"
                 aria-labelledby="ia-tab-5"
-                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-10 shadow-2xl transition-all duration-300 relative overflow-hidden"
+                class="ia-slide hidden bg-[#0b132b] text-white border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl transition-all duration-300 relative overflow-hidden"
               >
                 <div
                   class="absolute -top-24 -right-24 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"
                 ></div>
                 <div
-                  class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center relative z-10"
+                  class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 items-center relative z-10"
                 >
                   <!-- Costado Izquierdo: Solo Video y Botón Play/Pause -->
-                  <div class="lg:col-span-6 w-full flex flex-col items-start">
+                  <div class="lg:col-span-7 w-full flex flex-col items-start">
                     <!-- Marco del Video -->
                     <div
                       class="w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black border border-slate-700/70 shadow-[0_10px_35px_-5px_rgba(0,82,204,0.3)]"
                     >
                       <div class="relative w-full aspect-video bg-black">
-                        <iframe
-                          id="ia-yt-iframe-5"
-                          class="w-full h-full border-0 block"
-                          src="https://www.youtube-nocookie.com/embed/6amwl39Cr2s?enablejsapi=1&controls=0&modestbranding=1&rel=0&playsinline=1"
-                          title="Video demostrativo ICQ24"
-                          allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                          "
-                          allowfullscreen
-                        ></iframe>
+                        <video
+                          id="ia-video-5"
+                          class="w-full h-full object-cover block cursor-pointer"
+                          playsinline
+                          preload="metadata"
+                          loop
+                          muted
+                          onclick="toggleIaVideo(5)"
+                        >
+                          <source
+                            src="./Home/Asset/Videos%20flujo%20home/Videos%20ajustados/6.mp4"
+                            type="video/mp4"
+                          />
+                          <source
+                            src="https://raw.githubusercontent.com/Lucaro99/Pagina-web-ICQ24_2026/main/Home/Asset/Videos%20flujo%20home/Videos%20ajustados/6.mp4"
+                            type="video/mp4"
+                          />
+                          Tu navegador no soporta el formato de video.
+                        </video>
                       </div>
                     </div>
 
@@ -2705,7 +2729,7 @@
                   </div>
 
                   <!-- Costado Derecho: Información -->
-                  <div class="lg:col-span-6 text-left space-y-3 sm:space-y-4">
+                  <div class="lg:col-span-5 text-left space-y-3 sm:space-y-4">
                     <h3
                       class="text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight"
                     >
@@ -5243,41 +5267,62 @@
         startTypewriter();
 
         // ══════════════════════════════════════════════════════════════
-        // CONTROLADOR: IA APLICADA A LA OPERACIÓN (6 SLIDES TABS & YOUTUBE PLAYER)
+        // CONTROLADOR: IA APLICADA A LA OPERACIÓN (6 SLIDES TABS & HTML5 VIDEO PLAYER)
         // ══════════════════════════════════════════════════════════════
         let iaCurrentSlide = 0;
         const totalIaSlides = 6;
         const iaVideoPlaying = {};
 
         window.toggleIaVideo = function (idx) {
-          const iframe = document.getElementById(`ia-yt-iframe-${idx}`);
+          const video = document.getElementById(`ia-video-${idx}`);
           const btn = document.getElementById(`ia-play-btn-${idx}`);
-          if (!iframe || !iframe.contentWindow || !btn) return;
+          if (!video || !btn) return;
 
-          const isPlaying = !!iaVideoPlaying[idx];
           const icon = btn.querySelector("i");
           const label = btn.querySelector("span");
 
-          if (isPlaying) {
+          if (!video.paused) {
             // Pausar video
-            iframe.contentWindow.postMessage(
-              '{"event":"command","func":"pauseVideo","args":""}',
-              "*",
-            );
+            video.pause();
             iaVideoPlaying[idx] = false;
             if (icon)
               icon.className = "fa-solid fa-play text-[10px] text-icqBlue";
             if (label) label.textContent = "Play";
           } else {
-            // Reproducir video
-            iframe.contentWindow.postMessage(
-              '{"event":"command","func":"playVideo","args":""}',
-              "*",
-            );
-            iaVideoPlaying[idx] = true;
-            if (icon)
-              icon.className = "fa-solid fa-pause text-[10px] text-icqBlue";
-            if (label) label.textContent = "Pause";
+            // Pausar cualquier otro video activo primero
+            for (let i = 0; i < totalIaSlides; i++) {
+              if (i !== idx) {
+                const otherVideo = document.getElementById(`ia-video-${i}`);
+                const otherBtn = document.getElementById(`ia-play-btn-${i}`);
+                if (otherVideo && !otherVideo.paused) {
+                  otherVideo.pause();
+                }
+                iaVideoPlaying[i] = false;
+                if (otherBtn) {
+                  const oIcon = otherBtn.querySelector("i");
+                  const oLabel = otherBtn.querySelector("span");
+                  if (oIcon)
+                    oIcon.className = "fa-solid fa-play text-[10px] text-icqBlue";
+                  if (oLabel) oLabel.textContent = "Play";
+                }
+              }
+            }
+
+            // Reproducir video con audio silenciado
+            video.muted = true;
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise
+                .then(() => {
+                  iaVideoPlaying[idx] = true;
+                  if (icon)
+                    icon.className = "fa-solid fa-pause text-[10px] text-icqBlue";
+                  if (label) label.textContent = "Pause";
+                })
+                .catch((err) => {
+                  console.warn("Error al reproducir video:", err);
+                });
+            }
           }
         };
 
@@ -5322,31 +5367,50 @@
                   slide.style.opacity = "1";
                   slide.style.transform = "translateY(0)";
                 });
+
+                // Reproducir automáticamente el video del slide activo
+                const activeVideo = document.getElementById(`ia-video-${idx}`);
+                const activeBtn = document.getElementById(`ia-play-btn-${idx}`);
+                if (activeVideo) {
+                  activeVideo.muted = true;
+                  activeVideo.currentTime = 0;
+                  const playPromise = activeVideo.play();
+                  if (playPromise !== undefined) {
+                    playPromise
+                      .then(() => {
+                        iaVideoPlaying[idx] = true;
+                        if (activeBtn) {
+                          const icon = activeBtn.querySelector("i");
+                          const label = activeBtn.querySelector("span");
+                          if (icon)
+                            icon.className =
+                              "fa-solid fa-pause text-[10px] text-icqBlue";
+                          if (label) label.textContent = "Pause";
+                        }
+                      })
+                      .catch((err) => {
+                        console.warn("Autoplay bloqueado o no disponible:", err);
+                      });
+                  }
+                }
               } else {
                 slide.classList.remove("block");
                 slide.classList.add("hidden");
 
                 // Pausar video del slide que quedó inactivo
-                if (iaVideoPlaying[i]) {
-                  const prevIframe = document.getElementById(
-                    `ia-yt-iframe-${i}`,
-                  );
-                  const prevBtn = document.getElementById(`ia-play-btn-${i}`);
-                  if (prevIframe && prevIframe.contentWindow) {
-                    prevIframe.contentWindow.postMessage(
-                      '{"event":"command","func":"pauseVideo","args":""}',
-                      "*",
-                    );
-                  }
-                  iaVideoPlaying[i] = false;
-                  if (prevBtn) {
-                    const icon = prevBtn.querySelector("i");
-                    const label = prevBtn.querySelector("span");
-                    if (icon)
-                      icon.className =
-                        "fa-solid fa-play text-[10px] text-icqBlue";
-                    if (label) label.textContent = "Play";
-                  }
+                const prevVideo = document.getElementById(`ia-video-${i}`);
+                const prevBtn = document.getElementById(`ia-play-btn-${i}`);
+                if (prevVideo && !prevVideo.paused) {
+                  prevVideo.pause();
+                }
+                iaVideoPlaying[i] = false;
+                if (prevBtn) {
+                  const icon = prevBtn.querySelector("i");
+                  const label = prevBtn.querySelector("span");
+                  if (icon)
+                    icon.className =
+                      "fa-solid fa-play text-[10px] text-icqBlue";
+                  if (label) label.textContent = "Play";
                 }
               }
             }
@@ -5441,6 +5505,43 @@
             },
             { passive: true },
           );
+        }
+
+        // Autoplay del video activo cuando la sección entra al campo de visión (viewport)
+        if ("IntersectionObserver" in window && iaSlidesContainer) {
+          const iaSectionObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const currentVid = document.getElementById(
+                    `ia-video-${iaCurrentSlide}`,
+                  );
+                  const currentBtn = document.getElementById(
+                    `ia-play-btn-${iaCurrentSlide}`,
+                  );
+                  if (currentVid && currentVid.paused) {
+                    currentVid.muted = true;
+                    currentVid
+                      .play()
+                      .then(() => {
+                        iaVideoPlaying[iaCurrentSlide] = true;
+                        if (currentBtn) {
+                          const icon = currentBtn.querySelector("i");
+                          const label = currentBtn.querySelector("span");
+                          if (icon)
+                            icon.className =
+                              "fa-solid fa-pause text-[10px] text-icqBlue";
+                          if (label) label.textContent = "Pause";
+                        }
+                      })
+                      .catch(() => {});
+                  }
+                }
+              });
+            },
+            { threshold: 0.25 },
+          );
+          iaSectionObserver.observe(iaSlidesContainer);
         }
 
         // Soluciones Carousel Logic (2 cards por vista)
