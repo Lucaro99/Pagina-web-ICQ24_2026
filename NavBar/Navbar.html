@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propuesta NavBar ICQ24 · Diseño Estratégico y Modular</title>
+
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Configuración Tailwind ICQ24 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              icqBlue: "#0263e2",
+              icqBlueHover: "#002d6d",
+              icqDark: "#0f172a",
+              icqNavy: "#0a192f",
+              icqNavyDark: "#060e1d",
+              icqLightBg: "#f8fafc",
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+            },
+            boxShadow: {
+              dropdown:
+                "0 20px 40px -15px rgba(2, 99, 226, 0.12), 0 8px 16px -6px rgba(15, 23, 42, 0.08)",
+              megamenu:
+                "0 25px 50px -12px rgba(2, 99, 226, 0.16), 0 10px 20px -8px rgba(15, 23, 42, 0.08)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #f8fafc;
+        color: #0f172a;
+      }
+
+      /* Transiciones y animaciones de dropdown */
+      .nav-dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+      }
+
+      .nav-item:hover .nav-dropdown-menu,
+      .nav-item:focus-within .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      /* Indicador de chevron rotatorio */
+      .nav-item:hover .nav-chevron {
+        transform: rotate(180deg);
+        color: #0263e2;
+      }
+
+      /* Pestañas activas del Megamenú de Plataformas */
+      .platform-tab-btn.active {
+        background-color: #eff6ff;
+        color: #0263e2;
+        border-color: #bfdbfe;
+        font-weight: 700;
+      }
+
+      .platform-tab-btn.active .tab-icon {
+        background-color: #0263e2;
+        color: #ffffff;
+      }
+
+      /* Scrollbar suave para paneles largos */
+      .custom-scroll::-webkit-scrollbar {
+        width: 5px;
+      }
+      .custom-scroll::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 4px;
+      }
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      .custom-scroll::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-slate-50 flex flex-col justify-between">
+    <!-- =====================================================================
+         NAVBAR PRINCIPAL ICQ24
+         ===================================================================== -->
+    <header
+      class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-sm transition-all duration-200"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- 1. LOGO ICQ24 -->
+          <div class="flex items-center gap-8">
+            <a
+              href="/"
+              class="flex items-center shrink-0 group focus:outline-none focus:ring-2 focus:ring-icqBlue rounded-lg p-1"
+            >
+              <img
+                src="https://www.icq24.com/web/image/37705-f534f3a0/Logo%20ICQ24_original.webp"
+                alt="ICQ24 - Tecnología para Contact Center, CX e ITSM"
+                class="h-9 sm:h-10 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              />
+            </a>
+
+            <!-- 2. MENÚ DE NAVEGACIÓN DESKTOP (MD+) -->
+            <nav
+              class="hidden lg:flex items-center gap-1 xl:gap-2"
+              aria-label="Navegación Principal"
+            >
+              <!-- ITEM 1: PLATAFORMAS (MEGAMENÚ POR PARTNERS/SUITE) -->
+              <div class="nav-item relative py-6">
+                <button
+                  type="button"
+                  class="flex items-center gap-1.5 px-3 py-2 text-sm font-bold text-slate-700 hover:text-icqBlue rounded-lg hover:bg-slate-50/80 transition-colors focus:outline-none focus:ring-2 focus:ring-icqBlue/40 cursor-pointer"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <span>Plataformas</span>
+                  <i
+                    class="fa-solid fa-chevron-down text-[10px] text-slate-400 nav-chevron transition-transform duration-200"
+                  ></i>
+                </button>
+
+                <!-- MEGAMENÚ DESPLEGABLE: PLATAFORMAS -->
+                <div
+                  class="nav-dropdown-menu absolute top-full left-0 w-[920px] xl:w-[980px] -ml-24 xl:-ml-12 pt-2"
+                >
+                  <div
+                    class="bg-white rounded-2xl border border-slate-200/90 shadow-megamenu overflow-hidden grid grid-cols-12"
+                  >
+                    <!-- Columna Izquierda: Pestañas de Partners/Marcas (4 cols) -->
+                    <div
+                      class="col-span-4 bg-slate-50/70 p-4 border-r border-slate-200/80 space-y-1.5"
+                    >
+                      <div class="px-3 pb-2 pt-1">
+                        <span
+                          class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400"
+                          >Ecosistema Tecnológico</span
+                        >
+                      </div>
+
+                      <!-- Tab 1: FIVE9 -->
+                      <button
+                        type="button"
+                        onclick="showPlatformTab('tab-five9', this)"
+                        class="platform-tab-btn active w-full flex items-center justify-between p-3 rounded-xl border border-transparent transition-all text-left group cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="tab-icon w-8 h-8 rounded-lg bg-blue-100 text-icqBlue flex items-center justify-center text-sm font-black transition-colors shrink-0"
+                          >
+                            <i class="fa-solid fa-headset"></i>
+                          </div>
+                          <div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Five9
+                            </div>
+                            <div class="text-[11px] text-slate-500 font-medium">
+                              Cloud CCaaS & IA
+                            </div>
+                          </div>
+                        </div>
+                        <i
+                          class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 transition-transform"
+                        ></i>
+                      </button>
+
+                      <!-- Tab 2: ATLASSIAN -->
+                      <button
+                        type="button"
+                        onclick="showPlatformTab('tab-atlassian', this)"
+                        class="platform-tab-btn w-full flex items-center justify-between p-3 rounded-xl border border-transparent hover:bg-white hover:border-slate-200 transition-all text-left group cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="tab-icon w-8 h-8 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-sm transition-colors shrink-0"
+                          >
+                            <i class="fa-solid fa-network-wired"></i>
+                          </div>
+                          <div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Atlassian
+                            </div>
+                            <div class="text-[11px] text-slate-500 font-medium">
+                              ITSM & Service Desk
+                            </div>
+                          </div>
+                        </div>
+                        <i
+                          class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 transition-transform"
+                        ></i>
+                      </button>
+
+                      <!-- Tab 3: ICQ24 SUITE -->
+                      <button
+                        type="button"
+                        onclick="showPlatformTab('tab-icqsuite', this)"
+                        class="platform-tab-btn w-full flex items-center justify-between p-3 rounded-xl border border-transparent hover:bg-white hover:border-slate-200 transition-all text-left group cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="tab-icon w-8 h-8 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-sm transition-colors shrink-0"
+                          >
+                            <i class="fa-solid fa-layer-group"></i>
+                          </div>
+                          <div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              ICQ24 Suite
+                            </div>
+                            <div class="text-[11px] text-slate-500 font-medium">
+                              Soluciones Propias
+                            </div>
+                          </div>
+                        </div>
+                        <span
+                          class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-100 text-icqBlue"
+                          >Propio</span
+                        >
+                      </button>
+
+                      <!-- Tab 4: VERINT -->
+                      <button
+                        type="button"
+                        onclick="showPlatformTab('tab-verint', this)"
+                        class="platform-tab-btn w-full flex items-center justify-between p-3 rounded-xl border border-transparent hover:bg-white hover:border-slate-200 transition-all text-left group cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="tab-icon w-8 h-8 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-sm transition-colors shrink-0"
+                          >
+                            <i class="fa-solid fa-chart-pie"></i>
+                          </div>
+                          <div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Verint
+                            </div>
+                            <div class="text-[11px] text-slate-500 font-medium">
+                              WFM & Calidad Operativa
+                            </div>
+                          </div>
+                        </div>
+                        <i
+                          class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 transition-transform"
+                        ></i>
+                      </button>
+
+                      <!-- Tab 5: KHOMP -->
+                      <button
+                        type="button"
+                        onclick="showPlatformTab('tab-khomp', this)"
+                        class="platform-tab-btn w-full flex items-center justify-between p-3 rounded-xl border border-transparent hover:bg-white hover:border-slate-200 transition-all text-left group cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="tab-icon w-8 h-8 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-sm transition-colors shrink-0"
+                          >
+                            <i class="fa-solid fa-phone-volume"></i>
+                          </div>
+                          <div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Khomp
+                            </div>
+                            <div class="text-[11px] text-slate-500 font-medium">
+                              Telefónica & Telemercadeo
+                            </div>
+                          </div>
+                        </div>
+                        <i
+                          class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 transition-transform"
+                        ></i>
+                      </button>
+
+                      <!-- Tab 6: ODOO -->
+                      <button
+                        type="button"
+                        onclick="showPlatformTab('tab-odoo', this)"
+                        class="platform-tab-btn w-full flex items-center justify-between p-3 rounded-xl border border-transparent hover:bg-white hover:border-slate-200 transition-all text-left group cursor-pointer"
+                      >
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="tab-icon w-8 h-8 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center text-sm transition-colors shrink-0"
+                          >
+                            <i class="fa-solid fa-cubes"></i>
+                          </div>
+                          <div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Odoo
+                            </div>
+                            <div class="text-[11px] text-slate-500 font-medium">
+                              ERP & CRM Modular
+                            </div>
+                          </div>
+                        </div>
+                        <i
+                          class="fa-solid fa-chevron-right text-[10px] text-slate-400 group-hover:translate-x-0.5 transition-transform"
+                        ></i>
+                      </button>
+                    </div>
+
+                    <!-- Columna Derecha: Contenido Dinámico de la Pestaña Activa (8 cols) -->
+                    <div
+                      class="col-span-8 p-6 bg-white flex flex-col justify-between"
+                    >
+                      <!-- PANEL 1: FIVE9 (Activo por defecto) -->
+                      <div
+                        id="tab-five9"
+                        class="platform-tab-content space-y-4"
+                      >
+                        <div
+                          class="flex items-center justify-between border-b border-slate-100 pb-3"
+                        >
+                          <div>
+                            <h3
+                              class="text-sm font-extrabold text-slate-900 flex items-center gap-2"
+                            >
+                              <span
+                                >Five9 Intelligent Cloud Contact Center</span
+                              >
+                              <span
+                                class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-icqBlue"
+                                >Partner Platinum</span
+                              >
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                              Automatización con IA, orquestación omnicanal y
+                              agentes virtuales de última generación.
+                            </p>
+                          </div>
+                          <a
+                            href="/five9-software-inteligente-contact-center"
+                            class="text-xs font-bold text-icqBlue hover:underline shrink-0"
+                            >Ver todo →</a
+                          >
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2.5">
+                          <a
+                            href="/five9/agentes-virtuales"
+                            class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Agentes Virtuales Inteligentes (IVA)
+                            </div>
+                            <div
+                              class="text-[11px] text-slate-500 line-clamp-1"
+                            >
+                              Autoservicio conversacional 24/7 con IA.
+                            </div>
+                          </a>
+                          <a
+                            href="/five9/ai-agent-assist"
+                            class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              AI Agent Assist
+                            </div>
+                            <div
+                              class="text-[11px] text-slate-500 line-clamp-1"
+                            >
+                              Guía en vivo y resúmenes automáticos para agentes.
+                            </div>
+                          </a>
+                          <a
+                            href="/five9/analytics-ai"
+                            class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Analytics AI
+                            </div>
+                            <div
+                              class="text-[11px] text-slate-500 line-clamp-1"
+                            >
+                              Insights y análisis de sentimiento en tiempo real.
+                            </div>
+                          </a>
+                          <a
+                            href="/five9/agentic-qm"
+                            class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Agentic Quality Management
+                            </div>
+                            <div
+                              class="text-[11px] text-slate-500 line-clamp-1"
+                            >
+                              Auditoría y control de calidad 100% automatizado.
+                            </div>
+                          </a>
+                          <a
+                            href="/five9/workforce-optimization"
+                            class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Workforce Optimization (WFO)
+                            </div>
+                            <div
+                              class="text-[11px] text-slate-500 line-clamp-1"
+                            >
+                              Eficiencia integral de tus equipos de atención.
+                            </div>
+                          </a>
+                          <a
+                            href="/five9/workforce-management"
+                            class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Workforce Management (WFM)
+                            </div>
+                            <div
+                              class="text-[11px] text-slate-500 line-clamp-1"
+                            >
+                              Pronóstico de demanda, turnos y adherencia.
+                            </div>
+                          </a>
+                          <a
+                            href="/five9/omnicanalidad"
+                            class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Omnicanalidad
+                            </div>
+                            <div
+                              class="text-[11px] text-slate-500 line-clamp-1"
+                            >
+                              Voz, WhatsApp, Chat, Email en una sola pantalla.
+                            </div>
+                          </a>
+                          <a
+                            href="/five9/crm-integraciones"
+                            class="p-2.5 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              CRM Integraciones
+                            </div>
+                            <div
+                              class="text-[11px] text-slate-500 line-clamp-1"
+                            >
+                              Salesforce, ServiceNow, Zendesk, Dynamics y Odoo.
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- PANEL 2: ATLASSIAN -->
+                      <div
+                        id="tab-atlassian"
+                        class="platform-tab-content hidden space-y-4"
+                      >
+                        <div
+                          class="flex items-center justify-between border-b border-slate-100 pb-3"
+                        >
+                          <div>
+                            <h3
+                              class="text-sm font-extrabold text-slate-900 flex items-center gap-2"
+                            >
+                              <span>Ecosistema Atlassian</span>
+                              <span
+                                class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700"
+                                >Enterprise ITSM</span
+                              >
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                              Gestión de servicios de TI, flujos de trabajo
+                              ágiles y colaboración sin fricciones.
+                            </p>
+                          </div>
+                          <a
+                            href="/atlassian"
+                            class="text-xs font-bold text-icqBlue hover:underline shrink-0"
+                            >Ver todo →</a
+                          >
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                          <a
+                            href="/atlassian/jira-service-management"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Jira Service Management
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Mesa de ayuda moderna, SLAs, gestión de incidentes
+                              y activos con IA.
+                            </div>
+                          </a>
+                          <a
+                            href="/atlassian/jira"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Jira Software
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Gestión de proyectos, sprints y visibilidad para
+                              equipos operativos.
+                            </div>
+                          </a>
+                          <a
+                            href="/atlassian/confluence"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Confluence
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Base de conocimiento conectada y documentación de
+                              procesos.
+                            </div>
+                          </a>
+                          <a
+                            href="/atlassian/system-of-work"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              System of Work
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Alineación estratégica entre TI, operaciones y
+                              negocio.
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- PANEL 3: ICQ24 SUITE -->
+                      <div
+                        id="tab-icqsuite"
+                        class="platform-tab-content hidden space-y-4"
+                      >
+                        <div
+                          class="flex items-center justify-between border-b border-slate-100 pb-3"
+                        >
+                          <div>
+                            <h3
+                              class="text-sm font-extrabold text-slate-900 flex items-center gap-2"
+                            >
+                              <span
+                                >ICQ24 Suite · Soluciones Especializadas</span
+                              >
+                              <span
+                                class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-icqBlue"
+                                >Desarrollo ICQ24</span
+                              >
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                              Tecnología complementaria diseñada para cerrar
+                              brechas operativas en Contact Centers.
+                            </p>
+                          </div>
+                          <a
+                            href="/icq-suite"
+                            class="text-xs font-bold text-icqBlue hover:underline shrink-0"
+                            >Ver todo →</a
+                          >
+                        </div>
+                        <div class="grid grid-cols-3 gap-3">
+                          <a
+                            href="/icq-suite/omniq"
+                            class="p-3 rounded-xl bg-slate-50/60 hover:bg-slate-100/80 transition-colors group block border border-slate-200/60"
+                          >
+                            <div
+                              class="w-7 h-7 rounded-lg bg-blue-100 text-icqBlue flex items-center justify-center text-xs mb-2"
+                            >
+                              <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              OmniQ
+                            </div>
+                            <div class="text-[11px] text-slate-500 mt-1">
+                              Control inteligente y orquestación avanzada de
+                              colas y desvíos.
+                            </div>
+                          </a>
+                          <a
+                            href="/icq-suite/omniconnect"
+                            class="p-3 rounded-xl bg-slate-50/60 hover:bg-slate-100/80 transition-colors group block border border-slate-200/60"
+                          >
+                            <div
+                              class="w-7 h-7 rounded-lg bg-blue-100 text-icqBlue flex items-center justify-center text-xs mb-2"
+                            >
+                              <i class="fa-solid fa-plug-circle-bolt"></i>
+                            </div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              OmniConnect
+                            </div>
+                            <div class="text-[11px] text-slate-500 mt-1">
+                              Conectores middleware para sincronizar bases de
+                              datos y CRMs.
+                            </div>
+                          </a>
+                          <a
+                            href="/icq-suite/omnivision"
+                            class="p-3 rounded-xl bg-slate-50/60 hover:bg-slate-100/80 transition-colors group block border border-slate-200/60"
+                          >
+                            <div
+                              class="w-7 h-7 rounded-lg bg-blue-100 text-icqBlue flex items-center justify-center text-xs mb-2"
+                            >
+                              <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              OmniVision
+                            </div>
+                            <div class="text-[11px] text-slate-500 mt-1">
+                              Tableros de control unificados y métricas en
+                              tiempo real.
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- PANEL 4: VERINT -->
+                      <div
+                        id="tab-verint"
+                        class="platform-tab-content hidden space-y-4"
+                      >
+                        <div
+                          class="flex items-center justify-between border-b border-slate-100 pb-3"
+                        >
+                          <div>
+                            <h3
+                              class="text-sm font-extrabold text-slate-900 flex items-center gap-2"
+                            >
+                              <span>Verint Workforce Engagement</span>
+                              <span
+                                class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700"
+                                >WEM Leader</span
+                              >
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                              Optimización de personal, calidad conversacional y
+                              analítica del habla.
+                            </p>
+                          </div>
+                          <a
+                            href="/verint"
+                            class="text-xs font-bold text-icqBlue hover:underline shrink-0"
+                            >Ver todo →</a
+                          >
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                          <a
+                            href="/verint/workforce-management"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Workforce Management (WFM)
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Planificación, pronóstico y gestión flexible del
+                              horario de agentes.
+                            </div>
+                          </a>
+                          <a
+                            href="/verint/quality-management"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Quality Management (QM)
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Evaluación integral y retroalimentación para
+                              agentes de servicio.
+                            </div>
+                          </a>
+                          <a
+                            href="/verint/speech-analytics"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Speech Analytics
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Transcripción y extracción de valor a partir de
+                              grabaciones de voz.
+                            </div>
+                          </a>
+                          <a
+                            href="/verint/qm-automatico"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              QM Automático
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Calificación continua de llamadas con modelos de
+                              inteligencia artificial.
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- PANEL 5: KHOMP -->
+                      <div
+                        id="tab-khomp"
+                        class="platform-tab-content hidden space-y-4"
+                      >
+                        <div
+                          class="flex items-center justify-between border-b border-slate-100 pb-3"
+                        >
+                          <div>
+                            <h3
+                              class="text-sm font-extrabold text-slate-900 flex items-center gap-2"
+                            >
+                              <span>Khomp Telephony & Media</span>
+                              <span
+                                class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700"
+                                >Outbound AMD</span
+                              >
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                              Telefonía avanzada, detección de contestador
+                              automático (AMD) y conectividad.
+                            </p>
+                          </div>
+                          <a
+                            href="/khomp"
+                            class="text-xs font-bold text-icqBlue hover:underline shrink-0"
+                            >Ver todo →</a
+                          >
+                        </div>
+                        <div class="grid grid-cols-3 gap-2.5">
+                          <a
+                            href="/khomp/manager-one"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Manager One
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Gestión y control de gateways, rutas y troncales
+                              SIP.
+                            </div>
+                          </a>
+                          <a
+                            href="/khomp/insights"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Insights
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Analítica telefónica y métricas de completamiento
+                              de llamadas.
+                            </div>
+                          </a>
+                          <a
+                            href="/khomp/click2call"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Click2Call
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Llamadas directas desde sitios web y aplicaciones
+                              móviles.
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- PANEL 6: ODOO -->
+                      <div
+                        id="tab-odoo"
+                        class="platform-tab-content hidden space-y-4"
+                      >
+                        <div
+                          class="flex items-center justify-between border-b border-slate-100 pb-3"
+                        >
+                          <div>
+                            <h3
+                              class="text-sm font-extrabold text-slate-900 flex items-center gap-2"
+                            >
+                              <span>Odoo Business Management</span>
+                              <span
+                                class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700"
+                                >ERP & CRM</span
+                              >
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                              Plataforma integrada de gestión comercial,
+                              operativa y de mesa de ayuda.
+                            </p>
+                          </div>
+                          <a
+                            href="/odoo"
+                            class="text-xs font-bold text-icqBlue hover:underline shrink-0"
+                            >Ver todo →</a
+                          >
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                          <a
+                            href="/odoo/erp"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Odoo ERP
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Facturación, compras, inventario y gestión de
+                              procesos conectados.
+                            </div>
+                          </a>
+                          <a
+                            href="/odoo/crm"
+                            class="p-3 rounded-xl hover:bg-slate-50 transition-colors group block border border-transparent hover:border-slate-100"
+                          >
+                            <div
+                              class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                            >
+                              Odoo CRM
+                            </div>
+                            <div class="text-[11px] text-slate-500">
+                              Seguimiento de leads, pipelines de ventas y
+                              sincronización con Contact Center.
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- Banner inferior de ayuda rápida -->
+                      <div
+                        class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between bg-blue-50/50 -mx-6 -mb-6 px-6 py-3 rounded-b-2xl"
+                      >
+                        <div
+                          class="flex items-center gap-2 text-xs text-slate-600"
+                        >
+                          <i class="fa-solid fa-lightbulb text-icqBlue"></i>
+                          <span
+                            >¿No estás seguro de cuál plataforma necesita tu
+                            operación?</span
+                          >
+                        </div>
+                        <a
+                          href="/contactus"
+                          class="text-xs font-bold text-icqBlue hover:text-icqBlueHover"
+                          >Hablar con un asesor técnico →</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ITEM 2: SOLUCIONES (DROPDOWN MODULAR POR CASO DE NEGOCIO) -->
+              <div class="nav-item relative py-6">
+                <button
+                  type="button"
+                  class="flex items-center gap-1.5 px-3 py-2 text-sm font-bold text-slate-700 hover:text-icqBlue rounded-lg hover:bg-slate-50/80 transition-colors focus:outline-none focus:ring-2 focus:ring-icqBlue/40 cursor-pointer"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <span>Soluciones</span>
+                  <i
+                    class="fa-solid fa-chevron-down text-[10px] text-slate-400 nav-chevron transition-transform duration-200"
+                  ></i>
+                </button>
+
+                <!-- DROPDOWN: SOLUCIONES -->
+                <div
+                  class="nav-dropdown-menu absolute top-full left-0 w-[580px] -ml-8 pt-2"
+                >
+                  <div
+                    class="bg-white rounded-2xl border border-slate-200/90 shadow-dropdown p-4 overflow-hidden"
+                  >
+                    <div class="px-3 pb-2 pt-1 border-b border-slate-100">
+                      <span
+                        class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400"
+                        >Áreas de Impacto Operativo</span
+                      >
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 pt-2">
+                      <!-- 1. Contact Center & CX -->
+                      <a
+                        href="/soluciones/contact-center-cx"
+                        class="p-3 rounded-xl hover:bg-slate-50 transition-colors group flex items-start gap-3 border border-transparent hover:border-slate-100"
+                      >
+                        <div
+                          class="w-9 h-9 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-base shrink-0 group-hover:bg-icqBlue group-hover:text-white transition-colors"
+                        >
+                          <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <div>
+                          <div
+                            class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                          >
+                            Contact Center & CX
+                          </div>
+                          <div
+                            class="text-[11px] text-slate-500 mt-0.5 leading-snug"
+                          >
+                            Omnicanalidad, atención resolutiva y experiencia al
+                            cliente.
+                          </div>
+                        </div>
+                      </a>
+
+                      <!-- 2. Automatización & IA -->
+                      <a
+                        href="/soluciones/automatizacion-ia"
+                        class="p-3 rounded-xl hover:bg-slate-50 transition-colors group flex items-start gap-3 border border-transparent hover:border-slate-100"
+                      >
+                        <div
+                          class="w-9 h-9 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-base shrink-0 group-hover:bg-icqBlue group-hover:text-white transition-colors"
+                        >
+                          <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div>
+                          <div
+                            class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                          >
+                            Automatización & IA
+                          </div>
+                          <div
+                            class="text-[11px] text-slate-500 mt-0.5 leading-snug"
+                          >
+                            Agentes virtuales inteligentes y flujos
+                            autogestionados.
+                          </div>
+                        </div>
+                      </a>
+
+                      <!-- 3. Inteligencia & Optimización Operativa -->
+                      <a
+                        href="/soluciones/optimizacion-operativa"
+                        class="p-3 rounded-xl hover:bg-slate-50 transition-colors group flex items-start gap-3 border border-transparent hover:border-slate-100"
+                      >
+                        <div
+                          class="w-9 h-9 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-base shrink-0 group-hover:bg-icqBlue group-hover:text-white transition-colors"
+                        >
+                          <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                          <div
+                            class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                          >
+                            Inteligencia & Optimización
+                          </div>
+                          <div
+                            class="text-[11px] text-slate-500 mt-0.5 leading-snug"
+                          >
+                            WFM, analítica de llamadas y aseguramiento de
+                            calidad.
+                          </div>
+                        </div>
+                      </a>
+
+                      <!-- 4. ITSM & Help Desk -->
+                      <a
+                        href="/soluciones/itsm-help-desk"
+                        class="p-3 rounded-xl hover:bg-slate-50 transition-colors group flex items-start gap-3 border border-transparent hover:border-slate-100"
+                      >
+                        <div
+                          class="w-9 h-9 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-base shrink-0 group-hover:bg-icqBlue group-hover:text-white transition-colors"
+                        >
+                          <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <div>
+                          <div
+                            class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                          >
+                            ITSM & Help Desk
+                          </div>
+                          <div
+                            class="text-[11px] text-slate-500 mt-0.5 leading-snug"
+                          >
+                            Soporte a usuarios, control de SLAs y gestión de
+                            incidentes.
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ITEM 3: RECURSOS -->
+              <div class="nav-item relative py-6">
+                <button
+                  type="button"
+                  class="flex items-center gap-1.5 px-3 py-2 text-sm font-bold text-slate-700 hover:text-icqBlue rounded-lg hover:bg-slate-50/80 transition-colors focus:outline-none focus:ring-2 focus:ring-icqBlue/40 cursor-pointer"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <span>Recursos</span>
+                  <i
+                    class="fa-solid fa-chevron-down text-[10px] text-slate-400 nav-chevron transition-transform duration-200"
+                  ></i>
+                </button>
+
+                <!-- DROPDOWN: RECURSOS -->
+                <div
+                  class="nav-dropdown-menu absolute top-full left-0 w-[300px] pt-2"
+                >
+                  <div
+                    class="bg-white rounded-2xl border border-slate-200/90 shadow-dropdown p-2 space-y-1"
+                  >
+                    <a
+                      href="/casos-de-uso"
+                      class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div
+                        class="w-8 h-8 rounded-lg bg-blue-50 text-icqBlue flex items-center justify-center text-sm group-hover:bg-icqBlue group-hover:text-white transition-colors shrink-0"
+                      >
+                        <i class="fa-solid fa-trophy"></i>
+                      </div>
+                      <div>
+                        <div
+                          class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                        >
+                          Casos de Uso
+                        </div>
+                        <div class="text-[11px] text-slate-500">
+                          Resultados reales y ROI comprobado
+                        </div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="/blog"
+                      class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div
+                        class="w-8 h-8 rounded-lg bg-blue-50 text-icqBlue flex items-center justify-center text-sm group-hover:bg-icqBlue group-hover:text-white transition-colors shrink-0"
+                      >
+                        <i class="fa-solid fa-newspaper"></i>
+                      </div>
+                      <div>
+                        <div
+                          class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                        >
+                          Blog
+                        </div>
+                        <div class="text-[11px] text-slate-500">
+                          Tendencias en IA y Contact Center
+                        </div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="/cursos"
+                      class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div
+                        class="w-8 h-8 rounded-lg bg-blue-50 text-icqBlue flex items-center justify-center text-sm group-hover:bg-icqBlue group-hover:text-white transition-colors shrink-0"
+                      >
+                        <i class="fa-solid fa-graduation-cap"></i>
+                      </div>
+                      <div>
+                        <div
+                          class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                        >
+                          Cursos & Academia
+                        </div>
+                        <div class="text-[11px] text-slate-500">
+                          Capacitación y buenas prácticas
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ITEM 4: COMPAÑÍA -->
+              <div class="nav-item relative py-6">
+                <button
+                  type="button"
+                  class="flex items-center gap-1.5 px-3 py-2 text-sm font-bold text-slate-700 hover:text-icqBlue rounded-lg hover:bg-slate-50/80 transition-colors focus:outline-none focus:ring-2 focus:ring-icqBlue/40 cursor-pointer"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <span>Compañía</span>
+                  <i
+                    class="fa-solid fa-chevron-down text-[10px] text-slate-400 nav-chevron transition-transform duration-200"
+                  ></i>
+                </button>
+
+                <!-- DROPDOWN: COMPAÑÍA -->
+                <div
+                  class="nav-dropdown-menu absolute top-full left-0 w-[300px] pt-2"
+                >
+                  <div
+                    class="bg-white rounded-2xl border border-slate-200/90 shadow-dropdown p-2 space-y-1"
+                  >
+                    <a
+                      href="/about-us"
+                      class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div
+                        class="w-8 h-8 rounded-lg bg-blue-50 text-icqBlue flex items-center justify-center text-sm group-hover:bg-icqBlue group-hover:text-white transition-colors shrink-0"
+                      >
+                        <i class="fa-solid fa-building"></i>
+                      </div>
+                      <div>
+                        <div
+                          class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                        >
+                          Acerca de Nosotros
+                        </div>
+                        <div class="text-[11px] text-slate-500">
+                          Trayectoria y visión de ICQ24
+                        </div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="/nuestro-equipo"
+                      class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div
+                        class="w-8 h-8 rounded-lg bg-blue-50 text-icqBlue flex items-center justify-center text-sm group-hover:bg-icqBlue group-hover:text-white transition-colors shrink-0"
+                      >
+                        <i class="fa-solid fa-users"></i>
+                      </div>
+                      <div>
+                        <div
+                          class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                        >
+                          Nuestro Equipo
+                        </div>
+                        <div class="text-[11px] text-slate-500">
+                          Consultores e ingenieros expertos
+                        </div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="/soluciones-partners"
+                      class="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
+                    >
+                      <div
+                        class="w-8 h-8 rounded-lg bg-blue-50 text-icqBlue flex items-center justify-center text-sm group-hover:bg-icqBlue group-hover:text-white transition-colors shrink-0"
+                      >
+                        <i class="fa-solid fa-handshake"></i>
+                      </div>
+                      <div>
+                        <div
+                          class="text-xs font-bold text-slate-900 group-hover:text-icqBlue"
+                        >
+                          Soluciones y Partners
+                        </div>
+                        <div class="text-[11px] text-slate-500">
+                          Certificaciones y alianzas globales
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ITEM 5: SOPORTE (ENLACE DIRECTO) -->
+              <a
+                href="/soporte"
+                class="px-3 py-2 text-sm font-bold text-slate-700 hover:text-icqBlue rounded-lg hover:bg-slate-50/80 transition-colors"
+              >
+                Soporte
+              </a>
+            </nav>
+          </div>
+
+          <!-- 3. HERRAMIENTAS LATERALES DERECHAS (IDIOMA, LOGIN, CTA Y HAMBURGUESA) -->
+          <div class="flex items-center gap-3 sm:gap-4">
+            <!-- SELECTOR DE IDIOMA (COMPATIBLE CON ODOO / ESTILO NATIVO) -->
+            <div class="nav-item relative py-6">
+              <button
+                type="button"
+                class="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-bold text-slate-700 hover:text-icqBlue bg-slate-100 hover:bg-slate-200/80 rounded-lg transition-colors cursor-pointer"
+                title="Seleccionar idioma"
+              >
+                <i class="fa-solid fa-globe text-xs text-icqBlue"></i>
+                <span class="hidden sm:inline">ES</span>
+                <i
+                  class="fa-solid fa-chevron-down text-[9px] text-slate-400"
+                ></i>
+              </button>
+
+              <!-- Dropdown Idiomas -->
+              <div
+                class="nav-dropdown-menu absolute top-full right-0 w-36 pt-2"
+              >
+                <div
+                  class="bg-white rounded-xl border border-slate-200/90 shadow-dropdown p-1.5 text-xs"
+                >
+                  <a
+                    href="/es"
+                    class="flex items-center justify-between p-2 rounded-lg bg-blue-50 text-icqBlue font-bold"
+                  >
+                    <span>Español</span>
+                    <i class="fa-solid fa-check text-[10px]"></i>
+                  </a>
+                  <a
+                    href="/en"
+                    class="flex items-center justify-between p-2 rounded-lg text-slate-700 hover:bg-slate-50 font-medium"
+                  >
+                    <span>English (US)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PERFIL DE USUARIO / LOGIN (COMPATIBLE CON ODOO) -->
+            <div class="nav-item relative py-6">
+              <!-- Vista Usuario Público / Sin sesión -->
+              <button
+                type="button"
+                class="flex items-center gap-1.5 p-2 text-slate-600 hover:text-icqBlue rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
+                title="Mi Cuenta"
+              >
+                <i class="fa-solid fa-user text-sm"></i>
+                <i
+                  class="fa-solid fa-chevron-down text-[9px] text-slate-400 hidden sm:inline"
+                ></i>
+              </button>
+
+              <!-- Dropdown Perfil -->
+              <div
+                class="nav-dropdown-menu absolute top-full right-0 w-44 pt-2"
+              >
+                <div
+                  class="bg-white rounded-xl border border-slate-200/90 shadow-dropdown p-1.5 text-xs"
+                >
+                  <a
+                    href="/my/home"
+                    class="flex items-center gap-2 p-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold"
+                  >
+                    <i class="fa-solid fa-id-card text-icqBlue"></i>
+                    <span>Mi cuenta / Portal</span>
+                  </a>
+                  <a
+                    href="/web/login"
+                    class="flex items-center gap-2 p-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold"
+                  >
+                    <i
+                      class="fa-solid fa-arrow-right-to-bracket text-slate-500"
+                    ></i>
+                    <span>Iniciar sesión</span>
+                  </a>
+                  <div class="h-px bg-slate-100 my-1"></div>
+                  <a
+                    href="/web/session/logout?redirect=/"
+                    class="flex items-center gap-2 p-2 rounded-lg text-red-600 hover:bg-red-50 font-semibold"
+                  >
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>Cerrar sesión</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTÓN CTA: CONTÁCTANOS (ESTILO ICQ24) -->
+            <a
+              href="/contactus"
+              class="hidden md:inline-flex items-center justify-center gap-2 rounded-full px-5 sm:px-6 py-2.5 text-xs sm:text-sm font-extrabold text-white transition-all shadow-md shadow-blue-500/20 hover:shadow-blue-500/35 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer bg-icqBlue hover:bg-icqBlueHover"
+            >
+              <span>Contáctanos</span>
+              <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            </a>
+
+            <!-- BOTÓN HAMBURGUESA PARA MÓVIL (LG:HIDDEN) -->
+            <button
+              type="button"
+              onclick="toggleMobileMenu()"
+              class="lg:hidden p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-icqBlue transition-colors cursor-pointer"
+              aria-label="Abrir Menú Móvil"
+            >
+              <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================================
+           MENÚ DESPLEGABLE MÓVIL (DRAWER RESPONSIVE)
+           =================================================================== -->
+      <div
+        id="mobile-menu"
+        class="hidden lg:hidden border-t border-slate-200 bg-white max-h-[calc(100vh-80px)] overflow-y-auto custom-scroll shadow-xl"
+      >
+        <div class="px-4 py-5 space-y-3">
+          <!-- Acordeón 1: Plataformas -->
+          <div class="border border-slate-200/80 rounded-xl overflow-hidden">
+            <button
+              type="button"
+              onclick="toggleMobileAccordion('acc-plataformas', this)"
+              class="w-full flex items-center justify-between p-3.5 bg-slate-50/80 text-left font-bold text-sm text-slate-900"
+            >
+              <span class="flex items-center gap-2.5">
+                <i class="fa-solid fa-layer-group text-icqBlue text-xs"></i>
+                Plataformas
+              </span>
+              <i
+                class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"
+              ></i>
+            </button>
+            <div
+              id="acc-plataformas"
+              class="hidden p-3 bg-white space-y-3 text-xs border-t border-slate-100"
+            >
+              <!-- Five9 -->
+              <div class="space-y-1">
+                <div
+                  class="font-extrabold text-icqBlue uppercase tracking-wider text-[10px]"
+                >
+                  Five9
+                </div>
+                <div
+                  class="grid grid-cols-1 gap-1 pl-2 border-l-2 border-blue-100"
+                >
+                  <a
+                    href="/five9/agentes-virtuales"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Agentes Virtuales Inteligentes</a
+                  >
+                  <a
+                    href="/five9/ai-agent-assist"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >AI Agent Assist</a
+                  >
+                  <a
+                    href="/five9/analytics-ai"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Analytics AI</a
+                  >
+                  <a
+                    href="/five9/agentic-qm"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Agentic Quality Management</a
+                  >
+                  <a
+                    href="/five9/workforce-optimization"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Workforce Optimization</a
+                  >
+                  <a
+                    href="/five9/workforce-management"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Workforce Management</a
+                  >
+                  <a
+                    href="/five9/omnicanalidad"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Omnicanalidad</a
+                  >
+                  <a
+                    href="/five9/crm-integraciones"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >CRM Integraciones</a
+                  >
+                </div>
+              </div>
+
+              <!-- Atlassian -->
+              <div class="space-y-1 pt-2">
+                <div
+                  class="font-extrabold text-slate-900 uppercase tracking-wider text-[10px]"
+                >
+                  Atlassian
+                </div>
+                <div
+                  class="grid grid-cols-1 gap-1 pl-2 border-l-2 border-slate-200"
+                >
+                  <a
+                    href="/atlassian/jira-service-management"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Jira Service Management</a
+                  >
+                  <a
+                    href="/atlassian/jira"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Jira</a
+                  >
+                  <a
+                    href="/atlassian/confluence"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Confluence</a
+                  >
+                  <a
+                    href="/atlassian/system-of-work"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >System of Work</a
+                  >
+                </div>
+              </div>
+
+              <!-- ICQ24 Suite -->
+              <div class="space-y-1 pt-2">
+                <div
+                  class="font-extrabold text-slate-900 uppercase tracking-wider text-[10px]"
+                >
+                  ICQ24 Suite
+                </div>
+                <div
+                  class="grid grid-cols-1 gap-1 pl-2 border-l-2 border-blue-200"
+                >
+                  <a
+                    href="/icq-suite/omniq"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >OmniQ</a
+                  >
+                  <a
+                    href="/icq-suite/omniconnect"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >OmniConnect</a
+                  >
+                  <a
+                    href="/icq-suite/omnivision"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >OmniVision</a
+                  >
+                </div>
+              </div>
+
+              <!-- Verint -->
+              <div class="space-y-1 pt-2">
+                <div
+                  class="font-extrabold text-slate-900 uppercase tracking-wider text-[10px]"
+                >
+                  Verint
+                </div>
+                <div
+                  class="grid grid-cols-1 gap-1 pl-2 border-l-2 border-slate-200"
+                >
+                  <a
+                    href="/verint/workforce-management"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Workforce Management</a
+                  >
+                  <a
+                    href="/verint/quality-management"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Quality Management</a
+                  >
+                  <a
+                    href="/verint/speech-analytics"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Speech Analytics</a
+                  >
+                  <a
+                    href="/verint/qm-automatico"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >QM Automático</a
+                  >
+                </div>
+              </div>
+
+              <!-- Khomp -->
+              <div class="space-y-1 pt-2">
+                <div
+                  class="font-extrabold text-slate-900 uppercase tracking-wider text-[10px]"
+                >
+                  Khomp
+                </div>
+                <div
+                  class="grid grid-cols-1 gap-1 pl-2 border-l-2 border-slate-200"
+                >
+                  <a
+                    href="/khomp/manager-one"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Manager One</a
+                  >
+                  <a
+                    href="/khomp/insights"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Insights</a
+                  >
+                  <a
+                    href="/khomp/click2call"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >Click2Call</a
+                  >
+                </div>
+              </div>
+
+              <!-- Odoo -->
+              <div class="space-y-1 pt-2">
+                <div
+                  class="font-extrabold text-slate-900 uppercase tracking-wider text-[10px]"
+                >
+                  Odoo
+                </div>
+                <div
+                  class="grid grid-cols-1 gap-1 pl-2 border-l-2 border-slate-200"
+                >
+                  <a
+                    href="/odoo/erp"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >ERP</a
+                  >
+                  <a
+                    href="/odoo/crm"
+                    class="py-1 text-slate-700 hover:text-icqBlue"
+                    >CRM</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Acordeón 2: Soluciones -->
+          <div class="border border-slate-200/80 rounded-xl overflow-hidden">
+            <button
+              type="button"
+              onclick="toggleMobileAccordion('acc-soluciones', this)"
+              class="w-full flex items-center justify-between p-3.5 bg-slate-50/80 text-left font-bold text-sm text-slate-900"
+            >
+              <span class="flex items-center gap-2.5">
+                <i class="fa-solid fa-shapes text-icqBlue text-xs"></i>
+                Soluciones
+              </span>
+              <i
+                class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"
+              ></i>
+            </button>
+            <div
+              id="acc-soluciones"
+              class="hidden p-3 bg-white space-y-2 text-xs border-t border-slate-100"
+            >
+              <a
+                href="/soluciones/contact-center-cx"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Contact Center & CX</a
+              >
+              <a
+                href="/soluciones/automatizacion-ia"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Automatización & IA</a
+              >
+              <a
+                href="/soluciones/optimizacion-operativa"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Inteligencia & Optimización Operativa</a
+              >
+              <a
+                href="/soluciones/itsm-help-desk"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >ITSM & Help Desk</a
+              >
+            </div>
+          </div>
+
+          <!-- Acordeón 3: Recursos -->
+          <div class="border border-slate-200/80 rounded-xl overflow-hidden">
+            <button
+              type="button"
+              onclick="toggleMobileAccordion('acc-recursos', this)"
+              class="w-full flex items-center justify-between p-3.5 bg-slate-50/80 text-left font-bold text-sm text-slate-900"
+            >
+              <span class="flex items-center gap-2.5">
+                <i class="fa-solid fa-book-open text-icqBlue text-xs"></i>
+                Recursos
+              </span>
+              <i
+                class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"
+              ></i>
+            </button>
+            <div
+              id="acc-recursos"
+              class="hidden p-3 bg-white space-y-2 text-xs border-t border-slate-100"
+            >
+              <a
+                href="/casos-de-uso"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Casos de Uso</a
+              >
+              <a
+                href="/blog"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Blog</a
+              >
+              <a
+                href="/cursos"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Cursos & Academia</a
+              >
+            </div>
+          </div>
+
+          <!-- Acordeón 4: Compañía -->
+          <div class="border border-slate-200/80 rounded-xl overflow-hidden">
+            <button
+              type="button"
+              onclick="toggleMobileAccordion('acc-compania', this)"
+              class="w-full flex items-center justify-between p-3.5 bg-slate-50/80 text-left font-bold text-sm text-slate-900"
+            >
+              <span class="flex items-center gap-2.5">
+                <i class="fa-solid fa-building text-icqBlue text-xs"></i>
+                Compañía
+              </span>
+              <i
+                class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"
+              ></i>
+            </button>
+            <div
+              id="acc-compania"
+              class="hidden p-3 bg-white space-y-2 text-xs border-t border-slate-100"
+            >
+              <a
+                href="/about-us"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Acerca de Nosotros</a
+              >
+              <a
+                href="/nuestro-equipo"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Nuestro Equipo</a
+              >
+              <a
+                href="/soluciones-partners"
+                class="block py-1.5 font-semibold text-slate-700 hover:text-icqBlue"
+                >Soluciones y Partners</a
+              >
+            </div>
+          </div>
+
+          <!-- Enlace Directo: Soporte -->
+          <a
+            href="/soporte"
+            class="flex items-center justify-between p-3.5 bg-slate-50/80 rounded-xl font-bold text-sm text-slate-900 hover:text-icqBlue border border-slate-200/80"
+          >
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-headset text-icqBlue text-xs"></i>
+              Soporte
+            </span>
+            <i class="fa-solid fa-arrow-right text-xs text-slate-400"></i>
+          </a>
+
+          <!-- Botón CTA Móvil -->
+          <div class="pt-2">
+            <a
+              href="/contactus"
+              class="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-icqBlue text-white font-extrabold text-sm shadow-md shadow-blue-500/25"
+            >
+              <span>Contáctanos</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================================
+         SCRIPTS INTERACTIVOS (CAMBIO DE TABS Y MENÚ MÓVIL)
+         ===================================================================== -->
+    <script>
+      // Cambio dinámico de pestañas en el megamenú de Plataformas
+      function showPlatformTab(tabId, btnElement) {
+        // Ocultar todos los paneles
+        document
+          .querySelectorAll(".platform-tab-content")
+          .forEach(function (content) {
+            content.classList.add("hidden");
+          });
+
+        // Desactivar todos los botones de tab
+        document.querySelectorAll(".platform-tab-btn").forEach(function (btn) {
+          btn.classList.remove("active");
+        });
+
+        // Mostrar panel seleccionado
+        const target = document.getElementById(tabId);
+        if (target) {
+          target.classList.remove("hidden");
+        }
+
+        // Marcar botón activo
+        if (btnElement) {
+          btnElement.classList.add("active");
+        }
+      }
+
+      // Alternar menú móvil
+      function toggleMobileMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("mobile-menu-icon");
+        if (!menu) return;
+
+        const isHidden = menu.classList.contains("hidden");
+        if (isHidden) {
+          menu.classList.remove("hidden");
+          if (icon) {
+            icon.className = "fa-solid fa-xmark text-lg";
+          }
+        } else {
+          menu.classList.add("hidden");
+          if (icon) {
+            icon.className = "fa-solid fa-bars text-lg";
+          }
+        }
+      }
+
+      // Acordeones en menú móvil
+      function toggleMobileAccordion(accId, btnElement) {
+        const acc = document.getElementById(accId);
+        const icon = btnElement
+          ? btnElement.querySelector(".fa-chevron-down")
+          : null;
+        if (!acc) return;
+
+        const isHidden = acc.classList.contains("hidden");
+        if (isHidden) {
+          acc.classList.remove("hidden");
+          if (icon) icon.style.transform = "rotate(180deg)";
+        } else {
+          acc.classList.add("hidden");
+          if (icon) icon.style.transform = "rotate(0deg)";
+        }
+      }
+    </script>
+  </body>
+</html>
