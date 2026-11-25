@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard WFM</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .gantt-row { display: grid; grid-template-columns: 150px 1fr; align-items: center; height: 40px; }
+  .gantt-row .who { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  .gantt-row .who i { width: 28px; height: 28px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+  .track { position: relative; height: 22px; border-radius: 8px; background: #f1f5f9; }
+  .blk { position: absolute; top: 0; height: 22px; border-radius: 8px; }
+  .b-shift { background: var(--blue); } .b-break { background: var(--yellow); } .b-train { background: #8ab4f8; } .b-off { background: #cbd5e1; }
+  .hours { display: grid; grid-template-columns: 150px 1fr; font-size: 12px; font-weight: 600; color: var(--soft); margin-top: 6px; }
+  .hours div:last-child { display: flex; justify-content: space-between; }
+  .sug { display: flex; align-items: center; gap: 20px; padding: 22px 24px; border: 2px solid #e3ecfb; border-radius: 22px; background: #f8fbff; }
+  .sug + .sug { margin-top: 16px; }
+  .sug b { display: block; font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+  .sug span { display: block; font-size: 18px; font-weight: 500; color: var(--muted); margin-top: 4px; }
+  .sug .chev { margin-left: auto; color: var(--blue); font-size: 22px; }
+  .team { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; color: var(--muted); margin-top: 10px; }
+  .team .bar-track { flex: 1; height: 10px; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1200px">
+
+  <svg class="abs" style="left:0;top:0;z-index:2" width="1920" height="1200" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M1610 210 H1560 a50 50 0 0 0 -50 50 V390" />
+  </svg>
+
+  <!-- Laptop -->
+  <div class="laptop" style="left:140px;top:150px;width:1400px">
+    <div class="lid">
+      <div class="screen" style="height:820px">
+        <div class="app">
+          <div class="app-side">
+            <i class="fa-solid fa-house"></i>
+            <div class="on"><i class="fa-solid fa-calendar-days"></i></div>
+            <i class="fa-solid fa-chart-line"></i>
+            <i class="fa-solid fa-users"></i>
+            <i class="fa-solid fa-user-clock"></i>
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <div class="app-main">
+            <div class="app-top">
+              <h4>Planificación de turnos<small>Workforce Management · Semana 48</small></h4>
+              <div style="display:flex;gap:10px">
+                <span class="pill-ui green"><i class="fa-solid fa-circle" style="font-size:8px"></i> Forecast actualizado</span>
+                <span class="pill-ui"><i class="fa-regular fa-calendar"></i> Hoy</span>
+              </div>
+            </div>
+
+            <div class="kpis">
+              <div class="panel kpi"><div class="lbl">Nivel de servicio</div><div class="val">82%<span class="up">▲ 3 pts</span></div></div>
+              <div class="panel kpi"><div class="lbl">Adherencia</div><div class="val">94%<span class="up">▲ 2 pts</span></div></div>
+              <div class="panel kpi"><div class="lbl">Ocupación</div><div class="val">86%</div></div>
+              <div class="panel kpi"><div class="lbl">Agentes conectados</div><div class="val">128<span style="color:#94a3b8">/ 132</span></div></div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:16px;flex:1">
+              <div style="display:flex;flex-direction:column;gap:16px">
+                <div class="panel">
+                  <h5>Forecast vs. volumen real <span class="legend"><span><i style="background:#0263e2"></i>Real</span><span><i style="background:#8ab4f8"></i>Forecast</span><span><i style="background:#f0ad0f"></i>Agentes</span></span></h5>
+                  <svg width="100%" height="170" viewBox="0 0 720 170" preserveAspectRatio="none">
+                    <defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0263e2" stop-opacity=".18"/><stop offset="1" stop-color="#0263e2" stop-opacity="0"/></linearGradient></defs>
+                    <g stroke="#eef2f7" stroke-width="2"><line x1="0" y1="30" x2="720" y2="30"/><line x1="0" y1="85" x2="720" y2="85"/><line x1="0" y1="140" x2="720" y2="140"/></g>
+                    <g fill="#f0ad0f" opacity=".28"><rect x="20" y="110" width="40" height="40" rx="6"/><rect x="110" y="80" width="40" height="70" rx="6"/><rect x="200" y="46" width="40" height="104" rx="6"/><rect x="290" y="30" width="40" height="120" rx="6"/><rect x="380" y="52" width="40" height="98" rx="6"/><rect x="470" y="70" width="40" height="80" rx="6"/><rect x="560" y="96" width="40" height="54" rx="6"/><rect x="650" y="118" width="40" height="32" rx="6"/></g>
+                    <path d="M0 140 C60 128 100 96 160 80 S240 30 300 26 S380 50 430 62 S520 84 580 104 S680 130 720 134 V170 H0Z" fill="url(#ga)"/>
+                    <path d="M0 140 C60 128 100 96 160 80 S240 30 300 26 S380 50 430 62 S520 84 580 104 S680 130 720 134" stroke="#0263e2" stroke-width="4" fill="none"/>
+                    <path d="M0 144 C60 132 100 102 160 86 S240 38 300 34 S380 56 430 66 S520 88 580 106 S680 132 720 136" stroke="#8ab4f8" stroke-width="3" stroke-dasharray="8 7" fill="none"/>
+                  </svg>
+                  <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:#94a3b8;margin-top:4px"><span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span><span>18:00</span></div>
+                </div>
+                <div class="panel" style="flex:1">
+                  <h5>Turnos de hoy <span class="legend"><span><i style="background:#0263e2"></i>Turno</span><span><i style="background:#f0ad0f"></i>Break</span><span><i style="background:#8ab4f8"></i>Capacitación</span></span></h5>
+                  <div class="gantt-row"><div class="who"><i class="fa-solid fa-user"></i>Equipo A</div><div class="track"><div class="blk b-shift" style="left:0;width:38%"></div><div class="blk b-break" style="left:39%;width:6%"></div><div class="blk b-shift" style="left:46%;width:30%"></div></div></div>
+                  <div class="gantt-row"><div class="who"><i class="fa-solid fa-user"></i>Equipo B</div><div class="track"><div class="blk b-train" style="left:8%;width:12%"></div><div class="blk b-shift" style="left:21%;width:34%"></div><div class="blk b-break" style="left:56%;width:6%"></div><div class="blk b-shift" style="left:63%;width:28%"></div></div></div>
+                  <div class="gantt-row"><div class="who"><i class="fa-solid fa-user"></i>Equipo C</div><div class="track"><div class="blk b-shift" style="left:18%;width:30%"></div><div class="blk b-break" style="left:49%;width:6%"></div><div class="blk b-shift" style="left:56%;width:44%"></div></div></div>
+                  <div class="gantt-row"><div class="who"><i class="fa-solid fa-user"></i>Multiskill</div><div class="track"><div class="blk b-off" style="left:0;width:24%"></div><div class="blk b-shift" style="left:25%;width:50%"></div><div class="blk b-train" style="left:76%;width:14%"></div></div></div>
+                  <div class="hours"><div></div><div><span>08</span><span>10</span><span>12</span><span>14</span><span>16</span><span>18</span><span>20</span></div></div>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:16px">
+                <div class="panel" style="flex:1">
+                  <h5>Alertas de cobertura</h5>
+                  <div class="skeleton" style="width:80%"></div><div class="skeleton" style="width:60%;margin-top:10px"></div>
+                  <div class="skeleton" style="width:72%;margin-top:22px"></div><div class="skeleton" style="width:50%;margin-top:10px"></div>
+                </div>
+                <div class="panel">
+                  <h5>Adherencia por equipo <i class="fa-solid fa-ellipsis" style="color:#94a3b8"></i></h5>
+                  <div class="team">A<div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>96%</div>
+                  <div class="team">B<div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>92%</div>
+                  <div class="team">C<div class="bar-track"><div class="bar-fill" style="width:89%"></div></div>89%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="base"></div>
+  </div>
+
+  <!-- Nodo -->
+  <div class="node" style="left:1610px;top:110px;width:200px;height:200px;font-size:88px"><i class="fa-solid fa-business-time"></i></div>
+
+  <!-- Panel flotante -->
+  <div class="card" style="left:1180px;top:390px;width:640px;padding:36px 34px 34px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:26px">
+      <i class="fa-solid fa-wand-magic-sparkles" style="font-size:40px;color:#0263e2"></i>
+      <div class="t-title" style="font-size:29px">Replanificación sugerida</div>
+    </div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-arrow-trend-up"></i></div><div><b>Pico de demanda 11:00–13:00</b><span>+18% sobre el forecast</span></div><i class="fa-solid fa-chevron-right chev"></i></div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-people-arrows"></i></div><div><b>Reasignar 4 agentes multiskill</b><span>De backoffice a canal voz</span></div><i class="fa-solid fa-chevron-right chev"></i></div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-mug-hot"></i></div><div><b>Mover breaks del equipo A</b><span>Proteger el nivel de servicio</span></div><i class="fa-solid fa-chevron-right chev"></i></div>
+  </div>
+</div>
+</body>
+</html>

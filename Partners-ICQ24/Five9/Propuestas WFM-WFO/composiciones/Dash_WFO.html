@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard WFO</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .tbl th { text-align: left; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); padding: 0 0 10px; }
+  .tbl td { padding: 9px 0; border-top: 1px solid #f1f5f9; font-weight: 600; color: var(--muted); vertical-align: middle; }
+  .who { display: flex; align-items: center; gap: 10px; }
+  .who i { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+  .score { display: flex; align-items: center; gap: 10px; }
+  .score .bar-track { width: 120px; height: 10px; }
+  .tag { padding: 5px 12px; border-radius: 99px; font-size: 12px; font-weight: 700; }
+  .tag.g { background: var(--green-bg); color: #1f7a45; } .tag.b { background: var(--blue-light); color: var(--blue); } .tag.y { background: #fef6e4; color: #b27c06; }
+  .sug { display: flex; align-items: center; gap: 20px; padding: 22px 24px; border: 2px solid #e3ecfb; border-radius: 22px; background: #f8fbff; }
+  .sug + .sug { margin-top: 16px; }
+  .sug b { display: block; font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+  .sug span { display: block; font-size: 18px; font-weight: 500; color: var(--muted); margin-top: 4px; }
+  .sug .chev { margin-left: auto; color: var(--blue); font-size: 22px; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1200px">
+
+  <svg class="abs" style="left:0;top:0;z-index:2" width="1920" height="1200" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M1610 210 H1560 a50 50 0 0 0 -50 50 V390" />
+  </svg>
+
+  <div class="laptop" style="left:140px;top:150px;width:1400px">
+    <div class="lid">
+      <div class="screen" style="height:820px">
+        <div class="app">
+          <div class="app-side">
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-calendar-days"></i>
+            <div class="on"><i class="fa-solid fa-gauge-high"></i></div>
+            <i class="fa-solid fa-clipboard-check"></i>
+            <i class="fa-solid fa-users"></i>
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <div class="app-main">
+            <div class="app-top">
+              <h4>Centro de optimización<small>Workforce Optimization · Operación en tiempo real</small></h4>
+              <div style="display:flex;gap:10px">
+                <span class="pill-ui green"><i class="fa-solid fa-circle" style="font-size:8px"></i> En vivo</span>
+                <span class="pill-ui"><i class="fa-regular fa-calendar"></i> Esta semana</span>
+              </div>
+            </div>
+
+            <div class="kpis">
+              <div class="panel kpi"><div class="lbl">Adherencia</div><div class="val">95%<span class="up">▲ 4 pts</span></div></div>
+              <div class="panel kpi"><div class="lbl">Puntaje de calidad</div><div class="val">91<span style="color:#94a3b8">/ 100</span></div></div>
+              <div class="panel kpi"><div class="lbl">AHT</div><div class="val">4:12<span class="up">▼ 18 s</span></div></div>
+              <div class="panel kpi"><div class="lbl">Costo por contacto</div><div class="val">-8%<span class="up">vs. mes anterior</span></div></div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:16px;flex:1">
+              <div style="display:flex;flex-direction:column;gap:16px">
+                <div class="panel">
+                  <h5>Interacciones evaluadas <span class="pill-ui" style="font-size:13px;padding:5px 12px">Cobertura 100%</span></h5>
+                  <svg width="100%" height="160" viewBox="0 0 720 160" preserveAspectRatio="none">
+                    <g stroke="#eef2f7" stroke-width="2"><line x1="0" y1="20" x2="720" y2="20"/><line x1="0" y1="80" x2="720" y2="80"/><line x1="0" y1="140" x2="720" y2="140"/></g>
+                    <g>
+                      <rect x="20" y="70" width="56" height="70" rx="10" fill="#8ab4f8"/>
+                      <rect x="120" y="52" width="56" height="88" rx="10" fill="#5b9bf3"/>
+                      <rect x="220" y="40" width="56" height="100" rx="10" fill="#0263e2"/>
+                      <rect x="320" y="28" width="56" height="112" rx="10" fill="#0263e2"/>
+                      <rect x="420" y="16" width="56" height="124" rx="10" fill="#1e2a8a"/>
+                      <rect x="520" y="44" width="56" height="96" rx="10" fill="#5b9bf3"/>
+                      <rect x="620" y="86" width="56" height="54" rx="10" fill="#8ab4f8"/>
+                    </g>
+                    <path d="M48 96 C120 80 200 62 248 56 S380 36 448 28 S580 52 648 60" stroke="#22a35a" stroke-width="4" fill="none" stroke-linecap="round"/>
+                  </svg>
+                  <div style="display:flex;justify-content:space-around;font-size:12px;font-weight:600;color:#94a3b8;margin-top:4px"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div>
+                </div>
+                <div class="panel" style="flex:1">
+                  <h5>Desempeño por agente</h5>
+                  <table class="tbl">
+                    <tr><th>Agente</th><th>Calidad</th><th>Adherencia</th><th>Acción</th></tr>
+                    <tr><td><div class="who"><i class="fa-solid fa-user"></i>Agente 01</div></td><td><div class="score"><div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>96</div></td><td>97%</td><td><span class="tag g">Top</span></td></tr>
+                    <tr><td><div class="who"><i class="fa-solid fa-user"></i>Agente 02</div></td><td><div class="score"><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>88</div></td><td>94%</td><td><span class="tag b">Seguimiento</span></td></tr>
+                    <tr><td><div class="who"><i class="fa-solid fa-user"></i>Agente 03</div></td><td><div class="score"><div class="bar-track"><div class="bar-fill" style="width:74%"></div></div>74</div></td><td>89%</td><td><span class="tag y">Coaching</span></td></tr>
+                  </table>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:16px">
+                <div class="panel" style="flex:1">
+                  <h5>Recomendaciones</h5>
+                  <div class="skeleton" style="width:80%"></div><div class="skeleton" style="width:60%;margin-top:10px"></div>
+                  <div class="skeleton" style="width:72%;margin-top:22px"></div><div class="skeleton" style="width:50%;margin-top:10px"></div>
+                </div>
+                <div class="panel">
+                  <h5>Cumplimiento de SLA <i class="fa-solid fa-ellipsis" style="color:#94a3b8"></i></h5>
+                  <div style="display:flex;align-items:center;gap:16px">
+                    <div style="font-size:34px;font-weight:800;letter-spacing:-.03em">84%</div>
+                    <div style="flex:1"><div class="bar-track" style="height:10px"><div class="bar-fill" style="width:84%"></div></div><div style="font-size:13px;font-weight:600;color:#94a3b8;margin-top:6px">Meta 80/20</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="base"></div>
+  </div>
+
+  <div class="node" style="left:1610px;top:110px;width:200px;height:200px;font-size:84px"><i class="fa-solid fa-bullseye"></i></div>
+
+  <div class="card" style="left:1180px;top:390px;width:640px;padding:36px 34px 34px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:26px">
+      <i class="fa-solid fa-wand-magic-sparkles" style="font-size:40px;color:#0263e2"></i>
+      <div class="t-title" style="font-size:29px">Plan de mejora continua</div>
+    </div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-chalkboard-user"></i></div><div><b>Coaching sugerido</b><span>3 agentes · manejo de objeciones</span></div><i class="fa-solid fa-chevron-right chev"></i></div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-clipboard-check"></i></div><div><b>Evaluación automática</b><span>1.240 interacciones analizadas hoy</span></div><i class="fa-solid fa-chevron-right chev"></i></div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-scale-balanced"></i></div><div><b>Ajuste de dimensionamiento</b><span>Turno tarde: −2 posiciones</span></div><i class="fa-solid fa-chevron-right chev"></i></div>
+  </div>
+</div>
+</body>
+</html>

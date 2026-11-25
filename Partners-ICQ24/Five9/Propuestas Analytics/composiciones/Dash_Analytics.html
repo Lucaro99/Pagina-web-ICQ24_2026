@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  /* Portátil 16:10 */
+  .lt { position: absolute; z-index: 2; }
+  .lt .lid { position: relative; background: #16191f; border-radius: 26px 26px 6px 6px; padding: 18px 18px 24px; box-shadow: 0 0 0 3px #a3a9b2, 0 30px 70px rgba(15,23,42,.16); }
+  .lt .lid::before { content: ""; position: absolute; top: 7px; left: 50%; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: #343a44; }
+  .lt .screen { position: relative; overflow: hidden; border-radius: 6px; background: #f3f6fb; }
+  .lt .base { position: relative; height: 22px; margin: 0 -66px; border-radius: 4px 4px 26px 26px; background: linear-gradient(180deg, #e3e6ea 0%, #c4c9d0 45%, #9ba1aa 100%); box-shadow: 0 24px 34px rgba(15,23,42,.14); }
+  .lt .base::before { content: ""; position: absolute; top: 0; left: 50%; width: 190px; height: 9px; margin-left: -95px; border-radius: 0 0 12px 12px; background: #a9afb8; }
+
+  /* App */
+  .seg { display: inline-flex; background: #e8eef8; border-radius: 99px; padding: 4px; gap: 4px; font-size: 14px; font-weight: 700; color: var(--muted); }
+  .seg span { padding: 6px 14px; border-radius: 99px; }
+  .seg span.on { background: #fff; color: var(--blue); box-shadow: 0 2px 6px rgba(15,23,42,.08); }
+  .mot { display: grid; grid-template-columns: 130px 1fr 44px; align-items: center; gap: 12px; margin-top: 15px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  .mot b { font-weight: 800; color: var(--text); text-align: right; }
+  .mot .bar-track { height: 12px; }
+  .chn { display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: 10px; margin-top: 12px; }
+  .chn i { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 13px; }
+  .stack { display: flex; height: 14px; border-radius: 99px; overflow: hidden; }
+  .stack .p { background: #22a35a; } .stack .n { background: #f0ad0f; } .stack .x { background: #ed3d2e; }
+  .tr { font-size: 13.5px; line-height: 1.9; color: var(--muted); font-weight: 500; }
+  .tr b { color: var(--text); font-weight: 700; }
+  .kw { display: inline-block; padding: 1px 9px; border-radius: 99px; font-weight: 700; font-size: 12.5px; line-height: 1.6; }
+  .kw.b { background: var(--blue-light); color: var(--blue); }
+  .kw.y { background: #fef6e4; color: #b27c06; }
+  .al { display: flex; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid #eef2f7; font-size: 13px; font-weight: 600; color: var(--text); }
+  .al:last-child { border-bottom: 0; }
+  .al i { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+
+  /* Insights */
+  .ins { position: absolute; z-index: 3; width: 410px; height: 136px; padding: 0 24px; border-radius: 30px; display: flex; gap: 18px; align-items: center; }
+  .ins .ico { width: 60px; height: 60px; font-size: 24px; }
+  .ins b { display: block; white-space: nowrap; font-size: 20px; font-weight: 800; letter-spacing: -.01em; color: var(--text); }
+  .ins span { display: block; font-size: 16px; font-weight: 500; color: var(--muted); margin-top: 6px; line-height: 1.35; }
+  .src { flex: 1; display: flex; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 18px; background: #f8fbff; border: 2px solid #e3ecfb; font-size: 17px; font-weight: 700; color: var(--text); white-space: nowrap; }
+  .src > i { color: var(--blue); font-size: 18px; }
+  .src .check { margin-left: auto; width: 30px; height: 30px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1200px">
+<div style="position:absolute;inset:0;transform:translateY(-45px)">
+
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1920" height="1200" fill="none">
+    <defs>
+      <marker id="ae" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="14" refY="10" orient="auto"><path d="M2 2 L16 10 L2 18" fill="none" stroke="#0263e2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#0263e2"/><stop offset="1" stop-color="#8ab4f8"/></linearGradient>
+    </defs>
+    <path d="M1178 595 H1222" stroke="#0263e2" stroke-width="3.5" marker-end="url(#ae)"/>
+    <g stroke="url(#lg)" stroke-width="3.5" stroke-linecap="round">
+      <path d="M1440 595 C1470 595 1450 375 1478 375"/>
+      <path d="M1440 595 H1478"/>
+      <path d="M1440 595 C1470 595 1450 815 1478 815"/>
+    </g>
+  </svg>
+
+  <div class="lt" style="left:90px;top:250px;width:1070px">
+    <div class="lid">
+      <div class="screen" style="width:1034px;height:646px">
+        <div style="width:1348px;height:843px;transform:scale(0.7671);transform-origin:0 0">
+          <div class="app">
+            <div class="app-side">
+              <i class="fa-solid fa-house"></i>
+              <div class="on"><i class="fa-solid fa-chart-pie"></i></div>
+              <i class="fa-solid fa-microphone-lines"></i>
+              <i class="fa-solid fa-comments"></i>
+              <i class="fa-solid fa-clipboard-check"></i>
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="app-main">
+              <div class="app-top">
+                <h4>Five9 Analytics<small>Speech, Interaction Analytics y Reporting</small></h4>
+                <div style="display:flex;gap:12px;align-items:center">
+                  <div class="seg"><span class="on">Todos</span><span>Voz</span><span>Digital</span></div>
+                  <span class="pill-ui green"><i class="fa-solid fa-circle" style="font-size:8px"></i> Tiempo real</span>
+                </div>
+              </div>
+
+              <div class="kpis">
+                <div class="panel kpi"><div class="lbl">Interacciones analizadas</div><div class="val">100%</div></div>
+                <div class="panel kpi"><div class="lbl">Sentimiento positivo</div><div class="val">72%<span class="up">▲ 5 pts</span></div></div>
+                <div class="panel kpi"><div class="lbl">AHT</div><div class="val">4:05<span class="up">▼ 12%</span></div></div>
+                <div class="panel kpi"><div class="lbl">CSAT</div><div class="val">4.6<span style="color:#94a3b8">/ 5</span></div></div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:16px;flex:1">
+                <div class="panel">
+                  <h5>Motivos de contacto <i class="fa-solid fa-ellipsis" style="color:#94a3b8"></i></h5>
+                  <div class="mot">Facturación<div class="bar-track"><div class="bar-fill" style="width:86%"></div></div><b>34%</b></div>
+                  <div class="mot">Soporte técnico<div class="bar-track"><div class="bar-fill" style="width:68%;background:#3b8bf5"></div></div><b>27%</b></div>
+                  <div class="mot">Cambio de plan<div class="bar-track"><div class="bar-fill" style="width:48%;background:#5b9bf3"></div></div><b>19%</b></div>
+                  <div class="mot">Cancelación<div class="bar-track"><div class="bar-fill" style="width:30%;background:#8ab4f8"></div></div><b>12%</b></div>
+                  <div class="mot">Otros<div class="bar-track"><div class="bar-fill" style="width:20%;background:#bcd5fb"></div></div><b>8%</b></div>
+                  <div style="margin-top:22px;padding-top:16px;border-top:1px solid #eef2f7;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:#475569">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="color:#0263e2"></i> Clasificado con IA y NLP
+                  </div>
+                  <h5 style="margin-top:20px">Palabras clave</h5>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px">
+                    <span class="kw b" style="font-size:14px;padding:4px 12px">factura</span><span class="kw y" style="font-size:14px;padding:4px 12px">cancelar</span><span class="kw b" style="font-size:14px;padding:4px 12px">cobro</span>
+                    <span class="kw b" style="font-size:14px;padding:4px 12px">plan</span><span class="kw y" style="font-size:14px;padding:4px 12px">demora</span><span class="kw b" style="font-size:14px;padding:4px 12px">reembolso</span>
+                  </div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:16px">
+                  <div class="panel">
+                    <h5>Tendencia de sentimiento <span class="legend"><span><i style="background:#22a35a"></i>Positivo</span><span><i style="background:#ed3d2e"></i>Negativo</span></span></h5>
+                    <svg width="100%" height="150" viewBox="0 0 520 150" preserveAspectRatio="none">
+                      <defs><linearGradient id="gp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22a35a" stop-opacity=".2"/><stop offset="1" stop-color="#22a35a" stop-opacity="0"/></linearGradient></defs>
+                      <g stroke="#eef2f7" stroke-width="2"><line x1="0" y1="25" x2="520" y2="25"/><line x1="0" y1="75" x2="520" y2="75"/><line x1="0" y1="125" x2="520" y2="125"/></g>
+                      <path d="M0 90 C60 84 100 70 150 72 S250 54 300 46 S420 30 520 22 V150 H0Z" fill="url(#gp)"/>
+                      <path d="M0 90 C60 84 100 70 150 72 S250 54 300 46 S420 30 520 22" stroke="#22a35a" stroke-width="4" fill="none"/>
+                      <path d="M0 118 C60 116 100 120 150 112 S250 118 300 122 S420 128 520 132" stroke="#ed3d2e" stroke-width="3" stroke-dasharray="8 7" fill="none"/>
+                    </svg>
+                    <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:#94a3b8;margin-top:4px"><span>Sem 1</span><span>Sem 2</span><span>Sem 3</span><span>Sem 4</span></div>
+                  </div>
+                  <div class="panel" style="flex:1">
+                    <h5>Transcripción analizada <span class="pill-ui" style="font-size:12px"><i class="fa-solid fa-microphone-lines"></i> Voz</span></h5>
+                    <div class="tr"><b>Cliente:</b> Tengo un problema con mi <span class="kw b">factura</span> de este mes y quiero <span class="kw y">cancelar</span> el servicio.</div>
+                    <div class="tr" style="margin-top:6px"><b>Agente:</b> Entiendo, reviso el cobro y le ofrezco un <span class="kw b">cambio de plan</span>.</div>
+                    <div class="tr" style="margin-top:6px"><b>Cliente:</b> Perfecto, así sí me quedo.</div>
+                    <div style="display:flex;gap:8px;margin-top:14px;padding-top:12px;border-top:1px solid #eef2f7;flex-wrap:wrap">
+                      <span class="pill-ui green" style="font-size:12px"><i class="fa-regular fa-face-smile"></i> Cierre positivo</span>
+                      <span class="pill-ui" style="font-size:12px"><i class="fa-solid fa-user-shield"></i> Retención lograda</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:16px">
+                  <div class="panel">
+                    <h5>Sentimiento por canal</h5>
+                    <div class="chn"><i class="fa-solid fa-phone"></i><div class="stack"><div class="p" style="width:70%"></div><div class="n" style="width:20%"></div><div class="x" style="width:10%"></div></div></div>
+                    <div class="chn"><i class="fa-solid fa-comment-dots"></i><div class="stack"><div class="p" style="width:76%"></div><div class="n" style="width:16%"></div><div class="x" style="width:8%"></div></div></div>
+                    <div class="chn"><i class="fa-solid fa-envelope"></i><div class="stack"><div class="p" style="width:62%"></div><div class="n" style="width:26%"></div><div class="x" style="width:12%"></div></div></div>
+                    <div class="chn"><i class="fa-brands fa-whatsapp" style="background:#e8f5ee;color:#1f9a52"></i><div class="stack"><div class="p" style="width:80%"></div><div class="n" style="width:14%"></div><div class="x" style="width:6%"></div></div></div>
+                  </div>
+                  <div class="panel" style="flex:1">
+                    <h5>Alertas</h5>
+                    <div class="al"><i style="background:#fdecea;color:#ed3d2e" class="fa-solid fa-arrow-trend-up"></i>Recontactos en chat +8%</div>
+                    <div class="al"><i style="background:#fef6e4;color:#b27c06" class="fa-solid fa-triangle-exclamation"></i>Palabra clave: "cancelar"</div>
+                    <div class="al"><i style="background:#e8f5ee;color:#1f9a52" class="fa-solid fa-check"></i>FCR estable en voz</div>
+                    <div class="al"><i style="background:#eff6ff;color:#0263e2" class="fa-solid fa-user-xmark"></i>Riesgo de baja: 14 clientes</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="base"></div>
+  </div>
+
+  <!-- Nodo IA -->
+  <div class="node" style="left:1230px;top:490px;width:210px;height:210px;flex-direction:column;gap:6px;font-size:70px">
+    <i class="fa-solid fa-brain"></i>
+    <div style="font-size:17px;font-weight:800;color:#0f172a">IA + NLP</div>
+  </div>
+
+  <div class="t-label" style="position:absolute;left:1480px;top:250px;color:#475569">Insights accionables</div>
+  <div class="card ins" style="left:1478px;top:307px"><div class="ico" style="background:#f0ad0f"><i class="fa-solid fa-lightbulb"></i></div><div><b>Causa raíz detectada</b><span>Facturación genera el 34% de los contactos</span></div></div>
+  <div class="card ins" style="left:1478px;top:527px"><div class="ico" style="background:#ed3d2e"><i class="fa-solid fa-bell"></i></div><div><b>Alerta temprana</b><span>Recontactos en chat subieron 8% esta semana</span></div></div>
+  <div class="card ins" style="left:1478px;top:747px"><div class="ico"><i class="fa-solid fa-user-graduate"></i></div><div><b>Oportunidad de coaching</b><span>3 agentes con AHT sobre la meta</span></div></div>
+
+  <!-- Fuentes analizadas -->
+  <div class="card" style="left:110px;top:1010px;width:1120px;padding:20px 24px;border-radius:30px;display:flex;align-items:center;gap:16px">
+    <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+      <div class="ico md"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+      <div class="t-title" style="font-size:21px;line-height:1.2">100% de las<br/>interacciones</div>
+    </div>
+    <div class="src"><i class="fa-solid fa-phone"></i>Voz<div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <div class="src"><i class="fa-solid fa-comment-dots"></i>Chat<div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <div class="src"><i class="fa-solid fa-envelope"></i>Email<div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <div class="src"><i class="fa-brands fa-whatsapp"></i>WhatsApp<div class="check"><i class="fa-solid fa-check"></i></div></div>
+  </div>
+</div>
+</div>
+</body>
+</html>

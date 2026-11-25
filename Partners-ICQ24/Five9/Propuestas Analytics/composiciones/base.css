@@ -1,0 +1,124 @@
+/* ==========================================================================
+   ICQ24 · Composiciones de imagen (hero / dashboard / footer)
+   Línea gráfica: Montserrat, azul #0263e2, tarjetas blancas con glow azul.
+   ========================================================================== */
+:root {
+  --blue: #0263e2;
+  --blue-hover: #002d6d;
+  --blue-light: #eff6ff;
+  --blue-soft: #8ab4f8;
+  --blue-deep: #1e2a8a;
+  --navy: #0a192f;
+  --text: #0f172a;
+  --muted: #475569;
+  --soft: #94a3b8;
+  --line: #e2e8f0;
+  --bg-light: #f8fafc;
+  --green: #22a35a;
+  --green-bg: #e8f5ee;
+  --yellow: #f0ad0f;
+  --red: #ed3d2e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: transparent; }
+body { font-family: "Montserrat", sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
+
+.canvas { position: relative; overflow: hidden; }
+.abs { position: absolute; }
+
+/* Persona recortada con desvanecido inferior */
+.person {
+  position: absolute; z-index: 2;
+  -webkit-mask-image: linear-gradient(to bottom, #000 var(--fade-start, 60%), transparent var(--fade-end, 86%));
+          mask-image: linear-gradient(to bottom, #000 var(--fade-start, 60%), transparent var(--fade-end, 86%));
+}
+/* Vista previa sobre blanco: abrir el HTML con ?white */
+html.white, html.white body { background: #fff; }
+
+/* Tarjeta flotante */
+.card {
+  position: absolute; z-index: 3; background: #fff;
+  border: 2px solid rgba(2, 99, 226, 0.16);
+  border-radius: 40px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.6) inset, 0 14px 50px rgba(2, 99, 226, 0.20), 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+.card.sm { border-radius: 28px; }
+
+/* Píldora con icono (tipo Guía / Recomienda / Acelera) */
+.chip { display: flex; align-items: center; gap: 26px; padding: 24px 40px 24px 26px; font-weight: 600; font-size: 30px; letter-spacing: -0.01em; }
+.ico {
+  flex-shrink: 0; width: 92px; height: 92px; border-radius: 50%;
+  background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 40px;
+}
+.ico.light { background: var(--blue-light); color: var(--blue); border: 2px solid rgba(2,99,226,.12); }
+.ico.md { width: 72px; height: 72px; font-size: 30px; }
+.ico.sm { width: 54px; height: 54px; font-size: 24px; }
+
+/* Nodo circular grande con línea conectora */
+.node {
+  position: absolute; z-index: 3; border-radius: 50%; background: #fff;
+  border: 2px solid rgba(2, 99, 226, 0.16);
+  box-shadow: 0 14px 50px rgba(2, 99, 226, 0.22);
+  display: flex; align-items: center; justify-content: center; color: var(--blue);
+}
+.connector { position: absolute; z-index: 1; border: 3px solid var(--blue); border-radius: 0; }
+
+/* Textos */
+.t-title { font-weight: 700; font-size: 30px; line-height: 1.25; letter-spacing: -0.01em; color: var(--text); }
+.t-sub { font-weight: 500; font-size: 22px; color: var(--muted); }
+.t-kpi { font-weight: 800; font-size: 56px; letter-spacing: -0.03em; color: var(--blue); line-height: 1; }
+.t-label { font-weight: 700; font-size: 16px; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); }
+.skeleton { height: 16px; border-radius: 99px; background: #d9dee6; }
+.check { width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.check.blue { background: var(--blue); }
+
+.bar-track { height: 18px; border-radius: 99px; background: #e8eef8; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--blue), #3b8bf5); }
+
+/* ---------------- Laptop ---------------- */
+.laptop { position: absolute; z-index: 1; }
+.laptop .lid {
+  position: relative; background: #1c1f26; border-radius: 40px 40px 8px 8px; padding: 26px 26px 34px;
+  box-shadow: 0 0 0 4px #9aa1ab, 0 30px 60px rgba(15,23,42,.18);
+}
+.laptop .lid::before { content: ""; position: absolute; top: 10px; left: 50%; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: #3a3f48; }
+.laptop .screen { position: relative; overflow: hidden; border-radius: 10px; background: #f3f6fb; }
+.laptop .base {
+  position: relative; height: 54px; margin: 0 -110px; border-radius: 0 0 46px 46px;
+  background: linear-gradient(180deg, #d8dce2 0%, #b9bec6 55%, #8f959e 100%);
+  box-shadow: 0 28px 40px rgba(15,23,42,.16);
+}
+.laptop .base::before { content: ""; position: absolute; top: 0; left: 50%; width: 300px; height: 16px; margin-left: -150px; border-radius: 0 0 18px 18px; background: #9aa0a9; }
+
+/* UI de la app dentro de la pantalla */
+.app { display: grid; grid-template-columns: 92px 1fr; height: 100%; }
+.app-side { background: linear-gradient(180deg, #0b3f9a, #0a2f73); display: flex; flex-direction: column; align-items: center; gap: 30px; padding-top: 34px; color: rgba(255,255,255,.75); font-size: 26px; }
+.app-side .on { width: 58px; height: 58px; border-radius: 16px; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(2,99,226,.5); }
+.app-main { padding: 26px 30px; display: flex; flex-direction: column; gap: 20px; }
+.app-top { display: flex; align-items: center; justify-content: space-between; }
+.app-top h4 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+.app-top small { display: block; font-size: 16px; font-weight: 500; color: var(--muted); margin-top: 2px; letter-spacing: 0; }
+.pill-ui { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 99px; font-size: 15px; font-weight: 700; background: var(--blue-light); color: var(--blue); border: 1px solid #cfe0fb; }
+.pill-ui.green { background: var(--green-bg); color: #1f7a45; border-color: #c4e6d2; }
+.panel { background: #fff; border: 1px solid #e3e9f2; border-radius: 18px; padding: 18px 20px; box-shadow: 0 2px 6px rgba(15,23,42,.03); }
+.panel h5 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.kpi .lbl { font-size: 14px; font-weight: 600; color: var(--muted); }
+.kpi .val { font-size: 34px; font-weight: 800; letter-spacing: -0.03em; color: var(--text); margin-top: 4px; }
+.kpi .val span { font-size: 15px; font-weight: 700; margin-left: 6px; }
+.up { color: #1f7a45; } .down { color: var(--red); }
+.legend { display: flex; gap: 18px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; }
+
+/* Persona con bordes laterales desvanecidos (escenas de escritorio cortadas por el encuadre) */
+.person.edges {
+  -webkit-mask-image: linear-gradient(to bottom, #000 var(--fade-start, 60%), transparent var(--fade-end, 86%)),
+                      linear-gradient(to right, transparent 0, #000 var(--edge-l, 6%), #000 calc(100% - var(--edge-r, 6%)), transparent 100%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to bottom, #000 var(--fade-start, 60%), transparent var(--fade-end, 86%)),
+                      linear-gradient(to right, transparent 0, #000 var(--edge-l, 6%), #000 calc(100% - var(--edge-r, 6%)), transparent 100%);
+          mask-composite: intersect;
+}
+.tag { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 99px; font-size: 17px; font-weight: 700; background: var(--blue-light); color: var(--blue); border: 1px solid #cfe0fb; white-space: nowrap; }
+.tag.green { background: var(--green-bg); color: #1f7a45; border-color: #c4e6d2; }
+.tag.yellow { background: #fef6e4; color: #b27c06; border-color: #f7e2b0; }

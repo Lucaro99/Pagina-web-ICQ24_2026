@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Hero CRM Integrations</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .crm { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 18px; background: #f8fbff; border: 2px solid #e3ecfb; font-size: 20px; font-weight: 700; color: var(--text); }
+  .crm i { color: var(--blue); font-size: 20px; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1440px">
+
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1920" height="1440" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M1610 300 V390" />
+    <path d="M1600 790 V1000" />
+  </svg>
+
+  <img class="person edges" src="../fotos/recortes/crm-hero.png" style="left:170px;top:190px;width:1500px;--fade-start:80%;--fade-end:98%;--edge-l:14%;--edge-r:12%" alt="" />
+
+  <!-- Nodo -->
+  <div class="node" style="left:1500px;top:80px;width:220px;height:220px;font-size:92px"><i class="fa-solid fa-address-card"></i></div>
+
+  <!-- Chips izquierdos -->
+  <div class="card chip" style="left:40px;top:250px;width:490px;white-space:nowrap;font-size:29px"><div class="ico"><i class="fa-solid fa-id-card"></i></div>Screen pop</div>
+  <div class="card chip" style="left:40px;top:440px;width:490px;white-space:nowrap;font-size:29px"><div class="ico"><i class="fa-solid fa-phone"></i></div>Click-to-call</div>
+  <div class="card chip" style="left:40px;top:630px;width:490px;white-space:nowrap;font-size:29px"><div class="ico"><i class="fa-solid fa-pen-to-square"></i></div>Registro automático</div>
+
+  <!-- Cliente identificado -->
+  <div class="card" style="left:1290px;top:390px;width:580px;padding:32px 34px 30px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
+      <div class="t-title" style="font-size:27px">Cliente identificado</div>
+      <span class="tag green"><i class="fa-solid fa-circle" style="font-size:9px"></i> Llamada entrante</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px">
+      <div class="ico light" style="width:84px;height:84px;font-size:36px"><i class="fa-solid fa-user"></i></div>
+      <div style="flex:1">
+        <div class="skeleton" style="width:72%;height:20px;background:#cfd6e0"></div>
+        <div class="skeleton" style="width:48%;margin-top:12px;height:14px"></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">
+      <span class="tag"><i class="fa-solid fa-star"></i> Cliente VIP</span>
+      <span class="tag yellow"><i class="fa-solid fa-ticket"></i> Caso abierto</span>
+      <span class="tag"><i class="fa-solid fa-clock-rotate-left"></i> 12 interacciones</span>
+    </div>
+  </div>
+
+  <!-- AHT -->
+  <div class="card" style="left:110px;top:965px;width:540px;padding:30px 36px 28px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <div>
+        <div class="t-title" style="font-size:26px">Tiempo medio (AHT)</div>
+        <div class="t-sub" style="font-size:18px">Antes vs. con CRM integrado</div>
+      </div>
+      <div style="font-weight:800;font-size:34px;color:#1f7a45;letter-spacing:-.02em">−22%</div>
+    </div>
+    <svg width="468" height="150" viewBox="0 0 468 150">
+      <line x1="0" y1="148" x2="468" y2="148" stroke="#cbd5e1" stroke-width="3"/>
+      <g>
+        <rect x="10"  y="20" width="44" height="128" rx="12" fill="#cbd5e1"/>
+        <rect x="64"  y="44" width="44" height="104" rx="12" fill="#0263e2"/>
+        <rect x="130" y="30" width="44" height="118" rx="12" fill="#cbd5e1"/>
+        <rect x="184" y="62" width="44" height="86" rx="12" fill="#0263e2"/>
+        <rect x="250" y="12" width="44" height="136" rx="12" fill="#cbd5e1"/>
+        <rect x="304" y="58" width="44" height="90" rx="12" fill="#0263e2"/>
+        <rect x="370" y="36" width="44" height="112" rx="12" fill="#cbd5e1"/>
+        <rect x="424" y="76" width="44" height="72" rx="12" fill="#1e2a8a"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- CRMs integrados -->
+  <div class="card" style="left:1330px;top:1000px;width:540px;padding:30px 32px 30px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:20px">
+      <div class="ico md"><i class="fa-solid fa-link"></i></div>
+      <div class="t-title" style="font-size:26px">Integración nativa</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="crm"><i class="fa-solid fa-cloud"></i>Salesforce</div>
+      <div class="crm"><i class="fa-solid fa-circle-nodes"></i>HubSpot</div>
+      <div class="crm"><i class="fa-solid fa-table-cells-large"></i>Dynamics 365</div>
+      <div class="crm"><i class="fa-solid fa-cubes"></i>Odoo</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

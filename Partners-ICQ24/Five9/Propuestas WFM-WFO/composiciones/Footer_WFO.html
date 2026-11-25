@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Footer WFO</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .chip2 { display: flex; align-items: center; gap: 20px; padding: 18px 22px 18px 18px; font-weight: 700; font-size: 28px; letter-spacing: -0.01em; border-radius: 999px; }
+  .chip2 .check { margin-left: auto; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1400px;height:1320px">
+
+  <!-- Conector entre tarjetas derechas -->
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1400" height="1320" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M1250 650 V800" />
+  </svg>
+
+  <img class="person" src="../fotos/recortes/equipo-asesores.png" style="left:290px;top:100px;width:900px;--fade-start:68%;--fade-end:94%" alt="" />
+
+  <!-- Izquierda: capacidades integradas -->
+  <div class="card chip2" style="left:30px;top:390px;width:410px"><div class="ico md"><i class="fa-solid fa-calendar-days"></i></div>Planificación<div class="check"><i class="fa-solid fa-check"></i></div></div>
+  <div class="card chip2" style="left:30px;top:515px;width:410px"><div class="ico md"><i class="fa-solid fa-clipboard-check"></i></div>Calidad<div class="check"><i class="fa-solid fa-check"></i></div></div>
+  <div class="card chip2" style="left:30px;top:640px;width:410px"><div class="ico md"><i class="fa-solid fa-chart-pie"></i></div>Analítica<div class="check"><i class="fa-solid fa-check"></i></div></div>
+
+  <!-- Izquierda abajo: optimización continua -->
+  <div class="card" style="left:40px;top:830px;width:480px;padding:28px 32px 22px;border-radius:32px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+      <div class="t-title" style="font-size:25px">Optimización continua</div>
+      <div class="ico light sm"><i class="fa-solid fa-arrow-trend-up" style="font-size:22px"></i></div>
+    </div>
+    <svg width="416" height="170" viewBox="0 0 416 170">
+      <defs><linearGradient id="oa" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0263e2" stop-opacity=".22"/><stop offset="1" stop-color="#0263e2" stop-opacity="0"/></linearGradient></defs>
+      <g stroke="#eef2f7" stroke-width="2"><line x1="0" y1="25" x2="416" y2="25"/><line x1="0" y1="85" x2="416" y2="85"/><line x1="0" y1="145" x2="416" y2="145"/></g>
+      <path d="M0 140 C46 130 74 104 120 107 S194 78 240 69 S320 36 402 20 V170 H0Z" fill="url(#oa)"/>
+      <path d="M0 140 C46 130 74 104 120 107 S194 78 240 69 S320 36 402 20" stroke="#0263e2" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <circle cx="402" cy="20" r="9" fill="#fff" stroke="#0263e2" stroke-width="6"/>
+    </svg>
+  </div>
+
+  <!-- Derecha arriba: adherencia -->
+  <div class="card" style="left:1120px;top:390px;width:260px;padding:26px 24px 24px;border-radius:32px;text-align:center">
+    <svg width="140" height="140" viewBox="0 0 120 120" style="display:block;margin:0 auto 8px">
+      <circle cx="60" cy="60" r="48" stroke="#e8eef8" stroke-width="13" fill="none"/>
+      <circle cx="60" cy="60" r="48" stroke="#0263e2" stroke-width="13" fill="none" stroke-linecap="round" stroke-dasharray="286 302" transform="rotate(-90 60 60)"/>
+      <text x="60" y="68" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="25" fill="#0f172a">95%</text>
+    </svg>
+    <div class="t-title" style="font-size:23px">Adherencia</div>
+  </div>
+
+  <!-- Derecha abajo: SLA -->
+  <div class="card" style="left:960px;top:800px;width:420px;padding:26px 28px;border-radius:32px">
+    <div style="display:flex;align-items:center;gap:18px">
+      <div class="ico md"><i class="fa-solid fa-headset"></i></div>
+      <div style="flex:1">
+        <div class="t-title" style="font-size:25px">SLA cumplido</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px">
+          <div class="bar-track" style="flex:1"><div class="bar-fill" style="width:84%"></div></div>
+          <div class="check"><i class="fa-solid fa-check"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

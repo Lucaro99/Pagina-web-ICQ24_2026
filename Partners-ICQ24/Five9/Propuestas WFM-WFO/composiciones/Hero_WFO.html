@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Hero WFO</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .row { display: flex; align-items: center; gap: 18px; padding: 16px 0; border-bottom: 2px solid #f1f5f9; }
+  .row:last-child { border-bottom: 0; padding-bottom: 4px; }
+  .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+  .st { padding: 8px 16px; border-radius: 99px; font-size: 17px; font-weight: 700; white-space: nowrap; }
+  .st.g { background: var(--green-bg); color: #1f7a45; }
+  .st.b { background: var(--blue-light); color: var(--blue); }
+  .st.y { background: #fef6e4; color: #b27c06; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1440px">
+
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1920" height="1440" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M1470 330 V410" />
+    <path d="M1700 820 V990" />
+  </svg>
+
+  <img class="person" src="../fotos/recortes/supervisor-laptop.png" style="left:280px;top:40px;width:1170px;--fade-start:60%;--fade-end:88%" alt="" />
+
+  <!-- Nodo -->
+  <div class="node" style="left:1360px;top:100px;width:220px;height:220px;font-size:96px">
+    <i class="fa-solid fa-gauge-high"></i>
+  </div>
+
+  <!-- Chips izquierdos -->
+  <div class="card chip" style="left:70px;top:330px;width:400px"><div class="ico"><i class="fa-solid fa-calendar-days"></i></div>Planifica</div>
+  <div class="card chip" style="left:70px;top:530px;width:400px"><div class="ico"><i class="fa-solid fa-clipboard-check"></i></div>Evalúa</div>
+  <div class="card chip" style="left:70px;top:730px;width:400px"><div class="ico"><i class="fa-solid fa-arrow-trend-up"></i></div>Optimiza</div>
+
+  <!-- Monitoreo del equipo -->
+  <div class="card" style="left:1250px;top:410px;width:600px;padding:32px 36px 26px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+      <div class="t-title" style="font-size:28px">Monitoreo del equipo</div>
+      <span class="pill-ui green" style="font-size:16px"><i class="fa-solid fa-circle" style="font-size:9px"></i> En vivo</span>
+    </div>
+    <div class="row"><div class="avatar"><i class="fa-solid fa-user"></i></div><div style="flex:1"><div class="skeleton" style="width:70%;background:#cfd6e0"></div><div class="skeleton" style="width:45%;margin-top:10px;height:12px"></div></div><span class="st g">En turno</span></div>
+    <div class="row"><div class="avatar"><i class="fa-solid fa-user"></i></div><div style="flex:1"><div class="skeleton" style="width:62%;background:#cfd6e0"></div><div class="skeleton" style="width:38%;margin-top:10px;height:12px"></div></div><span class="st b">Coaching</span></div>
+    <div class="row"><div class="avatar"><i class="fa-solid fa-user"></i></div><div style="flex:1"><div class="skeleton" style="width:74%;background:#cfd6e0"></div><div class="skeleton" style="width:50%;margin-top:10px;height:12px"></div></div><span class="st y">Break</span></div>
+  </div>
+
+  <!-- Nivel de servicio -->
+  <div class="card" style="left:150px;top:1030px;width:540px;padding:30px 36px">
+    <div style="display:flex;align-items:center;gap:24px">
+      <svg width="120" height="120" viewBox="0 0 120 120" style="flex-shrink:0">
+        <circle cx="60" cy="60" r="48" stroke="#e8eef8" stroke-width="14" fill="none"/>
+        <circle cx="60" cy="60" r="48" stroke="#0263e2" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="247 302" transform="rotate(-90 60 60)"/>
+        <text x="60" y="68" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="26" fill="#0f172a">82%</text>
+      </svg>
+      <div style="flex:1">
+        <div class="t-title" style="font-size:27px">Nivel de servicio</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px">
+          <div class="check"><i class="fa-solid fa-check"></i></div>
+          <span class="t-sub" style="font-size:20px;font-weight:600">Meta 80/20 cumplida</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Productividad vs costo -->
+  <div class="card" style="left:1440px;top:990px;width:440px;padding:30px 30px 24px">
+    <div class="t-title" style="font-size:24px;margin-bottom:4px">Productividad vs. costo</div>
+    <div class="legend" style="font-size:15px;margin-bottom:12px"><span><i style="background:#0263e2"></i>Productividad</span><span><i style="background:#8ab4f8"></i>Costo laboral</span></div>
+    <svg width="376" height="140" viewBox="0 0 406 150" preserveAspectRatio="none">
+      <g stroke="#eef2f7" stroke-width="2"><line x1="0" y1="20" x2="406" y2="20"/><line x1="0" y1="75" x2="406" y2="75"/><line x1="0" y1="130" x2="406" y2="130"/></g>
+      <path d="M0 118 C60 112 90 96 140 86 S240 52 290 40 S360 22 394 18" stroke="#0263e2" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M0 40 C60 44 100 58 150 66 S250 88 300 98 S370 110 394 114" stroke="#8ab4f8" stroke-width="5" fill="none" stroke-linecap="round" stroke-dasharray="10 9"/>
+      <circle cx="394" cy="18" r="9" fill="#fff" stroke="#0263e2" stroke-width="5"/>
+    </svg>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard CRM Integrations</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .call { background: linear-gradient(160deg, #0263e2, #0a3f9e); color: #fff; border-radius: 18px; padding: 22px 22px 20px; }
+  .call .lbl { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+  .call .tm { font-size: 40px; font-weight: 800; letter-spacing: -.02em; margin: 8px 0 14px; }
+  .call .btns { display: flex; gap: 10px; }
+  .call .btns span { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .call .btns span.end { background: #ed3d2e; margin-left: auto; }
+  .field { display: grid; grid-template-columns: 130px 1fr; align-items: center; padding: 10px 0; border-bottom: 1px solid #eef2f7; font-size: 14px; }
+  .field:last-child { border-bottom: 0; }
+  .field b { color: var(--soft); font-weight: 600; }
+  .tl { display: flex; gap: 14px; padding: 10px 0; }
+  .tl .d { width: 38px; height: 38px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .tl .d.g { background: var(--green-bg); color: #1f9a52; }
+  .tl .d.y { background: #fef6e4; color: #b27c06; }
+  .tl .x { flex: 1; }
+  .tl small { font-size: 12px; color: var(--soft); font-weight: 600; }
+  .sug { display: flex; align-items: center; gap: 20px; padding: 22px 24px; border: 2px solid #e3ecfb; border-radius: 22px; background: #f8fbff; }
+  .sug + .sug { margin-top: 16px; }
+  .sug b { display: block; font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+  .sug span { display: block; font-size: 18px; font-weight: 500; color: var(--muted); margin-top: 4px; }
+  .sug .check { margin-left: auto; }
+  .crm-logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .crm-logos div { height: 92px; border-radius: 18px; background: #fff; border: 2px solid #e3ecfb; display: flex; align-items: center; justify-content: center; padding: 14px; }
+  .crm-logos img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .lt { position: absolute; z-index: 2; }
+  .lt .lid { position: relative; background: #16191f; border-radius: 26px 26px 6px 6px; padding: 18px 18px 24px; box-shadow: 0 0 0 3px #a3a9b2, 0 30px 70px rgba(15,23,42,.16); }
+  .lt .lid::before { content: ""; position: absolute; top: 7px; left: 50%; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: #343a44; }
+  .lt .screen { position: relative; overflow: hidden; border-radius: 6px; background: #f3f6fb; }
+  .lt .base { position: relative; height: 22px; margin: 0 -66px; border-radius: 4px 4px 26px 26px; background: linear-gradient(180deg, #e3e6ea 0%, #c4c9d0 45%, #9ba1aa 100%); box-shadow: 0 24px 34px rgba(15,23,42,.14); }
+  .lt .base::before { content: ""; position: absolute; top: 0; left: 50%; width: 190px; height: 9px; margin-left: -95px; border-radius: 0 0 12px 12px; background: #a9afb8; }
+  .crm { position: absolute; z-index: 3; width: 390px; height: 160px; padding: 22px 26px; border-radius: 30px; display: flex; flex-direction: column; justify-content: space-between; }
+  .crm .top { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .crm .top img { max-width: 230px; object-fit: contain; }
+  .crm p { font-size: 18px; font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+  .crm p i { color: var(--blue); }
+  .stage { display: grid; grid-template-columns: 110px 1fr 46px; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; color: var(--muted); margin-top: 14px; }
+  .stage .bar-track { height: 12px; }
+  .reg { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 2px solid #f1f5f9; }
+  .reg:last-child { border-bottom: 0; padding-bottom: 0; }
+  .reg b { display: block; font-size: 19px; font-weight: 700; color: var(--text); }
+  .reg span { display: block; font-size: 15px; font-weight: 500; color: var(--muted); margin-top: 2px; }
+  .regx { flex: 1; display: flex; align-items: center; gap: 10px; padding: 13px 14px; border-radius: 18px; background: #f8fbff; border: 2px solid #e3ecfb; font-size: 17px; font-weight: 700; color: var(--text); white-space: nowrap; }
+  .regx > i { color: var(--blue); font-size: 18px; }
+  .regx .check { margin-left: auto; width: 30px; height: 30px; font-size: 14px; }
+  .reg .check { margin-left: auto; width: 34px; height: 34px; font-size: 16px; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1200px">
+<div style="position:absolute;inset:0;transform:translateY(-45px)">
+
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1920" height="1200" fill="none">
+    <defs>
+      <marker id="ae" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="14" refY="10" orient="auto"><path d="M2 2 L16 10 L2 18" fill="none" stroke="#0263e2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <marker id="as" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" refX="6" refY="10" orient="auto"><path d="M18 2 L4 10 L18 18" fill="none" stroke="#0263e2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#0263e2"/><stop offset="1" stop-color="#8ab4f8"/></linearGradient>
+    </defs>
+    <path d="M1178 595 H1220" stroke="#0263e2" stroke-width="3.5" marker-start="url(#as)" marker-end="url(#ae)"/>
+    <g stroke="url(#lg)" stroke-width="3.5" stroke-linecap="round">
+      <path d="M1440 595 C1478 595 1462 327 1500 327"/>
+      <path d="M1440 595 C1478 595 1462 509 1500 509"/>
+      <path d="M1440 595 C1478 595 1462 691 1500 691"/>
+      <path d="M1440 595 C1478 595 1462 873 1500 873"/>
+    </g>
+  </svg>
+
+  <div class="lt" style="left:90px;top:250px;width:1070px">
+    <div class="lid">
+      <div class="screen" style="width:1034px;height:646px">
+        <div style="width:1348px;height:843px;transform:scale(0.7671);transform-origin:0 0">
+        <div class="app">
+          <div class="app-side">
+            <i class="fa-solid fa-house"></i>
+            <div class="on"><i class="fa-solid fa-address-book"></i></div>
+            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-ticket"></i>
+            <i class="fa-solid fa-chart-line"></i>
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <div class="app-main">
+            <div class="app-top">
+              <h4>Consola de agente<small>Five9 + CRM · Vista unificada del cliente</small></h4>
+              <div style="display:flex;gap:10px">
+                <span class="pill-ui green"><i class="fa-solid fa-circle" style="font-size:8px"></i> CRM conectado</span>
+                <span class="pill-ui"><i class="fa-solid fa-arrows-rotate"></i> Sync en tiempo real</span>
+              </div>
+            </div>
+
+            <div class="kpis">
+              <div class="panel kpi"><div class="lbl">AHT</div><div class="val">4:05<span class="up">▼ 22%</span></div></div>
+              <div class="panel kpi"><div class="lbl">Registros automáticos</div><div class="val">100%</div></div>
+              <div class="panel kpi"><div class="lbl">Resolución 1er contacto</div><div class="val">78%<span class="up">▲ 6 pts</span></div></div>
+              <div class="panel kpi"><div class="lbl">Interacciones hoy</div><div class="val">1.248</div></div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:300px 1fr 1fr;gap:16px;flex:1">
+              <div style="display:flex;flex-direction:column;gap:16px">
+                <div class="call">
+                  <div class="lbl"><i class="fa-solid fa-circle" style="font-size:8px;color:#5ee08f"></i> &nbsp;Llamada activa</div>
+                  <div class="tm">02:48</div>
+                  <div class="btns"><span><i class="fa-solid fa-microphone-slash"></i></span><span><i class="fa-solid fa-pause"></i></span><span><i class="fa-solid fa-right-left"></i></span><span class="end"><i class="fa-solid fa-phone-slash"></i></span></div>
+                </div>
+                <div class="panel" style="flex:1">
+                  <h5>Disposición</h5>
+                  <div class="skeleton" style="width:80%"></div><div class="skeleton" style="width:60%;margin-top:10px"></div>
+                  <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap"><span class="pill-ui">Venta</span><span class="pill-ui">Soporte</span><span class="pill-ui green">Resuelto</span></div>
+                  <h5 style="margin-top:26px">Notas</h5><div class="skeleton" style="width:90%"></div><div class="skeleton" style="width:76%;margin-top:10px"></div><div class="skeleton" style="width:58%;margin-top:10px"></div>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:16px">
+              <div class="panel">
+                <h5>Ficha del cliente <span class="pill-ui" style="font-size:13px"><i class="fa-solid fa-star"></i> VIP</span></h5>
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
+                  <div class="ico light" style="width:64px;height:64px;font-size:28px"><i class="fa-solid fa-user"></i></div>
+                  <div style="flex:1"><div class="skeleton" style="width:70%;height:18px;background:#cfd6e0"></div><div class="skeleton" style="width:46%;margin-top:10px;height:12px"></div></div>
+                </div>
+                <div class="field" style="padding:8px 0"><b>Cuenta</b><div class="skeleton" style="width:70%"></div></div>
+                <div class="field"><b>Segmento</b><span style="font-weight:700">Empresas</span></div>
+                <div class="field"><b>Oportunidad</b><div class="skeleton" style="width:55%"></div></div>
+                <div class="field"><b>Caso abierto</b><span class="pill-ui" style="background:#fef6e4;color:#b27c06;border-color:#f7e2b0;font-size:13px">#4821 · En curso</span></div>
+              </div>
+              <div class="panel" style="flex:1">
+                <h5>Historial de interacciones <i class="fa-solid fa-ellipsis" style="color:#94a3b8"></i></h5>
+                <div class="tl"><div class="d"><i class="fa-solid fa-phone"></i></div><div class="x"><div class="skeleton" style="width:80%"></div><small>Hoy · Llamada entrante</small></div></div>
+                <div class="tl"><div class="d g"><i class="fa-brands fa-whatsapp"></i></div><div class="x"><div class="skeleton" style="width:66%"></div><small>Hace 2 días · WhatsApp</small></div></div>
+                <div class="tl"><div class="d y"><i class="fa-solid fa-ticket"></i></div><div class="x"><div class="skeleton" style="width:74%"></div><small>Hace 5 días · Caso creado</small></div></div>
+              </div>
+              </div>
+
+              <div class="panel">
+                <h5>Pipeline <span class="pill-ui green" style="font-size:12px"><i class="fa-solid fa-arrows-rotate"></i> Sincronizado</span></h5>
+                <div class="stage">Prospecto<div class="bar-track"><div class="bar-fill" style="width:42%;background:#bcd5fb"></div></div>42</div>
+                <div class="stage">Calificado<div class="bar-track"><div class="bar-fill" style="width:64%;background:#8ab4f8"></div></div>31</div>
+                <div class="stage">Propuesta<div class="bar-track"><div class="bar-fill" style="width:48%"></div></div>18</div>
+                <div class="stage">Cierre<div class="bar-track"><div class="bar-fill" style="width:28%;background:#1e2a8a"></div></div>9</div>
+                <h5 style="margin-top:24px">Próxima acción</h5>
+                <div class="skeleton" style="width:86%"></div><div class="skeleton" style="width:58%;margin-top:10px"></div>
+                <div style="display:flex;gap:8px;margin-top:16px"><span class="pill-ui"><i class="fa-regular fa-calendar"></i> Seguimiento</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="base"></div>
+  </div>
+
+  <!-- Nodo de integración -->
+  <div class="node" style="left:1230px;top:490px;width:210px;height:210px;flex-direction:column;gap:6px;font-size:70px">
+    <i class="fa-solid fa-link"></i>
+    <div style="font-size:17px;font-weight:800;color:#0f172a">Five9 CTI</div>
+  </div>
+
+  <div class="t-label" style="position:absolute;left:1502px;top:200px;color:#475569">Integración nativa con</div>
+  <div class="card crm" style="left:1500px;top:247px">
+    <div class="top"><img src="../../../../Img General/Logos Partner/Salesforce.svg" alt="Salesforce" style="max-height:64px"/><div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <p><i class="fa-solid fa-headset"></i>Service Cloud y Sales Cloud</p>
+  </div>
+  <div class="card crm" style="left:1500px;top:429px">
+    <div class="top"><img src="../../../../Img General/Logos Partner/HubSpot.svg" alt="HubSpot" style="max-height:46px"/><div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <p><i class="fa-solid fa-phone"></i>Click-to-call y sincronización</p>
+  </div>
+  <div class="card crm" style="left:1500px;top:611px">
+    <div class="top"><img src="../../../../Img General/Logos Partner/Microsoft Dynamics 365.svg" alt="Microsoft Dynamics 365" style="max-height:60px"/><div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <p><i class="fa-solid fa-id-card"></i>Screen pop con contexto</p>
+  </div>
+  <div class="card crm" style="left:1500px;top:793px">
+    <div class="top"><img src="../../../../Img General/Logos Partner/Odoo.webp" alt="Odoo" style="max-height:46px"/><div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <p><i class="fa-solid fa-code"></i>Open CTI y APIs REST</p>
+  </div>
+
+  <!-- Registro automático -->
+  <div class="card" style="left:110px;top:1010px;width:1120px;padding:20px 24px;border-radius:30px;display:flex;align-items:center;gap:16px">
+    <div style="display:flex;align-items:center;gap:14px;flex-shrink:0">
+      <div class="ico md"><i class="fa-solid fa-arrows-rotate"></i></div>
+      <div class="t-title" style="font-size:21px;line-height:1.2">Registro<br/>automático</div>
+    </div>
+    <div class="regx"><i class="fa-solid fa-phone"></i>Llamada registrada<div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <div class="regx"><i class="fa-solid fa-note-sticky"></i>Nota creada<div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <div class="regx"><i class="fa-solid fa-ticket"></i>Caso actualizado<div class="check"><i class="fa-solid fa-check"></i></div></div>
+  </div>
+</div>
+</div>
+</body>
+</html>

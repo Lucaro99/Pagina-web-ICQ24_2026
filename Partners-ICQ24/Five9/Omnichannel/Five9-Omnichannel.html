@@ -1,0 +1,2241 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Five9 Omnicanal: Conecta todos tus canales con ICQ24</title>
+    <meta
+      name="description"
+      content="Five9 Omnicanal unifica voz y canales digitales para reducir AHT, optimizar costos y ofrecer una experiencia del cliente continua y medible."
+    />
+    <meta
+      name="keywords"
+      content="Five9 Omnicanal, Five9 Omnichannel, Plataforma omnicanal Five9, contact center, omnicanalidad, omnicanal contact center, software contact center, Five9"
+    />
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FAQ Schema (SEO / AEO / GEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es Five9 Omnicanal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Five9 Omnicanal es la capacidad de Five9 que unifica voz y canales digitales en una sola plataforma para ofrecer experiencias conectadas y operaciones más eficientes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué canales soporta Five9 Omnicanal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Five9 permite gestionar voz, chat, email, SMS, redes sociales y otros canales digitales desde una sola consola."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Five9 Omnicanal incluye routing inteligente?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Five9 utiliza routing basado en skills, prioridad, disponibilidad y contexto del cliente."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Five9 Omnicanal se integra con CRM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Five9 cuenta con integraciones nativas con Salesforce, HubSpot, Microsoft Dynamics, Odoo y otros sistemas empresariales."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué beneficios ofrece una operación omnicanal?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Una estrategia omnicanal ayuda a reducir AHT, mejorar FCR, aumentar CSAT y ofrecer experiencias más consistentes entre canales."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Product Schema (SEO semántico avanzado) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Five9 Omnichannel",
+        "brand": {
+          "@type": "Brand",
+          "name": "Five9"
+        },
+        "description": "Plataforma omnicanal enterprise para Contact Centers que unifica voz y canales digitales en una sola operación.",
+        "category": "Contact Center Software",
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "Five9"
+        }
+      }
+    </script>
+    <!-- DefinedTerm Schema (GEO / AEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "Five9 Omnicanal",
+        "description": "Suite cloud unificada que gestiona interacciones de voz y canales digitales con contexto histórico, routing inteligente y reportería unificada.",
+        "inDefinedTermSet": "https://www.five9.com"
+      }
+    </script>
+
+    <style>
+      /* ==========================================================================
+         DESIGN SYSTEM – ICQ24 / FIVE9 THEME (CSS Variables)
+         ========================================================================== */
+      :root {
+        --brand-primary: #0263e2;
+        --brand-primary-hover: #002d6d;
+        --brand-primary-light: #eff6ff;
+        --brand-primary-mid: #1d4ed8;
+        --navy: #0a192f;
+        --navy-dark: #0b132b;
+        --yellow: #f0ad0f;
+        --yellow-bg: #fef6e4;
+        --red: #ed3d2e;
+        --green: #3b935d;
+        --green-bg: #e8f5ee;
+
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-card: #f9fafb;
+        --bg-dark: #0f172a;
+        --bg-dark-elevated: #1e293b;
+
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+        --text-inverse: #ffffff;
+
+        --border-light: #e2e8f0;
+        --border-dark: #334155;
+
+        --shadow-card: 0 4px 20px rgba(2, 99, 226, 0.1);
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: #1e293b;
+        background-color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      /* Componentes del Sistema de Diseño */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #475569;
+        margin-bottom: 14px;
+        letter-spacing: 0.12em;
+      }
+
+      .eyebrow.text-blue-400 {
+        color: #60a5fa !important;
+      }
+
+      .btn-primary {
+        background-color: var(--brand-primary);
+        color: #ffffff !important;
+        font-weight: 700;
+        padding: 0.875rem 1.75rem;
+        border-radius: 9999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 14px rgba(2, 99, 226, 0.35);
+        text-decoration: none;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--brand-primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(2, 99, 226, 0.45);
+        color: #ffffff !important;
+      }
+
+      .btn-secondary {
+        background-color: #ffffff;
+        color: var(--navy-dark) !important;
+        font-weight: 700;
+        padding: 0.875rem 1.75rem;
+        border-radius: 9999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: all 0.25s ease;
+        border: 2px solid var(--border-light);
+        text-decoration: none;
+      }
+
+      .btn-secondary:hover {
+        border-color: var(--brand-primary);
+        color: var(--brand-primary) !important;
+        transform: translateY(-2px);
+      }
+
+      .card-five9 {
+        background: #ffffff;
+        border: 1px solid var(--border-light);
+        border-radius: 1.25rem;
+        padding: 2rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .card-five9:hover {
+        transform: translateY(-4px);
+        border-color: rgba(2, 99, 226, 0.3);
+        box-shadow: 0 12px 30px rgba(2, 99, 226, 0.1);
+      }
+
+      .gradient-hero {
+        background:
+          radial-gradient(
+            circle at top right,
+            rgba(2, 99, 226, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at bottom left,
+            rgba(2, 99, 226, 0.05) 0%,
+            transparent 50%
+          ),
+          #f8fafc;
+      }
+
+      /* Animación Marquee Infinito para Desafíos */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .marquee-container {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 10%,
+          black 90%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 10%,
+          black 90%,
+          transparent
+        );
+      }
+
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 35s linear infinite;
+      }
+
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+
+      /* Acordeón de FAQ Personalizado */
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      details summary {
+        list-style: none;
+      }
+
+      .faq-main-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s ease-out;
+      }
+
+      details[open] .faq-main-content {
+        grid-template-rows: 1fr;
+      }
+
+      .faq-main-content-inner {
+        overflow: hidden;
+      }
+
+      .faq-item-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+      }
+
+      details.faq-item[open] .faq-item-content {
+        grid-template-rows: 1fr;
+      }
+
+      .faq-item-content-inner {
+        overflow: hidden;
+      }
+
+      /* ==========================================================================
+         CARRUSELES MÓVILES EXCLUSIVOS (RESPONSIVE)
+         ========================================================================== */
+      .imp-carousel-track {
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      @media (max-width: 767px) {
+        .imp-carousel-track {
+          display: flex !important;
+          width: 100% !important;
+        }
+        .imp-card {
+          flex: 0 0 100% !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 768px) {
+        .imp-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+          transform: none !important;
+        }
+      }
+
+      .marquee-track h3,
+      .kpi-card h3,
+      .kpi-card p {
+        margin: 0 !important;
+      }
+
+      .kpi-carousel-track {
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      @media (max-width: 639px) {
+        .kpi-carousel-track {
+          display: flex !important;
+          width: 100% !important;
+        }
+        .kpi-card {
+          flex: 0 0 100% !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 640px) and (max-width: 1023px) {
+        .kpi-carousel-track {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+          gap: 1.5rem !important;
+          transform: none !important;
+        }
+        .kpi-card {
+          flex: 0 0 calc(50% - 0.75rem) !important;
+          min-width: 0 !important;
+          width: calc(50% - 0.75rem) !important;
+          max-width: calc(50% - 0.75rem) !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 1024px) {
+        .kpi-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+          gap: 1.25rem !important;
+          transform: none !important;
+        }
+        .kpi-card {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+
+      .qv-desktop-view {
+        display: none !important;
+      }
+      .qv-mobile-view {
+        display: flex !important;
+      }
+      @media (min-width: 768px) {
+        .qv-desktop-view {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 0.5rem 1.15rem !important;
+        }
+        .qv-mobile-view {
+          display: none !important;
+        }
+      }
+
+      .qv-slide {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      #qvTrack {
+        gap: 0 !important;
+      }
+    </style>
+  </head>
+
+  <body
+    class="min-h-screen flex flex-col justify-between text-slate-800 bg-slate-50"
+  >
+    <main class="flex-grow">
+      <!-- 1. HERO SECTION -->
+      <section
+        class="relative py-16 lg:py-20 gradient-hero overflow-hidden border-b border-slate-200"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center"
+          >
+            <div class="lg:col-span-5 space-y-6">
+              <span class="eyebrow">FIVE9 OMNICANAL</span>
+
+              <h1
+                class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight"
+              >
+                <span class="text-icqBlue">Omnicanalidad:</span> Conecta todos
+                tus canales y opera con contexto en tiempo real.
+              </h1>
+
+              <p
+                class="text-sm sm:text-base text-slate-600 leading-relaxed font-medium"
+              >
+                Convierte interacciones dispersas en una experiencia continua,
+                eficiente y medible.
+              </p>
+              <p
+                class="text-sm sm:text-base text-slate-600 leading-relaxed font-bold"
+              >
+                Centraliza voz, chat, email y canales digitales para ofrecer
+                contexto completo, reducir fricción operativa y acelerar la
+                resolución sin complicaciones.
+              </p>
+
+              <div class="pt-2">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="btn-primary text-xs sm:text-sm !px-4 sm:!px-6 whitespace-nowrap shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-icqBlue"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Descubre cómo Five9 Omnicanal mejora tu operación</span>
+                  <i
+                    class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Visual Image side -->
+            <div class="lg:col-span-7 flex items-center justify-center">
+              <div class="w-full relative">
+                <img
+                  src="https://www.icq24.com/web/image/38797-aab86229/Hero_Omni.png"
+                  alt="Five9 Omnicanal para Contact Center"
+                  width="1200"
+                  height="675"
+                  loading="eager"
+                  class="w-full h-auto object-contain lg:scale-110 transform origin-center transition-transform duration-500 hover:scale-115 mx-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. QUICK VALUE SECTION -->
+      <section
+        id="quick-value"
+        class="proof-strip bg-[#0b132b] text-white py-3.5 px-2 sm:px-4 border-y border-slate-800 select-none relative flex justify-center"
+      >
+        <div class="max-w-[1400px] mx-auto flex items-center justify-center w-full">
+          <!-- Versión Web / Escritorio -->
+          <div
+            class="qv-desktop-view hidden md:flex flex-wrap items-center justify-center gap-y-2 gap-x-4 lg:gap-x-5 text-xs lg:text-[13px] font-semibold text-slate-200 text-center"
+          >
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Voz, chat, email y canales digitales unificados</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Contexto completo en cada interacción</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Menor AHT y menos reprocesos</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Routing inteligente y visibilidad operativa</span>
+            </span>
+          </div>
+
+          <!-- Versión Móvil: carrusel automático -->
+          <div
+            id="qvCarouselWindow"
+            class="qv-mobile-view md:hidden overflow-hidden w-full max-w-xl h-8 sm:h-9 flex items-center justify-center relative cursor-default"
+          >
+            <div
+              id="qvTrack"
+              class="flex w-full transition-transform duration-700 ease-out will-change-transform"
+            >
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Voz, chat, email y canales digitales unificados</span>
+                </span>
+              </div>
+
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Contexto completo en cada interacción</span>
+                </span>
+              </div>
+
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Menor AHT y menos reprocesos</span>
+                </span>
+              </div>
+
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <span
+                  class="inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-slate-100"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Routing inteligente y visibilidad operativa</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. DIAGNÓSTICO / DESAFÍOS RECURRENTES SECTION -->
+      <section class="py-16 bg-white text-slate-900 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow">EL DESAFÍO EN LA OPERACIÓN</span>
+            <h2
+              class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight"
+            >
+              Más canales no deberían significar más fricción
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg font-medium">
+              A medida que crece la operación, aparecen problemas recurrentes:
+            </p>
+          </div>
+
+          <!-- Cards de Desafíos Recurrentes en Carrusel Infinito -->
+          <div class="mt-12 marquee-container py-4">
+            <div class="marquee-track flex gap-6 items-stretch">
+              <!-- Set 1 -->
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Canales que no comparten información
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Clientes repitiendo su solicitud en cada contacto
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Agentes sin contexto completo
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  AHT y recontactos en aumento
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Dificultad para medir la experiencia end-to-end
+                </h3>
+              </div>
+
+              <!-- Set 2 (duplicado) -->
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Canales que no comparten información
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Clientes repitiendo su solicitud en cada contacto
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Agentes sin contexto completo
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  AHT y recontactos en aumento
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Dificultad para medir la experiencia end-to-end
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. HIGHLIGHT STRIP & CTA (FRANJA COMPLETA) -->
+      <section
+        class="w-full py-12 lg:py-16 bg-[#0b132b] text-white text-center border-b border-slate-800"
+      >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <h3
+            class="text-base sm:text-base lg:text-2xl font-black text-white tracking-tight"
+          >
+            El problema no es tener muchos canales.
+          </h3>
+          <p
+            class="text-base sm:text-base text-slate-300 font-medium max-w-3xl mx-auto leading-relaxed"
+          >
+            Es no orquestarlos como una sola experiencia operativa.
+          </p>
+          <div>
+            <a
+              href="https://www.icq24.com/contactus"
+              class="btn-primary bg-icqBlue text-white hover:bg-blue-600 border-none px-6 py-3.5 text-sm sm:text-base font-bold rounded-full inline-flex items-center gap-2 shadow-lg shadow-icqBlue/30 hover:shadow-icqBlue/50 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Evalúa si tu Contact Center está operando realmente de forma omnicanal</span>
+              <i
+                class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. ¿QUÉ ES FIVE9 OMNICANAL? (CONCEPTOS CLAVE) SECTION -->
+      <section class="py-16 lg:py-20 bg-slate-50 text-slate-900">
+        <style>
+          .five9-card-hover {
+            transition:
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease !important;
+          }
+          .five9-card-hover:hover {
+            transform: translateY(-4px) !important;
+            box-shadow: 0 12px 24px rgba(2, 99, 226, 0.12) !important;
+            border-color: rgba(2, 99, 226, 0.25) !important;
+          }
+        </style>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+          >
+            <!-- Columna Izquierda: Imagen -->
+            <div class="lg:col-span-7 flex items-center justify-center">
+              <div class="relative w-full flex justify-center items-center py-2">
+                <img
+                  src="https://www.icq24.com/web/image/38798-b5633651/Dash_Omni.png"
+                  alt="Five9 Omnicanal Consola de Agente"
+                  class="w-full h-auto max-w-xl lg:max-w-none transform transition-transform duration-500 hover:scale-105 filter drop-shadow-xl"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Texto -->
+            <div class="lg:col-span-5 space-y-5 text-left">
+              <span class="eyebrow">CONCEPTOS CLAVE</span>
+              <h2
+                class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
+              >
+                ¿Qué es Five9 Omnicanal?
+              </h2>
+              <p
+                class="text-base sm:text-lg text-slate-700 font-medium leading-relaxed"
+              >
+                Five9 Omnichannel es una capacidad nativa de Five9 que unifica voz y canales digitales en un único entorno operativo, permitiendo atender al cliente con contexto completo y reglas inteligentes de enrutamiento.
+              </p>
+              <p class="text-sm sm:text-base text-slate-600 font-semibold leading-relaxed">
+                No suma complejidad. Ordena la operación y la hace medible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 7. CÓMO FUNCIONA FIVE9 OMNICANAL SECTION -->
+      <section
+        class="py-16 lg:py-20 bg-white text-slate-900 border-b border-slate-200"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+          >
+            <div class="max-w-3xl space-y-4 text-left md:text-left">
+              <span class="eyebrow">FLUJO OPERATIVO</span>
+              <h2
+                class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
+              >
+                Cómo funciona la omnicanalidad de Five9
+              </h2>
+              <h3 class="text-xl font-bold text-icqBlue">
+                Un solo modelo operativo para todos los canales
+              </h3>
+            </div>
+
+            <!-- Botones de Navegación del Carrusel -->
+            <div class="flex items-center gap-3 self-center md:self-end pb-2">
+              <button
+                id="flujo-prev"
+                aria-label="Anterior"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-base"
+                  aria-hidden="true"
+                ></i>
+              </button>
+              <button
+                id="flujo-next"
+                aria-label="Siguiente"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-base"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Pasos de Funcionamiento (Carrusel Horizontal) -->
+          <div
+            id="flujo-carousel"
+            class="mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            <!-- Paso 1 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >1</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Centraliza todos los canales en una sola consola
+                </h4>
+              </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >2</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Mantiene historial y contexto del cliente en cada interacción
+                </h4>
+              </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >3</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Enruta contactos según prioridad, skills y disponibilidad
+                </h4>
+              </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >4</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Permite escalar canales digitales sin perder control
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Outcome Box + CTA -->
+          <div class="mt-8 p-6 text-center max-w-3xl mx-auto space-y-6">
+            <p class="font-bold text-slate-900 text-base sm:text-lg">
+              El resultado: mejor experiencia del cliente y menor costo por contacto.
+            </p>
+            <div>
+              <a
+                href="https://www.icq24.com/contactus"
+                class="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Conoce cómo funciona la omnicanalidad en tu industria</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SCRIPT FOR FLUJO CAROUSEL -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const container = document.getElementById("flujo-carousel");
+          const prevBtn = document.getElementById("flujo-prev");
+          const nextBtn = document.getElementById("flujo-next");
+
+          if (!container || !prevBtn || !nextBtn) return;
+
+          function getScrollAmount() {
+            const card = container.querySelector(".flex-shrink-0");
+            return card ? card.offsetWidth + 24 : 350;
+          }
+
+          prevBtn.addEventListener("click", function () {
+            container.scrollBy({
+              left: -getScrollAmount(),
+              behavior: "smooth",
+            });
+          });
+
+          nextBtn.addEventListener("click", function () {
+            container.scrollBy({
+              left: getScrollAmount(),
+              behavior: "smooth",
+            });
+          });
+        });
+      </script>
+
+      <!-- 8. CAPACIDADES CLAVE DE FIVE9 OMNICANAL (CARRUSEL) -->
+      <section
+        class="py-16 lg:py-20 bg-slate-50 text-slate-900 border-b border-slate-200 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <!-- Header con Título y Botones de Control -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6"
+          >
+            <div class="max-w-3xl space-y-4 text-left">
+              <span class="eyebrow">CAPACIDADES CLAVE</span>
+              <h2
+                class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
+              >
+                Capacidades clave de Five9 Omnicanal
+              </h2>
+              <p class="text-slate-600 text-base sm:text-lg">
+                Diseñadas para eficiencia, no solo para atención
+              </p>
+            </div>
+
+            <!-- Botones de Navegación del Carrusel -->
+            <div class="flex items-center gap-3 self-start md:self-end">
+              <button
+                id="arsenal-prev"
+                aria-label="Anterior"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-base"
+                  aria-hidden="true"
+                ></i>
+              </button>
+              <button
+                id="arsenal-next"
+                aria-label="Siguiente"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-base"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Carrusel Contenedor -->
+          <div
+            id="arsenal-carousel"
+            class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            <!-- Cap 1 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Todos los canales, una sola operación
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Omnicanalidad unificada: voz, chat, email, SMS y redes desde la misma consola.
+              </p>
+            </div>
+
+            <!-- Cap 2 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-robot" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Autoservicio y agentes más efectivos
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Agentes Virtuales Inteligentes &amp; Agent Assist para atención 24/7 y apoyo contextual en tiempo real.
+              </p>
+            </div>
+
+            <!-- Cap 3 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-route" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                El contacto correcto, al agente correcto
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Routing avanzado por skills, prioridad y contexto del cliente.
+              </p>
+            </div>
+
+            <!-- Cap 4 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-plug" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Contexto completo en cada interacción
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Integración CRM nativa para una vista 360° del cliente.
+              </p>
+            </div>
+
+            <!-- Cap 5 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Insights accionables desde cada conversación
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Analytics conversacional con speech &amp; interaction analytics.
+              </p>
+            </div>
+
+            <!-- Cap 6 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Control operativo en tiempo real
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                KPIs consolidados: AHT, FCR, CSAT y adherence.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SCRIPTLOGIC FOR ARSENAL CAROUSEL -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const container = document.getElementById("arsenal-carousel");
+          const prevBtn = document.getElementById("arsenal-prev");
+          const nextBtn = document.getElementById("arsenal-next");
+
+          if (!container || !prevBtn || !nextBtn) return;
+
+          function getScrollAmount() {
+            const card = container.querySelector(".flex-shrink-0");
+            return card ? card.offsetWidth + 24 : 340;
+          }
+
+          prevBtn.addEventListener("click", function () {
+            container.scrollBy({
+              left: -getScrollAmount(),
+              behavior: "smooth",
+            });
+          });
+
+          nextBtn.addEventListener("click", function () {
+            container.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+          });
+        });
+      </script>
+
+      <!-- 9. PROBLEMAS OPERATIVOS QUE SE ELIMINAN (CARRUSEL AUTOMÁTICO OSCURO) -->
+      <section
+        class="py-16 lg:py-20 bg-[#0b132b] text-white border-b border-slate-800 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <!-- Header con Título -->
+          <div class="max-w-3xl space-y-4 text-left">
+            <span class="eyebrow text-blue-400">EFICIENCIA OPERATIVA</span>
+            <h2
+              class="text-3xl sm:text-4xl font-black text-white leading-tight"
+            >
+              Problemas operativos que se eliminan con la Omnicanalidad
+            </h2>
+          </div>
+
+          <!-- Carrusel Contenedor -->
+          <div
+            id="optimizacion-carousel"
+            class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            <!-- Card 1 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span
+                  class="font-bold text-slate-100 text-sm sm:text-base leading-snug block"
+                  >Experiencias inconsistentes entre canales</span
+                >
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span
+                  class="font-bold text-slate-100 text-sm sm:text-base leading-snug block"
+                  >Repetición de información por parte del cliente</span
+                >
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span
+                  class="font-bold text-slate-100 text-sm sm:text-base leading-snug block"
+                  >AHT elevado por falta de contexto</span
+                >
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span
+                  class="font-bold text-slate-100 text-sm sm:text-base leading-snug block"
+                  >Baja resolución en primer contacto</span
+                >
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span
+                  class="font-bold text-slate-100 text-sm sm:text-base leading-snug block"
+                  >Canales digitales subutilizados</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SCRIPT FOR OPTIMIZACIÓN CAROUSEL -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const container = document.getElementById("optimizacion-carousel");
+          if (!container) return;
+
+          function getScrollAmount() {
+            const card = container.querySelector(".flex-shrink-0");
+            return card ? card.offsetWidth + 24 : 350;
+          }
+
+          function scrollNext() {
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            if (container.scrollLeft >= maxScroll - 10) {
+              container.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+              container.scrollBy({
+                left: getScrollAmount(),
+                behavior: "smooth",
+              });
+            }
+          }
+
+          let autoPlayTimer = setInterval(scrollNext, 1500);
+
+          function startAutoPlay() {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(scrollNext, 1500);
+          }
+
+          container.addEventListener("mouseenter", function () {
+            clearInterval(autoPlayTimer);
+          });
+
+          container.addEventListener("mouseleave", function () {
+            startAutoPlay();
+          });
+        });
+      </script>
+
+      <!-- 10. IMPACTO DIRECTO EN TU OPERACIÓN SECTION -->
+      <section class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow"> IMPACTO DIRECTO </span>
+            <h2 class="text-3xl font-black text-slate-900">
+              Impacto directo en tu operación
+            </h2>
+          </div>
+
+          <!-- Wrapper del Carrusel / Grid -->
+          <div class="relative w-full">
+            <div
+              class="imp-carousel-window overflow-hidden w-full md:overflow-visible py-2"
+            >
+              <div
+                id="impTrack"
+                class="imp-carousel-track flex md:grid md:grid-cols-3 gap-0 md:gap-8"
+              >
+                <!-- Operación -->
+                <div
+                  class="imp-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Operación
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Reducción del costo por contacto</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Mayor productividad por agente</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Escalabilidad sin fricción operativa</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Experiencia del Cliente -->
+                <div
+                  class="imp-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Experiencia del Cliente
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span
+                          >Interacciones coherentes en todos los canales</span
+                        >
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Menores tiempos de respuesta</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Mejora sostenida de CSAT y FCR</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dirección e IT -->
+                <div
+                  class="imp-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Dirección e IT
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Visibilidad end-to-end del customer journey</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Integraciones simplificadas</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Control total de la operación</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de navegación y dots abajo -->
+            <div
+              id="impCarouselNav"
+              class="flex md:hidden items-center justify-center gap-4 mt-6"
+            >
+              <button
+                type="button"
+                id="impPrevBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta anterior"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <div class="flex items-center gap-2" id="impDots">
+                <span
+                  class="imp-dot w-6 h-2 rounded-full bg-icqBlue transition-all duration-300 cursor-pointer"
+                  data-index="0"
+                  aria-label="Tarjeta 1"
+                ></span>
+                <span
+                  class="imp-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="1"
+                  aria-label="Tarjeta 2"
+                ></span>
+                <span
+                  class="imp-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="2"
+                  aria-label="Tarjeta 3"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                id="impNextBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta siguiente"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center max-w-3xl mx-auto pt-4">
+            <a
+              href="https://www.icq24.com/contactus"
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Conoce más impactos de Five9 Omnicanal</span>
+              <i
+                class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. RESULTADOS MEDIBLES SECTION (KPIS Y RESULTADOS) -->
+      <section class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow"> RESULTADOS MEDIBLES </span>
+            <h2 class="text-3xl font-black text-slate-900">
+              Resultados de implementar Five9 Omnicanal
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg font-medium">
+              Five9 Omnichannel contribuye a:
+            </p>
+          </div>
+
+          <!-- Wrapper del Carrusel / Grid -->
+          <div class="relative w-full">
+            <div
+              class="kpi-carousel-window overflow-hidden w-full sm:overflow-visible py-2"
+            >
+              <div
+                id="kpiTrack"
+                class="kpi-carousel-track flex sm:flex-wrap sm:justify-center gap-0 sm:gap-6 items-stretch"
+              >
+                <!-- Card 1 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-2xl xl:text-3xl font-black text-icqBlue leading-none"
+                    >
+                      10–25 %
+                    </div>
+                  </div>
+                  <div class="space-y-1 flex flex-col justify-start">
+                    <h3 class="mb-0 font-bold text-slate-900 text-sm sm:text-base leading-tight">
+                      menos AHT
+                    </h3>
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      al eliminar reprocesos
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-lg xl:text-xl font-black text-icqBlue leading-tight uppercase"
+                    >
+                      Mayor FCR
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-start">
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      gracias al contexto unificado
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-sm xl:text-[15px] font-black text-icqBlue leading-tight uppercase"
+                    >
+                      Mayor adopción de canales digitales
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-start">
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      reduciendo presión sobre la voz
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-lg xl:text-xl font-black text-icqBlue leading-tight uppercase"
+                    >
+                      Mejor CSAT
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-start">
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      con experiencias más simples
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center items-center five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-base xl:text-lg font-black text-icqBlue leading-tight uppercase"
+                    >
+                      Menor costo por contacto
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de navegación y dots abajo -->
+            <div
+              id="kpiCarouselNav"
+              class="flex sm:hidden items-center justify-center gap-4 mt-6"
+            >
+              <button
+                type="button"
+                id="kpiPrevBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta anterior"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <div class="flex items-center gap-2" id="kpiDots">
+                <span
+                  class="kpi-dot w-6 h-2 rounded-full bg-icqBlue transition-all duration-300 cursor-pointer"
+                  data-index="0"
+                  aria-label="Tarjeta 1"
+                ></span>
+                <span
+                  class="kpi-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="1"
+                  aria-label="Tarjeta 2"
+                ></span>
+                <span
+                  class="kpi-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="2"
+                  aria-label="Tarjeta 3"
+                ></span>
+                <span
+                  class="kpi-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="3"
+                  aria-label="Tarjeta 4"
+                ></span>
+                <span
+                  class="kpi-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="4"
+                  aria-label="Tarjeta 5"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                id="kpiNextBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta siguiente"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 12. PREGUNTAS FRECUENTES (FAQ) ACCESIBLES (RESUELVE TUS DUDAS) -->
+      <section
+        class="py-16 border-b border-slate-200 bg-cover bg-center bg-no-repeat bg-fixed relative"
+        style="
+          background-image:
+            linear-gradient(
+              to bottom,
+              rgba(255, 255, 255, 0.75),
+              rgba(255, 255, 255, 0.65)
+            ),
+            url(https://www.icq24.com/web/image/37691-5879228f/Background.webp);
+        "
+      >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <!-- Acordeón Principal de Preguntas Frecuentes -->
+          <details class="group">
+            <summary
+              class="text-center space-y-4 flex flex-col items-center cursor-pointer list-none select-none focus:outline-none"
+            >
+              <span class="eyebrow"> Resuelve tus dudas </span>
+              <h2 class="text-3xl font-black text-slate-900">
+                Preguntas Frecuentes sobre Five9 Omnicanal
+              </h2>
+              <div class="pt-2">
+                <span
+                  class="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-icqBlue group-open:rotate-180 transition-transform duration-300 hover:border-icqBlue hover:shadow-md"
+                >
+                  <i
+                    class="fa-solid fa-chevron-down text-base"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </div>
+            </summary>
+
+            <div class="faq-main-content">
+              <div class="faq-main-content-inner space-y-4 pt-8">
+                <!-- FAQ 1 -->
+                <details
+                  name="five9-omni-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Qué es Five9 Omnicanal?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Five9 Omnicanal es la capacidad de Five9 que unifica voz y canales digitales en una sola plataforma para ofrecer experiencias conectadas y operaciones más eficientes.
+                    </div>
+                  </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details
+                  name="five9-omni-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Qué canales soporta Five9 Omnicanal?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Five9 permite gestionar voz, chat, email, SMS, redes sociales y otros canales digitales desde una sola consola.
+                    </div>
+                  </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details
+                  name="five9-omni-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Five9 Omnicanal incluye routing inteligente?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Sí. Five9 utiliza routing basado en skills, prioridad, disponibilidad y contexto del cliente.
+                    </div>
+                  </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details
+                  name="five9-omni-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Five9 Omnicanal se integra con CRM?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Sí. Five9 cuenta con integraciones nativas con Salesforce, HubSpot, Microsoft Dynamics, Odoo y otros sistemas empresariales.
+                    </div>
+                  </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details
+                  name="five9-omni-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Qué beneficios ofrece una operación omnicanal?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Una estrategia omnicanal ayuda a reducir AHT, mejorar FCR, aumentar CSAT y ofrecer experiencias más consistentes entre canales.
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 13. BOTTOM PARTNER CTA SECTION -->
+      <section
+        class="w-full py-14 lg:py-18 bg-[#0B1120] text-white border-b border-slate-800"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+        >
+          <!-- Columna de Imagen -->
+          <div class="w-full flex justify-center items-center">
+            <img
+              src="https://www.icq24.com/web/image/38795-a42244e0/Footer_Omni.png"
+              alt="Five9 Omnicanal con ICQ24"
+              width="800"
+              height="600"
+              loading="lazy"
+              class="w-full flex justify-center items-center"
+            />
+          </div>
+
+          <!-- Columna de Texto -->
+          <div class="space-y-6 text-left">
+            <span class="eyebrow text-blue-400">
+              PARTNER ENTERPRISE FIVE9
+            </span>
+
+            <h2
+              class="text-3xl sm:text-4xl font-black text-white leading-tight"
+            >
+              Implementa Omnicanalidad en tu operación con ICQ24
+            </h2>
+
+            <div
+              class="space-y-3 text-slate-300 text-sm sm:text-base leading-relaxed"
+            >
+              <p>En ICQ24 no solo habilitamos canales.</p>
+              <p>
+                Diseñamos modelos omnicanal eficientes sobre Five9, alineando
+                journeys, reglas de enrutamiento, integraciones y métricas
+                operativas.
+              </p>
+              <p class="font-bold text-white text-base sm:text-lg pt-2">
+                El objetivo es claro: mejor CX, menor complejidad y costos bajo
+                control.
+              </p>
+            </div>
+
+            <div class="pt-3">
+              <a
+                href="https://www.icq24.com/contactus"
+                class="btn-primary bg-icqBlue text-white hover:bg-blue-600 px-6 py-3.5 text-sm sm:text-base font-bold rounded-full inline-flex items-center gap-2 shadow-lg shadow-icqBlue/30 hover:shadow-icqBlue/50 transition-all duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Agenda una demo personalizada</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+         SCRIPTS AL FINAL DEL DOCUMENTO
+         ========================================================================== -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <!-- Configuración de Tailwind de ICQ24 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              icqGrey: "#475569",
+              icqDark: "#0f172a",
+              icqBlue: "#0263e2",
+              icqGreen: "#3b935d",
+              icqRed: "#ed3d2e",
+              icqYellow: "#f0ad0f",
+              icqLightBg: "#f8fafc",
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              heading: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Script de Interacción para Acordeón de FAQ -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqDetails = document.querySelectorAll("details.faq-item");
+        faqDetails.forEach((targetDetail) => {
+          targetDetail.addEventListener("toggle", () => {
+            if (targetDetail.open) {
+              faqDetails.forEach((detail) => {
+                if (detail !== targetDetail) {
+                  detail.open = false;
+                }
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Script de Carruseles Móviles para Impacto Multinivel y KPIs -->
+    <script>
+      (function () {
+        function initMobileCarousel({
+          trackId,
+          prevBtnId,
+          nextBtnId,
+          dotsSelector,
+          cardsSelector,
+          windowSelector,
+          breakpoint = 768,
+          activeDotClass = "bg-icqBlue",
+          inactiveDotClass = "bg-slate-300",
+        }) {
+          const track = document.getElementById(trackId);
+          const cards = document.querySelectorAll(cardsSelector);
+          if (!track || cards.length === 0) return;
+
+          const prevBtn = document.getElementById(prevBtnId);
+          const nextBtn = document.getElementById(nextBtnId);
+          const dots = document.querySelectorAll(dotsSelector);
+          const total = cards.length;
+          let currentIndex = 0;
+
+          function update() {
+            if (window.innerWidth < breakpoint) {
+              track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            } else {
+              track.style.transform = "none";
+            }
+
+            dots.forEach((dot, idx) => {
+              if (idx === currentIndex) {
+                dot.classList.remove("w-2", inactiveDotClass);
+                dot.classList.add("w-6", activeDotClass);
+              } else {
+                dot.classList.remove("w-6", activeDotClass);
+                dot.classList.add("w-2", inactiveDotClass);
+              }
+            });
+          }
+
+          if (nextBtn) {
+            nextBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = (currentIndex + 1) % total;
+              update();
+            });
+          }
+
+          if (prevBtn) {
+            prevBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = (currentIndex - 1 + total) % total;
+              update();
+            });
+          }
+
+          dots.forEach((dot, idx) => {
+            dot.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = idx;
+              update();
+            });
+          });
+
+          // Soporte táctil / swipe móvil
+          let startX = 0;
+          let isSwiping = false;
+          const carouselWindow = document.querySelector(windowSelector);
+          if (carouselWindow) {
+            carouselWindow.addEventListener(
+              "touchstart",
+              function (e) {
+                if (window.innerWidth < breakpoint) {
+                  startX = e.changedTouches[0].screenX;
+                  isSwiping = true;
+                }
+              },
+              { passive: true },
+            );
+
+            carouselWindow.addEventListener(
+              "touchend",
+              function (e) {
+                if (!isSwiping || window.innerWidth >= breakpoint) return;
+                isSwiping = false;
+                const diff = e.changedTouches[0].screenX - startX;
+                if (Math.abs(diff) > 40) {
+                  currentIndex =
+                    diff < 0
+                      ? (currentIndex + 1) % total
+                      : (currentIndex - 1 + total) % total;
+                  update();
+                }
+              },
+              { passive: true },
+            );
+          }
+
+          window.addEventListener("resize", update);
+          update();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          // 1. Carrusel de Impacto (breakpoint: 768px)
+          initMobileCarousel({
+            trackId: "impTrack",
+            prevBtnId: "impPrevBtn",
+            nextBtnId: "impNextBtn",
+            dotsSelector: "#impDots .imp-dot",
+            cardsSelector: ".imp-card",
+            windowSelector: ".imp-carousel-window",
+            breakpoint: 768,
+          });
+
+          // 2. Carrusel de KPIs (breakpoint: 640px)
+          initMobileCarousel({
+            trackId: "kpiTrack",
+            prevBtnId: "kpiPrevBtn",
+            nextBtnId: "kpiNextBtn",
+            dotsSelector: "#kpiDots .kpi-dot",
+            cardsSelector: ".kpi-card",
+            windowSelector: ".kpi-carousel-window",
+            breakpoint: 640,
+          });
+
+          // 3. Carrusel Automático Quick Value
+          (function () {
+            const qvTrack = document.getElementById("qvTrack");
+            const qvWindow = document.getElementById("qvCarouselWindow");
+            const slides = document.querySelectorAll(".qv-slide");
+            if (!qvTrack || !qvWindow || slides.length === 0) return;
+
+            let qvIndex = 0;
+            const qvTotal = slides.length;
+            let qvInterval = null;
+
+            function updateQv() {
+              if (window.innerWidth < 768) {
+                qvTrack.style.transform = `translateX(-${qvIndex * 100}%)`;
+              } else {
+                qvTrack.style.transform = "none";
+              }
+            }
+
+            function startQvAuto() {
+              if (qvInterval) clearInterval(qvInterval);
+              qvInterval = setInterval(() => {
+                if (window.innerWidth < 768) {
+                  qvIndex = (qvIndex + 1) % qvTotal;
+                  updateQv();
+                }
+              }, 3000);
+            }
+
+            startQvAuto();
+
+            qvWindow.addEventListener("mouseenter", () =>
+              clearInterval(qvInterval),
+            );
+            qvWindow.addEventListener("mouseleave", startQvAuto);
+            window.addEventListener("resize", updateQv);
+          })();
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Hero Omnicanal</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .row { display: flex; align-items: center; gap: 18px; padding: 16px 0; border-bottom: 2px solid #f1f5f9; }
+  .row:last-child { border-bottom: 0; padding-bottom: 4px; }
+  .ch { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; background: var(--blue-light); color: var(--blue); }
+  .ch.wa { background: #e8f5ee; color: #1f9a52; }
+  .step { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 99px; background: #f8fbff; border: 2px solid #e3ecfb; font-size: 18px; font-weight: 700; color: var(--text); white-space: nowrap; }
+  .step i { color: var(--blue); }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1440px">
+
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1920" height="1440" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M400 290 V340" />
+    <path d="M1620 612 V960" />
+  </svg>
+
+  <img class="person" src="../fotos/recortes/omni-hero.png" style="left:560px;top:60px;width:803px;--fade-start:66%;--fade-end:92%" alt="" />
+
+  <!-- Nodo -->
+  <div class="node" style="left:290px;top:70px;width:220px;height:220px;font-size:92px"><i class="fa-solid fa-comments"></i></div>
+
+  <!-- Canales -->
+  <div class="card chip" style="left:120px;top:340px;width:400px"><div class="ico"><i class="fa-solid fa-phone"></i></div>Voz</div>
+  <div class="card chip" style="left:120px;top:510px;width:400px"><div class="ico"><i class="fa-solid fa-comment-dots"></i></div>Chat</div>
+  <div class="card chip" style="left:120px;top:680px;width:400px"><div class="ico"><i class="fa-solid fa-envelope"></i></div>Email</div>
+  <div class="card chip" style="left:120px;top:850px;width:400px"><div class="ico"><i class="fa-brands fa-whatsapp"></i></div>WhatsApp</div>
+
+  <!-- Bandeja unificada -->
+  <div class="card" style="left:1310px;top:250px;width:560px;padding:32px 36px 26px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+      <div class="t-title" style="font-size:27px">Bandeja unificada</div>
+      <span class="pill-ui green" style="font-size:16px"><i class="fa-solid fa-circle" style="font-size:9px"></i> En vivo</span>
+    </div>
+    <div class="row"><div class="ch"><i class="fa-solid fa-phone"></i></div><div style="flex:1"><div class="skeleton" style="width:70%;background:#cfd6e0"></div><div class="skeleton" style="width:45%;margin-top:10px;height:12px"></div></div><span class="tag green">En curso</span></div>
+    <div class="row"><div class="ch wa"><i class="fa-brands fa-whatsapp"></i></div><div style="flex:1"><div class="skeleton" style="width:62%;background:#cfd6e0"></div><div class="skeleton" style="width:38%;margin-top:10px;height:12px"></div></div><span class="tag">Nuevo</span></div>
+    <div class="row"><div class="ch"><i class="fa-solid fa-envelope"></i></div><div style="flex:1"><div class="skeleton" style="width:74%;background:#cfd6e0"></div><div class="skeleton" style="width:50%;margin-top:10px;height:12px"></div></div><span class="tag yellow">Pendiente</span></div>
+  </div>
+
+  <!-- Routing inteligente -->
+  <div class="card" style="left:1360px;top:960px;width:510px;padding:30px 32px 30px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:20px">
+      <div class="ico md"><i class="fa-solid fa-route"></i></div>
+      <div>
+        <div class="t-title" style="font-size:26px">Routing inteligente</div>
+        <div class="t-sub" style="font-size:18px">Al agente correcto, a la primera</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px">
+      <span class="step"><i class="fa-solid fa-flag"></i>Prioridad</span>
+      <span class="step"><i class="fa-solid fa-medal"></i>Skills</span>
+      <span class="step"><i class="fa-solid fa-user-check"></i>Disponible</span>
+    </div>
+  </div>
+
+  <!-- Contexto -->
+  <div class="card" style="left:120px;top:1060px;width:560px;padding:30px 36px">
+    <div style="display:flex;align-items:center;gap:24px">
+      <svg width="120" height="120" viewBox="0 0 120 120" style="flex-shrink:0">
+        <circle cx="60" cy="60" r="48" stroke="#e8eef8" stroke-width="14" fill="none"/>
+        <circle cx="60" cy="60" r="48" stroke="#0263e2" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="302 302" transform="rotate(-90 60 60)"/>
+        <text x="60" y="68" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="24" fill="#0f172a">360°</text>
+      </svg>
+      <div style="flex:1">
+        <div class="t-title" style="font-size:27px">Contexto completo</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px">
+          <div class="check"><i class="fa-solid fa-check"></i></div>
+          <span class="t-sub" style="font-size:20px;font-weight:600">Historial en cada canal</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

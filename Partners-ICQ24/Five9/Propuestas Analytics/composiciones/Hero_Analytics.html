@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Hero Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .mot { display: grid; grid-template-columns: 170px 1fr 56px; align-items: center; gap: 14px; margin-top: 14px; font-size: 18px; font-weight: 600; color: var(--muted); }
+  .mot b { font-weight: 800; color: var(--text); text-align: right; }
+  .mot .bar-track { height: 14px; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1440px">
+
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1920" height="1440" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M1610 300 V390" />
+    <path d="M1600 760 V1000" />
+  </svg>
+
+  <img class="person edges" src="../fotos/recortes/hero.png" style="left:170px;top:200px;width:1500px;--fade-start:80%;--fade-end:98%;--edge-l:17%;--edge-r:12%" alt="" />
+
+  <!-- Nodo -->
+  <div class="node" style="left:1500px;top:80px;width:220px;height:220px;font-size:92px"><i class="fa-solid fa-chart-pie"></i></div>
+
+  <!-- Chips izquierdos -->
+  <div class="card chip" style="left:40px;top:250px;width:500px;white-space:nowrap;font-size:29px"><div class="ico"><i class="fa-solid fa-microphone-lines"></i></div>Speech Analytics</div>
+  <div class="card chip" style="left:40px;top:440px;width:500px;white-space:nowrap;font-size:29px"><div class="ico"><i class="fa-solid fa-comments"></i></div>Interaction Analytics</div>
+  <div class="card chip" style="left:40px;top:630px;width:500px;white-space:nowrap;font-size:29px"><div class="ico"><i class="fa-solid fa-chart-column"></i></div>Reporting</div>
+
+  <!-- Sentimiento -->
+  <div class="card" style="left:1290px;top:390px;width:580px;padding:32px 34px 30px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+      <div class="t-title" style="font-size:27px">Sentimiento en vivo</div>
+      <span class="tag green"><i class="fa-regular fa-face-smile"></i> Positivo</span>
+    </div>
+    <svg width="512" height="110" viewBox="0 0 512 110">
+      <g stroke-linecap="round" stroke-width="9">
+        <g stroke="#bcd5fb">
+          <line x1="6" y1="45" x2="6" y2="65"/><line x1="24" y1="35" x2="24" y2="75"/><line x1="42" y1="50" x2="42" y2="60"/><line x1="60" y1="28" x2="60" y2="82"/><line x1="78" y1="40" x2="78" y2="70"/><line x1="96" y1="20" x2="96" y2="90"/><line x1="114" y1="38" x2="114" y2="72"/>
+        </g>
+        <g stroke="#f0ad0f">
+          <line x1="132" y1="30" x2="132" y2="80"/><line x1="150" y1="14" x2="150" y2="96"/><line x1="168" y1="34" x2="168" y2="76"/><line x1="186" y1="22" x2="186" y2="88"/><line x1="204" y1="44" x2="204" y2="66"/>
+        </g>
+        <g stroke="#0263e2">
+          <line x1="222" y1="36" x2="222" y2="74"/><line x1="240" y1="18" x2="240" y2="92"/><line x1="258" y1="30" x2="258" y2="80"/><line x1="276" y1="8" x2="276" y2="102"/><line x1="294" y1="26" x2="294" y2="84"/><line x1="312" y1="40" x2="312" y2="70"/><line x1="330" y1="16" x2="330" y2="94"/><line x1="348" y1="32" x2="348" y2="78"/><line x1="366" y1="22" x2="366" y2="88"/><line x1="384" y1="42" x2="384" y2="68"/>
+        </g>
+        <g stroke="#22a35a">
+          <line x1="402" y1="28" x2="402" y2="82"/><line x1="420" y1="14" x2="420" y2="96"/><line x1="438" y1="34" x2="438" y2="76"/><line x1="456" y1="24" x2="456" y2="86"/><line x1="474" y1="40" x2="474" y2="70"/><line x1="492" y1="30" x2="492" y2="80"/><line x1="506" y1="46" x2="506" y2="64"/>
+        </g>
+      </g>
+    </svg>
+    <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">
+      <span class="tag"><i class="fa-solid fa-tag"></i> Facturación</span>
+      <span class="tag yellow"><i class="fa-solid fa-triangle-exclamation"></i> Riesgo de baja</span>
+      <span class="tag green"><i class="fa-solid fa-check"></i> Resuelto</span>
+    </div>
+  </div>
+
+  <!-- Motivos de contacto -->
+  <div class="card" style="left:110px;top:965px;width:560px;padding:30px 36px 32px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <div>
+        <div class="t-title" style="font-size:26px">Motivos de contacto</div>
+        <div class="t-sub" style="font-size:18px">Detectados automáticamente</div>
+      </div>
+      <div class="ico light sm"><i class="fa-solid fa-magnifying-glass-chart" style="font-size:22px"></i></div>
+    </div>
+    <div class="mot">Facturación<div class="bar-track"><div class="bar-fill" style="width:84%"></div></div><b>34%</b></div>
+    <div class="mot">Soporte técnico<div class="bar-track"><div class="bar-fill" style="width:66%;background:#3b8bf5"></div></div><b>27%</b></div>
+    <div class="mot">Cambio de plan<div class="bar-track"><div class="bar-fill" style="width:46%;background:#8ab4f8"></div></div><b>19%</b></div>
+  </div>
+
+  <!-- 100% analizado -->
+  <div class="card" style="left:1330px;top:1000px;width:540px;padding:30px 34px">
+    <div style="display:flex;align-items:center;gap:24px">
+      <svg width="120" height="120" viewBox="0 0 120 120" style="flex-shrink:0">
+        <circle cx="60" cy="60" r="48" stroke="#e8eef8" stroke-width="14" fill="none"/>
+        <circle cx="60" cy="60" r="48" stroke="#0263e2" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="302 302" transform="rotate(-90 60 60)"/>
+        <text x="60" y="68" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="25" fill="#0f172a">100%</text>
+      </svg>
+      <div style="flex:1">
+        <div class="t-title" style="font-size:26px">Interacciones analizadas</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px">
+          <div class="check"><i class="fa-solid fa-check"></i></div>
+          <span class="t-sub" style="font-size:19px;font-weight:600">Voz y canales digitales</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

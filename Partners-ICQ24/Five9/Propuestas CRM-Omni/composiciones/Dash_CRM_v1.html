@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard CRM Integrations</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .call { background: linear-gradient(160deg, #0263e2, #0a3f9e); color: #fff; border-radius: 18px; padding: 22px 22px 20px; }
+  .call .lbl { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+  .call .tm { font-size: 40px; font-weight: 800; letter-spacing: -.02em; margin: 8px 0 14px; }
+  .call .btns { display: flex; gap: 10px; }
+  .call .btns span { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,.18); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .call .btns span.end { background: #ed3d2e; margin-left: auto; }
+  .field { display: grid; grid-template-columns: 130px 1fr; align-items: center; padding: 10px 0; border-bottom: 1px solid #eef2f7; font-size: 14px; }
+  .field:last-child { border-bottom: 0; }
+  .field b { color: var(--soft); font-weight: 600; }
+  .tl { display: flex; gap: 14px; padding: 10px 0; }
+  .tl .d { width: 38px; height: 38px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .tl .d.g { background: var(--green-bg); color: #1f9a52; }
+  .tl .d.y { background: #fef6e4; color: #b27c06; }
+  .tl .x { flex: 1; }
+  .tl small { font-size: 12px; color: var(--soft); font-weight: 600; }
+  .sug { display: flex; align-items: center; gap: 20px; padding: 22px 24px; border: 2px solid #e3ecfb; border-radius: 22px; background: #f8fbff; }
+  .sug + .sug { margin-top: 16px; }
+  .sug b { display: block; font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+  .sug span { display: block; font-size: 18px; font-weight: 500; color: var(--muted); margin-top: 4px; }
+  .sug .check { margin-left: auto; }
+  .crm-logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .crm-logos div { height: 92px; border-radius: 18px; background: #fff; border: 2px solid #e3ecfb; display: flex; align-items: center; justify-content: center; padding: 14px; }
+  .crm-logos img { max-width: 100%; max-height: 100%; object-fit: contain; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1200px">
+
+  <svg class="abs" style="left:0;top:0;z-index:2" width="1920" height="1200" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M1610 210 H1560 a50 50 0 0 0 -50 50 V390" />
+  </svg>
+
+  <div class="laptop" style="left:140px;top:150px;width:1400px">
+    <div class="lid">
+      <div class="screen" style="height:820px">
+        <div class="app">
+          <div class="app-side">
+            <i class="fa-solid fa-house"></i>
+            <div class="on"><i class="fa-solid fa-address-book"></i></div>
+            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-ticket"></i>
+            <i class="fa-solid fa-chart-line"></i>
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <div class="app-main">
+            <div class="app-top">
+              <h4>Consola de agente<small>Five9 + CRM · Vista unificada del cliente</small></h4>
+              <div style="display:flex;gap:10px">
+                <span class="pill-ui green"><i class="fa-solid fa-circle" style="font-size:8px"></i> CRM conectado</span>
+                <span class="pill-ui"><i class="fa-solid fa-arrows-rotate"></i> Sync en tiempo real</span>
+              </div>
+            </div>
+
+            <div class="kpis">
+              <div class="panel kpi"><div class="lbl">AHT</div><div class="val">4:05<span class="up">▼ 22%</span></div></div>
+              <div class="panel kpi"><div class="lbl">Registros automáticos</div><div class="val">100%</div></div>
+              <div class="panel kpi"><div class="lbl">Resolución 1er contacto</div><div class="val">78%<span class="up">▲ 6 pts</span></div></div>
+              <div class="panel kpi"><div class="lbl">Interacciones hoy</div><div class="val">1.248</div></div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:300px 1fr 1fr;gap:16px;flex:1">
+              <div style="display:flex;flex-direction:column;gap:16px">
+                <div class="call">
+                  <div class="lbl"><i class="fa-solid fa-circle" style="font-size:8px;color:#5ee08f"></i> &nbsp;Llamada activa</div>
+                  <div class="tm">02:48</div>
+                  <div class="btns"><span><i class="fa-solid fa-microphone-slash"></i></span><span><i class="fa-solid fa-pause"></i></span><span><i class="fa-solid fa-right-left"></i></span><span class="end"><i class="fa-solid fa-phone-slash"></i></span></div>
+                </div>
+                <div class="panel" style="flex:1">
+                  <h5>Disposición</h5>
+                  <div class="skeleton" style="width:80%"></div><div class="skeleton" style="width:60%;margin-top:10px"></div>
+                  <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap"><span class="pill-ui">Venta</span><span class="pill-ui">Soporte</span><span class="pill-ui green">Resuelto</span></div>
+                  <h5 style="margin-top:26px">Notas</h5><div class="skeleton" style="width:90%"></div><div class="skeleton" style="width:76%;margin-top:10px"></div><div class="skeleton" style="width:58%;margin-top:10px"></div>
+                </div>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:16px">
+              <div class="panel">
+                <h5>Ficha del cliente <span class="pill-ui" style="font-size:13px"><i class="fa-solid fa-star"></i> VIP</span></h5>
+                <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
+                  <div class="ico light" style="width:64px;height:64px;font-size:28px"><i class="fa-solid fa-user"></i></div>
+                  <div style="flex:1"><div class="skeleton" style="width:70%;height:18px;background:#cfd6e0"></div><div class="skeleton" style="width:46%;margin-top:10px;height:12px"></div></div>
+                </div>
+                <div class="field" style="padding:8px 0"><b>Cuenta</b><div class="skeleton" style="width:70%"></div></div>
+                <div class="field"><b>Segmento</b><span style="font-weight:700">Empresas</span></div>
+                <div class="field"><b>Oportunidad</b><div class="skeleton" style="width:55%"></div></div>
+                <div class="field"><b>Caso abierto</b><span class="pill-ui" style="background:#fef6e4;color:#b27c06;border-color:#f7e2b0;font-size:13px">#4821 · En curso</span></div>
+              </div>
+              <div class="panel" style="flex:1">
+                <h5>Historial de interacciones <i class="fa-solid fa-ellipsis" style="color:#94a3b8"></i></h5>
+                <div class="tl"><div class="d"><i class="fa-solid fa-phone"></i></div><div class="x"><div class="skeleton" style="width:80%"></div><small>Hoy · Llamada entrante</small></div></div>
+                <div class="tl"><div class="d g"><i class="fa-brands fa-whatsapp"></i></div><div class="x"><div class="skeleton" style="width:66%"></div><small>Hace 2 días · WhatsApp</small></div></div>
+                <div class="tl"><div class="d y"><i class="fa-solid fa-ticket"></i></div><div class="x"><div class="skeleton" style="width:74%"></div><small>Hace 5 días · Caso creado</small></div></div>
+              </div>
+              </div>
+
+              <div class="panel">
+                <h5>Pipeline</h5>
+                <div class="skeleton" style="width:80%"></div><div class="skeleton" style="width:60%;margin-top:10px"></div>
+                <div class="skeleton" style="width:72%;margin-top:22px"></div><div class="skeleton" style="width:50%;margin-top:10px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="base"></div>
+  </div>
+
+  <div class="node" style="left:1610px;top:110px;width:200px;height:200px;font-size:84px"><i class="fa-solid fa-link"></i></div>
+
+  <div class="card" style="left:1180px;top:390px;width:640px;padding:36px 34px 34px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:26px">
+      <i class="fa-solid fa-arrows-rotate" style="font-size:38px;color:#0263e2"></i>
+      <div class="t-title" style="font-size:29px">Registro automático en CRM</div>
+    </div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-phone"></i></div><div><b>Llamada registrada</b><span>Duración, grabación y resultado</span></div><div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-note-sticky"></i></div><div><b>Nota creada</b><span>Resumen de la interacción</span></div><div class="check"><i class="fa-solid fa-check"></i></div></div>
+    <div class="sug"><div class="ico light md"><i class="fa-solid fa-ticket"></i></div><div><b>Caso actualizado</b><span>Estado y siguiente paso</span></div><div class="check"><i class="fa-solid fa-check"></i></div></div>
+  </div>
+  <!-- CRMs integrados -->
+  <div class="card" style="left:1130px;top:948px;width:740px;padding:24px 28px 28px;border-radius:32px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <div class="t-label" style="color:#475569">Integración nativa con</div>
+      <span class="pill-ui green" style="font-size:14px"><i class="fa-solid fa-circle-check"></i> Conectados</span>
+    </div>
+    <div class="crm-logos">
+      <div><img src="../../../../Img General/Logos Partner/Salesforce.svg" alt="Salesforce" style="max-height:58px"/></div>
+      <div><img src="../../../../Img General/Logos Partner/HubSpot.svg" alt="HubSpot" style="max-height:38px"/></div>
+      <div><img src="../../../../Img General/Logos Partner/Microsoft Dynamics 365.svg" alt="Microsoft Dynamics 365" style="max-height:52px"/></div>
+      <div><img src="../../../../Img General/Logos Partner/Odoo.webp" alt="Odoo" style="max-height:40px"/></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

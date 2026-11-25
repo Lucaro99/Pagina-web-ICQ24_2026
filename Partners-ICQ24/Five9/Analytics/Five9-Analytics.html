@@ -1,0 +1,2386 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Five9 Analytics | Speech & Interaction Analytics para Contact Center | ICQ24
+    </title>
+    <meta
+      name="description"
+      content="Five9 Analytics analiza 100% de interacciones omnicanal para identificar causas raíz, reducir AHT y mejorar CSAT con decisiones basadas en datos."
+    />
+    <meta
+      name="keywords"
+      content="Five9 Analytics, Speech & Interaction Analytics, Analítica conversacional Contact Center, Analítica Contact Center omnicanal, Insights operativos Contact Center, Reducción AHT con analytics, Mejora CSAT con speech analytics, Implementación Five9 Analytics LATAM"
+    />
+
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FAQ Schema GEO + AEO Optimizado -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es Five9 Analytics?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Five9 Analytics utiliza Speech Analytics, Interaction Analytics y NLP para analizar conversaciones omnicanal y generar insights operativos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué analiza Five9 Analytics?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Analiza llamadas, chats, emails y otros canales digitales para identificar intención, sentimiento y causas raíz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Five9 Analytics utiliza inteligencia artificial?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Utiliza IA y procesamiento de lenguaje natural para automatizar análisis conversacional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué beneficios ofrece implementar Speech Analytics?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ayuda a reducir AHT, mejorar CSAT, identificar riesgos y optimizar decisiones operativas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Five9 Analytics se integra con otras capacidades de Five9?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Se integra con Quality Management, WFO, Omnicanal, Agent Assist e IVAs."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Product Schema SEO Semántico Avanzado -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Five9 Analytics",
+        "brand": {
+          "@type": "Brand",
+          "name": "Five9"
+        },
+        "description": "Plataforma de Speech & Interaction Analytics para Contact Centers enterprise basada en IA y NLP.",
+        "category": "Contact Center Analytics Software",
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "Five9"
+        }
+      }
+    </script>
+
+    <!-- DefinedTerm Schema (GEO / AEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "Five9 Analytics",
+        "description": "Solución de Speech & Interaction Analytics para Contact Center impulsada por IA y NLP que analiza el 100% de las conversaciones para convertir voz del cliente y métricas en decisiones operativas.",
+        "inDefinedTermSet": "Contact Center Artificial Intelligence & Analytics Solutions"
+      }
+    </script>
+
+    <style>
+      /* ==========================================================================
+         DESIGN SYSTEM – ICQ24 / FIVE9 THEME (CSS Variables)
+         ========================================================================== */
+      :root {
+        --brand-primary: #0263e2;
+        --brand-primary-hover: #002d6d;
+        --brand-primary-light: #eff6ff;
+        --brand-primary-mid: #1d4ed8;
+        --navy: #0a192f;
+        --navy-dark: #0b132b;
+        --yellow: #f0ad0f;
+        --yellow-bg: #fef6e4;
+        --red: #ed3d2e;
+        --green: #3b935d;
+        --green-bg: #e8f5ee;
+
+        --bg-white: #ffffff;
+        --bg-light: #f8fafc;
+        --bg-card: #f9fafb;
+        --bg-dark: #0f172a;
+        --bg-dark-elevated: #1e293b;
+
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-light: #94a3b8;
+        --text-inverse: #ffffff;
+
+        --border-light: #e2e8f0;
+        --border-dark: #334155;
+
+        --shadow-card: 0 4px 20px rgba(2, 99, 226, 0.1);
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: #1e293b;
+        background-color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -0.02em;
+      }
+
+      .gradient-hero {
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.92),
+          rgba(255, 255, 255, 0.97)
+        );
+      }
+
+      .gradient-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 0%,
+          rgba(2, 99, 226, 0.09) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #475569;
+        margin-bottom: 14px;
+        letter-spacing: 0.12em;
+      }
+      .eyebrow span {
+        width: 12px;
+        height: 2px;
+        background-color: #0263e2;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 9999px;
+        cursor: pointer;
+        background: #0263e2;
+        color: #ffffff;
+        border: 2px solid transparent;
+        text-decoration: none;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          background-color 0.25s ease;
+      }
+
+      .btn-primary:hover {
+        background: #002d6d;
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px -4px rgba(2, 99, 226, 0.35);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px 28px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: 15px;
+        border-radius: 9999px;
+        cursor: pointer;
+        background: transparent;
+        color: #0263e2;
+        border: 2px solid #0263e2;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .btn-secondary:hover {
+        background: #0263e2;
+        color: #ffffff;
+        transform: translateY(-2px);
+      }
+
+      .five9-card-hover {
+        transition:
+          transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .five9-card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(2, 99, 226, 0.12);
+        border-color: rgba(2, 99, 226, 0.3);
+      }
+
+      /* Estilos para el carrusel infinito de Marquee */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .marquee-container {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 5%,
+          black 95%,
+          transparent
+        );
+      }
+      .marquee-track {
+        display: flex;
+        gap: 24px;
+        width: max-content;
+        align-items: center;
+        animation: marquee 35s linear infinite;
+      }
+      .marquee-container:hover .marquee-track {
+        animation-play-state: paused;
+      }
+      .marquee-track > div {
+        padding: 1.25rem 1.5rem !important;
+        min-height: auto !important;
+        height: auto !important;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      /* Transición suave para el acordeón principal y preguntas */
+      .faq-main-content,
+      .faq-item-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition:
+          grid-template-rows 0.4s ease-in-out,
+          opacity 0.4s ease-in-out;
+        opacity: 0;
+      }
+      details[open] > .faq-main-content,
+      details[open] > .faq-item-content {
+        grid-template-rows: 1fr;
+        opacity: 1;
+      }
+      .faq-main-content-inner,
+      .faq-item-content-inner {
+        overflow: hidden;
+      }
+
+      /* ==========================================================================
+         CARRUSELES MÓVILES (1 COLUMNA) Y GRIDS DESKTOP (COMPATIBLE CON ODOO)
+         ========================================================================== */
+      /* 1. Impacto Multinivel (< 768px carrusel 1 col centrada, >= 768px grid 3 cols) */
+      @media (max-width: 767px) {
+        .imp-carousel-window {
+          overflow: hidden !important;
+          width: 100% !important;
+        }
+        .imp-carousel-track {
+          display: flex !important;
+          width: 100% !important;
+          gap: 0 !important;
+          transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+        }
+        .imp-card {
+          flex: 0 0 100% !important;
+          width: 100% !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 768px) {
+        .imp-carousel-window {
+          overflow: visible !important;
+          width: 100% !important;
+        }
+        .imp-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 2rem !important; /* 32px */
+          transform: none !important;
+        }
+        .imp-card {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+
+      .marquee-track h3,
+      .kpi-card h3,
+      .kpi-card p {
+        margin: 0 !important;
+      }
+
+      /* 2. KPIs y Resultados (< 640px carrusel 1 col centrada, >= 640px grid 2 cols, >= 1024px grid 3 cols) */
+      @media (max-width: 639px) {
+        .kpi-carousel-window {
+          overflow: hidden !important;
+          width: 100% !important;
+        }
+        .kpi-carousel-track {
+          display: flex !important;
+          width: 100% !important;
+          gap: 0 !important;
+          transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+          will-change: transform;
+        }
+        .kpi-card {
+          flex: 0 0 100% !important;
+          width: 100% !important;
+          min-width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 640px) {
+        .kpi-carousel-window {
+          overflow: visible !important;
+          width: 100% !important;
+        }
+        .kpi-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 1.5rem !important; /* 24px */
+          transform: none !important;
+        }
+        .kpi-card {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+      @media (min-width: 1024px) {
+        .kpi-carousel-track {
+          display: grid !important;
+          grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+          gap: 1.25rem !important;
+          transform: none !important;
+        }
+        .kpi-card {
+          flex: 1 1 auto !important;
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+        }
+      }
+
+      /* 3. Carrusel Automático de Beneficios Rápidos (Quick Value) (< 768px carrusel automático sin flechas ni dots, >= 768px inline) */
+      .qv-desktop-view {
+        display: none !important;
+      }
+      .qv-mobile-view {
+        display: flex !important;
+      }
+      @media (min-width: 768px) {
+        .qv-desktop-view {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          align-items: center !important;
+          justify-content: center !important;
+          gap: 0.5rem 1.15rem !important;
+        }
+        .qv-mobile-view {
+          display: none !important;
+        }
+      }
+
+      .qv-slide {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      #qvTrack {
+        gap: 0 !important;
+      }
+    </style>
+  </head>
+
+  <body
+    class="min-h-screen flex flex-col justify-between text-slate-800 bg-slate-50"
+  >
+    <main class="flex-grow">
+      <!-- HERO SECTION -->
+      <section
+        class="relative py-16 lg:py-20 gradient-hero overflow-hidden border-b border-slate-200"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center"
+          >
+            <div class="lg:col-span-5 space-y-6">
+              <span class="eyebrow">FIVE9 ANALYTICS</span>
+
+              <h1
+                class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight"
+              >
+                <span class="text-icqBlue">Five9 Analytics:</span> Convierte
+                conversaciones en decisiones operativas que mejoran CX y
+                operaciones.
+              </h1>
+
+              <p
+                class="text-sm sm:text-base text-slate-600 leading-relaxed font-medium"
+              >
+                Muchos Contact Centers tienen datos, pero
+                <strong class="text-slate-900 font-bold">no visibilidad accionable</strong>.
+              </p>
+              <p
+                class="text-sm sm:text-base text-slate-600 leading-relaxed font-bold"
+              >
+                Five9 Analytics permite analizar 100% de las interacciones de
+                voz y canales digitales para entender por qué contactan tus
+                clientes, dónde se generan fricciones y qué acciones priorizar
+                para reducir AHT, elevar CSAT y optimizar la operación.
+              </p>
+
+              <div class="pt-2">
+                <a
+                  href="https://www.icq24.com/contactus"
+                  class="btn-primary text-xs sm:text-sm !px-4 sm:!px-6 whitespace-nowrap shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-icqBlue"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Descubre qué dicen realmente tus clientes</span>
+                  <i
+                    class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Visual Image side -->
+            <div class="lg:col-span-7 flex items-center justify-center">
+              <div class="w-full relative">
+                <img
+                  src="https://www.icq24.com/web/image/38849-c6740a72/Hero_Analytics.webp"
+                  alt="Five9 Analytics Speech and Interaction Analytics para Contact Center"
+                  width="1200"
+                  height="675"
+                  loading="eager"
+                  class="w-full h-auto object-contain lg:scale-110 transform origin-center transition-transform duration-500 hover:scale-115 mx-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK VALUE SECTION -->
+      <section
+        id="quick-value"
+        class="proof-strip bg-[#0b132b] text-white py-3.5 px-4 sm:px-6 lg:px-8 border-y border-slate-800 select-none relative flex justify-center"
+      >
+        <div class="max-w-7xl mx-auto flex items-center justify-center w-full">
+          <!-- Versión Web / Escritorio: todos uno al lado del otro (sin carrusel) -->
+          <div
+            class="qv-desktop-view hidden md:flex flex-wrap items-center justify-center gap-y-2 gap-x-6 lg:gap-x-8 text-xs sm:text-sm font-semibold tracking-wide text-slate-200 text-center"
+          >
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Análisis de voz y canales digitales en un solo modelo</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Identificación automática de motivos de contacto</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Insights accionables para reducir AHT y mejorar CSAT</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <i
+                class="fa-solid fa-check text-icqBlue text-xs sm:text-sm flex-shrink-0"
+                aria-hidden="true"
+              ></i>
+              <span>Visibilidad operativa en tiempo real</span>
+            </span>
+          </div>
+
+          <!-- Versión Móvil: carrusel automático sin marcadores ni flechas (1 a la vez, centrado con tiempo suficiente) -->
+          <div
+            id="qvCarouselWindow"
+            class="qv-mobile-view md:hidden overflow-hidden w-full max-w-xl h-8 sm:h-9 flex items-center justify-center relative cursor-default"
+          >
+            <div
+              id="qvTrack"
+              class="flex w-full transition-transform duration-700 ease-out will-change-transform"
+            >
+              <!-- Slide 1 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <div
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-200"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span
+                    >Análisis de voz y canales digitales en un solo modelo</span
+                  >
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <div
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-200"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Identificación automática de motivos de contacto</span>
+                </div>
+              </div>
+              <!-- Slide 3 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <div
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-200"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Insights accionables para reducir AHT y mejorar CSAT</span>
+                </div>
+              </div>
+              <!-- Slide 4 -->
+              <div
+                class="qv-slide flex-shrink-0 w-full flex items-center justify-center text-center px-2"
+              >
+                <div
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-200"
+                >
+                  <i
+                    class="fa-solid fa-check text-icqBlue text-xs flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Visibilidad operativa en tiempo real</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIAGNÓSTICO / DESAFÍOS RECURRENTES SECTION -->
+      <section class="py-16 bg-white text-slate-900 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow">EL DESAFÍO EN LA OPERACIÓN</span>
+            <h2
+              class="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight"
+            >
+              Cuando existen datos, pero no visibilidad real de la operación
+            </h2>
+            <p class="text-slate-600 text-base sm:text-lg font-medium">
+              Muchas organizaciones cuentan con grandes volúmenes de
+              información, pero enfrentan el mismo problema:
+            </p>
+          </div>
+
+          <!-- Cards de Desafíos Recurrentes en Carrusel Infinito -->
+          <div class="mt-12 marquee-container py-4">
+            <div class="marquee-track flex gap-6 items-stretch">
+              <!-- Set 1 of cards -->
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  KPIs dispersos entre herramientas y canales
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Análisis basados en muestras limitadas
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Dificultad para identificar causas raíz
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Decisiones reactivas y tardías
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Poca conexión entre datos, acciones y resultados
+                </h3>
+              </div>
+
+              <!-- Set 2 (duplicado para loop continuo) -->
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  KPIs dispersos entre herramientas y canales
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Análisis basados en muestras limitadas
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Dificultad para identificar causas raíz
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Decisiones reactivas y tardías
+                </h3>
+              </div>
+
+              <div
+                class="w-[320px] sm:w-[390px] flex-shrink-0 bg-red-50/60 py-4 px-5 rounded-2xl border border-red-200/70 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:bg-red-50 hover:border-red-400 hover:shadow-lg hover:shadow-red-500/10 min-h-[84px]"
+                aria-hidden="true"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl bg-red-100 text-icqRed flex items-center justify-center flex-shrink-0 text-base font-bold"
+                >
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <h3
+                  class="mb-0 font-bold text-slate-900 text-sm xl:text-base leading-snug"
+                >
+                  Poca conexión entre datos, acciones y resultados
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Conclusión del Desafío -->
+          <div class="mt-8 text-center max-w-2xl mx-auto">
+            <p class="text-sm sm:text-base text-slate-600 font-medium">
+              Sin un modelo integrado, los datos se quedan en reportes y
+              <strong class="text-slate-900 font-bold">no generan impacto real</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ¿QUÉ ES FIVE9 ANALYTICS? (CONCEPTOS CLAVE) SECTION -->
+      <section class="py-16 lg:py-20 bg-slate-50 text-slate-900">
+        <style>
+          .five9-card-hover {
+            transition:
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s ease,
+              border-color 0.3s ease !important;
+          }
+          .five9-card-hover:hover {
+            transform: translateY(-4px) !important;
+            box-shadow: 0 12px 24px rgba(2, 99, 226, 0.12) !important;
+            border-color: rgba(2, 99, 226, 0.25) !important;
+          }
+        </style>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+          >
+            <!-- Columna Izquierda: Imagen -->
+            <div class="lg:col-span-7 flex items-center justify-center">
+              <div class="relative w-full flex justify-center items-center py-2">
+                <img
+                  src="https://www.icq24.com/web/image/38847-7431f720/Dash_Analytics.webp"
+                  alt="Five9 Analytics Dashboard y Visualización Operativa en Acción"
+                  class="w-full h-auto max-w-xl lg:max-w-none transform transition-transform duration-500 hover:scale-105 filter drop-shadow-xl"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Texto exacto del MD -->
+            <div class="lg:col-span-5 space-y-5 text-left">
+              <span class="eyebrow">CONCEPTOS CLAVE</span>
+              <h2
+                class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
+              >
+                ¿Qué es Five9 Analytics?
+              </h2>
+              <p
+                class="text-base sm:text-lg text-slate-700 font-medium leading-relaxed"
+              >
+                <strong class="text-slate-900 font-bold">Five9 Analytics</strong>
+                es la capacidad de <strong class="text-slate-900 font-bold">Five9</strong>
+                que combina <strong class="text-icqBlue font-bold">Speech Analytics, Interaction Analytics y Reporting</strong>
+                para analizar automáticamente interacciones omnicanal mediante IA y NLP.
+              </p>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Conecta <strong class="text-slate-900 font-bold">voz del cliente</strong>,
+                <strong class="text-slate-900 font-bold">desempeño del agente</strong> y
+                <strong class="text-slate-900 font-bold">métricas operativas</strong> en un
+                único modelo analítico para convertir información en
+                <strong class="text-slate-900 font-bold">decisiones accionables</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- HIGHLIGHT STRIP: EVALÚA LA VISIBILIDAD (FRANJA AZUL OSCURA CENTRADA) -->
+      <section
+        class="w-full py-12 lg:py-16 bg-[#0b132b] text-white text-center border-b border-slate-800"
+      >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <h3
+            class="text-base sm:text-base lg:text-2xl font-black text-white tracking-tight"
+          >
+            No es solo visualización de datos.
+          </h3>
+          <p
+            class="text-base sm:text-base text-slate-300 font-medium max-w-3xl mx-auto leading-relaxed"
+          >
+            Es inteligencia aplicada a la operación del Contact Center.
+          </p>
+          <div>
+            <a
+              href="https://www.icq24.com/contactus"
+              class="btn-primary bg-icqBlue text-white hover:bg-blue-600 border-none px-6 py-3.5 text-sm sm:text-base font-bold rounded-full inline-flex items-center gap-2 shadow-lg shadow-icqBlue/30 hover:shadow-icqBlue/50 transition-all duration-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span
+                >Evalúa la visibilidad real de los motivos de contacto en tu operación</span
+              >
+              <i
+                class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CÓMO FUNCIONA FIVE9 ANALYTICS SECTION -->
+      <section
+        class="py-16 lg:py-20 bg-white text-slate-900 border-b border-slate-200"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+          >
+            <div class="max-w-3xl space-y-4 text-left md:text-left">
+              <span class="eyebrow">FLUJO ANALÍTICO OPERATIVO</span>
+              <h2
+                class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
+              >
+                Cómo funciona Five9 Analytics
+              </h2>
+              <h3 class="text-xl font-bold text-icqBlue">
+                De conversaciones aisladas a inteligencia operativa
+              </h3>
+              <p class="text-slate-600 text-base sm:text-lg">
+                Five9 Analytics captura y procesa todas las interacciones para:
+              </p>
+            </div>
+
+            <!-- Botones de Navegación del Carrusel -->
+            <div class="flex items-center gap-3 self-center md:self-end pb-2">
+              <button
+                id="flujo-prev"
+                aria-label="Anterior"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-base"
+                  aria-hidden="true"
+                ></i>
+              </button>
+              <button
+                id="flujo-next"
+                aria-label="Siguiente"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-base"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Pasos de Funcionamiento (Carrusel Horizontal) -->
+          <div
+            id="flujo-carousel"
+            class="mt-10 flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            <!-- Paso 1 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >1</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Analiza conversaciones de voz y canales digitales
+                </h4>
+              </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >2</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Detecta tendencias, comportamientos y desviaciones
+                </h4>
+              </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >3</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Identifica causas raíz que impactan AHT, CSAT y FCR
+                </h4>
+              </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >4</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Monitorea la operación en tiempo real
+                </h4>
+              </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-slate-50 p-6 sm:p-7 rounded-2xl border border-slate-200 space-y-4 relative flex flex-col justify-between five9-card-hover shadow-sm"
+            >
+              <div class="space-y-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-icqBlue text-white font-black text-base flex items-center justify-center shadow-md"
+                  >5</span
+                >
+                <h4 class="font-bold text-slate-900 text-lg leading-snug">
+                  Prioriza acciones de mejora continua en CX y eficiencia
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- Outcome Box -->
+          <div class="mt-8 p-6 text-center max-w-3xl mx-auto">
+            <p class="font-bold text-slate-900 text-base sm:text-lg">
+              El resultado: pasar de reportes descriptivos a una gestión basada en insights accionables.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- SCRIPT FOR FLUJO CAROUSEL -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const container = document.getElementById("flujo-carousel");
+          const prevBtn = document.getElementById("flujo-prev");
+          const nextBtn = document.getElementById("flujo-next");
+
+          if (!container || !prevBtn || !nextBtn) return;
+
+          function getScrollAmount() {
+            const card = container.querySelector(".snap-start");
+            return card ? card.offsetWidth + 24 : 350;
+          }
+
+          prevBtn.addEventListener("click", function () {
+            container.scrollBy({
+              left: -getScrollAmount(),
+              behavior: "smooth",
+            });
+          });
+
+          nextBtn.addEventListener("click", function () {
+            container.scrollBy({
+              left: getScrollAmount(),
+              behavior: "smooth",
+            });
+          });
+        });
+      </script>
+
+      <!-- CAPACIDADES CLAVE SECTION (ARSENAL OPERATIVO - CARRUSEL) -->
+      <section
+        class="py-16 lg:py-20 bg-slate-50 text-slate-900 border-b border-slate-200 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <!-- Header con Título y Botones de Control -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between gap-6"
+          >
+            <div class="max-w-3xl space-y-4 text-left">
+              <span class="eyebrow">CAPACIDADES CLAVE</span>
+              <h2
+                class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight"
+              >
+                Capacidades que convierten conversaciones en insights
+              </h2>
+            </div>
+
+            <!-- Botones de Navegación del Carrusel -->
+            <div class="flex items-center gap-3 self-start md:self-end">
+              <button
+                id="arsenal-prev"
+                aria-label="Anterior"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-base"
+                  aria-hidden="true"
+                ></i>
+              </button>
+              <button
+                id="arsenal-next"
+                aria-label="Siguiente"
+                class="w-12 h-12 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm active:scale-95"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-base"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Carrusel Contenedor -->
+          <div
+            id="arsenal-carousel"
+            class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            <!-- Cap 1 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-microphone-lines" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Speech Analytics
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Análisis automático de llamadas para identificar temas, sentimiento, riesgos y oportunidades.
+              </p>
+            </div>
+
+            <!-- Cap 2 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-comments" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Interaction Analytics omnicanal
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Visibilidad equivalente en chat, email y canales digitales.
+              </p>
+            </div>
+
+            <!-- Cap 3 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Detección de motivos de contacto
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Identificación precisa de por qué contactan los clientes y qué procesos generan fricción.
+              </p>
+            </div>
+
+            <!-- Cap 4 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Alertas y monitoreo inteligente
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Detección temprana de desviaciones, riesgos o tendencias negativas.
+              </p>
+            </div>
+
+            <!-- Cap 5 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white p-8 rounded-2xl border border-slate-200 shadow-sm five9-card-hover space-y-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 text-icqBlue flex items-center justify-center text-xl font-bold"
+              >
+                <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">
+                Integración con calidad y desempeño
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Conexión directa con Quality Management, coaching y KPIs operativos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCRIPTLOGIC FOR ARSENAL CAROUSEL -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const container = document.getElementById("arsenal-carousel");
+          const prevBtn = document.getElementById("arsenal-prev");
+          const nextBtn = document.getElementById("arsenal-next");
+
+          if (!container || !prevBtn || !nextBtn) return;
+
+          function getScrollAmount() {
+            const card = container.querySelector(".snap-start");
+            return card ? card.offsetWidth + 24 : 340;
+          }
+
+          prevBtn.addEventListener("click", function () {
+            container.scrollBy({
+              left: -getScrollAmount(),
+              behavior: "smooth",
+            });
+          });
+
+          nextBtn.addEventListener("click", function () {
+            container.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+          });
+        });
+      </script>
+
+      <!-- FRICCIÓN OPERATIVA QUE ELIMINA SECTION (CARRUSEL AUTOMÁTICO OSCURO) -->
+      <section
+        class="py-16 lg:py-20 bg-[#0b132b] text-white border-b border-slate-800 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <!-- Header con Título -->
+          <div class="max-w-3xl space-y-4 text-left">
+            <span class="eyebrow text-blue-400">VISIBILIDAD OPERATIVA</span>
+            <h2
+              class="text-3xl sm:text-4xl font-black text-white leading-tight"
+            >
+              La falta de visibilidad operativa que Five9 Analytics elimina
+            </h2>
+          </div>
+
+          <!-- Carrusel Contenedor (3 cards por vista en desktop) -->
+          <div
+            id="optimizacion-carousel"
+            class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-4 px-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            <!-- Card 1 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <span
+                class="font-bold text-slate-100 text-sm sm:text-base leading-snug"
+                >Desconocimiento de las causas reales de contacto</span
+              >
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <span
+                class="font-bold text-slate-100 text-sm sm:text-base leading-snug"
+                >Mejora lenta por falta de evidencia confiable</span
+              >
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <span
+                class="font-bold text-slate-100 text-sm sm:text-base leading-snug"
+                >Riesgos de cumplimiento detectados tarde</span
+              >
+            </div>
+
+            <!-- Card 4 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <span
+                class="font-bold text-slate-100 text-sm sm:text-base leading-snug"
+                >Decisiones basadas en intuición</span
+              >
+            </div>
+
+            <!-- Card 5 -->
+            <div
+              class="snap-start flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-[#141e3d] p-6 rounded-2xl border border-slate-700/60 shadow-md five9-card-hover flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/20"
+            >
+              <div
+                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg font-bold flex-shrink-0"
+              >
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+              </div>
+              <span
+                class="font-bold text-slate-100 text-sm sm:text-base leading-snug"
+                >Dificultad para priorizar automatización o mejoras</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCRIPTLOGIC FOR OPTIMIZACIÓN DE PROCESOS (AUTOMÁTICO CON PAUSA AL HOVER) -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const container = document.getElementById("optimizacion-carousel");
+          if (!container) return;
+
+          function getScrollAmount() {
+            const card = container.querySelector(".snap-start");
+            return card ? card.offsetWidth + 24 : 350;
+          }
+
+          function scrollNext() {
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            if (container.scrollLeft >= maxScroll - 10) {
+              container.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+              container.scrollBy({
+                left: getScrollAmount(),
+                behavior: "smooth",
+              });
+            }
+          }
+
+          let autoPlayTimer = setInterval(scrollNext, 1500);
+
+          function startAutoPlay() {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(scrollNext, 1500);
+          }
+
+          container.addEventListener("mouseenter", function () {
+            clearInterval(autoPlayTimer);
+          });
+
+          container.addEventListener("mouseleave", function () {
+            startAutoPlay();
+          });
+        });
+      </script>
+
+      <!-- BENEFICIOS ESTRATÉGICOS PARA TU OPERACIÓN (IMPACTO MULTINIVEL SECTION) -->
+      <section class="py-16 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow"> BENEFICIOS ESTRATÉGICOS </span>
+            <h2 class="text-3xl font-black text-slate-900">
+              Beneficios estratégicos para tu operación
+            </h2>
+          </div>
+
+          <!-- Wrapper del Carrusel / Grid -->
+          <div class="relative w-full">
+            <div
+              class="imp-carousel-window overflow-hidden w-full md:overflow-visible py-2"
+            >
+              <div
+                id="impTrack"
+                class="imp-carousel-track flex md:grid md:grid-cols-3 gap-0 md:gap-8"
+              >
+                <!-- Experiencia del Cliente -->
+                <div
+                  class="imp-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-face-smile" aria-hidden="true"></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Experiencia del Cliente
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Identificación temprana de fricciones</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Mejora continua del journey</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Incremento sostenido de CSAT y FCR</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Operación -->
+                <div
+                  class="imp-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Operación
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Reducción de contactos repetitivos</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Priorización correcta de automatización</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Enfoque operativo más eficiente</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dirección e IT -->
+                <div
+                  class="imp-card w-full flex-shrink-0 md:flex-shrink bg-white p-8 rounded-3xl border border-slate-200 space-y-6 five9-card-hover flex flex-col justify-between"
+                >
+                  <div class="space-y-6">
+                    <div
+                      class="w-12 h-12 rounded-2xl bg-blue-100 text-icqBlue flex items-center justify-center text-xl font-bold"
+                    >
+                      <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+                    </div>
+                    <h3
+                      class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3"
+                    >
+                      Dirección e IT
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Visibilidad real de la voz del cliente</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Decisiones basadas en evidencia</span>
+                      </li>
+                      <li class="flex items-start gap-2">
+                        <i
+                          class="fa-solid fa-check text-icqGreen mt-1"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Mayor control y previsibilidad</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de navegación y dots abajo (visibles únicamente en 1 columna / móviles) -->
+            <div
+              id="impCarouselNav"
+              class="flex md:hidden items-center justify-center gap-4 mt-6"
+            >
+              <button
+                type="button"
+                id="impPrevBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta anterior"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <div class="flex items-center gap-2" id="impDots">
+                <span
+                  class="imp-dot w-6 h-2 rounded-full bg-icqBlue transition-all duration-300 cursor-pointer"
+                  data-index="0"
+                  aria-label="Tarjeta 1"
+                ></span>
+                <span
+                  class="imp-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="1"
+                  aria-label="Tarjeta 2"
+                ></span>
+                <span
+                  class="imp-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="2"
+                  aria-label="Tarjeta 3"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                id="impNextBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta siguiente"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- RESULTADOS MEDIBLES SECTION (KPIS Y RESULTADOS) -->
+      <section class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div class="max-w-3xl mx-auto text-center space-y-4">
+            <span class="eyebrow"> KPIS Y RESULTADOS </span>
+            <h2 class="text-3xl font-black text-slate-900">
+              Resultados medibles cuando la analítica se usa correctamente
+            </h2>
+            <p class="text-slate-600 text-base">
+              En implementaciones enterprise, la analítica avanzada suele generar*:
+            </p>
+          </div>
+
+          <!-- Wrapper del Carrusel / Grid -->
+          <div class="relative w-full">
+            <div
+              class="kpi-carousel-window overflow-hidden w-full sm:overflow-visible py-2"
+            >
+              <div
+                id="kpiTrack"
+                class="kpi-carousel-track flex sm:flex-wrap sm:justify-center gap-0 sm:gap-6 items-stretch"
+              >
+                <!-- Card 1 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-2xl xl:text-3xl font-black text-icqBlue leading-none"
+                    >
+                      10–30 %
+                    </div>
+                  </div>
+                  <div class="space-y-1 flex flex-col justify-start">
+                    <h3 class="mb-0 font-bold text-slate-900 text-sm sm:text-base leading-tight">
+                      de reducción
+                    </h3>
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      en contactos repetitivos
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-base xl:text-lg font-black text-icqBlue leading-tight uppercase"
+                    >
+                      Mejoras sostenidas
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-start">
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      en CSAT y FCR
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-base xl:text-lg font-black text-icqBlue leading-tight uppercase"
+                    >
+                      Identificación más rápida
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-start">
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      de causas raíz
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-base xl:text-lg font-black text-icqBlue leading-tight uppercase"
+                    >
+                      Reducción de riesgos
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-start">
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      operativos y de cumplimiento
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                  class="kpi-card w-full flex-shrink-0 sm:flex-shrink p-4 sm:p-5 bg-slate-50 border border-slate-200 rounded-3xl text-center flex flex-col justify-center space-y-2 five9-card-hover min-h-[160px]"
+                >
+                  <div class="flex flex-col justify-center items-center">
+                    <div
+                      class="text-base xl:text-lg font-black text-icqBlue leading-tight uppercase"
+                    >
+                      Mayor efectividad
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-start">
+                    <p class="mb-0 text-xs sm:text-sm font-medium text-slate-600 leading-snug">
+                      en programas de mejora continua
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de navegación y dots abajo (visibles únicamente en 1 columna / móviles) -->
+            <div
+              id="kpiCarouselNav"
+              class="flex sm:hidden items-center justify-center gap-4 mt-6"
+            >
+              <button
+                type="button"
+                id="kpiPrevBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta anterior"
+              >
+                <i
+                  class="fa-solid fa-chevron-left text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+              <div class="flex items-center gap-2" id="kpiDots">
+                <span
+                  class="kpi-dot w-6 h-2 rounded-full bg-icqBlue transition-all duration-300 cursor-pointer"
+                  data-index="0"
+                  aria-label="Tarjeta 1"
+                ></span>
+                <span
+                  class="kpi-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="1"
+                  aria-label="Tarjeta 2"
+                ></span>
+                <span
+                  class="kpi-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="2"
+                  aria-label="Tarjeta 3"
+                ></span>
+                <span
+                  class="kpi-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="3"
+                  aria-label="Tarjeta 4"
+                ></span>
+                <span
+                  class="kpi-dot w-2 h-2 rounded-full bg-slate-300 transition-all duration-300 cursor-pointer"
+                  data-index="4"
+                  aria-label="Tarjeta 5"
+                ></span>
+              </div>
+
+              <button
+                type="button"
+                id="kpiNextBtn"
+                class="w-11 h-11 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-icqBlue hover:text-white hover:border-icqBlue transition-all duration-300 flex items-center justify-center shadow-sm cursor-pointer"
+                aria-label="Tarjeta siguiente"
+              >
+                <i
+                  class="fa-solid fa-chevron-right text-sm"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center max-w-3xl mx-auto space-y-4 pt-4">
+            <p class="text-xs text-slate-500 italic">
+              *Rangos orientativos; el impacto depende del alcance y la adopción.
+            </p>
+            <p class="text-base font-semibold text-slate-700">
+              Five9 Analytics convierte la información en un activo estratégico, no en reportes aislados.
+            </p>
+            <div>
+              <a
+                href="https://www.icq24.com/contactus"
+                class="btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Descubre cómo transformar datos en resultados</span>
+                <i
+                  class="fa-solid fa-arrow-right text-xs"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PREGUNTAS FRECUENTES (FAQ) ACCESIBLES (RESUELVE TUS DUDAS) -->
+      <section
+        class="py-16 border-b border-slate-200 bg-cover bg-center bg-no-repeat bg-fixed relative"
+        style="
+          background-image:
+            linear-gradient(
+              to bottom,
+              rgba(255, 255, 255, 0.75),
+              rgba(255, 255, 255, 0.65)
+            ),
+            url(https://www.icq24.com/web/image/37691-5879228f/Background.webp);
+        "
+      >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <!-- Acordeón Principal de Preguntas Frecuentes -->
+          <details class="group">
+            <summary
+              class="text-center space-y-4 flex flex-col items-center cursor-pointer list-none select-none focus:outline-none"
+            >
+              <span class="eyebrow"> Resuelve tus dudas </span>
+              <h2 class="text-3xl font-black text-slate-900">
+                Preguntas Frecuentes sobre Five9 Analytics
+              </h2>
+              <div class="pt-2">
+                <span
+                  class="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-icqBlue group-open:rotate-180 transition-transform duration-300 hover:border-icqBlue hover:shadow-md"
+                >
+                  <i
+                    class="fa-solid fa-chevron-down text-base"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </div>
+            </summary>
+
+            <div class="faq-main-content">
+              <div class="faq-main-content-inner space-y-4 pt-8">
+                <!-- FAQ 1 -->
+                <details
+                  name="five9-analytics-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Qué es Five9 Analytics?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Five9 Analytics utiliza Speech Analytics, Interaction Analytics y NLP para analizar conversaciones omnicanal y generar insights operativos.
+                    </div>
+                  </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details
+                  name="five9-analytics-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Qué analiza Five9 Analytics?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Analiza llamadas, chats, emails y otros canales digitales para identificar intención, sentimiento y causas raíz.
+                    </div>
+                  </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details
+                  name="five9-analytics-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Five9 Analytics utiliza inteligencia artificial?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Sí. Utiliza IA y procesamiento de lenguaje natural para automatizar análisis conversacional.
+                    </div>
+                  </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details
+                  name="five9-analytics-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Qué beneficios ofrece implementar Speech Analytics?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Ayuda a reducir AHT, mejorar CSAT, identificar riesgos y optimizar decisiones operativas.
+                    </div>
+                  </div>
+                </details>
+
+                <!-- FAQ 5 -->
+                <details
+                  name="five9-analytics-faq"
+                  class="faq-item bg-white border border-slate-200 rounded-2xl p-6 group/item focus-within:ring-2 focus-within:ring-icqBlue"
+                >
+                  <summary
+                    class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center gap-4 list-none"
+                  >
+                    <span>¿Five9 Analytics se integra con otras capacidades de Five9?</span>
+                    <span
+                      class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 group-open/item:rotate-180 transition-transform"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-down text-sm"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </summary>
+                  <div class="faq-item-content">
+                    <div
+                      class="faq-item-content-inner mt-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4"
+                    >
+                      Sí. Se integra con Quality Management, WFO, Omnicanal, Agent Assist e IVAs.
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- BOTTOM PARTNER CTA SECTION -->
+      <section
+        class="w-full py-14 lg:py-18 bg-[#0B1120] text-white border-b border-slate-800"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+        >
+          <!-- Columna de Imagen -->
+          <div class="w-full flex justify-center items-center">
+            <img
+              src="https://www.icq24.com/web/image/38845-cc3057aa/Footer_Analytics.webp"
+              alt="Five9 Analytics con ICQ24"
+              width="800"
+              height="600"
+              loading="lazy"
+              class="w-full flex justify-center items-center"
+            />
+          </div>
+
+          <!-- Columna de Texto -->
+          <div class="space-y-6 text-left">
+            <span class="eyebrow text-blue-400">
+              PARTNER ENTERPRISE FIVE9
+            </span>
+
+            <h2
+              class="text-3xl sm:text-4xl font-black text-white leading-tight"
+            >
+              Five9 Analytics con ICQ24
+            </h2>
+
+            <h3 class="text-lg sm:text-xl font-bold text-blue-300">
+              Insights diseñados para accionar, no solo para reportar
+            </h3>
+
+            <div
+              class="space-y-3 text-slate-300 text-sm sm:text-base leading-relaxed"
+            >
+              <p>En ICQ24 no solo habilitamos dashboards.</p>
+              <p>
+                Diseñamos modelos de analítica con IA alineados a procesos, KPIs
+                y objetivos de negocio, conectando datos con decisiones reales en
+                la operación.
+              </p>
+              <p class="font-bold text-white text-base sm:text-lg pt-2">
+                El objetivo es claro: menos intuición, más decisiones basadas en
+                datos.
+              </p>
+            </div>
+
+            <div class="pt-3">
+              <a
+                href="https://www.icq24.com/contactus"
+                class="btn-primary bg-icqBlue text-white hover:bg-blue-600 px-6 py-3.5 text-sm sm:text-base font-bold rounded-full inline-flex items-center gap-2 shadow-lg shadow-icqBlue/30 hover:shadow-icqBlue/50 transition-all duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Agenda una demo personalizada de Five9 Analytics</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square text-xs sm:text-sm"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+         SCRIPTS AL FINAL DEL DOCUMENTO
+         ========================================================================== -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/3f2f44a158.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <!-- Configuración de Tailwind de ICQ24 -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              icqGrey: "#475569",
+              icqDark: "#0f172a",
+              icqBlue: "#0263e2",
+              icqGreen: "#3b935d",
+              icqRed: "#ed3d2e",
+              icqYellow: "#f0ad0f",
+              icqLightBg: "#f8fafc",
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              heading: ["Montserrat", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Script de Interacción para Acordeón de FAQ -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqDetails = document.querySelectorAll("details.faq-item");
+        faqDetails.forEach((targetDetail) => {
+          targetDetail.addEventListener("toggle", () => {
+            if (targetDetail.open) {
+              faqDetails.forEach((detail) => {
+                if (detail !== targetDetail) {
+                  detail.open = false;
+                }
+              });
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Script de Carruseles Móviles para Beneficios Estratégicos y KPIs (Compatible con Odoo) -->
+    <script>
+      (function () {
+        function initMobileCarousel({
+          trackId,
+          prevBtnId,
+          nextBtnId,
+          dotsSelector,
+          cardsSelector,
+          windowSelector,
+          breakpoint = 768,
+          activeDotClass = "bg-icqBlue",
+          inactiveDotClass = "bg-slate-300",
+        }) {
+          const track = document.getElementById(trackId);
+          const cards = document.querySelectorAll(cardsSelector);
+          if (!track || cards.length === 0) return;
+
+          const prevBtn = document.getElementById(prevBtnId);
+          const nextBtn = document.getElementById(nextBtnId);
+          const dots = document.querySelectorAll(dotsSelector);
+          const total = cards.length;
+          let currentIndex = 0;
+
+          function update() {
+            if (window.innerWidth < breakpoint) {
+              track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            } else {
+              track.style.transform = "none";
+            }
+
+            dots.forEach((dot, idx) => {
+              if (idx === currentIndex) {
+                dot.classList.remove("w-2", inactiveDotClass);
+                dot.classList.add("w-6", activeDotClass);
+              } else {
+                dot.classList.remove("w-6", activeDotClass);
+                dot.classList.add("w-2", inactiveDotClass);
+              }
+            });
+          }
+
+          if (nextBtn) {
+            nextBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = (currentIndex + 1) % total;
+              update();
+            });
+          }
+
+          if (prevBtn) {
+            prevBtn.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = (currentIndex - 1 + total) % total;
+              update();
+            });
+          }
+
+          dots.forEach((dot, idx) => {
+            dot.addEventListener("click", function (e) {
+              e.preventDefault();
+              currentIndex = idx;
+              update();
+            });
+          });
+
+          // Soporte táctil / swipe móvil
+          let startX = 0;
+          let isSwiping = false;
+          const carouselWindow = document.querySelector(windowSelector);
+          if (carouselWindow) {
+            carouselWindow.addEventListener(
+              "touchstart",
+              function (e) {
+                if (window.innerWidth < breakpoint) {
+                  startX = e.changedTouches[0].screenX;
+                  isSwiping = true;
+                }
+              },
+              { passive: true },
+            );
+
+            carouselWindow.addEventListener(
+              "touchend",
+              function (e) {
+                if (!isSwiping || window.innerWidth >= breakpoint) return;
+                isSwiping = false;
+                const diff = e.changedTouches[0].screenX - startX;
+                if (Math.abs(diff) > 40) {
+                  currentIndex =
+                    diff < 0
+                      ? (currentIndex + 1) % total
+                      : (currentIndex - 1 + total) % total;
+                  update();
+                }
+              },
+              { passive: true },
+            );
+          }
+
+          window.addEventListener("resize", function () {
+            if (window.innerWidth >= breakpoint) {
+              currentIndex = 0;
+            }
+            update();
+          });
+
+          update();
+        }
+
+        function initCarousels() {
+          // 1. Beneficios Estratégicos (< 768px carrusel 1 col centrada, >= 768px desktop)
+          initMobileCarousel({
+            trackId: "impTrack",
+            prevBtnId: "impPrevBtn",
+            nextBtnId: "impNextBtn",
+            dotsSelector: ".imp-dot",
+            cardsSelector: ".imp-card",
+            windowSelector: ".imp-carousel-window",
+            breakpoint: 768,
+            inactiveDotClass: "bg-slate-300",
+          });
+
+          // 2. KPIs y Resultados (< 640px carrusel 1 col centrada, >= 640px desktop/tablet)
+          initMobileCarousel({
+            trackId: "kpiTrack",
+            prevBtnId: "kpiPrevBtn",
+            nextBtnId: "kpiNextBtn",
+            dotsSelector: ".kpi-dot",
+            cardsSelector: ".kpi-card",
+            windowSelector: ".kpi-carousel-window",
+            breakpoint: 640,
+            inactiveDotClass: "bg-slate-300",
+          });
+
+          // 3. Quick Value (< 768px carrusel automático sin marcadores ni flechas, tiempo suficiente para leer)
+          initQuickValueCarousel();
+        }
+
+        // -------------------------------------------------------------
+        // Carrusel Automático de Beneficios Rápidos (Quick Value)
+        // -------------------------------------------------------------
+        function initQuickValueCarousel() {
+          const qvTrack = document.getElementById("qvTrack");
+          const qvSlides = document.querySelectorAll(".qv-slide");
+          const qvSection = document.getElementById("quick-value");
+          const qvWindow = document.getElementById("qvCarouselWindow");
+
+          if (!qvTrack || qvSlides.length === 0) return;
+
+          let qvCurrentIndex = 0;
+          const qvTotal = qvSlides.length;
+          const qvIntervalMs = 4000;
+          let qvTimer = null;
+
+          function updateQv() {
+            if (window.innerWidth < 768) {
+              qvTrack.style.transform = `translateX(-${qvCurrentIndex * 100}%)`;
+            } else {
+              qvTrack.style.transform = "none";
+            }
+          }
+
+          function qvNext() {
+            qvCurrentIndex = (qvCurrentIndex + 1) % qvTotal;
+            updateQv();
+          }
+
+          function qvPrev() {
+            qvCurrentIndex = (qvCurrentIndex - 1 + qvTotal) % qvTotal;
+            updateQv();
+          }
+
+          function startQv() {
+            stopQv();
+            if (window.innerWidth < 768) {
+              qvTimer = setInterval(qvNext, qvIntervalMs);
+            }
+          }
+
+          function stopQv() {
+            if (qvTimer) {
+              clearInterval(qvTimer);
+              qvTimer = null;
+            }
+          }
+
+          if (qvSection) {
+            qvSection.addEventListener("mouseenter", stopQv);
+            qvSection.addEventListener("mouseleave", startQv);
+          }
+
+          let qvStartX = 0;
+          if (qvWindow) {
+            qvWindow.addEventListener(
+              "touchstart",
+              function (e) {
+                stopQv();
+                qvStartX = e.changedTouches[0].screenX;
+              },
+              { passive: true },
+            );
+
+            qvWindow.addEventListener(
+              "touchend",
+              function (e) {
+                const diff = e.changedTouches[0].screenX - qvStartX;
+                if (Math.abs(diff) > 35) {
+                  if (diff < 0) qvNext();
+                  else qvPrev();
+                }
+                startQv();
+              },
+              { passive: true },
+            );
+          }
+
+          window.addEventListener("resize", function () {
+            if (window.innerWidth >= 768) {
+              stopQv();
+              qvCurrentIndex = 0;
+              updateQv();
+            } else {
+              if (!qvTimer) startQv();
+              updateQv();
+            }
+          });
+
+          updateQv();
+          startQv();
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initCarousels);
+        } else {
+          initCarousels();
+        }
+      })();
+    </script>
+
+    <!-- SEO Oculto Semántico -->
+    <div style="display: none">
+      <h2>¿Qué es Five9 Analytics?</h2>
+      <p>
+        Five9 Analytics utiliza Speech Analytics, Interaction Analytics y NLP para
+        analizar conversaciones omnicanal y generar insights operativos en
+        Contact Centers enterprise.
+      </p>
+
+      <h2>¿Para qué sirve Speech Analytics en Contact Center?</h2>
+      <p>
+        Permite analizar el 100% de las llamadas y canales digitales, detectar
+        motivos de contacto, reducir AHT y mejorar CSAT basándose en evidencia.
+      </p>
+
+      <h2>¿Cómo ayuda Five9 Analytics a reducir causas de fricción?</h2>
+      <p>
+        Identifica causas raíz de contacto repetitivo, evalúa sentimiento e
+        intención, y prioriza oportunidades de automatización e iniciativas de
+        calidad.
+      </p>
+    </div>
+  </body>
+</html>

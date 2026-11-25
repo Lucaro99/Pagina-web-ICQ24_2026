@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Footer Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .chip2 { display: flex; align-items: center; gap: 18px; padding: 16px 20px 16px 16px; font-weight: 700; font-size: 26px; letter-spacing: -0.01em; border-radius: 999px; white-space: nowrap; }
+  .chip2 .check { margin-left: auto; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1400px;height:1320px">
+
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1400" height="1320" fill="none" stroke="#0263e2" stroke-width="3">
+    <path d="M1230 600 V800" />
+  </svg>
+
+  <img class="person" src="../fotos/recortes/footer.png" style="left:290px;top:60px;width:830px;--fade-start:68%;--fade-end:94%" alt="" />
+
+  <!-- Izquierda -->
+  <div class="card chip2" style="left:20px;top:390px;width:360px"><div class="ico md"><i class="fa-regular fa-face-smile"></i></div>Sentimiento<div class="check"><i class="fa-solid fa-check"></i></div></div>
+  <div class="card chip2" style="left:20px;top:515px;width:360px"><div class="ico md"><i class="fa-solid fa-tags"></i></div>Motivos<div class="check"><i class="fa-solid fa-check"></i></div></div>
+  <div class="card chip2" style="left:20px;top:640px;width:360px"><div class="ico md"><i class="fa-solid fa-bell"></i></div>Alertas<div class="check"><i class="fa-solid fa-check"></i></div></div>
+
+  <!-- Izquierda abajo: CSAT -->
+  <div class="card" style="left:30px;top:840px;width:470px;padding:28px 32px 22px;border-radius:32px">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+      <div class="t-title" style="font-size:25px">CSAT en aumento</div>
+      <div class="ico light sm"><i class="fa-solid fa-arrow-trend-up" style="font-size:22px"></i></div>
+    </div>
+    <svg width="406" height="170" viewBox="0 0 406 170">
+      <defs><linearGradient id="ca" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0263e2" stop-opacity=".22"/><stop offset="1" stop-color="#0263e2" stop-opacity="0"/></linearGradient></defs>
+      <g stroke="#eef2f7" stroke-width="2"><line x1="0" y1="25" x2="406" y2="25"/><line x1="0" y1="85" x2="406" y2="85"/><line x1="0" y1="145" x2="406" y2="145"/></g>
+      <path d="M0 138 C46 132 70 120 116 116 S190 98 236 82 S318 44 392 24 V170 H0Z" fill="url(#ca)"/>
+      <path d="M0 138 C46 132 70 120 116 116 S190 98 236 82 S318 44 392 24" stroke="#0263e2" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <circle cx="392" cy="24" r="9" fill="#fff" stroke="#0263e2" stroke-width="6"/>
+    </svg>
+  </div>
+
+  <!-- Derecha arriba: causa raíz -->
+  <div class="card" style="left:1040px;top:380px;width:340px;padding:26px 26px 24px;border-radius:32px">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+      <div class="ico md" style="background:#f0ad0f"><i class="fa-solid fa-lightbulb"></i></div>
+      <div class="t-title" style="font-size:22px;line-height:1.2">Causa raíz<br/>detectada</div>
+    </div>
+    <div class="skeleton" style="width:90%"></div>
+    <div class="skeleton" style="width:64%;margin-top:10px"></div>
+    <div style="margin-top:16px"><span class="tag"><i class="fa-solid fa-bolt"></i> Acción sugerida</span></div>
+  </div>
+
+  <!-- Derecha abajo: AHT -->
+  <div class="card" style="left:960px;top:800px;width:420px;padding:26px 28px;border-radius:32px">
+    <div style="display:flex;align-items:center;gap:18px">
+      <div class="ico md"><i class="fa-solid fa-stopwatch"></i></div>
+      <div style="flex:1">
+        <div class="t-title" style="font-size:24px">AHT reducido</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:10px">
+          <div style="font-weight:800;font-size:34px;color:#1f7a45;letter-spacing:-.02em">−12%</div>
+          <span class="t-sub" style="font-size:17px">vs. mes anterior</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

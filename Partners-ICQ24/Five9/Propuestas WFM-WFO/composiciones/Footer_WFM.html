@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Footer WFM</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  .chip2 { display: flex; align-items: center; gap: 22px; padding: 20px 26px 20px 20px; font-weight: 700; font-size: 30px; letter-spacing: -0.01em; border-radius: 999px; }
+  .chip2 .check { margin-left: auto; }
+  .agent { display: flex; align-items: center; gap: 22px; padding: 20px 24px; border-radius: 999px; }
+  .agent .av { width: 64px; height: 64px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+  .agent .ok { width: 60px; height: 60px; border-radius: 50%; background: var(--green-bg); color: #1f9a52; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; margin-left: auto; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1400px;height:1320px">
+
+  <img class="person" src="../fotos/recortes/asesor-portatil.png" style="left:200px;top:30px;width:980px;--fade-start:66%;--fade-end:93%" alt="" />
+
+  <!-- Chips izquierdos -->
+  <div class="card chip2" style="left:40px;top:300px;width:470px"><div class="ico md"><i class="fa-solid fa-chart-line"></i></div>Forecasting<div class="check"><i class="fa-solid fa-check"></i></div></div>
+  <div class="card chip2" style="left:40px;top:440px;width:470px"><div class="ico md"><i class="fa-solid fa-calendar-days"></i></div>Turnos óptimos<div class="check"><i class="fa-solid fa-check"></i></div></div>
+  <div class="card chip2" style="left:40px;top:580px;width:470px"><div class="ico md"><i class="fa-solid fa-user-clock"></i></div>Adherencia<div class="check"><i class="fa-solid fa-check"></i></div></div>
+
+  <!-- Gráfico de tendencia -->
+  <div class="card" style="left:50px;top:850px;width:520px;padding:34px 36px 30px;border-radius:32px">
+    <div class="t-label" style="margin-bottom:14px">Nivel de servicio</div>
+    <svg width="448" height="200" viewBox="0 0 448 200">
+      <defs><marker id="ar" markerUnits="userSpaceOnUse" markerWidth="26" markerHeight="26" refX="12" refY="13" orient="auto"><path d="M0 0 L26 13 L0 26 Z" fill="#0263e2"/></marker></defs>
+      <g fill="#0263e2">
+        <rect x="20"  y="168" width="34" height="10" rx="5" fill="#dbe8fd"/>
+        <rect x="70"  y="160" width="34" height="18" rx="6" fill="#bcd5fb"/>
+        <rect x="120" y="146" width="34" height="32" rx="7" fill="#8ab4f8"/>
+        <rect x="170" y="128" width="34" height="50" rx="8" fill="#5b9bf3"/>
+        <rect x="220" y="110" width="34" height="68" rx="8" fill="#3b8bf5"/>
+        <rect x="270" y="90"  width="34" height="88" rx="8"/>
+        <rect x="320" y="70"  width="34" height="108" rx="8"/>
+        <rect x="370" y="44"  width="34" height="134" rx="8" fill="#1e2a8a"/>
+      </g>
+      <path d="M10 150 L80 112 L130 128 L200 86 L250 100 L320 50 L410 14" stroke="#0263e2" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#ar)"/>
+    </svg>
+  </div>
+
+  <!-- Agentes en turno -->
+  <div class="card agent" style="left:1010px;top:780px;width:370px"><div class="av"><i class="fa-solid fa-user"></i></div><div style="flex:1"><div class="skeleton" style="width:85%;background:#cfd6e0"></div><div class="skeleton" style="width:55%;margin-top:10px;height:12px"></div></div><div class="ok"><i class="fa-solid fa-calendar-check"></i></div></div>
+  <div class="card agent" style="left:1010px;top:905px;width:370px"><div class="av"><i class="fa-solid fa-user"></i></div><div style="flex:1"><div class="skeleton" style="width:78%;background:#cfd6e0"></div><div class="skeleton" style="width:50%;margin-top:10px;height:12px"></div></div><div class="ok"><i class="fa-solid fa-calendar-check"></i></div></div>
+  <div class="card agent" style="left:1010px;top:1030px;width:370px"><div class="av"><i class="fa-solid fa-user"></i></div><div style="flex:1"><div class="skeleton" style="width:88%;background:#cfd6e0"></div><div class="skeleton" style="width:58%;margin-top:10px;height:12px"></div></div><div class="ok"><i class="fa-solid fa-calendar-check"></i></div></div>
+  <div class="card agent" style="left:1010px;top:1155px;width:370px"><div class="av"><i class="fa-solid fa-user"></i></div><div style="flex:1"><div class="skeleton" style="width:74%;background:#cfd6e0"></div><div class="skeleton" style="width:46%;margin-top:10px;height:12px"></div></div><div class="ok"><i class="fa-solid fa-calendar-check"></i></div></div>
+</div>
+</body>
+</html>

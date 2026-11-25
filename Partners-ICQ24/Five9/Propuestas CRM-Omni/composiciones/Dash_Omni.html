@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Dashboard Omnicanal · Flujo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="base.css" />
+<script>if (location.search.includes("white")) document.documentElement.classList.add("white");</script>
+<style>
+  /* Pasos */
+  .step-h { position: absolute; z-index: 3; display: flex; align-items: center; gap: 16px; }
+  .step-h .n { width: 52px; height: 52px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; font-size: 22px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(2,99,226,.3); }
+  .step-h b { font-size: 25px; font-weight: 800; letter-spacing: -.01em; color: var(--text); }
+  .step-h span { display: block; font-size: 17px; font-weight: 500; color: var(--muted); margin-top: 2px; }
+
+  /* Canales */
+  .chan { display: flex; align-items: center; gap: 18px; padding: 14px 24px 14px 14px; border-radius: 999px; font-weight: 700; font-size: 24px; letter-spacing: -.01em; }
+  .chan .ico { width: 62px; height: 62px; font-size: 26px; }
+  .chan .ico.wa { background: #1f9a52; }
+
+  /* Reglas */
+  .rule { display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 2px solid #f1f5f9; font-size: 19px; font-weight: 700; color: var(--text); }
+  .rule:last-child { border-bottom: 0; padding-bottom: 0; }
+  .rule .ri { width: 40px; height: 40px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+
+  /* Portátil realista 16:10 */
+  .lt { position: absolute; z-index: 2; }
+  .lt .lid { position: relative; background: #16191f; border-radius: 26px 26px 6px 6px; padding: 18px 18px 24px; box-shadow: 0 0 0 3px #a3a9b2, 0 30px 70px rgba(15,23,42,.16); }
+  .lt .lid::before { content: ""; position: absolute; top: 7px; left: 50%; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: #343a44; }
+  .lt .screen { position: relative; overflow: hidden; border-radius: 6px; background: #f3f6fb; }
+  .lt .base { position: relative; height: 22px; margin: 0 -64px; border-radius: 4px 4px 26px 26px; background: linear-gradient(180deg, #e3e6ea 0%, #c4c9d0 45%, #9ba1aa 100%); box-shadow: 0 24px 34px rgba(15,23,42,.14); }
+  .lt .base::before { content: ""; position: absolute; top: 0; left: 50%; width: 180px; height: 9px; margin-left: -90px; border-radius: 0 0 12px 12px; background: #a9afb8; }
+
+  /* UI de la consola */
+  .app { grid-template-columns: 64px 1fr; }
+  .app-side { gap: 22px; padding-top: 22px; font-size: 19px; }
+  .app-side .on { width: 42px; height: 42px; border-radius: 12px; }
+  .app-main { padding: 18px 20px; gap: 13px; }
+  .app-top h4 { font-size: 21px; }
+  .app-top small { font-size: 13px; }
+  .pill-ui { font-size: 12.5px; padding: 6px 12px; }
+  .panel { padding: 13px 15px; border-radius: 14px; }
+  .panel h5 { font-size: 14px; margin-bottom: 9px; }
+  .kpis { gap: 12px; }
+  .kpi .lbl { font-size: 12px; }
+  .kpi .val { font-size: 25px; margin-top: 2px; }
+  .kpi .val span { font-size: 12px; }
+  .inbox { display: flex; align-items: center; gap: 9px; padding: 7px 8px; border-radius: 10px; }
+  .inbox.on { background: var(--blue-light); border: 1px solid #cfe0fb; }
+  .inbox .c { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+  .inbox.on .c { background: var(--blue); color: #fff; }
+  .inbox .c.wa { background: #e8f5ee; color: #1f9a52; }
+  .inbox .x { flex: 1; }
+  .inbox small { font-size: 10px; color: var(--soft); font-weight: 700; }
+  .msg { max-width: 80%; padding: 9px 12px; border-radius: 12px; }
+  .msg.in { background: #f1f5f9; border-bottom-left-radius: 3px; }
+  .msg.out { background: var(--blue); margin-left: auto; border-bottom-right-radius: 3px; }
+  .sys { align-self: center; font-size: 10.5px; font-weight: 700; color: #1f7a45; background: var(--green-bg); border: 1px solid #c4e6d2; padding: 5px 10px; border-radius: 99px; white-space: nowrap; }
+  .jr { position: relative; }
+  .jr::before { content: ""; position: absolute; left: 15px; top: 20px; bottom: 20px; border-left: 2px dashed #cfe0fb; }
+  .jr .tl { display: flex; gap: 10px; padding: 6px 0; align-items: center; position: relative; }
+  .jr .tl .d { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-light); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; position: relative; z-index: 1; border: 2px solid #fff; }
+  .jr .tl .d.g { background: var(--green-bg); color: #1f9a52; }
+  .jr .tl .d.on { background: var(--blue); color: #fff; }
+  .jr .tl b { display: block; font-size: 12px; font-weight: 700; color: var(--text); }
+  .jr .tl small { font-size: 10.5px; color: var(--soft); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="canvas" style="width:1920px;height:1200px">
+<div style="position:absolute;inset:0;transform:translateY(-35px)">
+
+  <svg class="abs" style="left:0;top:0;z-index:1" width="1920" height="1200" fill="none">
+    <defs>
+      <marker id="ah" markerUnits="userSpaceOnUse" markerWidth="22" markerHeight="22" refX="16" refY="11" orient="auto"><path d="M2 2 L18 11 L2 20" fill="none" stroke="#0263e2" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+      <linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#8ab4f8"/><stop offset="1" stop-color="#0263e2"/></linearGradient>
+    </defs>
+    <g stroke="url(#lg)" stroke-width="3.5" stroke-linecap="round">
+      <path d="M330 300 C410 300 410 560 480 560"/>
+      <path d="M330 430 C405 430 405 560 480 560"/>
+      <path d="M330 560 H480"/>
+      <path d="M330 690 C405 690 405 560 480 560"/>
+      <path d="M330 820 C410 820 410 560 480 560"/>
+    </g>
+    <path d="M714 560 H790" stroke="#0263e2" stroke-width="3.5" marker-end="url(#ah)"/>
+    <path d="M597 677 V735" stroke="#0263e2" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+  </svg>
+
+
+  <!-- 1 · Canales -->
+  <div class="card chan" style="left:40px;top:255px;width:290px"><div class="ico"><i class="fa-solid fa-phone"></i></div>Voz</div>
+  <div class="card chan" style="left:40px;top:385px;width:290px"><div class="ico wa"><i class="fa-brands fa-whatsapp"></i></div>WhatsApp</div>
+  <div class="card chan" style="left:40px;top:515px;width:290px"><div class="ico"><i class="fa-solid fa-comment-dots"></i></div>Chat web</div>
+  <div class="card chan" style="left:40px;top:645px;width:290px"><div class="ico"><i class="fa-solid fa-envelope"></i></div>Email</div>
+  <div class="card chan" style="left:40px;top:775px;width:290px"><div class="ico"><i class="fa-solid fa-mobile-screen"></i></div>SMS</div>
+
+  <!-- 2 · Orquestación -->
+  <div class="node" style="left:480px;top:443px;width:234px;height:234px;flex-direction:column;gap:6px;font-size:80px">
+    <i class="fa-solid fa-route"></i>
+    <div style="font-size:18px;font-weight:800;color:#0f172a;letter-spacing:-.01em">Five9 Omnicanal</div>
+  </div>
+  <div class="card" style="left:455px;top:735px;width:285px;padding:20px 24px 20px;border-radius:28px">
+    <div class="t-label" style="font-size:13px;margin-bottom:4px">Enruta por</div>
+    <div class="rule"><div class="ri"><i class="fa-solid fa-flag"></i></div>Prioridad</div>
+    <div class="rule"><div class="ri"><i class="fa-solid fa-medal"></i></div>Skills</div>
+    <div class="rule"><div class="ri"><i class="fa-solid fa-clock-rotate-left"></i></div>Historial</div>
+    <div class="rule"><div class="ri"><i class="fa-solid fa-user-check"></i></div>Disponibilidad</div>
+  </div>
+
+  <!-- 3 · Portátil 16:10 -->
+  <div class="lt" style="left:800px;top:225px;width:1036px">
+    <div class="lid">
+      <div class="screen" style="width:1000px;height:625px">
+        <div class="app">
+          <div class="app-side">
+            <i class="fa-solid fa-house"></i>
+            <div class="on"><i class="fa-solid fa-inbox"></i></div>
+            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-comments"></i>
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="app-main">
+            <div class="app-top">
+              <h4>Consola omnicanal<small>Todas las conversaciones en un solo lugar</small></h4>
+              <span class="pill-ui green"><i class="fa-solid fa-circle" style="font-size:7px"></i> Disponible</span>
+            </div>
+            <div class="kpis">
+              <div class="panel kpi"><div class="lbl">AHT</div><div class="val">3:52<span class="up">▼ 18%</span></div></div>
+              <div class="panel kpi"><div class="lbl">Recontactos</div><div class="val">9%<span class="up">▼ 4 pts</span></div></div>
+              <div class="panel kpi"><div class="lbl">Resolución (FCR)</div><div class="val">81%</div></div>
+              <div class="panel kpi"><div class="lbl">CSAT</div><div class="val">4.8<span style="color:#94a3b8">/ 5</span></div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:200px 1fr 230px;gap:12px;flex:1">
+              <div class="panel" style="padding:11px">
+                <h5 style="padding:2px 4px 0">Bandeja</h5>
+                <div class="inbox on"><div class="c"><i class="fa-solid fa-phone"></i></div><div class="x"><div class="skeleton" style="width:80%;height:9px;background:#b9cdf0"></div><small>Voz · 02:14</small></div></div>
+                <div class="inbox"><div class="c wa"><i class="fa-brands fa-whatsapp"></i></div><div class="x"><div class="skeleton" style="width:70%;height:9px"></div><small>WhatsApp</small></div></div>
+                <div class="inbox"><div class="c"><i class="fa-solid fa-comment-dots"></i></div><div class="x"><div class="skeleton" style="width:64%;height:9px"></div><small>Chat web</small></div></div>
+                <div class="inbox"><div class="c"><i class="fa-solid fa-envelope"></i></div><div class="x"><div class="skeleton" style="width:76%;height:9px"></div><small>Email</small></div></div>
+                <div class="inbox"><div class="c"><i class="fa-solid fa-mobile-screen"></i></div><div class="x"><div class="skeleton" style="width:58%;height:9px"></div><small>SMS</small></div></div>
+                <div class="inbox"><div class="c"><i class="fa-brands fa-facebook-messenger"></i></div><div class="x"><div class="skeleton" style="width:66%;height:9px"></div><small>Messenger</small></div></div>
+                <div class="inbox"><div class="c"><i class="fa-brands fa-instagram"></i></div><div class="x"><div class="skeleton" style="width:54%;height:9px"></div><small>Instagram</small></div></div>
+              </div>
+              <div class="panel" style="display:flex;flex-direction:column;gap:9px">
+                <h5 style="margin-bottom:0">Conversación activa <span class="pill-ui" style="font-size:11px;padding:4px 10px"><i class="fa-solid fa-phone"></i> Voz</span></h5>
+                <div class="msg in"><div class="skeleton" style="width:160px;height:9px;background:#d2d9e3"></div><div class="skeleton" style="width:100px;height:9px;margin-top:6px;background:#d2d9e3"></div></div>
+                <div class="msg out"><div class="skeleton" style="width:140px;height:9px;background:rgba(255,255,255,.45)"></div></div>
+                <div class="sys"><i class="fa-brands fa-whatsapp"></i> Viene de WhatsApp · contexto conservado</div>
+                <div class="msg in"><div class="skeleton" style="width:130px;height:9px;background:#d2d9e3"></div></div>
+                <div class="msg out"><div class="skeleton" style="width:160px;height:9px;background:rgba(255,255,255,.45)"></div><div class="skeleton" style="width:80px;height:9px;margin-top:6px;background:rgba(255,255,255,.45)"></div></div>
+                <div style="margin-top:auto;display:flex;align-items:center;gap:8px;padding:7px 8px 7px 12px;border:1px solid #e3e9f2;border-radius:11px;font-size:11.5px;font-weight:500;color:#94a3b8">Escribe una respuesta…<span style="margin-left:auto;width:28px;height:28px;border-radius:50%;background:#0263e2;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px"><i class="fa-solid fa-paper-plane"></i></span></div>
+              </div>
+              <div class="panel">
+                <h5>Recorrido del cliente</h5>
+                <div class="jr">
+                  <div class="tl"><div class="d g"><i class="fa-brands fa-whatsapp"></i></div><div><b>Consulta inicial</b><small>WhatsApp · 09:12</small></div></div>
+                  <div class="tl"><div class="d"><i class="fa-solid fa-comment-dots"></i></div><div><b>Seguimiento</b><small>Chat web · 09:40</small></div></div>
+                  <div class="tl"><div class="d on"><i class="fa-solid fa-phone"></i></div><div><b>Resolución</b><small>Voz · ahora</small></div></div>
+                </div>
+                <div style="margin-top:10px;padding-top:10px;border-top:1px solid #eef2f7">
+                  <div style="font-size:11px;font-weight:700;color:#475569;margin-bottom:7px">Intención detectada</div>
+                  <span class="pill-ui" style="font-size:11.5px;padding:4px 10px">Cambio de plan</span>
+                  <div style="font-size:11px;font-weight:700;color:#475569;margin:12px 0 7px">Sentimiento</div>
+                  <span class="pill-ui green" style="font-size:11.5px;padding:4px 10px"><i class="fa-regular fa-face-smile"></i> Positivo</span>
+                  <div style="font-size:11px;font-weight:700;color:#475569;margin:12px 0 7px">Siguiente paso</div>
+                  <div class="skeleton" style="width:90%;height:9px"></div><div class="skeleton" style="width:64%;height:9px;margin-top:6px"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="base"></div>
+  </div>
+
+  <!-- Resultado -->
+  <div class="card" style="left:1460px;top:850px;width:400px;padding:22px 24px;border-radius:28px">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="check" style="width:52px;height:52px;font-size:24px"><i class="fa-solid fa-check"></i></div>
+      <div>
+        <div class="t-title" style="font-size:22px">Sin repetir la solicitud</div>
+        <div class="t-sub" style="font-size:16px;margin-top:2px">Mismo contexto en 3 canales</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
